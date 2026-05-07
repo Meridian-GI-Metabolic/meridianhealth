@@ -14,8 +14,11 @@
     <style id="portal-desktop-chrome">
       /* When the desktop portal shell is showing its LHS mega-menu the in-app
          hamburger is redundant. On mobile the shell hides its aside, so the
-         hamburger must stay as the only navigation. */
-      html.shell-aside-visible [data-testid="drawer-hamburger"]{display:none !important}
+         hamburger must stay as the only navigation. testID may or may not be
+         preserved by react-native-web in production; the JS hider below covers
+         both cases. */
+      html.shell-aside-visible [data-testid="drawer-hamburger"],
+      html.shell-aside-visible [data-portal-hide="hamburger"]{display:none !important}
 
       /* Lift the Meridian Health ID input on My Programme so it reads as a
          deliberate sign-in field. Selector targets the input by its placeholder
@@ -54,7 +57,41 @@
       try {
         var inFrame = window.top !== window.self;
         var asideVisible = inFrame && window.top.innerWidth >= 900;
-        if (asideVisible) document.documentElement.classList.add("shell-aside-visible");
+        if (asideVisible) {
+          document.documentElement.classList.add("shell-aside-visible");
+          /* Belt-and-braces hamburger hider. The testID may be stripped from
+             the production bundle, so also walk the DOM and tag any element
+             whose first child is a row of three short horizontal lines. */
+          var tagged = false;
+          function tagHamburger(){
+            if (tagged) return;
+            var nodes = document.querySelectorAll('div[role="button"], [data-testid="drawer-hamburger"]');
+            for (var i=0;i<nodes.length;i++){
+              var n = nodes[i];
+              if (n.getAttribute('data-portal-hide')==='hamburger') { tagged=true; return; }
+              var kids = n.children;
+              if (kids.length===3){
+                var ok=0;
+                for (var j=0;j<3;j++){
+                  var s = kids[j];
+                  var r = s.getBoundingClientRect();
+                  if (r.height>0 && r.height<=3 && r.width>=10 && r.width<=30) ok++;
+                }
+                if (ok===3){
+                  n.setAttribute('data-portal-hide','hamburger');
+                  tagged=true; return;
+                }
+              }
+            }
+          }
+          var obs = new MutationObserver(tagHamburger);
+          window.addEventListener('DOMContentLoaded', function(){
+            tagHamburger();
+            obs.observe(document.body, {childList:true, subtree:true});
+            /* Stop observing after 8s — bundle has booted by then. */
+            setTimeout(function(){ obs.disconnect(); }, 8000);
+          });
+        }
       } catch(e){ /* cross-origin: leave hamburger visible to be safe */ }
       var BASE = "/portal/app";
       var p = location.pathname;
