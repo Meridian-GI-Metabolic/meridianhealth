@@ -16,6 +16,34 @@
          hamburger is redundant. On mobile the shell hides its aside, so the
          hamburger must stay as the only navigation. */
       html.shell-aside-visible [data-testid="drawer-hamburger"]{display:none !important}
+
+      /* Lift the Meridian Health ID input on My Programme so it reads as a
+         deliberate sign-in field. Selector targets the input by its placeholder
+         so no app code changes are required. Digits get monospaced spacing
+         that visually echoes the segmented code field used on the app. */
+      input[placeholder="Enter ID"]{
+        font-family:"SF Mono","JetBrains Mono",Menlo,Consolas,monospace !important;
+        font-size:22px !important;
+        letter-spacing:.32em !important;
+        text-align:center !important;
+        font-weight:600 !important;
+        color:#201e11 !important;
+        padding:14px 18px !important;
+        min-height:56px !important;
+        background:#fbf9f3 !important;
+        border:1px solid rgba(32,30,17,.18) !important;
+        border-radius:10px !important;
+        box-shadow:0 1px 2px rgba(32,30,17,.04), inset 0 0 0 0 #c8a035 !important;
+        transition:border-color .15s ease, box-shadow .15s ease !important;
+      }
+      input[placeholder="Enter ID"]:focus{
+        outline:none !important;
+        border-color:#c8a035 !important;
+        box-shadow:0 1px 2px rgba(32,30,17,.04), inset 0 0 0 1px #c8a035 !important;
+      }
+      input[placeholder="Enter ID"]::placeholder{
+        letter-spacing:.04em;font-weight:400;color:rgba(32,30,17,.32);
+      }
     </style>
   <link rel="icon" href="/brand/favicon-32.png?v=6.7q" />
   <script>
