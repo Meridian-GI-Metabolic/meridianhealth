@@ -90,7 +90,7 @@
     class="portal-frame"
     name="portalApp"
     title="Meridian patient app"
-    src="/portal/app/"
+    src="/portal/app/?v=6.7aw"
     allow="camera; microphone; geolocation; clipboard-read; clipboard-write"
   ></iframe>
 </div>
@@ -108,7 +108,7 @@
     l.addEventListener('click', function(e){
       e.preventDefault();
       var route=l.getAttribute('data-route');
-      var target='/portal/app'+(route==='/'?'/':route);
+      var target='/portal/app'+(route==='/'?'/?home=1':route);
       frame.src=target;
       setActive(route);
     });
