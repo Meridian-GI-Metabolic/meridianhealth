@@ -23,11 +23,21 @@
   .portal-frame.is-loading{opacity:0}
   /* Desktop: vertical mega-menu (sized per Apple sidebar conventions) */
   .portal-aside{
-    width:24%;flex:0 0 24%;max-width:320px;min-width:240px;
+    width:var(--aside-w,280px);flex:0 0 var(--aside-w,280px);
     background:#fbf9f3;
     box-shadow:inset -1px 0 0 rgba(32,30,17,.06);
     display:flex;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    position:relative;
   }
+  /* Drag handle on the aside's right edge: invisible until hover. */
+  .portal-resize{
+    position:absolute;top:0;right:-3px;width:6px;height:100%;
+    cursor:col-resize;z-index:5;background:transparent;
+    transition:background .15s ease;
+  }
+  .portal-resize:hover,.portal-resize.is-active{background:rgba(200,160,53,.35)}
+  body.is-resizing{cursor:col-resize;user-select:none}
+  body.is-resizing .portal-frame{pointer-events:none}
   .portal-brand{padding:22px 24px 18px;border-bottom:1px solid rgba(32,30,17,.06);display:flex;align-items:center;gap:10px;color:#201e11;text-decoration:none}
   .portal-brand .mark{width:180px;height:23px;background-color:#201e11;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;font-size:0;overflow:hidden}
   .portal-back{display:block;padding:16px 24px 20px;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(32,30,17,.55);text-decoration:none;border-bottom:1px solid rgba(32,30,17,.06)}
@@ -91,6 +101,7 @@
       <a class="portal-link" data-route="/">Sign in or change patient</a>
     </nav>
     <div class="portal-foot">Held by named clinicians at Meridian Health, Fitzroy.</div>
+    <div class="portal-resize" role="separator" aria-orientation="vertical" aria-label="Resize navigation"></div>
   </aside>
 
   <main class="portal-main">
@@ -139,6 +150,48 @@
     });
   });
   setActive('/');
+
+  /* Drag-to-resize the LHS sidebar. Width persists across reloads. */
+  var aside=document.querySelector('.portal-aside');
+  var handle=document.querySelector('.portal-resize');
+  var KEY='mh-portal-aside-w';
+  var MIN=220, MAX=520;
+  function applyWidth(px){
+    px=Math.max(MIN, Math.min(MAX, px));
+    document.documentElement.style.setProperty('--aside-w', px+'px');
+    return px;
+  }
+  try { var saved=parseInt(localStorage.getItem(KEY),10); if(saved) applyWidth(saved); } catch(e){}
+  var dragging=false;
+  function start(e){
+    dragging=true;
+    handle.classList.add('is-active');
+    document.body.classList.add('is-resizing');
+    e.preventDefault();
+  }
+  function move(e){
+    if(!dragging) return;
+    var x=(e.touches?e.touches[0].clientX:e.clientX);
+    var w=applyWidth(x - aside.getBoundingClientRect().left);
+    try { localStorage.setItem(KEY, String(w)); } catch(e){}
+  }
+  function end(){
+    if(!dragging) return;
+    dragging=false;
+    handle.classList.remove('is-active');
+    document.body.classList.remove('is-resizing');
+  }
+  handle.addEventListener('mousedown', start);
+  handle.addEventListener('touchstart', start, {passive:false});
+  window.addEventListener('mousemove', move);
+  window.addEventListener('touchmove', move, {passive:false});
+  window.addEventListener('mouseup', end);
+  window.addEventListener('touchend', end);
+  /* Double-click resets to default. */
+  handle.addEventListener('dblclick', function(){
+    document.documentElement.style.removeProperty('--aside-w');
+    try { localStorage.removeItem(KEY); } catch(e){}
+  });
 })();
 </script>
 
