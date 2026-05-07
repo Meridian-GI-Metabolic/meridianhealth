@@ -12,11 +12,10 @@
       #root{display:flex;height:100%;flex:1}
     </style>
     <style id="portal-desktop-chrome">
-      /* When embedded in the desktop portal shell, the LHS mega-menu replaces
-         the in-app hamburger and home dashboard. Hide both on wide viewports. */
-      @media(min-width:700px){
-        [data-testid="drawer-hamburger"]{display:none !important}
-      }
+      /* When embedded in the desktop portal shell the LHS mega-menu replaces
+         the in-app hamburger. The shell hides its aside on narrow screens, so
+         on mobile the bare app is shown directly and the hamburger stays. */
+      html.in-portal-shell [data-testid="drawer-hamburger"]{display:none !important}
     </style>
   <link rel="icon" href="/brand/favicon-32.png?v=6.7q" />
   <script>
@@ -24,6 +23,13 @@
        at site root, but is hosted under /portal/app/. Strip the prefix
        before the bundle boots so router.push("/journey") and friends match. */
     (function(){
+      try {
+        if (window.top !== window.self) {
+          document.documentElement.classList.add("in-portal-shell");
+        }
+      } catch(e){
+        document.documentElement.classList.add("in-portal-shell");
+      }
       var BASE = "/portal/app";
       var p = location.pathname;
       if (p.indexOf(BASE) === 0) {
