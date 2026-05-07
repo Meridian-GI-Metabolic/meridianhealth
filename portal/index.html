@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Patient portal | Meridian Health</title>
+<meta name="description" content="The Meridian patient portal. Sign in with your patient number to view your treatment, trackers and reading prepared by your team." />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/favicon-180.png?v=6.7q" />
+<link rel="stylesheet" href="/assets/styles.css?v=6.7av" />
+<link rel="stylesheet" href="/assets/gate.css?v=1" />
+<script defer src="/assets/gate.js?v=1"></script>
+<style>
+  html,body{height:100%;margin:0;background:#f7f5ef;color:#201e11;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+  .portal{position:fixed;inset:0;display:flex;background:#f7f5ef}
+  .portal-frame{flex:1;border:0;background:#f7f5ef;display:block;width:100%;height:100%}
+  /* Desktop: vertical mega-menu */
+  .portal-aside{
+    width:280px;flex:0 0 280px;background:#fbf9f3;border-right:1px solid rgba(32,30,17,.08);
+    display:flex;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  }
+  .portal-brand{padding:22px 24px 18px;border-bottom:1px solid rgba(32,30,17,.06);display:flex;align-items:center;gap:10px;color:#201e11;text-decoration:none}
+  .portal-brand .mark{width:135px;height:17px;background-color:#201e11;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;font-size:0;overflow:hidden}
+  .portal-back{display:block;padding:14px 24px 18px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(32,30,17,.55);text-decoration:none;border-bottom:1px solid rgba(32,30,17,.06)}
+  .portal-back:hover{color:#201e11}
+  .portal-back::before{content:"\2190\00a0\00a0"}
+  .portal-nav{padding:10px 0 30px;flex:1}
+  .portal-group{padding:18px 24px 6px}
+  .portal-group .eyebrow{display:block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#9a7818;font-weight:500;margin:0 0 4px}
+  .portal-group .gold-rule{width:24px;height:1px;background:#c8a035;margin:0 0 10px}
+  .portal-link{
+    display:block;padding:10px 24px;font-size:14px;color:rgba(32,30,17,.78);
+    text-decoration:none;border-left:2px solid transparent;letter-spacing:-.005em;line-height:1.4;
+    transition:color .15s ease,background .15s ease,border-color .15s ease;cursor:pointer;
+  }
+  .portal-link:hover{color:#201e11;background:rgba(32,30,17,.04)}
+  .portal-link.active{color:#201e11;border-left-color:#c8a035;background:rgba(200,160,53,.06);font-weight:500}
+  .portal-foot{padding:18px 24px 22px;border-top:1px solid rgba(32,30,17,.06);font-size:11.5px;color:rgba(32,30,17,.45);line-height:1.5}
+  /* Mobile: pure Expo web app, full-screen, no marketing chrome */
+  @media(max-width:899px){
+    .portal-aside{display:none}
+    .portal-frame{height:100%}
+  }
+</style>
+</head>
+<body>
+
+<div class="portal">
+  <aside class="portal-aside" aria-label="Portal navigation">
+    <a class="portal-brand" href="/portal/" aria-label="Meridian Health portal"><span class="mark">Meridian Health</span></a>
+    <a class="portal-back" href="/">To the practice site</a>
+    <nav class="portal-nav">
+      <div class="portal-group">
+        <span class="eyebrow">Information</span>
+        <div class="gold-rule"></div>
+      </div>
+      <a class="portal-link" data-route="/information">Conditions and treatments</a>
+
+      <div class="portal-group">
+        <span class="eyebrow">Care journey</span>
+        <div class="gold-rule"></div>
+      </div>
+      <a class="portal-link" data-route="/journey">Journey setup</a>
+      <a class="portal-link" data-route="/journey-plan">Journey plan</a>
+      <a class="portal-link" data-route="/appointments">Appointments</a>
+      <a class="portal-link" data-route="/reminders">Blood test reminders</a>
+
+      <div class="portal-group">
+        <span class="eyebrow">Tracking</span>
+        <div class="gold-rule"></div>
+      </div>
+      <a class="portal-link" data-route="/fluid-tracker">Fluid tracker</a>
+      <a class="portal-link" data-route="/calorie-tracker">Calorie tracker</a>
+      <a class="portal-link" data-route="/exercise">Exercise</a>
+      <a class="portal-link" data-route="/weight-tracker">Weight tracker</a>
+
+      <div class="portal-group">
+        <span class="eyebrow">Practice</span>
+        <div class="gold-rule"></div>
+      </div>
+      <a class="portal-link" data-route="/contact">Contact the practice</a>
+      <a class="portal-link" data-route="/">Sign in or change patient</a>
+    </nav>
+    <div class="portal-foot">Held by named clinicians at Meridian Health, Fitzroy.</div>
+  </aside>
+
+  <iframe
+    class="portal-frame"
+    name="portalApp"
+    title="Meridian patient app"
+    src="/portal/app/"
+    allow="camera; microphone; geolocation; clipboard-read; clipboard-write"
+  ></iframe>
+</div>
+
+<script>
+(function(){
+  var frame=document.querySelector('.portal-frame');
+  var links=document.querySelectorAll('.portal-link');
+  function setActive(route){
+    links.forEach(function(l){
+      l.classList.toggle('active', l.getAttribute('data-route')===route);
+    });
+  }
+  links.forEach(function(l){
+    l.addEventListener('click', function(e){
+      e.preventDefault();
+      var route=l.getAttribute('data-route');
+      var target='/portal/app'+(route==='/'?'/':route);
+      frame.src=target;
+      setActive(route);
+    });
+  });
+  setActive('/');
+})();
+</script>
+
+</body>
+</html>

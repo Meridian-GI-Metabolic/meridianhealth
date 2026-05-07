@@ -1,0 +1,34 @@
+Meridian Health — bundled font licenses
+=========================================
+
+All fonts shipped in /fonts/ are open-source and free for commercial use
+and redistribution. Summary:
+
+  Inter family (Inter_*.ttf)
+    SIL Open Font License 1.1
+    https://github.com/rsms/inter/blob/master/LICENSE.txt
+
+  Ionicons (Ionicons.ttf)
+    MIT License — Copyright (c) Ionic
+    https://github.com/ionic-team/ionicons/blob/main/LICENSE
+
+  MaterialIcons / MaterialCommunityIcons
+    Apache License 2.0 (font), SIL OFL 1.1 (community glyphs)
+    https://github.com/google/material-design-icons/blob/master/LICENSE
+    https://github.com/Templarian/MaterialDesign/blob/master/LICENSE
+
+  FontAwesome / FontAwesome5_* / FontAwesome6_* (free tier)
+    SIL OFL 1.1 (font files), MIT (supporting files)
+    https://fontawesome.com/license/free
+
+  Feather (Feather.ttf)            MIT — https://github.com/feathericons/feather/blob/master/LICENSE
+  AntDesign (AntDesign.ttf)        MIT — https://github.com/ant-design/ant-design-icons/blob/master/LICENSE
+  Entypo (Entypo.ttf)              CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+  EvilIcons (EvilIcons.ttf)        MIT — https://github.com/outpunk/evil-icons/blob/master/LICENSE
+  Foundation (Foundation.ttf)      MIT — https://github.com/zurb/foundation-icon-fonts/blob/master/LICENSE
+  Fontisto (Fontisto.ttf)          SIL OFL 1.1 — https://github.com/kenangundogan/fontisto/blob/master/LICENSE
+  Octicons (Octicons.ttf)          MIT — https://github.com/primer/octicons/blob/main/LICENSE
+  SimpleLineIcons                  MIT — https://github.com/thesabbir/simple-line-icons/blob/master/LICENSE.md
+  Zocial (Zocial.ttf)              MIT — https://github.com/smcllns/css-social-buttons/blob/master/LICENSE
+
+These files are distributed in their original unmodified form.

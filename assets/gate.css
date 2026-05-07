@@ -1,0 +1,16 @@
+html.gate-locked, html.gate-locked body { overflow:hidden !important; }
+html.gate-locked body > *:not(.mh-gate) { filter: blur(14px) saturate(.85); pointer-events:none; user-select:none; }
+.mh-gate{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(120% 90% at 50% 30%,#f7f5ef 0%,#ecebe6 60%,#d2d0cb 100%);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#201e11}
+.mh-gate-card{width:100%;max-width:420px;background:#f7f5ef;border:1px solid rgba(32,30,17,.10);border-radius:6px;padding:36px 32px;box-shadow:0 18px 60px rgba(32,30,17,.10),0 1px 0 rgba(255,255,255,.6) inset}
+.mh-gate-eyebrow{display:inline-block;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#9a7a1f;font-weight:500}
+.mh-gate-rule{width:48px;height:1px;background:#c8a035;margin:12px 0 18px}
+.mh-gate-card h1{font-family:"Raleway","Inter",serif;font-weight:400;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 6px}
+.mh-gate-lead{margin:0 0 22px;color:rgba(32,30,17,.65);font-size:14.5px;line-height:1.5}
+.mh-gate-form label{display:block;margin:0 0 14px}
+.mh-gate-form label span{display:block;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(32,30,17,.55);margin:0 0 6px;font-weight:500}
+.mh-gate-form input{width:100%;box-sizing:border-box;padding:12px 14px;font:inherit;font-size:15px;color:#201e11;background:#fff;border:1px solid rgba(32,30,17,.18);border-radius:4px;transition:border-color .15s ease, box-shadow .15s ease;outline:none}
+.mh-gate-form input:focus{border-color:#c8a035;box-shadow:0 0 0 3px rgba(200,160,53,.18)}
+.mh-gate-form button{margin-top:8px;width:100%;padding:13px 18px;font:inherit;font-size:14px;font-weight:500;letter-spacing:.04em;color:#f7f5ef;background:#201e11;border:none;border-radius:4px;cursor:pointer;transition:background .15s ease}
+.mh-gate-form button:hover{background:#3a3520}
+.mh-gate-err{min-height:18px;margin:6px 0 0;font-size:12.5px;color:#a23a1f;letter-spacing:.01em}
+.mh-gate-foot{margin:22px 0 0;font-size:11.5px;color:rgba(32,30,17,.45);line-height:1.5;letter-spacing:.02em}
