@@ -67,7 +67,14 @@
           var inFrame = window.top !== window.self;
           var parentWide = inFrame && window.top.innerWidth >= 900;
           var wantHome = /[?&]home=1\b/.test(location.search);
-          if (parentWide && virt === "/" && !wantHome) virt = "/information";
+          if (parentWide && virt === "/" && !wantHome) {
+            /* First-time visitors land on programme setup (where they enter
+               their Meridian Health ID). Returning patients with a stored ID
+               land on appointments. */
+            var hasId = false;
+            try { hasId = !!localStorage.getItem("@mgos_patient_id"); } catch(e){}
+            virt = hasId ? "/appointments" : "/journey";
+          }
         } catch(e){}
         try { history.replaceState(history.state, "", virt + location.search + location.hash); } catch(e){}
       }
