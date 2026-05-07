@@ -15,15 +15,21 @@
 <style>
   html,body{height:100%;margin:0;background:#f7f5ef;color:#201e11;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;overflow:hidden}
   .portal{position:fixed;inset:0;display:flex;background:#f7f5ef}
-  .portal-frame{flex:1;border:0;background:#f7f5ef;display:block;width:100%;height:100%}
-  /* Desktop: vertical mega-menu */
+  .portal-main{position:relative;flex:1;display:flex;background:#f7f5ef;min-width:0}
+  .portal-frame{
+    flex:1;border:0;background:#f7f5ef;display:block;width:100%;height:100%;
+    opacity:1;transition:opacity .28s ease;
+  }
+  .portal-frame.is-loading{opacity:0}
+  /* Desktop: vertical mega-menu (sized per Apple sidebar conventions) */
   .portal-aside{
-    width:45%;flex:0 0 45%;max-width:630px;min-width:360px;
-    background:#fbf9f3;border-right:1px solid rgba(32,30,17,.08);
+    width:24%;flex:0 0 24%;max-width:320px;min-width:240px;
+    background:#fbf9f3;
+    box-shadow:inset -1px 0 0 rgba(32,30,17,.06);
     display:flex;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;
   }
   .portal-brand{padding:22px 24px 18px;border-bottom:1px solid rgba(32,30,17,.06);display:flex;align-items:center;gap:10px;color:#201e11;text-decoration:none}
-  .portal-brand .mark{width:202px;height:26px;background-color:#201e11;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;font-size:0;overflow:hidden}
+  .portal-brand .mark{width:180px;height:23px;background-color:#201e11;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;font-size:0;overflow:hidden}
   .portal-back{display:block;padding:16px 24px 20px;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(32,30,17,.55);text-decoration:none;border-bottom:1px solid rgba(32,30,17,.06)}
   .portal-back:hover{color:#201e11}
   .portal-back::before{content:"\2190\00a0\00a0"}
@@ -87,13 +93,15 @@
     <div class="portal-foot">Held by named clinicians at Meridian Health, Fitzroy.</div>
   </aside>
 
-  <iframe
-    class="portal-frame"
-    name="portalApp"
-    title="Meridian patient app"
-    src="/portal/app/?v=6.7aw"
-    allow="camera; microphone; geolocation; clipboard-read; clipboard-write"
-  ></iframe>
+  <main class="portal-main">
+    <iframe
+      class="portal-frame"
+      name="portalApp"
+      title="Meridian patient app"
+      src="/portal/app/?v=6.7aw"
+      allow="camera; microphone; geolocation; clipboard-read; clipboard-write"
+    ></iframe>
+  </main>
 </div>
 
 <script>
@@ -105,12 +113,28 @@
       l.classList.toggle('active', l.getAttribute('data-route')===route);
     });
   }
+  /* Apple-style cross-fade between iframe routes: hide on src change,
+     reveal once the new document has loaded. */
+  var hideTimer;
+  frame.addEventListener('load', function(){
+    clearTimeout(hideTimer);
+    frame.classList.remove('is-loading');
+  });
+  function navigate(target){
+    if (frame.src.split('?')[0] === new URL(target, location.href).href.split('?')[0] &&
+        frame.src.indexOf(target) !== -1) return;
+    frame.classList.add('is-loading');
+    /* Safety: if onload never fires within 1.2s, reveal anyway. */
+    clearTimeout(hideTimer);
+    hideTimer=setTimeout(function(){frame.classList.remove('is-loading');},1200);
+    frame.src=target;
+  }
   links.forEach(function(l){
     l.addEventListener('click', function(e){
       e.preventDefault();
       var route=l.getAttribute('data-route');
       var target='/portal/app'+(route==='/'?'/?home=1':route);
-      frame.src=target;
+      navigate(target);
       setActive(route);
     });
   });
