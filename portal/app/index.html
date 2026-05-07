@@ -11,6 +11,13 @@
       body{overflow:hidden;margin:0}
       #root{display:flex;height:100%;flex:1}
     </style>
+    <style id="portal-desktop-chrome">
+      /* When embedded in the desktop portal shell, the LHS mega-menu replaces
+         the in-app hamburger and home dashboard. Hide both on wide viewports. */
+      @media(min-width:700px){
+        [data-testid="drawer-hamburger"]{display:none !important}
+      }
+    </style>
   <link rel="icon" href="/brand/favicon-32.png?v=6.7q" />
   <script>
     /* Virtualise path for Expo Router: bundle was exported expecting routes
@@ -22,6 +29,14 @@
       if (p.indexOf(BASE) === 0) {
         var virt = p.substring(BASE.length) || "/";
         if (virt.charAt(0) !== "/") virt = "/" + virt;
+        /* On the desktop portal shell the LHS mega-menu replaces the in-app
+           home dashboard, so land on a content route instead of "/". */
+        try {
+          var inFrame = window.top !== window.self;
+          var parentWide = inFrame && window.top.innerWidth >= 900;
+          var wantHome = /[?&]home=1\b/.test(location.search);
+          if (parentWide && virt === "/" && !wantHome) virt = "/information";
+        } catch(e){}
         try { history.replaceState(history.state, "", virt + location.search + location.hash); } catch(e){}
       }
     })();
