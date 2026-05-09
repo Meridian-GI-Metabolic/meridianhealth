@@ -1118,3 +1118,8 @@ main#content > .bleed-deep:last-child{
   .nav-portal span{display:none}
   .nav-portal svg{width:16px;height:16px}
 }
+
+/* Announcement banner */
+.ann-bar{background:#201e11;color:#f7f5ef;text-align:center;padding:10px 24px;font-size:12.5px;font-family:"Inter",system-ui,-apple-system,sans-serif;font-weight:400;letter-spacing:.025em;line-height:1.5;width:100%;box-sizing:border-box}
+.ann-mob{display:none}
+@media(max-width:680px){.ann-desk{display:none}.ann-mob{display:inline}}
