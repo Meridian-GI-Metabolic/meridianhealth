@@ -51,5 +51,4 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "autoscale"
-publicDir = "."
 run = ["node", "server.js"]
