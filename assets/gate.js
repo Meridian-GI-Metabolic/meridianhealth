@@ -31,7 +31,7 @@
       e.preventDefault();
       var u=f.elements.u.value.trim();
       var p=f.elements.p.value;
-      if(u===USER && p===PASS){
+      if(u.toUpperCase()===USER && p===PASS){
         sessionStorage.setItem(KEY,"ok");
         document.documentElement.classList.remove("gate-locked");
         wrap.remove();
