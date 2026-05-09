@@ -37,3 +37,4 @@ externalPort = 80
 [deployment]
 deploymentTarget = "static"
 publicDir = "."
+run = ["npx", "serve", ".", "-l", "5000"]
