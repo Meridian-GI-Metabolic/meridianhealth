@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meridian — Deploy</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #201e11;
+    --ink-60: rgba(32,30,17,.60);
+    --ink-30: rgba(32,30,17,.30);
+    --ink-10: rgba(32,30,17,.10);
+    --cream: #f7f5ef;
+    --gold: #c8a035;
+    --green: #2d6a4f;
+    --red: #b3261e;
+  }
+  html, body { height: 100%; background: var(--cream); font-family: "Inter", system-ui, -apple-system, sans-serif; color: var(--ink); }
+  body { display: flex; align-items: center; justify-content: center; padding: 24px; min-height: 100vh; }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--ink-10);
+    border-radius: 14px;
+    padding: 40px 36px 36px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 2px 24px rgba(32,30,17,.06);
+  }
+
+  .wordmark {
+    display: block;
+    width: 96px;
+    height: 13px;
+    background-color: var(--ink);
+    -webkit-mask: url('/brand/wordmark.png') left center / contain no-repeat;
+    mask: url('/brand/wordmark.png') left center / contain no-repeat;
+    margin-bottom: 28px;
+  }
+
+  h1 { font-size: 20px; font-weight: 500; letter-spacing: -.015em; margin-bottom: 6px; }
+  .sub { font-size: 13.5px; color: var(--ink-60); margin-bottom: 28px; line-height: 1.5; }
+
+  label { display: block; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.1px; color: var(--ink-60); margin-bottom: 7px; }
+
+  input[type="password"] {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1px solid var(--ink-30);
+    border-radius: 7px;
+    background: var(--cream);
+    color: var(--ink);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 18px;
+  }
+  input[type="password"]:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(32,30,17,.07); }
+
+  button {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 12.5px;
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: opacity .15s;
+  }
+  button:hover { opacity: .85; }
+  button:disabled { opacity: .45; cursor: default; }
+
+  .log-wrap {
+    margin-top: 22px;
+    display: none;
+  }
+  .log-wrap.visible { display: block; }
+  .log-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.1px; color: var(--ink-60); margin-bottom: 7px; }
+  pre {
+    background: #201e11;
+    color: #d4cebc;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 12px;
+    font-family: "SF Mono", "Fira Code", monospace;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 240px;
+    overflow-y: auto;
+    min-height: 60px;
+  }
+
+  .status {
+    margin-top: 14px;
+    font-size: 13.5px;
+    font-weight: 500;
+    min-height: 20px;
+  }
+  .status.ok  { color: var(--green); }
+  .status.err { color: var(--red); }
+
+  .divider { border: none; border-top: 1px solid var(--ink-10); margin: 22px 0; }
+
+  .info { font-size: 12.5px; color: var(--ink-60); line-height: 1.6; }
+  .info a { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="wordmark" aria-label="Meridian Health"></span>
+  <h1>Deploy to production</h1>
+  <p class="sub">Pushes the current workspace to GitHub, which triggers an automatic Netlify deploy to meridianhealth.com.au.</p>
+
+  <label for="token">Deploy password</label>
+  <input type="password" id="token" placeholder="Enter deploy password" autocomplete="current-password" />
+
+  <button id="btn" type="button">Deploy now</button>
+
+  <div class="log-wrap" id="logWrap">
+    <div class="log-label">Output</div>
+    <pre id="log"></pre>
+    <div class="status" id="status"></div>
+  </div>
+
+  <hr class="divider" />
+  <p class="info">Deployment usually takes 1–2 minutes to go live on Netlify after the push completes. <a href="https://app.netlify.com" target="_blank" rel="noopener">Check Netlify status →</a></p>
+</div>
+
+<script>
+document.getElementById("btn").addEventListener("click", async () => {
+  const token = document.getElementById("token").value.trim();
+  if (!token) { alert("Please enter the deploy password."); return; }
+
+  const btn = document.getElementById("btn");
+  const logWrap = document.getElementById("logWrap");
+  const log = document.getElementById("log");
+  const status = document.getElementById("status");
+
+  btn.disabled = true;
+  btn.textContent = "Deploying…";
+  logWrap.classList.add("visible");
+  log.textContent = "";
+  status.textContent = "";
+  status.className = "status";
+
+  try {
+    const res = await fetch("/api/deploy", {
+      method: "POST",
+      headers: { "x-deploy-token": token }
+    });
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let output = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      const chunk = decoder.decode(value);
+      output += chunk;
+      log.textContent = output;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    if (output.includes("DEPLOY_OK")) {
+      status.textContent = "Pushed successfully. Netlify is deploying now.";
+      status.className = "status ok";
+      btn.textContent = "Deploy now";
+    } else if (res.status === 401) {
+      status.textContent = "Incorrect password.";
+      status.className = "status err";
+      btn.textContent = "Deploy now";
+    } else {
+      status.textContent = "Push failed — check the output above.";
+      status.className = "status err";
+      btn.textContent = "Deploy now";
+    }
+  } catch (e) {
+    status.textContent = "Network error: " + e.message;
+    status.className = "status err";
+    btn.textContent = "Deploy now";
+  }
+
+  btn.disabled = false;
+});
+
+document.getElementById("token").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") document.getElementById("btn").click();
+});
+</script>
+</body>
+</html>

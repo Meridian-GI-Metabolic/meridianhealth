@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const { spawn } = require("child_process");
 
 const PORT = process.env.PORT || 5000;
 
@@ -39,6 +40,40 @@ function serveFile(res, filePath) {
 
 http.createServer((req, res) => {
   let urlPath = req.url.split("?")[0];
+
+  // POST /api/deploy — run push.sh and stream output
+  if (req.method === "POST" && urlPath === "/api/deploy") {
+    const token = process.env.DEPLOY_TOKEN || "";
+    const auth = req.headers["x-deploy-token"] || "";
+
+    if (!token || auth !== token) {
+      res.writeHead(401, { "Content-Type": "text/plain" });
+      res.end("Unauthorised");
+      return;
+    }
+
+    res.writeHead(200, {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Cache-Control": "no-cache",
+    });
+
+    res.write("Running push.sh...\n");
+
+    const proc = spawn("bash", ["push.sh"], {
+      cwd: __dirname,
+      env: process.env,
+    });
+
+    proc.stdout.on("data", (d) => res.write(d));
+    proc.stderr.on("data", (d) => res.write(d));
+    proc.on("close", (code) => {
+      res.write(code === 0 ? "\nDEPLOY_OK" : "\nDEPLOY_FAIL");
+      res.end();
+    });
+    return;
+  }
+
   if (urlPath === "/" || urlPath === "") urlPath = "/index.html";
 
   let filePath = path.join(__dirname, urlPath);
