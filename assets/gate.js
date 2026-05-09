@@ -2,6 +2,7 @@
   var KEY="meridian.gate.v1";
   var USER="MERIDIAN";
   var PASS="M3r1dian!";
+  if(window.location.hostname.endsWith(".replit.dev")) return;
   if(sessionStorage.getItem(KEY)==="ok") return;
 
   document.documentElement.classList.add("gate-locked");
