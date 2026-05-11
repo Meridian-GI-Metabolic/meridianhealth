@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Meridian Health — Opening September 2026, Fitzroy</title>
+<title>Meridian Health, Opening September 2026, Fitzroy</title>
 <meta name="description" content="Meridian provides upper gastrointestinal, bariatric and metabolic care within one clinical setting at Brenan Place, Fitzroy. Opening September 2026." />
 <meta name="robots" content="noindex, nofollow" />
 <style>
@@ -35,7 +35,7 @@ html,body{
 }
 
 /* ═══════════════════════════════════════════
-   FIXED TOP LAYER — always above all slides
+   FIXED TOP LAYER - always above all slides
    z-index: 500+
    ═══════════════════════════════════════════ */
 
@@ -55,7 +55,7 @@ html,body{
 }
 .banner strong{font-weight:600}
 
-/* Monogram — anchored to left edge, top flush with banner bottom */
+/* Monogram - anchored to left edge, top flush with banner bottom */
 .mono-fixed{
   position:fixed;
   top:var(--bh);
@@ -76,7 +76,7 @@ html,body{
   background:linear-gradient(160deg,rgba(6,4,1,.92) 0%,rgba(8,6,2,.82) 50%,rgba(4,3,1,.95) 100%);
 }
 
-/* Opening super — fixed bottom */
+/* Opening super - fixed bottom */
 .opening-fixed{
   position:fixed;bottom:0;left:0;right:0;
   z-index:580;
@@ -112,7 +112,7 @@ html,body{
 }
 
 /* ═══════════════════════════════════════════
-   SCROLL STAGE — creates scroll height
+   SCROLL STAGE - creates scroll height
    Slides respond to this via JS
    ═══════════════════════════════════════════ */
 #scroll-stage{
@@ -122,7 +122,7 @@ html,body{
 }
 
 /* ═══════════════════════════════════════════
-   SLIDES LAYER — fixed, full viewport
+   SLIDES LAYER - fixed, full viewport
    Each slide sits above the previous via z-index
    JS drives translateY(100%→0%) per slide
    ═══════════════════════════════════════════ */
@@ -156,7 +156,7 @@ html,body{
 }
 
 /* ═══════════════════════════════════════════
-   SLIDE CONTENT — centred in viewport
+   SLIDE CONTENT - centred in viewport
    ═══════════════════════════════════════════ */
 .slide-content{
   position:relative;z-index:2;
@@ -171,7 +171,7 @@ html,body{
 @media(max-width:720px){.slide-content{padding:calc(var(--bh)+72px) 24px 52px}}
 
 /* ═══════════════════════════════════════════
-   SLIDE 0 — HERO
+   SLIDE 0 - HERO
    ═══════════════════════════════════════════ */
 .s0-wordmark{
   max-width:min(520px,80vw);width:100%;
@@ -182,7 +182,7 @@ html,body{
 @media(max-width:600px){.s0-wordmark{max-width:min(300px,85vw)}}
 
 /* ═══════════════════════════════════════════
-   SLIDE 1 — CLINICAL TEAM
+   SLIDE 1 - CLINICAL TEAM
    ═══════════════════════════════════════════ */
 .s1-heading{
   font-size:clamp(11px,1.1vw,14px);font-weight:500;
@@ -213,7 +213,7 @@ html,body{
 .s1-name{font-size:10px;font-weight:500;color:var(--cream);letter-spacing:.03em;line-height:1.3}
 .s1-quals{font-size:8px;color:var(--c45);letter-spacing:.02em;margin-top:3px;line-height:1.4}
 
-/* swipe hint — mobile only */
+/* swipe hint - mobile only */
 .s1-swipe-hint{
   display:none;
   align-items:center;gap:6px;
@@ -239,7 +239,7 @@ html,body{
 .s1-desc{font-size:12px;color:var(--c70);line-height:1.65}
 
 /* ═══════════════════════════════════════════
-   SLIDES 2 & 3 — FORMS
+   SLIDES 2 & 3 - FORMS
    ═══════════════════════════════════════════ */
 .form-inner{max-width:480px;width:100%;text-align:left}
 .fs-eyebrow{
@@ -346,14 +346,14 @@ html,body{
     justify-content:flex-start;
     align-items:center;
   }
-  /* form slides — allow inner scroll so nothing is clipped */
+  /* form slides - allow inner scroll so nothing is clipped */
   #s2 .slide-content,
   #s3 .slide-content{
     justify-content:flex-start;
     overflow-y:auto;
     -webkit-overflow-scrolling:touch;
   }
-  /* s1 mobile carousel — 3 visible, swipeable */
+  /* s1 mobile carousel - 3 visible, swipeable */
   .s1-team-grid{
     flex-wrap:nowrap;
     overflow-x:auto;
@@ -414,16 +414,16 @@ html,body{
 <!-- ═══════ FIXED SLIDES LAYER ═══════ -->
 <div id="slides-layer" aria-live="polite">
 
-  <!-- SLIDE 0 — HERO -->
+  <!-- SLIDE 0 - HERO -->
   <section class="slide" id="s0" aria-label="Hero">
     <div class="slide-bg" style="background-image:url('images/bg-01.png')"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
-      <img src="images/wordmark.png" alt="Meridian — GI and Metabolic Health" class="s0-wordmark" />
+      <img src="images/wordmark.png" alt="Meridian GI and Metabolic Health" class="s0-wordmark" />
     </div>
   </section>
 
-  <!-- SLIDE 1 — CLINICAL -->
+  <!-- SLIDE 1 - CLINICAL -->
   <section class="slide" id="s1" aria-label="Clinical overview">
     <div class="slide-bg" style="background-image:url('images/bg-02.png')"></div>
     <div class="slide-overlay"></div>
@@ -551,7 +551,7 @@ html,body{
     </div>
   </section>
 
-  <!-- SLIDE 2 — PATIENT INTEREST -->
+  <!-- SLIDE 2 - PATIENT INTEREST -->
   <section class="slide" id="s2" aria-label="Patient registration">
     <div class="slide-bg" style="background-image:url('images/bg-bathroom.png')"></div>
     <div class="slide-overlay"></div>
@@ -593,7 +593,7 @@ html,body{
     </div>
   </section>
 
-  <!-- SLIDE 3 — REFERRER ENQUIRIES -->
+  <!-- SLIDE 3 - REFERRER ENQUIRIES -->
   <section class="slide" id="s3" aria-label="Referrer enquiries">
     <div class="slide-bg" style="background-image:url('images/bg-referrer.jpg')"></div>
     <div class="slide-overlay"></div>
@@ -685,7 +685,7 @@ html,body{
       slide.style.transform = 'translateY(' + ty + '%)';
     });
 
-    /* Update active dot — whichever slide has most recently finished entering */
+    /* Update active dot - whichever slide has most recently finished entering */
     var active = 0;
     for (var i = slides.length - 1; i >= 1; i--) {
       if (syVH >= TRANSITIONS[i].s) { active = i; break; }
@@ -736,7 +736,7 @@ html,body{
 
 })();
 
-// swipe hint — hide once user scrolls the carousel
+// swipe hint - hide once user scrolls the carousel
 (function(){
   var grid = document.querySelector('.s1-team-grid');
   var hint = document.getElementById('swipeHint');
