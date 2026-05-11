@@ -1,15 +1,11 @@
 [build]
-  publish = "."
+  publish = "prelaunch"
 
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/*/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Robots-Tag = "noindex"
 
 [[headers]]
   for = "/fonts/*"
@@ -17,19 +13,11 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/brand/*"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/assets/*.css"
+  for = "/team/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[build.processing.html]
-  pretty_urls = true
+    Cache-Control = "public, max-age=31536000, immutable"
