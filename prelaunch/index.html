@@ -280,6 +280,8 @@ img{display:block}
 .df-submit:hover{background:rgba(200,160,53,.12);border-color:rgba(200,160,53,.7)}
 .df-submit:disabled{opacity:.35;cursor:default}
 .df-privacy{font-size:10.5px;color:var(--c45);margin-top:11px;line-height:1.5;text-align:center}
+.df-emergency{font-size:10.5px;color:rgba(243,239,230,.35);margin-top:6px;line-height:1.5;text-align:center;letter-spacing:.01em}
+.df-emergency strong{font-weight:600;color:rgba(243,239,230,.5)}
 .df-success{
   display:none;
   font-size:14px;color:var(--cream);
@@ -401,17 +403,18 @@ img{display:block}
           <div class="df-field"><label for="p-em">Email</label><input type="email" id="p-em" name="email" required autocomplete="email" /></div>
           <div class="df-field"><label for="p-ph">Phone</label><input type="tel" id="p-ph" name="phone" autocomplete="tel" /></div>
           <div class="df-field">
-            <label for="p-ai">I would like to discuss</label>
+            <label for="p-ai">How can we help</label>
             <select id="p-ai" name="area_of_interest" required>
               <option value="" disabled selected>Select&hellip;</option>
-              <option value="upper-gi">Upper GI care</option>
-              <option value="bariatric">Bariatric surgery</option>
-              <option value="metabolic">Metabolic medicine</option>
-              <option value="glp1">GLP-1 therapy</option>
+              <option value="mgos-current">Speak with MGOS regarding my current care needs</option>
+              <option value="mwls-pathway">Discuss a short-term care pathway at MWLS</option>
+              <option value="meridian-plan">Plan ahead for Meridian&rsquo;s opening in September 2026</option>
+              <option value="nurse-options">Speak with a nurse coordinator to explore my options</option>
             </select>
           </div>
           <button type="submit" class="df-submit">Register</button>
           <p class="df-privacy">Your details will be used only to respond to your enquiry.</p>
+          <p class="df-emergency">For all medical emergencies, please contact <strong>000</strong></p>
         </form>
         <div class="df-success" id="patient-success">
           Thank you. We will be in touch to assist in planning your personal pathway.
