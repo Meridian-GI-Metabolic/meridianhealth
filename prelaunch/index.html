@@ -23,27 +23,31 @@
   --c10:rgba(243,239,230,.10);
   --c06:rgba(243,239,230,.06);
   --ink:#201e11;
-  --banner:#f7f5ef;
+  --banner-bg:#f7f5ef;
 }
-html{overflow-x:hidden}
-body{
+html,body{
+  width:100%;background:#080602;
   font-family:"Inter",system-ui,-apple-system,sans-serif;
-  font-weight:400;background:#090704;
+  font-weight:400;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
 }
-a{color:inherit;text-decoration:none}
-img{display:block}
 
-/* ── BANNER ── */
+/* ═══════════════════════════════════════════
+   FIXED TOP LAYER — always above all slides
+   z-index: 500+
+   ═══════════════════════════════════════════ */
+
+/* Announcement banner */
 .banner{
   position:fixed;top:0;left:0;right:0;
   height:var(--bh);
-  background:var(--banner);
-  border-bottom:1px solid rgba(32,30,17,.08);
+  background:var(--banner-bg);
+  border-bottom:1px solid rgba(32,30,17,.07);
   display:flex;align-items:center;justify-content:center;
-  padding:0 24px;z-index:200;
+  padding:0 24px;
+  z-index:600;
 }
 .banner p{
   font-size:11px;font-weight:400;letter-spacing:.06em;
@@ -51,78 +55,43 @@ img{display:block}
 }
 .banner strong{font-weight:600}
 
-/* ── SLIDE SYSTEM ── */
-.slide-wrap{position:relative}
-.slide{
-  position:sticky;top:0;
-  height:100vh;
-  overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  will-change:transform;
-}
-.slide-wrap:nth-child(1) .slide{z-index:10}
-.slide-wrap:nth-child(2) .slide{z-index:20;box-shadow:0 -4px 60px rgba(0,0,0,.5)}
-.slide-wrap:nth-child(3) .slide{z-index:30;box-shadow:0 -4px 60px rgba(0,0,0,.5)}
-.slide-wrap:nth-child(4) .slide{z-index:40;box-shadow:0 -4px 60px rgba(0,0,0,.5)}
-
-/* Background */
-.slide-bg{
-  position:absolute;inset:-15% 0;
-  background-size:cover;background-position:center;
-  will-change:transform;
-  pointer-events:none;
-}
-/* Dark warm overlay */
-.slide-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(
-    160deg,
-    rgba(8,6,2,.82) 0%,
-    rgba(12,9,3,.70) 50%,
-    rgba(6,4,1,.88) 100%
-  );
-}
-
-/* ── MONOGRAM ── */
-.slide-mono{
-  position:absolute;
+/* Monogram — fixed, centred below banner */
+.mono-fixed{
+  position:fixed;
   top:calc(var(--bh) + 14px);
   left:50%;transform:translateX(-50%);
-  z-index:2;
+  z-index:580;
   line-height:0;
+  pointer-events:none;
 }
-.slide-mono img{
-  height:62px;width:auto;
+.mono-fixed img{
+  height:60px;width:auto;
   mix-blend-mode:screen;
   filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
   opacity:.9;
 }
 
-/* ── OPENING BAR (fixed bottom) ── */
+/* Opening super — fixed bottom */
 .opening-fixed{
   position:fixed;bottom:0;left:0;right:0;
-  z-index:150;
+  z-index:580;
   display:flex;align-items:center;justify-content:center;
-  padding:14px 24px 16px;
+  padding:13px 24px 16px;
   pointer-events:none;
 }
 .opening-fixed img{
   height:17px;width:auto;
   mix-blend-mode:screen;
   filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
-  opacity:.75;
-  max-width:90vw;
-}
-@media(max-width:600px){
-  .opening-fixed img{height:13px}
+  opacity:.72;
+  max-width:88vw;
 }
 
-/* ── NAV DOTS ── */
+/* Nav dots */
 .nav-dots{
   position:fixed;right:22px;top:50%;transform:translateY(-50%);
-  z-index:160;
+  z-index:580;
   display:flex;flex-direction:column;gap:10px;
-  pointer-events:auto;
 }
 .nav-dot{
   width:3px;height:20px;border-radius:2px;
@@ -132,160 +101,203 @@ img{display:block}
   border:none;padding:0;display:block;
 }
 .nav-dot.on{background:rgba(200,160,53,.75);height:28px}
-@media(max-width:600px){.nav-dots{display:none}}
+@media(max-width:600px){
+  .nav-dots{display:none}
+  .mono-fixed img{height:48px}
+  .opening-fixed img{height:13px}
+}
 
-/* ── SLIDE CONTENT BASE ── */
+/* ═══════════════════════════════════════════
+   SCROLL STAGE — creates scroll height
+   Slides respond to this via JS
+   ═══════════════════════════════════════════ */
+#scroll-stage{
+  /* 900vh: hero 100 + tr 100 + clinical 150 + tr 100 + patient 200 + tr 100 + referrer 150 */
+  height:900vh;
+  position:relative;
+}
+
+/* ═══════════════════════════════════════════
+   SLIDES LAYER — fixed, full viewport
+   Each slide sits above the previous via z-index
+   JS drives translateY(100%→0%) per slide
+   ═══════════════════════════════════════════ */
+#slides-layer{
+  position:fixed;inset:0;
+  pointer-events:none;/* re-enabled per slide below */
+}
+.slide{
+  position:absolute;inset:0;
+  overflow:hidden;
+  will-change:transform;
+  pointer-events:auto;
+}
+/* Initial state: slide 0 visible, 1-3 below viewport */
+#s0{z-index:10;transform:translateY(0)}
+#s1{z-index:20;transform:translateY(100%)}
+#s2{z-index:30;transform:translateY(100%)}
+#s3{z-index:40;transform:translateY(100%)}
+
+/* Slide backgrounds */
+.slide-bg{
+  position:absolute;inset:-10% 0;
+  background-size:cover;background-position:50% 50%;
+  will-change:background-position;
+  pointer-events:none;
+}
+/* Dark warm overlay */
+.slide-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(8,6,2,.84) 0%,rgba(12,9,3,.68) 50%,rgba(6,4,1,.88) 100%);
+  pointer-events:none;
+}
+
+/* ═══════════════════════════════════════════
+   SLIDE CONTENT — centred in viewport
+   ═══════════════════════════════════════════ */
 .slide-content{
   position:relative;z-index:2;
-  width:100%;
-  padding:calc(var(--bh) + 24px) 48px 52px;
+  height:100%;
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  min-height:100vh;
   text-align:center;
+  padding:calc(var(--bh) + 80px) 48px 52px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
-@media(max-width:720px){.slide-content{padding:calc(var(--bh)+20px) 24px 48px}}
+@media(max-width:720px){.slide-content{padding:calc(var(--bh)+72px) 24px 48px}}
 
-/* ── SLIDE 1 — HERO ── */
-.s1-wordmark{
-  max-width:min(520px,80vw);
-  width:100%;
+/* ═══════════════════════════════════════════
+   SLIDE 0 — HERO
+   ═══════════════════════════════════════════ */
+.s0-wordmark{
+  max-width:min(520px,80vw);width:100%;
   mix-blend-mode:screen;
   filter:invert(1) sepia(.6) saturate(2) brightness(.82);
   opacity:.95;
 }
-@media(max-width:600px){.s1-wordmark{max-width:min(320px,85vw)}}
+@media(max-width:600px){.s0-wordmark{max-width:min(300px,85vw)}}
 
-/* ── SLIDE 2 — CLINICAL ── */
-.s2-heading{
-  font-size:clamp(13px,1.3vw,16px);
-  font-weight:500;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:rgba(200,160,53,.85);
-  margin-bottom:36px;
+/* ═══════════════════════════════════════════
+   SLIDE 1 — CLINICAL
+   ═══════════════════════════════════════════ */
+.s1-heading{
+  font-size:clamp(11px,1.1vw,14px);font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(200,160,53,.82);margin-bottom:30px;
 }
-.s2-surgeons{
+.s1-surgeons{
   display:flex;gap:28px;justify-content:center;
-  margin-bottom:40px;flex-wrap:wrap;
+  margin-bottom:36px;flex-wrap:wrap;
 }
-.s2-surgeon{text-align:center}
-.s2-portrait{
-  width:130px;aspect-ratio:4/3;
-  border-radius:6px;overflow:hidden;
+.s1-surgeon{text-align:center}
+.s1-portrait{
+  width:128px;aspect-ratio:4/3;
+  border-radius:5px;overflow:hidden;
   background:#1a1510;margin-bottom:10px;
 }
-.s2-portrait img{
+.s1-portrait img{
   width:100%;height:100%;
   object-fit:cover;object-position:center 15%;
   filter:grayscale(1) contrast(.92) brightness(1.1);
-  display:block;
 }
-.s2-name{
-  font-size:12px;font-weight:500;
-  color:var(--cream);letter-spacing:.04em;
-  line-height:1.3;
-}
-.s2-role{font-size:10.5px;color:var(--c45);letter-spacing:.02em;margin-top:3px}
+.s1-name{font-size:12px;font-weight:500;color:var(--cream);letter-spacing:.04em;line-height:1.3}
+.s1-role{font-size:10px;color:var(--c45);letter-spacing:.02em;margin-top:3px}
 
-.s2-table{
-  width:100%;max-width:640px;
-  border-top:1px solid var(--c10);
+.s1-table{width:100%;max-width:640px;border-top:1px solid var(--c10)}
+.s1-row{
+  display:grid;grid-template-columns:170px 1fr;gap:20px;
+  padding:17px 0;border-bottom:1px solid var(--c10);text-align:left;
 }
-.s2-row{
-  display:grid;grid-template-columns:160px 1fr;
-  gap:20px;
-  padding:18px 0;
-  border-bottom:1px solid var(--c10);
-  text-align:left;
-}
-.s2-pathway{
-  font-size:10px;font-weight:600;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(200,160,53,.7);
+.s1-pathway{
+  font-size:9.5px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(200,160,53,.68);
   padding-top:2px;flex-shrink:0;
 }
-.s2-desc{font-size:13px;color:var(--c70);line-height:1.65}
+.s1-desc{font-size:12.5px;color:var(--c70);line-height:1.65}
 
 @media(max-width:700px){
-  .s2-surgeons{gap:16px}
-  .s2-portrait{width:100px}
-  .s2-row{grid-template-columns:1fr;gap:6px;padding:14px 0}
-  .s2-table{text-align:left}
+  .s1-surgeons{gap:16px}
+  .s1-portrait{width:96px}
+  .s1-row{grid-template-columns:1fr;gap:5px;padding:12px 0}
 }
 
-/* ── SLIDES 3 & 4 — FORMS ── */
-.form-slide-inner{max-width:480px;width:100%;text-align:left}
+/* ═══════════════════════════════════════════
+   SLIDES 2 & 3 — FORMS
+   ═══════════════════════════════════════════ */
+.form-inner{max-width:480px;width:100%;text-align:left}
 .fs-eyebrow{
-  font-size:10px;font-weight:500;letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(200,160,53,.7);
-  display:block;margin-bottom:0;text-align:center;
+  font-size:9.5px;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(200,160,53,.68);
+  display:block;text-align:center;
 }
-.fs-rule{width:28px;height:1px;background:var(--gold);opacity:.5;margin:12px auto 22px}
+.fs-rule{width:26px;height:1px;background:var(--gold);opacity:.45;margin:12px auto 20px}
 .fs-h2{
-  font-size:clamp(20px,2.5vw,28px);font-weight:400;
-  letter-spacing:.04em;text-transform:uppercase;
-  color:var(--cream);margin-bottom:14px;text-align:center;
+  font-size:clamp(19px,2.4vw,27px);font-weight:400;
+  letter-spacing:.05em;text-transform:uppercase;
+  color:var(--cream);margin-bottom:13px;text-align:center;
 }
 .fs-body{
-  font-size:13px;color:var(--c70);line-height:1.7;
-  margin-bottom:28px;text-align:center;max-width:38ch;margin-left:auto;margin-right:auto;
+  font-size:12.5px;color:var(--c70);line-height:1.7;
+  margin:0 auto 26px;text-align:center;max-width:38ch;
 }
-.df-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.df-field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+/* Form fields */
+.df-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.df-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
 .df-field label{
-  font-size:9px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:rgba(200,160,53,.6);
+  font-size:8.5px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(200,160,53,.58);
 }
-.df-field input,
-.df-field select{
+.df-field input,.df-field select{
   font-family:"Inter",system-ui,sans-serif;
-  font-size:13.5px;font-weight:400;
-  color:var(--cream);
+  font-size:13px;font-weight:400;color:var(--cream);
   padding:11px 14px;
   background:rgba(255,255,255,.04);
-  border:1px solid rgba(200,160,53,.22);
+  border:1px solid rgba(200,160,53,.20);
   border-radius:0;outline:none;
   -webkit-appearance:none;appearance:none;
   transition:border-color .18s,background .18s;
   width:100%;
 }
-.df-field input:focus,
-.df-field select:focus{
-  border-color:rgba(200,160,53,.55);
+.df-field input:focus,.df-field select:focus{
+  border-color:rgba(200,160,53,.52);
   background:rgba(255,255,255,.07);
 }
 .df-field input::placeholder{color:var(--c20)}
 .df-field select{
-  background-image:linear-gradient(45deg,transparent 50%,rgba(200,160,53,.5) 50%),
-                   linear-gradient(135deg,rgba(200,160,53,.5) 50%,transparent 50%);
-  background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;
+  background-image:linear-gradient(45deg,transparent 50%,rgba(200,160,53,.48) 50%),
+                   linear-gradient(135deg,rgba(200,160,53,.48) 50%,transparent 50%);
+  background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;
   background-size:5px 5px;background-repeat:no-repeat;
-  padding-right:36px;
   background-color:rgba(255,255,255,.04);
-  cursor:pointer;
+  padding-right:36px;cursor:pointer;
 }
-.df-field select option{background:#1a1208;color:var(--cream)}
+.df-field select option{background:#14100a;color:var(--cream)}
 .df-submit{
   width:100%;margin-top:4px;
   padding:13px 24px;
   font-family:"Inter",system-ui,sans-serif;
-  font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  background:transparent;
-  color:var(--cream);
-  border:1px solid rgba(200,160,53,.4);
+  font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  background:transparent;color:var(--cream);
+  border:1px solid rgba(200,160,53,.38);
   cursor:pointer;
   transition:background .2s,border-color .2s;
 }
-.df-submit:hover{background:rgba(200,160,53,.12);border-color:rgba(200,160,53,.7)}
+.df-submit:hover{background:rgba(200,160,53,.10);border-color:rgba(200,160,53,.65)}
 .df-submit:disabled{opacity:.35;cursor:default}
-.df-privacy{font-size:10.5px;color:var(--c45);margin-top:11px;line-height:1.5;text-align:center}
-.df-emergency{font-size:10.5px;color:rgba(243,239,230,.35);margin-top:6px;line-height:1.5;text-align:center;letter-spacing:.01em}
-.df-emergency strong{font-weight:600;color:rgba(243,239,230,.5)}
+.df-privacy{
+  font-size:10px;color:var(--c45);
+  margin-top:10px;line-height:1.5;text-align:center;
+}
+.df-emergency{
+  font-size:10px;color:rgba(243,239,230,.32);
+  margin-top:5px;line-height:1.5;text-align:center;letter-spacing:.01em;
+}
+.df-emergency strong{font-weight:600;color:rgba(243,239,230,.48)}
 .df-success{
   display:none;
   font-size:14px;color:var(--cream);
-  line-height:1.7;text-align:center;
+  line-height:1.75;text-align:center;
   padding:28px;
   border:1px solid var(--c10);
   background:rgba(255,255,255,.03);
@@ -293,106 +305,98 @@ img{display:block}
 .df-success.on{display:block}
 @media(max-width:600px){
   .df-row{grid-template-columns:1fr}
-  .form-slide-inner{max-width:100%}
-}
-
-/* ── MOBILE SLIDES ── */
-@media(max-width:768px){
-  .slide{position:relative;top:0;height:auto;min-height:100vh;box-shadow:none!important}
-  .slide-wrap:nth-child(n) .slide{z-index:auto}
-  .slide-bg{inset:-5% 0}
-  .slide-content{justify-content:center;min-height:100vh}
+  .form-inner{max-width:100%}
 }
 </style>
 </head>
 <body>
 
-<!-- BANNER -->
+<!-- ═══════ FIXED TOP LAYER ═══════ -->
+
 <div class="banner">
   <p><strong>MGOS</strong> AND <strong>MWLS</strong> NOW UNITED AT <strong>MERIDIAN</strong></p>
 </div>
 
-<!-- NAV DOTS -->
-<div class="nav-dots" aria-label="Slide navigation">
-  <button class="nav-dot on" data-s="0" aria-label="Slide 1"></button>
-  <button class="nav-dot" data-s="1" aria-label="Slide 2"></button>
-  <button class="nav-dot" data-s="2" aria-label="Slide 3"></button>
-  <button class="nav-dot" data-s="3" aria-label="Slide 4"></button>
+<div class="mono-fixed" aria-hidden="true">
+  <img src="images/monogram.png" alt="" />
 </div>
 
-<!-- OPENING (fixed bottom) -->
-<div class="opening-fixed" aria-label="Opening announcement">
+<div class="opening-fixed" aria-hidden="true">
   <img src="images/opening.png" alt="Opening September 2026. Brenan Place, Fitzroy." />
 </div>
 
-<!-- ══ SLIDE 1 — HERO ══ -->
-<div class="slide-wrap" id="s0" style="height:200vh">
-  <section class="slide">
-    <div class="slide-bg" style="background-image:url('images/bg-01.png')" data-parallax></div>
+<nav class="nav-dots" aria-label="Slide navigation">
+  <button class="nav-dot on" data-s="0" aria-label="Slide 1: Hero"></button>
+  <button class="nav-dot"    data-s="1" aria-label="Slide 2: Clinical"></button>
+  <button class="nav-dot"    data-s="2" aria-label="Slide 3: Patient registration"></button>
+  <button class="nav-dot"    data-s="3" aria-label="Slide 4: Referrer enquiries"></button>
+</nav>
+
+<!-- ═══════ SCROLL STAGE ═══════ -->
+<div id="scroll-stage"></div>
+
+<!-- ═══════ FIXED SLIDES LAYER ═══════ -->
+<div id="slides-layer" aria-live="polite">
+
+  <!-- SLIDE 0 — HERO -->
+  <section class="slide" id="s0" aria-label="Hero">
+    <div class="slide-bg" style="background-image:url('images/bg-01.png')"></div>
     <div class="slide-overlay"></div>
-    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
     <div class="slide-content">
-      <img src="images/wordmark.png" alt="Meridian — GI and Metabolic Health" class="s1-wordmark" />
+      <img src="images/wordmark.png" alt="Meridian — GI and Metabolic Health" class="s0-wordmark" />
     </div>
   </section>
-</div>
 
-<!-- ══ SLIDE 2 — CLINICAL ══ -->
-<div class="slide-wrap" id="s1" style="height:200vh">
-  <section class="slide">
-    <div class="slide-bg" style="background-image:url('images/bg-02.png')" data-parallax></div>
+  <!-- SLIDE 1 — CLINICAL -->
+  <section class="slide" id="s1" aria-label="Clinical overview">
+    <div class="slide-bg" style="background-image:url('images/bg-02.png')"></div>
     <div class="slide-overlay"></div>
-    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
     <div class="slide-content">
-      <p class="s2-heading">Surgeon-led clinical care</p>
-      <div class="s2-surgeons">
-        <div class="s2-surgeon">
-          <div class="s2-portrait"><img src="team/team-michael-hii.png" alt="A/Prof Michael Hii" loading="lazy" /></div>
-          <p class="s2-name">A/Prof Michael Hii</p>
-          <p class="s2-role">OG &amp; Bariatric Surgeon</p>
+      <p class="s1-heading">Surgeon-led clinical care</p>
+      <div class="s1-surgeons">
+        <div class="s1-surgeon">
+          <div class="s1-portrait"><img src="team/team-michael-hii.png" alt="A/Prof Michael Hii" loading="lazy" /></div>
+          <p class="s1-name">A/Prof Michael Hii</p>
+          <p class="s1-role">OG &amp; Bariatric Surgeon</p>
         </div>
-        <div class="s2-surgeon">
-          <div class="s2-portrait"><img src="team/team-nicole-winter.png" alt="Dr Nicole Winter" loading="lazy" /></div>
-          <p class="s2-name">Dr Nicole Winter</p>
-          <p class="s2-role">OG &amp; Bariatric Surgeon</p>
+        <div class="s1-surgeon">
+          <div class="s1-portrait"><img src="team/team-nicole-winter.png" alt="Dr Nicole Winter" loading="lazy" /></div>
+          <p class="s1-name">Dr Nicole Winter</p>
+          <p class="s1-role">OG &amp; Bariatric Surgeon</p>
         </div>
-        <div class="s2-surgeon">
-          <div class="s2-portrait"><img src="team/team-salena-ward.png" alt="Dr Salena Ward" loading="lazy" /></div>
-          <p class="s2-name">Dr Salena Ward</p>
-          <p class="s2-role">Gastric &amp; Bariatric Surgeon</p>
+        <div class="s1-surgeon">
+          <div class="s1-portrait"><img src="team/team-salena-ward.png" alt="Dr Salena Ward" loading="lazy" /></div>
+          <p class="s1-name">Dr Salena Ward</p>
+          <p class="s1-role">Gastric &amp; Bariatric Surgeon</p>
         </div>
       </div>
-      <div class="s2-table">
-        <div class="s2-row">
-          <span class="s2-pathway">Upper GI</span>
-          <span class="s2-desc">Care for patients with upper gastrointestinal conditions, including reflux, oesophageal, gastric and related concerns. Assessment, surgical care and structured follow-up within one clinical setting.</span>
+      <div class="s1-table">
+        <div class="s1-row">
+          <span class="s1-pathway">Upper GI</span>
+          <span class="s1-desc">Care for patients with upper gastrointestinal conditions, including reflux, oesophageal, gastric and related concerns. Assessment, surgical care and follow-up within one clinical setting.</span>
         </div>
-        <div class="s2-row">
-          <span class="s2-pathway">Bariatric</span>
-          <span class="s2-desc">Assessment and surgical care for patients considering bariatric surgery. Consultation, procedure planning and twelve months of follow-up with the same clinical team.</span>
+        <div class="s1-row">
+          <span class="s1-pathway">Bariatric</span>
+          <span class="s1-desc">Assessment and surgical care for patients considering bariatric surgery. Consultation, procedure planning and twelve months of follow-up with the same clinical team.</span>
         </div>
-        <div class="s2-row">
-          <span class="s2-pathway">Metabolic Medicine</span>
-          <span class="s2-desc">Clinician-guided support for patients exploring non-surgical weight management and metabolic health care pathways. Assessment, education and ongoing clinical support.</span>
+        <div class="s1-row">
+          <span class="s1-pathway">Metabolic Medicine</span>
+          <span class="s1-desc">Clinician-guided support for patients exploring non-surgical weight management and metabolic health care pathways. Assessment, education and ongoing clinical support.</span>
         </div>
       </div>
     </div>
   </section>
-</div>
 
-<!-- ══ SLIDE 3 — PATIENT INTEREST ══ -->
-<div class="slide-wrap" id="s2" style="height:200vh">
-  <section class="slide">
-    <div class="slide-bg" style="background-image:url('images/bg-03.png')" data-parallax></div>
+  <!-- SLIDE 2 — PATIENT INTEREST -->
+  <section class="slide" id="s2" aria-label="Patient registration">
+    <div class="slide-bg" style="background-image:url('images/bg-03.png')"></div>
     <div class="slide-overlay"></div>
-    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
     <div class="slide-content">
-      <div class="form-slide-inner">
+      <div class="form-inner">
         <span class="fs-eyebrow">For patients</span>
         <div class="fs-rule"></div>
         <h2 class="fs-h2">Register</h2>
         <p class="fs-body">Register your details to receive updates regarding Meridian, appointments and future clinical services.</p>
-
         <form id="patient-form" name="patient-interest" method="POST" data-netlify="true" netlify-honeypot="bot-p">
           <input type="hidden" name="form-name" value="patient-interest" />
           <p style="display:none"><label>Skip: <input name="bot-p" /></label></p>
@@ -422,21 +426,17 @@ img{display:block}
       </div>
     </div>
   </section>
-</div>
 
-<!-- ══ SLIDE 4 — REFERRER ══ -->
-<div class="slide-wrap" id="s3" style="height:200vh">
-  <section class="slide">
-    <div class="slide-bg" style="background-image:url('images/bg-04.png')" data-parallax></div>
+  <!-- SLIDE 3 — REFERRER ENQUIRIES -->
+  <section class="slide" id="s3" aria-label="Referrer enquiries">
+    <div class="slide-bg" style="background-image:url('images/bg-04.png')"></div>
     <div class="slide-overlay"></div>
-    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
     <div class="slide-content">
-      <div class="form-slide-inner">
+      <div class="form-inner">
         <span class="fs-eyebrow">For referrers</span>
         <div class="fs-rule"></div>
         <h2 class="fs-h2">Referrer Enquiries</h2>
         <p class="fs-body">General practitioners and healthcare professionals can register to receive the Meridian referrer information pack.</p>
-
         <form id="referrer-form" name="referrer-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-r">
           <input type="hidden" name="form-name" value="referrer-enquiry" />
           <p style="display:none"><label>Skip: <input name="bot-r" /></label></p>
@@ -465,75 +465,114 @@ img{display:block}
       </div>
     </div>
   </section>
-</div>
+
+</div><!-- #slides-layer -->
 
 <script>
 (function(){
-  var wh = window.innerHeight;
+  'use strict';
 
-  // ── Parallax ──
-  var bgs = document.querySelectorAll('[data-parallax]');
-  function onScroll(){
-    wh = window.innerHeight;
-    bgs.forEach(function(bg){
-      var wrap = bg.closest('.slide-wrap');
-      var rect = wrap.getBoundingClientRect();
-      var progress = -rect.top / wh; // 0 when wrap top at viewport top
-      var shift = (progress - 0.5) * 18;
-      bg.style.transform = 'translateY('+shift+'%)';
+  /* ── Configuration ──
+     900vh scroll stage split as:
+       0-100    → hero (s0 active)
+       100-200  → s1 enters (transition)
+       200-350  → s1 active
+       350-450  → s2 enters (transition)
+       450-650  → s2 active (form)
+       650-750  → s3 enters (transition)
+       750-900  → s3 active (form)
+  */
+  var STAGE_VH   = 900;
+
+  // [startVH, endVH] of the ENTER transition for each slide
+  // slide 0 needs none (already visible)
+  var TRANSITIONS = [
+    null,
+    {s:100, e:200},
+    {s:350, e:450},
+    {s:650, e:750}
+  ];
+
+  // VH position to scroll TO when a dot is clicked (middle of each active section)
+  var DOT_TARGETS_VH = [50, 275, 550, 825];
+
+  var slides  = Array.from(document.querySelectorAll('.slide'));
+  var dots    = Array.from(document.querySelectorAll('.nav-dot'));
+
+  /* ── Core tick ── */
+  function tick() {
+    var sy   = window.pageYOffset;
+    var wh   = window.innerHeight;
+    var syVH = sy / wh * 100;          // scroll in virtual-vh units
+
+    /* Update each slide's translateY */
+    slides.forEach(function(slide, i) {
+      var ty = 0;
+      if (i > 0) {
+        var t  = TRANSITIONS[i];
+        var progress = (syVH - t.s) / (t.e - t.s);
+        progress = Math.max(0, Math.min(1, progress));
+        ty = 100 * (1 - progress);
+      }
+      slide.style.transform = 'translateY(' + ty + '%)';
+
+      /* Subtle parallax on each background */
+      var bg = slide.querySelector('.slide-bg');
+      if (bg) {
+        /* slow vertical drift as overall scroll progresses */
+        var drift = 45 + (syVH / STAGE_VH) * 14;
+        bg.style.backgroundPosition = '50% ' + drift.toFixed(2) + '%';
+      }
     });
-  }
-  if(window.matchMedia('(min-width:769px)').matches){
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  }
 
-  // ── Nav dots ──
-  var dots = document.querySelectorAll('.nav-dot');
-  var wraps = document.querySelectorAll('.slide-wrap');
-  function updateDots(){
-    var s = window.pageYOffset;
+    /* Update active dot — whichever slide has most recently finished entering */
     var active = 0;
-    wraps.forEach(function(w,i){
-      if(s >= w.offsetTop - wh*0.5) active = i;
-    });
-    dots.forEach(function(d,i){ d.classList.toggle('on',i===active) });
+    for (var i = slides.length - 1; i >= 1; i--) {
+      if (syVH >= TRANSITIONS[i].s) { active = i; break; }
+    }
+    dots.forEach(function(d, i) { d.classList.toggle('on', i === active); });
   }
-  window.addEventListener('scroll', updateDots, {passive:true});
-  dots.forEach(function(dot){
-    dot.addEventListener('click',function(){
-      var i = parseInt(dot.dataset.s);
-      var wrap = wraps[i];
-      if(wrap) window.scrollTo({top: wrap.offsetTop, behavior:'smooth'});
+
+  /* ── Scroll stage height ── */
+  document.getElementById('scroll-stage').style.height = STAGE_VH + 'vh';
+
+  /* ── Event listeners ── */
+  window.addEventListener('scroll', tick, {passive:true});
+  window.addEventListener('resize', tick);
+  tick(); // initial paint
+
+  /* ── Dot navigation ── */
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var i  = parseInt(dot.dataset.s, 10);
+      var wh = window.innerHeight;
+      window.scrollTo({top: DOT_TARGETS_VH[i] * wh / 100, behavior: 'smooth'});
     });
   });
 
-  // ── Netlify forms ──
-  document.querySelectorAll('form[data-netlify]').forEach(function(form){
-    var sid = form.id.replace('-form','-success');
-    var succ = document.getElementById(sid);
-    form.addEventListener('submit',function(e){
+  /* ── Netlify form handlers ── */
+  document.querySelectorAll('form[data-netlify]').forEach(function(form) {
+    var successId = form.id.replace('-form', '-success');
+    var successEl = document.getElementById(successId);
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var btn = form.querySelector('.df-submit');
+      var btn  = form.querySelector('.df-submit');
       var orig = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Sending\u2026';
-      fetch('/',{
-        method:'POST',
-        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      fetch('/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: new URLSearchParams(new FormData(form)).toString()
-      }).then(function(){
-        form.style.display='none';
-        if(succ) succ.classList.add('on');
-      }).catch(function(){
-        btn.disabled=false;
-        btn.textContent=orig;
+      }).then(function() {
+        form.style.display = 'none';
+        if (successEl) successEl.classList.add('on');
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = orig;
       });
     });
   });
-
-  // ── Dot init ──
-  updateDots();
 
 })();
 </script>
