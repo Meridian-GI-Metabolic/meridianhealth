@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "jCVA6qChiry_0Od0iKpUY"
+uri = "file://prelaunch-meridian.zip"
+type = "unspecified"
+title = "Meridian Prelaunch Minisite"
