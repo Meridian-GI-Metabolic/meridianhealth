@@ -1,3 +1,4 @@
+# publish from repo root — full site at meridianhealth.com.au
 [build]
   publish = "."
 
