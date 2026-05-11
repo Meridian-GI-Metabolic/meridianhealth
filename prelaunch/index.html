@@ -59,7 +59,7 @@ html,body{
 .mono-fixed{
   position:fixed;
   top:var(--bh);
-  left:16px;
+  left:50%;transform:translateX(-50%);
   z-index:580;
   line-height:0;
   pointer-events:none;
@@ -71,7 +71,10 @@ html,body{
   opacity:.9;
 }
 @media(max-width:600px){.mono-fixed img{height:44px}}
-@media(max-width:480px){.mono-fixed{left:12px}}
+/* Darker overlay on referrer slide for legibility */
+#s3 .slide-overlay{
+  background:linear-gradient(160deg,rgba(6,4,1,.92) 0%,rgba(8,6,2,.82) 50%,rgba(4,3,1,.95) 100%);
+}
 
 /* Opening super — fixed bottom */
 .opening-fixed{
