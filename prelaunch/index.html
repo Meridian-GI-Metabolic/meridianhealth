@@ -140,9 +140,8 @@ html,body{
 
 /* Slide backgrounds */
 .slide-bg{
-  position:absolute;inset:-10% 0;
+  position:absolute;inset:0;
   background-size:cover;background-position:50% 50%;
-  will-change:background-position;
   pointer-events:none;
 }
 /* Dark warm overlay */
@@ -517,14 +516,6 @@ html,body{
         ty = 100 * (1 - progress);
       }
       slide.style.transform = 'translateY(' + ty + '%)';
-
-      /* Subtle parallax on each background */
-      var bg = slide.querySelector('.slide-bg');
-      if (bg) {
-        /* slow vertical drift as overall scroll progresses */
-        var drift = 45 + (syVH / STAGE_VH) * 14;
-        bg.style.backgroundPosition = '50% ' + drift.toFixed(2) + '%';
-      }
     });
 
     /* Update active dot — whichever slide has most recently finished entering */
