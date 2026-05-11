@@ -14,8 +14,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bh:40px;
-  --gold:#c8a035;
-  --gold-dim:#7a6828;
+  --gold:#d4af5f;
+  --gold-dim:#8a7535;
   --cream:#f3efe6;
   --c70:rgba(243,239,230,.70);
   --c45:rgba(243,239,230,.45);
@@ -55,21 +55,16 @@ html,body{
 }
 .banner strong{font-weight:600}
 
-/* Monogram — fixed, centred below banner */
-.mono-fixed{
-  position:fixed;
-  top:calc(var(--bh) + 14px);
-  left:50%;transform:translateX(-50%);
-  z-index:580;
-  line-height:0;
+/* Monogram — inside the announcement banner, left-anchored */
+.banner-mono{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  height:24px;width:auto;
+  mix-blend-mode:multiply;
+  filter:invert(1) sepia(.7) saturate(2.2) brightness(.55);
+  opacity:.88;
   pointer-events:none;
 }
-.mono-fixed img{
-  height:60px;width:auto;
-  mix-blend-mode:screen;
-  filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
-  opacity:.9;
-}
+@media(max-width:480px){.banner-mono{height:20px;left:10px}}
 
 /* Opening super — fixed bottom */
 .opening-fixed{
@@ -100,10 +95,9 @@ html,body{
   transition:background .3s,height .3s;
   border:none;padding:0;display:block;
 }
-.nav-dot.on{background:rgba(200,160,53,.75);height:28px}
+.nav-dot.on{background:rgba(212,175,95,.88);height:28px}
 @media(max-width:600px){
   .nav-dots{display:none}
-  .mono-fixed img{height:48px}
   .opening-fixed img{height:13px}
 }
 
@@ -183,7 +177,7 @@ html,body{
 .s1-heading{
   font-size:clamp(11px,1.1vw,14px);font-weight:500;
   letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(200,160,53,.82);margin-bottom:30px;
+  color:rgba(212,175,95,.92);margin-bottom:30px;
 }
 .s1-surgeons{
   display:flex;gap:28px;justify-content:center;
@@ -201,7 +195,7 @@ html,body{
   filter:grayscale(1) contrast(.92) brightness(1.1);
 }
 .s1-name{font-size:12px;font-weight:500;color:var(--cream);letter-spacing:.04em;line-height:1.3}
-.s1-role{font-size:10px;color:var(--c45);letter-spacing:.02em;margin-top:3px}
+.s1-role{font-size:12px;color:var(--c45);letter-spacing:.02em;margin-top:3px}
 
 .s1-table{width:100%;max-width:640px;border-top:1px solid var(--c10)}
 .s1-row{
@@ -210,7 +204,7 @@ html,body{
 }
 .s1-pathway{
   font-size:9.5px;font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(200,160,53,.68);
+  text-transform:uppercase;color:rgba(212,175,95,.85);
   padding-top:2px;flex-shrink:0;
 }
 .s1-desc{font-size:12.5px;color:var(--c70);line-height:1.65}
@@ -227,7 +221,7 @@ html,body{
 .form-inner{max-width:480px;width:100%;text-align:left}
 .fs-eyebrow{
   font-size:9.5px;font-weight:500;letter-spacing:.22em;
-  text-transform:uppercase;color:rgba(200,160,53,.68);
+  text-transform:uppercase;color:rgba(212,175,95,.85);
   display:block;text-align:center;
 }
 .fs-rule{width:26px;height:1px;background:var(--gold);opacity:.45;margin:12px auto 20px}
@@ -245,27 +239,27 @@ html,body{
 .df-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
 .df-field label{
   font-size:8.5px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:rgba(200,160,53,.58);
+  text-transform:uppercase;color:rgba(212,175,95,.80);
 }
 .df-field input,.df-field select{
   font-family:"Inter",system-ui,sans-serif;
   font-size:13px;font-weight:400;color:var(--cream);
   padding:11px 14px;
   background:rgba(255,255,255,.04);
-  border:1px solid rgba(200,160,53,.20);
+  border:1px solid rgba(212,175,95,.32);
   border-radius:0;outline:none;
   -webkit-appearance:none;appearance:none;
   transition:border-color .18s,background .18s;
   width:100%;
 }
 .df-field input:focus,.df-field select:focus{
-  border-color:rgba(200,160,53,.52);
+  border-color:rgba(212,175,95,.70);
   background:rgba(255,255,255,.07);
 }
 .df-field input::placeholder{color:var(--c20)}
 .df-field select{
-  background-image:linear-gradient(45deg,transparent 50%,rgba(200,160,53,.48) 50%),
-                   linear-gradient(135deg,rgba(200,160,53,.48) 50%,transparent 50%);
+  background-image:linear-gradient(45deg,transparent 50%,rgba(212,175,95,.68) 50%),
+                   linear-gradient(135deg,rgba(212,175,95,.68) 50%,transparent 50%);
   background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;
   background-size:5px 5px;background-repeat:no-repeat;
   background-color:rgba(255,255,255,.04);
@@ -278,11 +272,11 @@ html,body{
   font-family:"Inter",system-ui,sans-serif;
   font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
   background:transparent;color:var(--cream);
-  border:1px solid rgba(200,160,53,.38);
+  border:1px solid rgba(212,175,95,.55);
   cursor:pointer;
   transition:background .2s,border-color .2s;
 }
-.df-submit:hover{background:rgba(200,160,53,.10);border-color:rgba(200,160,53,.65)}
+.df-submit:hover{background:rgba(212,175,95,.12);border-color:rgba(212,175,95,.82)}
 .df-submit:disabled{opacity:.35;cursor:default}
 .df-privacy{
   font-size:10px;color:var(--c45);
@@ -308,6 +302,31 @@ html,body{
   .df-row{grid-template-columns:1fr}
   .form-inner{max-width:100%}
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE OPTIMISATION
+   ═══════════════════════════════════════════ */
+@media(max-width:768px){
+  .slide-content{
+    padding:calc(var(--bh) + 52px) 20px 80px;
+    justify-content:flex-start;
+    padding-top:calc(var(--bh) + 52px);
+  }
+  .s1-portrait{width:80px}
+  .s1-surgeons{gap:12px;margin-bottom:22px}
+  .s1-name{font-size:11px}
+  .s1-role{font-size:11px}
+  .s1-row{grid-template-columns:1fr;gap:4px;padding:10px 0}
+  .s1-desc{font-size:12px}
+  .s1-table{max-width:100%}
+  .fs-h2{font-size:clamp(17px,5vw,24px)}
+  .fs-body{font-size:12px;margin-bottom:18px}
+  .df-field input,.df-field select{font-size:16px;/* prevents iOS zoom */padding:10px 12px}
+  .df-submit{padding:12px 20px}
+  .df-privacy,.df-emergency{font-size:9.5px}
+  .s1-heading{margin-bottom:20px}
+  .form-inner{padding-bottom:20px}
+}
 </style>
 </head>
 <body>
@@ -315,11 +334,8 @@ html,body{
 <!-- ═══════ FIXED TOP LAYER ═══════ -->
 
 <div class="banner">
+  <img class="banner-mono" src="images/monogram.png" alt="" aria-hidden="true" />
   <p><strong>MGOS</strong> AND <strong>MWLS</strong> NOW UNITED AT <strong>MERIDIAN</strong></p>
-</div>
-
-<div class="mono-fixed" aria-hidden="true">
-  <img src="images/monogram.png" alt="" />
 </div>
 
 <div class="opening-fixed" aria-hidden="true">
@@ -390,7 +406,7 @@ html,body{
 
   <!-- SLIDE 2 — PATIENT INTEREST -->
   <section class="slide" id="s2" aria-label="Patient registration">
-    <div class="slide-bg" style="background-image:url('images/bg-03.png')"></div>
+    <div class="slide-bg" style="background-image:url('images/bg-bathroom.png')"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="form-inner">
@@ -430,7 +446,7 @@ html,body{
 
   <!-- SLIDE 3 — REFERRER ENQUIRIES -->
   <section class="slide" id="s3" aria-label="Referrer enquiries">
-    <div class="slide-bg" style="background-image:url('images/bg-04.png')"></div>
+    <div class="slide-bg" style="background-image:url('images/bg-referrer.jpg')"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="form-inner">
