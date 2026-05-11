@@ -1,0 +1,413 @@
+Meridian Health — Pre-Launch One Page Website
+
+Build a one-page pre-launch website for Meridian Health.
+
+This site will be deployed directly from Netlify as a temporary pre-launch destination while the broader website ecosystem is completed.
+
+The objective is to introduce Meridian as a specialist clinic providing upper gastrointestinal, bariatric and metabolic care.
+
+The overall perception should feel:
+
+Calm
+Clinical
+Contemporary
+Specialist-led
+Clear
+Considered
+
+Avoid:
+
+Startup aesthetics
+Wellness clichés
+Aggressive marketing language
+Luxury claims
+Superlative language
+CORE POSITIONING
+
+Meridian provides upper gastrointestinal, bariatric and metabolic care.
+
+Meridian brings together:
+
+Upper GI surgery
+Bariatric surgery
+Metabolic care
+
+Within one clinical setting.
+
+The site should communicate:
+
+Multidisciplinary care
+Clinical clarity
+Specialist involvement
+Continuity of care
+Patient support
+TECHNICAL DIRECTION
+
+Build as:
+
+One-page scrolling experience
+Full-screen stacked modules
+Smooth scroll transitions
+Sticky/sliding panel behaviour
+Responsive across desktop/tablet/mobile
+Fast-loading
+Netlify-ready deployment
+
+Preferred:
+
+React + clean CSS
+OR
+Clean HTML/CSS/JS
+
+No bloated libraries.
+
+OVERALL VISUAL DIRECTION
+
+Reference:
+
+Calm editorial healthcare
+Minimal architectural layouts
+Clean typography
+Soft restrained motion
+
+Design principles:
+
+Large negative space
+Strong typography hierarchy
+Minimal UI clutter
+Soft transitions
+Refined grid system
+
+Avoid:
+
+Heavy gradients
+Over-designed effects
+Hard shadows
+Corporate stock layouts
+Excessive animations
+COLOUR PALETTE
+
+Primary backgrounds:
+
+Warm off-white
+Soft cream
+Light stone tones
+
+Suggested:
+
+#f7f5ef
+#ece8df
+#e7e3da
+
+Text:
+
+Warm black
+Deep charcoal
+
+Suggested:
+
+#15110a
+#201e11
+
+Accent:
+
+Muted gold for subtle rules/details only
+
+Suggested:
+
+#C8A035
+
+No pure black sections.
+
+TYPOGRAPHY
+
+Typography should feel:
+
+Clear
+Calm
+Editorial
+Structured
+
+Use:
+
+Clean sans serif
+Refined spacing
+Large headings
+Minimal weights
+
+Avoid:
+
+Decorative typography
+Rounded startup fonts
+Excessive bolding
+SITE STRUCTURE
+1. FIXED ANNOUNCEMENT BANNER
+
+Include a fixed banner at the very top of the viewport.
+
+This remains visible while scrolling.
+
+Banner copy
+
+MGOS and MWLS, now united at MERIDIAN. Multidisciplinary care and a connected patient experience.
+
+Styling
+
+Reference attached screenshot.
+
+Requirements:
+
+Warm dark background
+Soft warm-white typography
+Slim height
+Full width
+No animation
+Calm clinical feel
+
+Suggested:
+
+Background: #1b180f
+Text: #f3efe6
+
+Navigation sits beneath this banner.
+
+Ensure hero content offsets correctly beneath fixed elements.
+
+2. NAVIGATION
+
+Minimal navigation.
+
+Use:
+
+MERIDIAN logotype only
+
+Navigation items:
+
+Upper GI
+Bariatric
+Metabolic
+Specialists
+Contact
+
+Right-side CTA:
+Register Interest
+
+Navigation should feel:
+
+Minimal
+Precise
+Light
+Clear
+
+Sticky during scroll.
+
+3. HERO MODULE
+
+Full-screen section.
+
+Headline
+
+MERIDIAN
+
+Subheading
+
+Upper GI. Bariatric. Metabolic care.
+
+Supporting copy
+
+A specialist clinic providing upper gastrointestinal, bariatric and metabolic care.
+
+CTA
+
+Primary:
+Register your interest
+
+Secondary:
+Launching soon at Brennan Place, Fitzroy.
+
+Visual direction
+
+Minimal.
+Potentially:
+
+Architectural imagery
+Soft textures
+Light/shadow
+Typography-led layouts
+
+Avoid:
+
+Stock medical imagery
+Literal surgical imagery
+AI-looking renders
+4. UPPER GI MODULE
+
+Full-screen sliding panel.
+
+Heading
+
+Upper GI Care
+
+Copy
+
+Care for patients with upper gastrointestinal conditions, including reflux, oesophageal, gastric and related gastrointestinal concerns.
+
+Meridian provides clinical assessment, surgical care and ongoing patient support within one clinical setting.
+
+5. BARIATRIC MODULE
+
+Full-screen sliding panel.
+
+Heading
+
+Bariatric Surgery
+
+Copy
+
+Assessment and surgical care for patients considering bariatric surgery.
+
+Meridian supports patients through consultation, assessment, procedure planning and follow-up care based on individual clinical needs.
+
+6. METABOLIC CARE MODULE
+
+Full-screen sliding panel.
+
+Heading
+
+Metabolic Care
+
+Copy
+
+Clinician-guided support for patients exploring non-surgical weight management and metabolic health care pathways.
+
+Meridian provides assessment, education and ongoing clinical support based on individual needs.
+
+Do not mention prescription medicines directly.
+
+7. SPECIALISTS MODULE
+
+Full-screen panel.
+
+Heading
+
+Specialist-led care
+
+Copy
+
+Meridian includes clinicians working across upper gastrointestinal, bariatric and metabolic care.
+
+Names
+
+A/Prof Michael Hii
+Dr Nicole Winter
+Dr Salena Ward
+
+Potential layout:
+
+Minimal editorial grid
+Portrait placeholders
+Refined typography
+Calm institutional presentation
+8. CONTACT / LEAD CAPTURE MODULE
+
+Final full-screen module.
+
+Heading
+
+Register your interest
+
+Supporting copy
+
+Meridian is preparing to open at Brennan Place, Fitzroy.
+
+Register your details and the team will be in touch regarding future appointments and updates.
+
+Form fields
+First name
+Last name
+Email
+Phone
+Area of interest dropdown:
+Upper GI care
+Bariatric surgery
+Metabolic care
+General enquiry
+CTA
+
+Submit enquiry
+
+Small privacy line
+
+Your details will be used only to respond to your enquiry.
+
+MOTION / INTERACTION
+
+Scrolling behaviour should feel calm and restrained.
+
+Use:
+
+Smooth panel transitions
+Slight layered overlap
+Subtle fade/parallax
+Sticky sections
+
+Avoid:
+
+Heavy animation
+Motion-heavy effects
+Fast transitions
+Gimmicky interactions
+MOBILE EXPERIENCE
+
+Mobile is critical.
+
+Ensure:
+
+Excellent typography scaling
+Fixed banner remains elegant
+Navigation remains minimal
+Panels feel immersive
+Forms are easy to complete
+Consistent spacing throughout
+AHPRA COMPLIANCE REQUIREMENTS
+
+All copy must remain AHPRA-compliant.
+
+Avoid:
+
+Testimonials
+Guaranteed outcomes
+Comparative claims
+“Best”
+“Leading”
+“World-class”
+“Clinical excellence”
+Prestige/superiority language
+Before-and-after implications
+Unrealistic outcome language
+Naming prescription medicines
+Misleading claims
+
+Use “specialist” only when referring to registered specialist surgeons or physicians.
+
+Tone should remain:
+
+Factual
+Restrained
+Clear
+Clinical
+Professional
+FINAL DELIVERY REQUIREMENTS
+
+Deliver:
+
+Fully responsive build
+Netlify-ready deployment
+Clean code structure
+Easy-to-update text sections
+Optimised performance
+SEO-ready structure
+Smooth scrolling experience
+Placeholder imagery areas where required
+
+No placeholder AI filler copy anywhere in build.
