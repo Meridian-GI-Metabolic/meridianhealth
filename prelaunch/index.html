@@ -458,6 +458,41 @@ body.menu-open .nav-drawer{display:flex}
   .hero-word{font-size:clamp(64px,18vw,100px)}
   :root{--bh:52px;--off:118px}
 }
+
+/* ─── OPENING BAR ─── */
+.opening-bar{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:190;
+  background:var(--cream);
+  border-top:1px solid rgba(32,30,17,.09);
+  padding:16px 48px;
+  display:flex;align-items:center;
+}
+.opening-bar p{
+  font-size:clamp(17px,2.8vw,40px);
+  font-weight:600;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  color:#7a6828;
+  line-height:1.15;
+  white-space:nowrap;
+}
+body{padding-bottom:90px}
+
+@media(max-width:1024px){
+  .opening-bar{padding:14px 36px}
+  body{padding-bottom:80px}
+}
+@media(max-width:720px){
+  .opening-bar{padding:14px 22px}
+  .opening-bar p{white-space:normal;line-height:1.2}
+  body{padding-bottom:100px}
+}
+@media(max-width:460px){
+  .opening-bar p{font-size:clamp(16px,5.8vw,26px)}
+  body{padding-bottom:110px}
+}
 </style>
 </head>
 <body>
@@ -762,5 +797,11 @@ body.menu-open .nav-drawer{display:flex}
 
 })();
 </script>
+
+<!-- OPENING BAR -->
+<div class="opening-bar" aria-label="Opening announcement">
+  <p>Opening September 2026.&ensp;Brenan Place, Fitzroy.</p>
+</div>
+
 </body>
 </html>
