@@ -55,16 +55,23 @@ html,body{
 }
 .banner strong{font-weight:600}
 
-/* Monogram — inside the announcement banner, left-anchored */
-.banner-mono{
-  position:absolute;left:14px;top:50%;transform:translateY(-50%);
-  height:24px;width:auto;
-  mix-blend-mode:multiply;
-  filter:invert(1) sepia(.7) saturate(2.2) brightness(.55);
-  opacity:.88;
+/* Monogram — anchored to left edge, top flush with banner bottom */
+.mono-fixed{
+  position:fixed;
+  top:var(--bh);
+  left:16px;
+  z-index:580;
+  line-height:0;
   pointer-events:none;
 }
-@media(max-width:480px){.banner-mono{height:20px;left:10px}}
+.mono-fixed img{
+  height:56px;width:auto;
+  mix-blend-mode:screen;
+  filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
+  opacity:.9;
+}
+@media(max-width:600px){.mono-fixed img{height:44px}}
+@media(max-width:480px){.mono-fixed{left:12px}}
 
 /* Opening super — fixed bottom */
 .opening-fixed{
@@ -334,8 +341,11 @@ html,body{
 <!-- ═══════ FIXED TOP LAYER ═══════ -->
 
 <div class="banner">
-  <img class="banner-mono" src="images/monogram.png" alt="" aria-hidden="true" />
   <p><strong>MGOS</strong> AND <strong>MWLS</strong> NOW UNITED AT <strong>MERIDIAN</strong></p>
+</div>
+
+<div class="mono-fixed" aria-hidden="true">
+  <img src="images/monogram.png" alt="" />
 </div>
 
 <div class="opening-fixed" aria-hidden="true">
