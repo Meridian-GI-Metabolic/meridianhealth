@@ -182,49 +182,36 @@ html,body{
 @media(max-width:600px){.s0-wordmark{max-width:min(300px,85vw)}}
 
 /* ═══════════════════════════════════════════
-   SLIDE 1 — CLINICAL
+   SLIDE 1 — CLINICAL TEAM
    ═══════════════════════════════════════════ */
 .s1-heading{
   font-size:clamp(11px,1.1vw,14px);font-weight:500;
   letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(194,165,94,.92);margin-bottom:30px;
+  color:rgba(194,165,94,.92);margin-bottom:26px;
 }
-.s1-surgeons{
-  display:flex;gap:28px;justify-content:center;
-  margin-bottom:36px;flex-wrap:wrap;
+.s1-team-grid{
+  display:flex;flex-wrap:wrap;gap:14px;
+  justify-content:center;
+  max-width:800px;width:100%;
 }
-.s1-surgeon{text-align:center;width:128px}
+.s1-member{text-align:center;width:88px;flex-shrink:0}
 .s1-portrait{
-  width:128px;aspect-ratio:4/3;
-  border-radius:5px;overflow:hidden;
-  background:#1a1510;margin-bottom:10px;
+  width:88px;aspect-ratio:4/3;
+  border-radius:4px;overflow:hidden;
+  background:#1a1510;margin-bottom:7px;
 }
 .s1-portrait img{
   width:100%;height:100%;
   object-fit:cover;object-position:center 15%;
   filter:grayscale(1) contrast(.92) brightness(1.1);
 }
-.s1-name{font-size:12px;font-weight:500;color:var(--cream);letter-spacing:.04em;line-height:1.3}
-.s1-role{font-size:12px;color:var(--c45);letter-spacing:.02em;margin-top:3px}
-.s1-quals{font-size:9px;color:var(--c45);letter-spacing:.03em;margin-top:4px;line-height:1.4}
-
-.s1-table{width:100%;max-width:640px;border-top:1px solid var(--c10)}
-.s1-row{
-  display:grid;grid-template-columns:170px 1fr;gap:20px;
-  padding:17px 0;border-bottom:1px solid var(--c10);text-align:left;
+.s1-chip{
+  font-size:7px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(194,165,94,.80);
+  display:block;margin-bottom:2px;
 }
-.s1-pathway{
-  font-size:9.5px;font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(194,165,94,.88);
-  padding-top:2px;flex-shrink:0;
-}
-.s1-desc{font-size:12.5px;color:var(--c70);line-height:1.65}
-
-@media(max-width:700px){
-  .s1-surgeons{gap:16px}
-  .s1-portrait{width:96px}
-  .s1-row{grid-template-columns:1fr;gap:5px;padding:12px 0}
-}
+.s1-name{font-size:10px;font-weight:500;color:var(--cream);letter-spacing:.03em;line-height:1.3}
+.s1-quals{font-size:8px;color:var(--c45);letter-spacing:.02em;margin-top:3px;line-height:1.4}
 
 /* ═══════════════════════════════════════════
    SLIDES 2 & 3 — FORMS
@@ -332,14 +319,25 @@ html,body{
   #s1 .slide-content{
     justify-content:center;
   }
-  .s1-portrait{width:80px}
-  .s1-surgeon{width:80px}
-  .s1-surgeons{gap:12px;margin-bottom:22px}
-  .s1-name{font-size:11px}
-  .s1-role{font-size:11px}
-  .s1-row{grid-template-columns:1fr;gap:4px;padding:10px 0}
-  .s1-desc{font-size:12px}
-  .s1-table{max-width:100%}
+  /* s1 mobile carousel — 3 visible, swipeable */
+  .s1-team-grid{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    justify-content:flex-start;
+    gap:10px;
+    padding-bottom:10px;
+    scrollbar-width:none;
+    max-width:100%;
+  }
+  .s1-team-grid::-webkit-scrollbar{display:none}
+  .s1-member{
+    flex:0 0 calc(33.333% - 7px);
+    width:calc(33.333% - 7px);
+    scroll-snap-align:start;
+  }
+  .s1-portrait{width:100%}
   .fs-h2{font-size:clamp(17px,5vw,24px)}
   .fs-body{font-size:12px;margin-bottom:18px;max-width:none}
   .df-field input,.df-field select{font-size:16px;/* prevents iOS zoom */padding:10px 12px}
@@ -393,39 +391,104 @@ html,body{
     <div class="slide-bg" style="background-image:url('images/bg-02.png')"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
-      <p class="s1-heading">Surgeon-led clinical care</p>
-      <div class="s1-surgeons">
-        <div class="s1-surgeon">
+      <p class="s1-heading">Multidisciplinary clinical team</p>
+      <div class="s1-team-grid">
+        <div class="s1-member">
           <div class="s1-portrait"><img src="team/team-michael-hii.png" alt="A/Prof Michael Hii" loading="lazy" /></div>
+          <span class="s1-chip">Surgeon</span>
           <p class="s1-name">A/Prof Michael Hii</p>
-          <p class="s1-role">Upper GI &amp; Bariatric Surgeon</p>
           <p class="s1-quals">FRACS &middot; MBBS &middot; BMedSci &middot; PGDipSurgAnat</p>
         </div>
-        <div class="s1-surgeon">
-          <div class="s1-portrait"><img src="team/team-nicole-winter.png" alt="Dr Nicole Winter" loading="lazy" /></div>
-          <p class="s1-name">Dr Nicole Winter</p>
-          <p class="s1-role">Upper GI &amp; Bariatric Surgeon</p>
-          <p class="s1-quals">FRACS &middot; MBBS (Hons) &middot; BMedSci &middot; AANZGOSA &middot; GChPOM</p>
-        </div>
-        <div class="s1-surgeon">
+        <div class="s1-member">
           <div class="s1-portrait"><img src="team/team-salena-ward.png" alt="Dr Salena Ward" loading="lazy" /></div>
+          <span class="s1-chip">Surgeon</span>
           <p class="s1-name">Dr Salena Ward</p>
-          <p class="s1-role">Gastric &amp; Bariatric Surgeon</p>
           <p class="s1-quals">MBBS &middot; FRACS &middot; MS &middot; PGDipSurgAnat</p>
         </div>
-      </div>
-      <div class="s1-table">
-        <div class="s1-row">
-          <span class="s1-pathway">Upper GI</span>
-          <span class="s1-desc">Care for patients with upper gastrointestinal conditions, including reflux, oesophageal, gastric and related concerns. Assessment, surgical care and follow-up within one clinical setting.</span>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-nicole-winter.png" alt="Dr Nicole Winter" loading="lazy" /></div>
+          <span class="s1-chip">Surgeon</span>
+          <p class="s1-name">Dr Nicole Winter</p>
+          <p class="s1-quals">FRACS &middot; MBBS (Hons) &middot; BMedSci &middot; AANZGOSA &middot; GChPOM</p>
         </div>
-        <div class="s1-row">
-          <span class="s1-pathway">Bariatric</span>
-          <span class="s1-desc">Assessment and surgical care for patients considering bariatric surgery. Consultation, procedure planning and structured follow-up with the same clinical team.</span>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-amy-osborne.webp" alt="Dr Amy Osborne" loading="lazy" /></div>
+          <span class="s1-chip">Physician</span>
+          <p class="s1-name">Dr Amy Osborne</p>
+          <p class="s1-quals">Perioperative Medicine &amp; Cardiology</p>
         </div>
-        <div class="s1-row">
-          <span class="s1-pathway">Metabolic Medicine</span>
-          <span class="s1-desc">Clinician-guided support for patients exploring non-surgical weight management and metabolic health care pathways. Assessment, education and ongoing clinical support.</span>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-anna-galligan.webp" alt="Dr Anna Galligan" loading="lazy" /></div>
+          <span class="s1-chip">Physician</span>
+          <p class="s1-name">Dr Anna Galligan</p>
+          <p class="s1-quals">Endocrinologist</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-geetha-theverkalam.webp" alt="Dr Geetha Theverkalam" loading="lazy" /></div>
+          <span class="s1-chip">Physician</span>
+          <p class="s1-name">Dr Geetha Theverkalam</p>
+          <p class="s1-quals">Endocrinologist</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-katrina-heggie.png" alt="Dr Katrina Heggie" loading="lazy" /></div>
+          <span class="s1-chip">GP</span>
+          <p class="s1-name">Dr Katrina Heggie</p>
+          <p class="s1-quals">Bariatric GP</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-jessie-leahy.png" alt="Jessie Leahy" loading="lazy" /></div>
+          <span class="s1-chip">Nursing</span>
+          <p class="s1-name">Jessie Leahy</p>
+          <p class="s1-quals">RN Div 1</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-isabella-matthews.png" alt="Isabella Matthews" loading="lazy" /></div>
+          <span class="s1-chip">Nursing</span>
+          <p class="s1-name">Isabella Matthews</p>
+          <p class="s1-quals">BN</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-jennifer-tsoutsoulis.png" alt="Jennifer Tsoutsoulis" loading="lazy" /></div>
+          <span class="s1-chip">Dietetics</span>
+          <p class="s1-name">Jennifer Tsoutsoulis</p>
+          <p class="s1-quals">APD &middot; BHumNut &middot; MDiet</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-megan-hickey.png" alt="Megan Hickey" loading="lazy" /></div>
+          <span class="s1-chip">Dietetics</span>
+          <p class="s1-name">Megan Hickey</p>
+          <p class="s1-quals">APD &middot; BNutDiet &middot; MDiet</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-melanie-strang.webp" alt="Dr Melanie Strang" loading="lazy" /></div>
+          <span class="s1-chip">Psychology</span>
+          <p class="s1-name">Dr Melanie Strang</p>
+          <p class="s1-quals">Registered Psychologist</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-katie-wendt.png" alt="Katie Wendt" loading="lazy" /></div>
+          <span class="s1-chip">Surgical PA</span>
+          <p class="s1-name">Katie Wendt</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-lauren-drummond.png" alt="Lauren Drummond" loading="lazy" /></div>
+          <span class="s1-chip">Surgical PA</span>
+          <p class="s1-name">Lauren Drummond</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-irena-jennings.png" alt="Irena Jennings" loading="lazy" /></div>
+          <span class="s1-chip">Surgical PA</span>
+          <p class="s1-name">Irena Jennings</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-joseph-gallagher.png" alt="Joseph Gallagher" loading="lazy" /></div>
+          <span class="s1-chip">Administration</span>
+          <p class="s1-name">Joseph Gallagher</p>
+        </div>
+        <div class="s1-member">
+          <div class="s1-portrait"><img src="team/team-patricia-bouldoh.png" alt="Patricia Bouldoh" loading="lazy" /></div>
+          <span class="s1-chip">Reception</span>
+          <p class="s1-name">Patricia Bouldoh</p>
         </div>
       </div>
     </div>
