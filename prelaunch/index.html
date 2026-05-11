@@ -321,31 +321,66 @@ body.menu-open .nav-drawer{display:flex}
   line-height:1.55;letter-spacing:.01em;
 }
 
-/* ─── CONTACT ─── */
-.s-contact{
+/* ─── ENQUIRIES ─── */
+.s-enquiries{
   background:var(--cream);
-  padding:88px 48px 96px;
+  padding:80px 48px 96px;
   position:relative;z-index:60;
 }
-.contact-inner{
-  max-width:1180px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1.1fr;
-  gap:88px;align-items:start;
-}
-.contact-eyebrow{
+.enq-top{max-width:1180px;margin:0 auto 52px}
+.enq-eyebrow{
   font-size:10.5px;font-weight:500;letter-spacing:2px;
   text-transform:uppercase;color:var(--gold-deep);
-  display:block;margin-bottom:0;
+  display:block;
 }
-.contact-rule{width:32px;height:1px;background:var(--gold);margin:14px 0 20px;display:block}
-.contact-h2{
-  font-size:clamp(30px,3.5vw,46px);
-  font-weight:400;letter-spacing:-.02em;line-height:1.1;
-  color:var(--ink);margin-bottom:20px;
+.enq-rule{width:32px;height:1px;background:var(--gold);margin:13px 0 0;display:block}
+.enq-grid{
+  max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1px 1fr;
+  align-items:start;
 }
-.contact-body{
-  font-size:15.5px;color:var(--ink-70);
-  line-height:1.72;max-width:44ch;
+.enq-col{padding:0 56px}
+.enq-col:first-child{padding-left:0}
+.enq-col:last-child{padding-right:0}
+.enq-vline{background:var(--ink-07);align-self:stretch;min-height:460px}
+.enq-col-eyebrow{
+  font-size:10.5px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold-deep);display:block;
+}
+.enq-col-rule{width:28px;height:1px;background:var(--gold);margin:12px 0 18px;display:block}
+.enq-col-h2{
+  font-size:clamp(22px,2.2vw,30px);
+  font-weight:400;letter-spacing:-.016em;line-height:1.12;
+  color:var(--ink);margin-bottom:14px;
+}
+.enq-col-body{
+  font-size:14.5px;color:var(--ink-70);
+  line-height:1.72;max-width:42ch;margin-bottom:26px;
+}
+/* Document placeholders */
+.ref-docs{margin-top:28px;padding-top:22px;border-top:1px solid var(--ink-07)}
+.ref-docs-label{
+  font-size:10px;font-weight:500;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--ink-35);
+  display:block;margin-bottom:14px;
+}
+.ref-doc-item{
+  display:flex;align-items:baseline;
+  justify-content:space-between;gap:16px;
+  padding:10px 0;border-bottom:1px solid var(--ink-04);
+}
+.ref-doc-item:last-child{border-bottom:none}
+.ref-doc-name{font-size:13px;color:var(--ink-70);letter-spacing:.005em}
+.ref-doc-note{font-size:11px;color:var(--ink-35);letter-spacing:.02em;white-space:nowrap;flex-shrink:0}
+@media(max-width:900px){
+  .enq-grid{grid-template-columns:1fr;gap:0}
+  .enq-vline{display:none}
+  .enq-col{padding:0}
+  .enq-col+.enq-col{padding-top:52px;margin-top:52px;border-top:1px solid var(--ink-07)}
+}
+@media(max-width:720px){
+  .s-enquiries{padding:64px 22px 88px}
+  .enq-top{margin-bottom:40px}
 }
 
 /* Form — exact main site field treatment */
@@ -651,40 +686,44 @@ body{padding-bottom:90px}
   </section>
 </div>
 
-<!-- ── CONTACT ── -->
-<section class="s-contact" id="contact">
-  <div class="contact-inner">
-    <div>
-      <span class="contact-eyebrow">Register</span>
-      <span class="contact-rule"></span>
-      <h2 class="contact-h2">Register your interest</h2>
-      <p class="contact-body">Meridian is preparing to open at Brenan Place, Fitzroy. Register your details and the team will be in touch regarding future appointments and updates.</p>
-    </div>
-    <div>
-      <form name="interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="interest-form">
-        <input type="hidden" name="form-name" value="interest" />
+<!-- ── ENQUIRIES ── -->
+<section class="s-enquiries" id="contact">
+  <div class="enq-top">
+    <span class="enq-eyebrow">Enquiries</span>
+    <span class="enq-rule"></span>
+  </div>
+  <div class="enq-grid">
+
+    <!-- CTA 01 — Patient Interest -->
+    <div class="enq-col">
+      <span class="enq-col-eyebrow">For patients</span>
+      <span class="enq-col-rule"></span>
+      <h2 class="enq-col-h2">Patient Interest</h2>
+      <p class="enq-col-body">Register your details to receive updates regarding Meridian, appointments and future clinical services.</p>
+      <form name="patient-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="patient-form">
+        <input type="hidden" name="form-name" value="patient-interest" />
         <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="field">
-            <label for="fn">First name</label>
-            <input type="text" id="fn" name="first_name" required autocomplete="given-name" />
+            <label for="p-fn">First name</label>
+            <input type="text" id="p-fn" name="first_name" required autocomplete="given-name" />
           </div>
           <div class="field">
-            <label for="ln">Last name</label>
-            <input type="text" id="ln" name="last_name" required autocomplete="family-name" />
+            <label for="p-ln">Last name</label>
+            <input type="text" id="p-ln" name="last_name" required autocomplete="family-name" />
           </div>
         </div>
         <div class="field">
-          <label for="em">Email</label>
-          <input type="email" id="em" name="email" required autocomplete="email" />
+          <label for="p-em">Email</label>
+          <input type="email" id="p-em" name="email" required autocomplete="email" />
         </div>
         <div class="field">
-          <label for="ph">Phone</label>
-          <input type="tel" id="ph" name="phone" autocomplete="tel" />
+          <label for="p-ph">Phone</label>
+          <input type="tel" id="p-ph" name="phone" autocomplete="tel" />
         </div>
         <div class="field">
-          <label for="ai">Area of interest</label>
-          <select id="ai" name="area_of_interest" required>
+          <label for="p-ai">Area of interest</label>
+          <select id="p-ai" name="area_of_interest" required>
             <option value="" disabled selected>Select&hellip;</option>
             <option value="upper-gi">Upper GI care</option>
             <option value="bariatric">Bariatric surgery</option>
@@ -695,10 +734,65 @@ body{padding-bottom:90px}
         <button type="submit" class="form-submit">Submit enquiry</button>
         <p class="form-privacy">Your details will be used only to respond to your enquiry.</p>
       </form>
-      <div class="form-success" id="form-success">
-        Thank you. Your enquiry has been received. A member of the Meridian team will be in touch.
+      <div class="form-success" id="patient-success">
+        Thank you. Your details have been received. The team will be in touch ahead of opening.
       </div>
     </div>
+
+    <div class="enq-vline" aria-hidden="true"></div>
+
+    <!-- CTA 02 — Referrer Enquiries -->
+    <div class="enq-col">
+      <span class="enq-col-eyebrow">For referrers</span>
+      <span class="enq-col-rule"></span>
+      <h2 class="enq-col-h2">Referrer Enquiries</h2>
+      <p class="enq-col-body">General practitioners and healthcare professionals can request the Meridian referrer information pack.</p>
+      <form name="referrer-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field-r" id="referrer-form">
+        <input type="hidden" name="form-name" value="referrer-enquiry" />
+        <p style="display:none"><label>Skip: <input name="bot-field-r" /></label></p>
+        <div class="field">
+          <label for="r-nm">Name</label>
+          <input type="text" id="r-nm" name="name" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="r-cl">Clinic</label>
+          <input type="text" id="r-cl" name="clinic" required />
+        </div>
+        <div class="field">
+          <label for="r-rl">Role</label>
+          <input type="text" id="r-rl" name="role" required />
+        </div>
+        <div class="field">
+          <label for="r-em">Email</label>
+          <input type="email" id="r-em" name="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="r-ph">Phone</label>
+          <input type="tel" id="r-ph" name="phone" autocomplete="tel" />
+        </div>
+        <button type="submit" class="form-submit">Request referrer pack</button>
+        <p class="form-privacy">Details will be used to send the Meridian referrer information pack.</p>
+      </form>
+      <div class="form-success" id="referrer-success">
+        Thank you. Your request has been received. The referrer pack will be forwarded once available.
+      </div>
+      <div class="ref-docs">
+        <span class="ref-docs-label">Clinical documents</span>
+        <div class="ref-doc-item">
+          <span class="ref-doc-name">Referrer information pack</span>
+          <span class="ref-doc-note">Available at opening</span>
+        </div>
+        <div class="ref-doc-item">
+          <span class="ref-doc-name">Specialist information</span>
+          <span class="ref-doc-note">Available at opening</span>
+        </div>
+        <div class="ref-doc-item">
+          <span class="ref-doc-name">Referral pathway guide</span>
+          <span class="ref-doc-note">Available at opening</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -755,27 +849,28 @@ body{padding-bottom:90px}
     });
   });
 
-  // Netlify form
-  var form = document.getElementById('interest-form');
-  var success = document.getElementById('form-success');
-  if(form){
+  // Netlify forms — generic handler
+  document.querySelectorAll('form[data-netlify]').forEach(function(form){
+    var successId = form.id.replace('-form','-success');
+    var success = document.getElementById(successId);
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var btn = form.querySelector('.form-submit');
+      var origLabel = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Sending\u2026';
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
         .then(function(){
           form.style.display = 'none';
-          success.classList.add('on');
+          if(success) success.classList.add('on');
         })
         .catch(function(){
           btn.disabled = false;
-          btn.textContent = 'Submit enquiry';
+          btn.textContent = origLabel;
         });
     });
-  }
+  });
 
   // Nav active link tracking
   var sections = document.querySelectorAll('[id]');
