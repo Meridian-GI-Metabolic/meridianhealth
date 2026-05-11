@@ -79,6 +79,12 @@ http.createServer((req, res) => {
   let filePath = path.join(__dirname, urlPath);
 
   fs.stat(filePath, (err, stat) => {
+    // Directory without trailing slash — redirect so relative assets resolve correctly
+    if (!err && stat.isDirectory() && !urlPath.endsWith("/")) {
+      res.writeHead(301, { "Location": urlPath + "/" });
+      res.end();
+      return;
+    }
     if (!err && stat.isDirectory()) {
       filePath = path.join(filePath, "index.html");
     }
