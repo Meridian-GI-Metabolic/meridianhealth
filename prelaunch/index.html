@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Meridian Health — Upper GI, Bariatric &amp; Metabolic Care, Fitzroy</title>
-<meta name="description" content="Meridian provides upper gastrointestinal, bariatric and metabolic care within one clinical setting at Brenan Place, Fitzroy." />
+<title>Meridian Health — Opening September 2026, Fitzroy</title>
+<meta name="description" content="Meridian provides upper gastrointestinal, bariatric and metabolic care within one clinical setting at Brenan Place, Fitzroy. Opening September 2026." />
 <meta name="robots" content="noindex, nofollow" />
 <style>
 @font-face{font-family:"Inter";src:url("fonts/Inter_400Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -12,521 +12,294 @@
 @font-face{font-family:"Inter";src:url("fonts/Inter_600SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
-  --ink:#201e11;
-  --ink-90:rgba(32,30,17,.90);
-  --ink-70:rgba(32,30,17,.70);
-  --ink-50:rgba(32,30,17,.50);
-  --ink-35:rgba(32,30,17,.35);
-  --ink-20:rgba(32,30,17,.20);
-  --ink-12:rgba(32,30,17,.12);
-  --ink-07:rgba(32,30,17,.07);
-  --ink-04:rgba(32,30,17,.04);
-  --cream:#f7f5ef;
-  --cream-2:#ece8df;
-  --cream-3:#e7e3da;
-  --deep:#1b180f;
-  --deep-text:#f3efe6;
+  --bh:40px;
   --gold:#c8a035;
-  --gold-deep:#9a7818;
-  --bh:44px;
-  --nh:66px;
-  --off:110px;
+  --gold-dim:#7a6828;
+  --cream:#f3efe6;
+  --c70:rgba(243,239,230,.70);
+  --c45:rgba(243,239,230,.45);
+  --c20:rgba(243,239,230,.20);
+  --c10:rgba(243,239,230,.10);
+  --c06:rgba(243,239,230,.06);
+  --ink:#201e11;
+  --banner:#f7f5ef;
 }
-
-html{-webkit-text-size-adjust:100%}
+html{overflow-x:hidden}
 body{
   font-family:"Inter",system-ui,-apple-system,sans-serif;
-  font-weight:400;
-  font-size:16px;
-  line-height:1.6;
-  color:var(--ink);
-  background:var(--cream);
+  font-weight:400;background:#090704;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-button,input,select,textarea{font-family:inherit}
+img{display:block}
 
-/* ─── BANNER ─── */
+/* ── BANNER ── */
 .banner{
   position:fixed;top:0;left:0;right:0;
-  z-index:200;
   height:var(--bh);
-  background:var(--deep);
+  background:var(--banner);
+  border-bottom:1px solid rgba(32,30,17,.08);
   display:flex;align-items:center;justify-content:center;
-  padding:0 24px;
+  padding:0 24px;z-index:200;
 }
 .banner p{
-  font-size:11px;font-weight:400;letter-spacing:.04em;
-  color:var(--deep-text);text-align:center;line-height:1.45;
+  font-size:11px;font-weight:400;letter-spacing:.06em;
+  color:var(--ink);text-align:center;line-height:1;
 }
-.banner strong{font-weight:500}
+.banner strong{font-weight:600}
 
-/* ─── NAV ─── */
-.nav{
-  position:fixed;top:var(--bh);left:0;right:0;
-  z-index:199;
-  height:var(--nh);
-  background:rgba(247,245,239,.95);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--ink-07);
-  display:flex;align-items:center;
-}
-.nav-inner{
-  width:100%;max-width:1280px;margin:0 auto;
-  padding:0 48px;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:32px;
-}
-.nav-logo{
-  font-size:13px;font-weight:500;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--ink);flex-shrink:0;
-}
-.nav-links{
-  display:flex;align-items:center;gap:30px;list-style:none;
-}
-.nav-links a{
-  font-size:12.5px;font-weight:400;color:var(--ink-70);
-  letter-spacing:.01em;transition:color .18s;
-}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{
-  flex-shrink:0;
-  padding:8px 20px;
-  font-size:11.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink);border:1px solid var(--ink-20);border-radius:999px;
-  transition:background .18s,color .18s,border-color .18s;white-space:nowrap;
-}
-.nav-cta:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
-
-.nav-burger{
-  display:none;flex-direction:column;gap:5px;
-  background:none;border:none;cursor:pointer;padding:6px 0;
-}
-.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .25s,opacity .2s}
-body.menu-open .nav-burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-body.menu-open .nav-burger span:nth-child(2){opacity:0}
-body.menu-open .nav-burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-.nav-drawer{
-  display:none;position:fixed;
-  top:calc(var(--bh) + var(--nh));left:0;right:0;
-  background:var(--cream);
-  border-bottom:1px solid var(--ink-07);
-  padding:20px 32px 28px;
-  z-index:198;flex-direction:column;
-}
-body.menu-open .nav-drawer{display:flex}
-.nav-drawer a{
-  display:block;padding:13px 0;
-  font-size:15px;color:var(--ink);
-  border-bottom:1px solid var(--ink-04);
-}
-.nav-drawer .d-cta{
-  margin-top:20px;display:inline-block;padding:12px 24px;
-  font-size:11.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink);border:1px solid var(--ink-20);border-radius:999px;
-}
-
-/* ─── STICKY PANEL SYSTEM ─── */
-.pin-wrap{position:relative}
-.pin{
-  position:sticky;top:var(--off);
-  height:calc(100vh - var(--off));
+/* ── SLIDE SYSTEM ── */
+.slide-wrap{position:relative}
+.slide{
+  position:sticky;top:0;
+  height:100vh;
   overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
   will-change:transform;
 }
-.pin-wrap:nth-child(1) .pin{z-index:11}
-.pin-wrap:nth-child(2) .pin{z-index:22;box-shadow:0 -3px 48px rgba(0,0,0,.07)}
-.pin-wrap:nth-child(3) .pin{z-index:33;box-shadow:0 -3px 48px rgba(0,0,0,.08)}
-.pin-wrap:nth-child(4) .pin{z-index:44;box-shadow:0 -3px 48px rgba(0,0,0,.09)}
-.pin-wrap:nth-child(5) .pin{z-index:55;box-shadow:0 -3px 64px rgba(0,0,0,.16)}
+.slide-wrap:nth-child(1) .slide{z-index:10}
+.slide-wrap:nth-child(2) .slide{z-index:20;box-shadow:0 -4px 60px rgba(0,0,0,.5)}
+.slide-wrap:nth-child(3) .slide{z-index:30;box-shadow:0 -4px 60px rgba(0,0,0,.5)}
+.slide-wrap:nth-child(4) .slide{z-index:40;box-shadow:0 -4px 60px rgba(0,0,0,.5)}
 
-/* ─── HERO ─── */
-.p-hero{
-  background:var(--cream);
-  display:grid;
-  grid-template-rows:1fr auto;
-  padding:44px 48px 48px;
+/* Background */
+.slide-bg{
+  position:absolute;inset:-15% 0;
+  background-size:cover;background-position:center;
+  will-change:transform;
+  pointer-events:none;
 }
-.hero-top{display:flex;align-items:flex-start;justify-content:space-between}
-.hero-eyebrow{
-  font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gold-deep);
+/* Dark warm overlay */
+.slide-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    160deg,
+    rgba(8,6,2,.82) 0%,
+    rgba(12,9,3,.70) 50%,
+    rgba(6,4,1,.88) 100%
+  );
 }
-.hero-tag{
-  font-size:10.5px;font-weight:400;letter-spacing:.04em;color:var(--ink-35);
-  text-align:right;padding-top:1px;
-}
-.hero-divider{
-  width:100%;height:1px;background:var(--gold);opacity:.45;
-  margin-bottom:32px;
-}
-.hero-bottom{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  align-items:flex-end;
-  gap:48px;
-}
-.hero-word{
-  font-size:clamp(80px,13vw,190px);
-  font-weight:400;letter-spacing:-.03em;line-height:.88;
-  color:var(--ink);
-}
-.hero-aside{padding-bottom:4px}
-.hero-sub{
-  font-size:clamp(16px,1.4vw,20px);
-  font-weight:400;color:var(--ink-70);
-  letter-spacing:-.005em;line-height:1.35;margin-bottom:16px;
-}
-.hero-body{
-  font-size:14.5px;color:var(--ink-50);
-  line-height:1.72;max-width:36ch;margin-bottom:26px;
-}
-.hero-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-.btn{
-  display:inline-flex;align-items:center;
-  padding:11px 22px;
-  font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink);border:1px solid var(--ink);border-radius:999px;
-  transition:background .18s,color .18s;
-}
-.btn:hover{background:var(--ink);color:var(--cream)}
-.hero-note{font-size:11.5px;color:var(--ink-35);letter-spacing:.02em}
 
-/* ─── PATHWAY SECTIONS ─── */
-.p-pathway{
-  padding:0 48px;
-  display:flex;align-items:center;
-  position:relative;overflow:hidden;
-}
-.p-ugi{background:var(--cream-2)}
-.p-bariatric{background:var(--cream-3)}
-.p-metabolic{background:var(--cream-2)}
-
-.ghost-num{
+/* ── MONOGRAM ── */
+.slide-mono{
   position:absolute;
-  font-size:clamp(200px,26vw,380px);
-  font-weight:600;
-  letter-spacing:-.04em;
-  color:rgba(32,30,17,.045);
-  line-height:1;pointer-events:none;
-  user-select:none;-webkit-user-select:none;
+  top:calc(var(--bh) + 14px);
+  left:50%;transform:translateX(-50%);
+  z-index:2;
+  line-height:0;
+}
+.slide-mono img{
+  height:62px;width:auto;
+  mix-blend-mode:screen;
+  filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
+  opacity:.9;
 }
 
-/* Upper GI — left content, ghost right */
-.p-ugi .ghost-num{right:-2vw;bottom:-4%;right:0}
-.ugi-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:64px;align-items:center;width:100%;max-width:1180px;margin:0 auto;
+/* ── OPENING BAR (fixed bottom) ── */
+.opening-fixed{
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:150;
+  display:flex;align-items:center;justify-content:center;
+  padding:14px 24px 16px;
+  pointer-events:none;
 }
-.pw-eyebrow{
-  font-size:10.5px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold-deep);margin-bottom:0;
-  display:block;
+.opening-fixed img{
+  height:17px;width:auto;
+  mix-blend-mode:screen;
+  filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
+  opacity:.75;
+  max-width:90vw;
 }
-.pw-rule{width:32px;height:1px;background:var(--gold);margin:14px 0 20px;display:block}
-.pw-h2{
-  font-size:clamp(36px,4.5vw,58px);
-  font-weight:400;letter-spacing:-.022em;line-height:1.08;
-  color:var(--ink);margin-bottom:0;
+@media(max-width:600px){
+  .opening-fixed img{height:13px}
 }
-.pw-body{
-  font-size:15.5px;color:var(--ink-70);
-  line-height:1.72;max-width:46ch;
-}
-.pw-body + .pw-body{margin-top:16px}
 
-/* Bariatric — centered, large heading */
-.p-bariatric .ghost-num{left:50%;transform:translateX(-50%);bottom:-6%;opacity:1}
-.bariatric-inner{
-  max-width:900px;margin:0 auto;width:100%;
-  position:relative;z-index:1;
+/* ── NAV DOTS ── */
+.nav-dots{
+  position:fixed;right:22px;top:50%;transform:translateY(-50%);
+  z-index:160;
+  display:flex;flex-direction:column;gap:10px;
+  pointer-events:auto;
 }
-.bariatric-inner .pw-h2{
-  font-size:clamp(44px,6vw,76px);
-  max-width:16ch;
+.nav-dot{
+  width:3px;height:20px;border-radius:2px;
+  background:var(--c20);
+  cursor:pointer;
+  transition:background .3s,height .3s;
+  border:none;padding:0;display:block;
 }
-.bariatric-inner .pw-body{max-width:50ch}
+.nav-dot.on{background:rgba(200,160,53,.75);height:28px}
+@media(max-width:600px){.nav-dots{display:none}}
 
-/* Metabolic — left content + gold vertical rule right */
-.metabolic-wrap{
-  width:100%;max-width:1180px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1px;
-  gap:80px;align-items:center;
+/* ── SLIDE CONTENT BASE ── */
+.slide-content{
+  position:relative;z-index:2;
+  width:100%;
+  padding:calc(var(--bh) + 24px) 48px 52px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  min-height:100vh;
+  text-align:center;
 }
-.metabolic-content .pw-h2{max-width:14ch}
-.metabolic-line{background:var(--gold);opacity:.4;height:140px;align-self:center}
-.p-metabolic .ghost-num{right:-1vw;bottom:-4%}
+@media(max-width:720px){.slide-content{padding:calc(var(--bh)+20px) 24px 48px}}
 
-/* ─── SPECIALISTS ─── */
-.p-specialists{
-  background:var(--deep);
-  padding:0 48px;
-  display:flex;flex-direction:column;justify-content:center;
-  gap:48px;
+/* ── SLIDE 1 — HERO ── */
+.s1-wordmark{
+  max-width:min(520px,80vw);
+  width:100%;
+  mix-blend-mode:screen;
+  filter:invert(1) sepia(.6) saturate(2) brightness(.82);
+  opacity:.95;
 }
-.spec-head{max-width:1180px;margin:0 auto;width:100%}
-.spec-eyebrow{
-  font-size:10.5px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold);margin-bottom:0;
-  display:block;
-}
-.spec-rule{width:32px;height:1px;background:var(--gold);margin:14px 0 20px;display:block;opacity:.7}
-.spec-h2{
-  font-size:clamp(30px,3.5vw,46px);
-  font-weight:400;letter-spacing:-.02em;line-height:1.1;
-  color:var(--deep-text);max-width:22ch;
-}
-.spec-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:28px;max-width:1180px;margin:0 auto;width:100%;
-}
-.spec-card{}
+@media(max-width:600px){.s1-wordmark{max-width:min(320px,85vw)}}
 
-/* Portrait — matches main site exactly */
-.tc-photo{
-  position:relative;
-  width:100%;aspect-ratio:4/3;
-  border-radius:10px;overflow:hidden;
-  background:radial-gradient(120% 90% at 50% 30%,#2a2820 0%,#222018 55%,#1a1810 100%);
-  margin-bottom:16px;flex:0 0 auto;
+/* ── SLIDE 2 — CLINICAL ── */
+.s2-heading{
+  font-size:clamp(13px,1.3vw,16px);
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(200,160,53,.85);
+  margin-bottom:36px;
 }
-.tc-photo img{
+.s2-surgeons{
+  display:flex;gap:28px;justify-content:center;
+  margin-bottom:40px;flex-wrap:wrap;
+}
+.s2-surgeon{text-align:center}
+.s2-portrait{
+  width:130px;aspect-ratio:4/3;
+  border-radius:6px;overflow:hidden;
+  background:#1a1510;margin-bottom:10px;
+}
+.s2-portrait img{
   width:100%;height:100%;
-  object-fit:cover;object-position:center 20%;
-  display:block;
-  filter:grayscale(1) contrast(.93) brightness(1.1);
-}
-.tc-body{}
-.role-chip{
-  display:inline-block;font-size:10px;letter-spacing:1.6px;
-  text-transform:uppercase;color:var(--gold);margin:0 0 10px;
-}
-.spec-card h3{
-  font-size:17px;font-weight:500;letter-spacing:-.01em;
-  color:var(--deep-text);margin:0 0 4px;
-}
-.spec-role{
-  font-size:13.5px;color:rgba(243,239,230,.62);
-  line-height:1.45;margin:0 0 8px;
-}
-.spec-quals{
-  font-size:11.5px;color:rgba(243,239,230,.40);
-  line-height:1.55;letter-spacing:.01em;
-}
-
-/* ─── ENQUIRIES ─── */
-.s-enquiries{
-  background:var(--cream);
-  padding:80px 48px 96px;
-  position:relative;z-index:60;
-}
-.enq-top{max-width:1180px;margin:0 auto 52px}
-.enq-eyebrow{
-  font-size:10.5px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold-deep);
+  object-fit:cover;object-position:center 15%;
+  filter:grayscale(1) contrast(.92) brightness(1.1);
   display:block;
 }
-.enq-rule{width:32px;height:1px;background:var(--gold);margin:13px 0 0;display:block}
-.enq-grid{
-  max-width:1180px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1px 1fr;
-  align-items:start;
+.s2-name{
+  font-size:12px;font-weight:500;
+  color:var(--cream);letter-spacing:.04em;
+  line-height:1.3;
 }
-.enq-col{padding:0 56px}
-.enq-col:first-child{padding-left:0}
-.enq-col:last-child{padding-right:0}
-.enq-vline{background:var(--ink-07);align-self:stretch;min-height:460px}
-.enq-col-eyebrow{
-  font-size:10.5px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold-deep);display:block;
+.s2-role{font-size:10.5px;color:var(--c45);letter-spacing:.02em;margin-top:3px}
+
+.s2-table{
+  width:100%;max-width:640px;
+  border-top:1px solid var(--c10);
 }
-.enq-col-rule{width:28px;height:1px;background:var(--gold);margin:12px 0 18px;display:block}
-.enq-col-h2{
-  font-size:clamp(22px,2.2vw,30px);
-  font-weight:400;letter-spacing:-.016em;line-height:1.12;
-  color:var(--ink);margin-bottom:14px;
+.s2-row{
+  display:grid;grid-template-columns:160px 1fr;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid var(--c10);
+  text-align:left;
 }
-.enq-col-body{
-  font-size:14.5px;color:var(--ink-70);
-  line-height:1.72;max-width:42ch;margin-bottom:26px;
+.s2-pathway{
+  font-size:10px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(200,160,53,.7);
+  padding-top:2px;flex-shrink:0;
 }
-/* Document placeholders */
-.ref-docs{margin-top:28px;padding-top:22px;border-top:1px solid var(--ink-07)}
-.ref-docs-label{
-  font-size:10px;font-weight:500;letter-spacing:1.6px;
-  text-transform:uppercase;color:var(--ink-35);
-  display:block;margin-bottom:14px;
-}
-.ref-doc-item{
-  display:flex;align-items:baseline;
-  justify-content:space-between;gap:16px;
-  padding:10px 0;border-bottom:1px solid var(--ink-04);
-}
-.ref-doc-item:last-child{border-bottom:none}
-.ref-doc-name{font-size:13px;color:var(--ink-70);letter-spacing:.005em}
-.ref-doc-note{font-size:11px;color:var(--ink-35);letter-spacing:.02em;white-space:nowrap;flex-shrink:0}
-@media(max-width:900px){
-  .enq-grid{grid-template-columns:1fr;gap:0}
-  .enq-vline{display:none}
-  .enq-col{padding:0}
-  .enq-col+.enq-col{padding-top:52px;margin-top:52px;border-top:1px solid var(--ink-07)}
-}
-@media(max-width:720px){
-  .s-enquiries{padding:64px 22px 88px}
-  .enq-top{margin-bottom:40px}
+.s2-desc{font-size:13px;color:var(--c70);line-height:1.65}
+
+@media(max-width:700px){
+  .s2-surgeons{gap:16px}
+  .s2-portrait{width:100px}
+  .s2-row{grid-template-columns:1fr;gap:6px;padding:14px 0}
+  .s2-table{text-align:left}
 }
 
-/* Form — exact main site field treatment */
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.field label{
-  font-size:10.5px;font-weight:500;letter-spacing:1.4px;
-  text-transform:uppercase;color:var(--ink-50);
+/* ── SLIDES 3 & 4 — FORMS ── */
+.form-slide-inner{max-width:480px;width:100%;text-align:left}
+.fs-eyebrow{
+  font-size:10px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(200,160,53,.7);
+  display:block;margin-bottom:0;text-align:center;
 }
-.field input,.field select{
-  font-size:14.5px;font-weight:400;color:var(--ink);
+.fs-rule{width:28px;height:1px;background:var(--gold);opacity:.5;margin:12px auto 22px}
+.fs-h2{
+  font-size:clamp(20px,2.5vw,28px);font-weight:400;
+  letter-spacing:.04em;text-transform:uppercase;
+  color:var(--cream);margin-bottom:14px;text-align:center;
+}
+.fs-body{
+  font-size:13px;color:var(--c70);line-height:1.7;
+  margin-bottom:28px;text-align:center;max-width:38ch;margin-left:auto;margin-right:auto;
+}
+.df-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.df-field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.df-field label{
+  font-size:9px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(200,160,53,.6);
+}
+.df-field input,
+.df-field select{
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:13.5px;font-weight:400;
+  color:var(--cream);
   padding:11px 14px;
-  background:var(--cream-2);
-  border:1px solid var(--ink-12);
-  border-radius:5px;outline:none;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(200,160,53,.22);
+  border-radius:0;outline:none;
   -webkit-appearance:none;appearance:none;
-  transition:border-color .15s,box-shadow .15s;
+  transition:border-color .18s,background .18s;
   width:100%;
 }
-.field input:focus,.field select:focus{
-  border-color:var(--ink);
-  box-shadow:0 0 0 3px rgba(32,30,17,.06);
+.df-field input:focus,
+.df-field select:focus{
+  border-color:rgba(200,160,53,.55);
+  background:rgba(255,255,255,.07);
 }
-.field select{
-  background-image:linear-gradient(45deg,transparent 50%,var(--ink-50) 50%),
-                   linear-gradient(135deg,var(--ink-50) 50%,transparent 50%);
-  background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;
-  background-size:5px 5px;background-repeat:no-repeat;padding-right:40px;
+.df-field input::placeholder{color:var(--c20)}
+.df-field select{
+  background-image:linear-gradient(45deg,transparent 50%,rgba(200,160,53,.5) 50%),
+                   linear-gradient(135deg,rgba(200,160,53,.5) 50%,transparent 50%);
+  background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;
+  background-size:5px 5px;background-repeat:no-repeat;
+  padding-right:36px;
+  background-color:rgba(255,255,255,.04);
+  cursor:pointer;
 }
-.form-submit{
-  width:100%;margin-top:6px;
+.df-field select option{background:#1a1208;color:var(--cream)}
+.df-submit{
+  width:100%;margin-top:4px;
   padding:13px 24px;
-  font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;
-  background:var(--ink);color:var(--cream);
-  border:none;border-radius:999px;cursor:pointer;
-  transition:opacity .18s;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;
+  color:var(--cream);
+  border:1px solid rgba(200,160,53,.4);
+  cursor:pointer;
+  transition:background .2s,border-color .2s;
 }
-.form-submit:hover{opacity:.8}
-.form-submit:disabled{opacity:.38;cursor:default}
-.form-privacy{font-size:11px;color:var(--ink-35);margin-top:12px;line-height:1.55}
-.form-success{
-  display:none;padding:22px 24px;
-  background:var(--cream-2);border:1px solid var(--ink-07);
-  border-radius:6px;font-size:15px;color:var(--ink-70);line-height:1.65;
+.df-submit:hover{background:rgba(200,160,53,.12);border-color:rgba(200,160,53,.7)}
+.df-submit:disabled{opacity:.35;cursor:default}
+.df-privacy{font-size:10.5px;color:var(--c45);margin-top:11px;line-height:1.5;text-align:center}
+.df-success{
+  display:none;
+  font-size:14px;color:var(--cream);
+  line-height:1.7;text-align:center;
+  padding:28px;
+  border:1px solid var(--c10);
+  background:rgba(255,255,255,.03);
 }
-.form-success.on{display:block}
-
-/* ─── FOOTER ─── */
-.site-footer{
-  background:var(--deep);
-  padding:28px 48px;
-  position:relative;z-index:60;
-  border-top:1px solid rgba(255,255,255,.04);
-}
-.footer-inner{
-  max-width:1280px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
-}
-.footer-logo{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,230,.50)}
-.footer-copy{font-size:11px;color:rgba(243,239,230,.28);letter-spacing:.01em}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:1024px){
-  :root{--off:110px}
-  .p-hero{padding:36px 36px 40px}
-  .p-pathway,.p-specialists,.s-contact{padding-left:36px;padding-right:36px}
-  .nav-inner{padding:0 36px}
-  .site-footer{padding:26px 36px}
-  .hero-bottom{grid-template-columns:1fr 280px}
-  .ugi-grid{gap:40px}
-}
-@media(max-width:860px){
-  .ugi-grid,.metabolic-wrap,.contact-inner{grid-template-columns:1fr;gap:32px}
-  .metabolic-line{display:none}
-  .hero-bottom{grid-template-columns:1fr;gap:24px}
-  .hero-aside{padding:0}
-  .hero-body{max-width:none}
-  .spec-grid{grid-template-columns:repeat(3,1fr);gap:18px}
-  .bariatric-inner .pw-h2{font-size:clamp(36px,7vw,60px)}
-}
-@media(max-width:720px){
-  .nav-links,.nav-cta{display:none}
-  .nav-burger{display:flex}
-  .nav-inner{padding:0 22px}
-  .p-hero{padding:24px 22px 28px}
-  .p-pathway,.p-specialists,.s-contact{padding-left:22px;padding-right:22px}
-  .site-footer{padding:22px}
-
-  /* On mobile — disable sticky; let sections flow */
-  .pin{
-    position:relative;top:0;
-    height:auto;min-height:calc(100vh - var(--off));
-    overflow:visible;
-    box-shadow:none!important;
-  }
-  .pin-wrap:nth-child(n) .pin{z-index:auto;box-shadow:none}
-  .p-hero,.p-ugi,.p-bariatric,.p-metabolic,.p-specialists{
-    padding-top:60px;padding-bottom:60px;
-    display:block;
-  }
-  .hero-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
-  .ghost-num{font-size:clamp(100px,36vw,180px)}
-  .spec-grid{grid-template-columns:1fr 1fr;gap:18px}
-  .s-contact{padding-top:64px;padding-bottom:72px}
-  .contact-inner{gap:40px}
-  .form-row{grid-template-columns:1fr}
-}
-@media(max-width:460px){
-  .spec-grid{grid-template-columns:1fr}
-  .hero-word{font-size:clamp(64px,18vw,100px)}
-  :root{--bh:52px;--off:118px}
+.df-success.on{display:block}
+@media(max-width:600px){
+  .df-row{grid-template-columns:1fr}
+  .form-slide-inner{max-width:100%}
 }
 
-/* ─── OPENING BAR ─── */
-.opening-bar{
-  position:fixed;
-  bottom:0;left:0;right:0;
-  z-index:190;
-  background:var(--cream);
-  border-top:1px solid rgba(32,30,17,.09);
-  padding:16px 48px;
-  display:flex;align-items:center;
-}
-.opening-bar p{
-  font-size:clamp(17px,2.8vw,40px);
-  font-weight:600;
-  letter-spacing:.055em;
-  text-transform:uppercase;
-  color:#7a6828;
-  line-height:1.15;
-  white-space:nowrap;
-}
-body{padding-bottom:90px}
-
-@media(max-width:1024px){
-  .opening-bar{padding:14px 36px}
-  body{padding-bottom:80px}
-}
-@media(max-width:720px){
-  .opening-bar{padding:14px 22px}
-  .opening-bar p{white-space:normal;line-height:1.2}
-  body{padding-bottom:100px}
-}
-@media(max-width:460px){
-  .opening-bar p{font-size:clamp(16px,5.8vw,26px)}
-  body{padding-bottom:110px}
+/* ── MOBILE SLIDES ── */
+@media(max-width:768px){
+  .slide{position:relative;top:0;height:auto;min-height:100vh;box-shadow:none!important}
+  .slide-wrap:nth-child(n) .slide{z-index:auto}
+  .slide-bg{inset:-5% 0}
+  .slide-content{justify-content:center;min-height:100vh}
 }
 </style>
 </head>
@@ -534,369 +307,232 @@ body{padding-bottom:90px}
 
 <!-- BANNER -->
 <div class="banner">
-  <p><strong>MGOS</strong> and <strong>MWLS</strong>, now united at <strong>MERIDIAN.</strong>&ensp;Multidisciplinary care and a connected patient experience.</p>
+  <p><strong>MGOS</strong> AND <strong>MWLS</strong> NOW UNITED AT <strong>MERIDIAN</strong></p>
 </div>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <span class="nav-logo">Meridian</span>
-    <ul class="nav-links">
-      <li><a href="#upper-gi">Upper GI</a></li>
-      <li><a href="#bariatric">Bariatric</a></li>
-      <li><a href="#metabolic">Metabolic</a></li>
-      <li><a href="#specialists">Clinicians</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Register interest</a>
-    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-drawer" id="nav-drawer">
-  <a href="#upper-gi">Upper GI</a>
-  <a href="#bariatric">Bariatric</a>
-  <a href="#metabolic">Metabolic</a>
-  <a href="#specialists">Clinicians</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" class="d-cta">Register interest</a>
+<!-- NAV DOTS -->
+<div class="nav-dots" aria-label="Slide navigation">
+  <button class="nav-dot on" data-s="0" aria-label="Slide 1"></button>
+  <button class="nav-dot" data-s="1" aria-label="Slide 2"></button>
+  <button class="nav-dot" data-s="2" aria-label="Slide 3"></button>
+  <button class="nav-dot" data-s="3" aria-label="Slide 4"></button>
 </div>
 
-<!-- ── HERO ── -->
-<div class="pin-wrap" id="hero" style="height:200vh">
-  <section class="pin p-hero">
-    <div class="hero-top">
-      <span class="hero-eyebrow">Fitzroy &middot; Melbourne</span>
-      <span class="hero-tag">Opening 2026</span>
+<!-- OPENING (fixed bottom) -->
+<div class="opening-fixed" aria-label="Opening announcement">
+  <img src="images/opening.png" alt="Opening September 2026. Brenan Place, Fitzroy." />
+</div>
+
+<!-- ══ SLIDE 1 — HERO ══ -->
+<div class="slide-wrap" id="s0" style="height:200vh">
+  <section class="slide">
+    <div class="slide-bg" style="background-image:url('images/bg-01.png')" data-parallax></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
+    <div class="slide-content">
+      <img src="images/wordmark.png" alt="Meridian — GI and Metabolic Health" class="s1-wordmark" />
     </div>
-    <div>
-      <div class="hero-divider"></div>
-      <div class="hero-bottom">
-        <h1 class="hero-word">MERIDIAN</h1>
-        <div class="hero-aside">
-          <p class="hero-sub">Upper GI.&ensp;Bariatric.&ensp;Metabolic.</p>
-          <p class="hero-body">A clinic providing upper gastrointestinal, bariatric and metabolic care within one clinical setting.</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn">Register interest</a>
-            <span class="hero-note">Brenan Place, Fitzroy.</span>
+  </section>
+</div>
+
+<!-- ══ SLIDE 2 — CLINICAL ══ -->
+<div class="slide-wrap" id="s1" style="height:200vh">
+  <section class="slide">
+    <div class="slide-bg" style="background-image:url('images/bg-02.png')" data-parallax></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
+    <div class="slide-content">
+      <p class="s2-heading">Surgeon-led clinical care</p>
+      <div class="s2-surgeons">
+        <div class="s2-surgeon">
+          <div class="s2-portrait"><img src="team/team-michael-hii.png" alt="A/Prof Michael Hii" loading="lazy" /></div>
+          <p class="s2-name">A/Prof Michael Hii</p>
+          <p class="s2-role">OG &amp; Bariatric Surgeon</p>
+        </div>
+        <div class="s2-surgeon">
+          <div class="s2-portrait"><img src="team/team-nicole-winter.png" alt="Dr Nicole Winter" loading="lazy" /></div>
+          <p class="s2-name">Dr Nicole Winter</p>
+          <p class="s2-role">OG &amp; Bariatric Surgeon</p>
+        </div>
+        <div class="s2-surgeon">
+          <div class="s2-portrait"><img src="team/team-salena-ward.png" alt="Dr Salena Ward" loading="lazy" /></div>
+          <p class="s2-name">Dr Salena Ward</p>
+          <p class="s2-role">Gastric &amp; Bariatric Surgeon</p>
+        </div>
+      </div>
+      <div class="s2-table">
+        <div class="s2-row">
+          <span class="s2-pathway">Upper GI</span>
+          <span class="s2-desc">Care for patients with upper gastrointestinal conditions, including reflux, oesophageal, gastric and related concerns. Assessment, surgical care and structured follow-up within one clinical setting.</span>
+        </div>
+        <div class="s2-row">
+          <span class="s2-pathway">Bariatric</span>
+          <span class="s2-desc">Assessment and surgical care for patients considering bariatric surgery. Consultation, procedure planning and twelve months of follow-up with the same clinical team.</span>
+        </div>
+        <div class="s2-row">
+          <span class="s2-pathway">Metabolic Medicine</span>
+          <span class="s2-desc">Clinician-guided support for patients exploring non-surgical weight management and metabolic health care pathways. Assessment, education and ongoing clinical support.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ SLIDE 3 — PATIENT INTEREST ══ -->
+<div class="slide-wrap" id="s2" style="height:200vh">
+  <section class="slide">
+    <div class="slide-bg" style="background-image:url('images/bg-03.png')" data-parallax></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
+    <div class="slide-content">
+      <div class="form-slide-inner">
+        <span class="fs-eyebrow">For patients</span>
+        <div class="fs-rule"></div>
+        <h2 class="fs-h2">Register</h2>
+        <p class="fs-body">Register your details to receive updates regarding Meridian, appointments and future clinical services.</p>
+
+        <form id="patient-form" name="patient-interest" method="POST" data-netlify="true" netlify-honeypot="bot-p">
+          <input type="hidden" name="form-name" value="patient-interest" />
+          <p style="display:none"><label>Skip: <input name="bot-p" /></label></p>
+          <div class="df-row">
+            <div class="df-field"><label for="p-fn">First name</label><input type="text" id="p-fn" name="first_name" required autocomplete="given-name" /></div>
+            <div class="df-field"><label for="p-ln">Last name</label><input type="text" id="p-ln" name="last_name" required autocomplete="family-name" /></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ── UPPER GI ── -->
-<div class="pin-wrap" id="upper-gi" style="height:160vh">
-  <section class="pin p-pathway p-ugi">
-    <span class="ghost-num" aria-hidden="true">01</span>
-    <div class="ugi-grid">
-      <div>
-        <span class="pw-eyebrow">Pathway 01</span>
-        <span class="pw-rule"></span>
-        <h2 class="pw-h2">Upper GI<br>Care</h2>
-      </div>
-      <div>
-        <p class="pw-body">Care for patients with upper gastrointestinal conditions, including reflux, oesophageal, gastric and related gastrointestinal concerns.</p>
-        <p class="pw-body">Meridian provides clinical assessment, surgical care and ongoing patient support within one clinical setting.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ── BARIATRIC ── -->
-<div class="pin-wrap" id="bariatric" style="height:160vh">
-  <section class="pin p-pathway p-bariatric">
-    <span class="ghost-num" aria-hidden="true">02</span>
-    <div class="bariatric-inner">
-      <span class="pw-eyebrow">Pathway 02</span>
-      <span class="pw-rule"></span>
-      <h2 class="pw-h2">Bariatric<br>Surgery</h2>
-      <p class="pw-body" style="margin-top:24px">Assessment and surgical care for patients considering bariatric surgery.</p>
-      <p class="pw-body">Meridian supports patients through consultation, assessment, procedure planning and follow-up care based on individual clinical needs.</p>
-    </div>
-  </section>
-</div>
-
-<!-- ── METABOLIC ── -->
-<div class="pin-wrap" id="metabolic" style="height:160vh">
-  <section class="pin p-pathway p-metabolic">
-    <span class="ghost-num" aria-hidden="true">03</span>
-    <div class="metabolic-wrap">
-      <div class="metabolic-content">
-        <span class="pw-eyebrow">Pathway 03</span>
-        <span class="pw-rule"></span>
-        <h2 class="pw-h2">Metabolic<br>Care</h2>
-        <p class="pw-body" style="margin-top:24px">Clinician-guided support for patients exploring non-surgical weight management and metabolic health care pathways.</p>
-        <p class="pw-body">Meridian provides assessment, education and ongoing clinical support based on individual needs.</p>
-      </div>
-      <div class="metabolic-line" aria-hidden="true"></div>
-    </div>
-  </section>
-</div>
-
-<!-- ── SPECIALISTS ── -->
-<div class="pin-wrap" id="specialists" style="height:160vh">
-  <section class="pin p-specialists">
-    <div class="spec-head">
-      <span class="spec-eyebrow">Your care team</span>
-      <span class="spec-rule"></span>
-      <h2 class="spec-h2">Surgeon-led care</h2>
-    </div>
-    <div class="spec-grid">
-
-      <div class="spec-card">
-        <div class="tc-photo">
-          <img src="team/team-michael-hii.png" alt="A/Prof Michael Hii" loading="lazy" />
-        </div>
-        <div class="tc-body">
-          <span class="role-chip">Surgeon</span>
-          <h3>A/Prof Michael Hii</h3>
-          <p class="spec-role">Oesophago-Gastric &amp; Bariatric Surgeon</p>
-          <p class="spec-quals">FRACS &middot; MBBS &middot; BMedSci &middot; PGDipSurgAnat<br>Adjunct Lecturer, Monash University</p>
-        </div>
-      </div>
-
-      <div class="spec-card">
-        <div class="tc-photo">
-          <img src="team/team-nicole-winter.png" alt="Dr Nicole Winter" loading="lazy" />
-        </div>
-        <div class="tc-body">
-          <span class="role-chip">Surgeon</span>
-          <h3>Dr Nicole Winter</h3>
-          <p class="spec-role">Oesophago-Gastric &amp; Bariatric Surgeon</p>
-          <p class="spec-quals">FRACS &middot; MBBS (Hons) &middot; BMedSci &middot; GChPOM<br>Clinical Honorary Lecturer, University of Melbourne</p>
-        </div>
-      </div>
-
-      <div class="spec-card">
-        <div class="tc-photo">
-          <img src="team/team-salena-ward.png" alt="Dr Salena Ward" loading="lazy" />
-        </div>
-        <div class="tc-body">
-          <span class="role-chip">Surgeon</span>
-          <h3>Dr Salena Ward</h3>
-          <p class="spec-role">Gastric, Bariatric &amp; General Surgeon</p>
-          <p class="spec-quals">MBBS &middot; FRACS &middot; MS &middot; PGDipSurgAnat<br>Adjunct Lecturer, Monash University</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-</div>
-
-<!-- ── ENQUIRIES ── -->
-<section class="s-enquiries" id="contact">
-  <div class="enq-top">
-    <span class="enq-eyebrow">Enquiries</span>
-    <span class="enq-rule"></span>
-  </div>
-  <div class="enq-grid">
-
-    <!-- CTA 01 — Patient Interest -->
-    <div class="enq-col">
-      <span class="enq-col-eyebrow">For patients</span>
-      <span class="enq-col-rule"></span>
-      <h2 class="enq-col-h2">Patient Interest</h2>
-      <p class="enq-col-body">Register your details to receive updates regarding Meridian, appointments and future clinical services.</p>
-      <form name="patient-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="patient-form">
-        <input type="hidden" name="form-name" value="patient-interest" />
-        <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
-        <div class="form-row">
-          <div class="field">
-            <label for="p-fn">First name</label>
-            <input type="text" id="p-fn" name="first_name" required autocomplete="given-name" />
+          <div class="df-field"><label for="p-em">Email</label><input type="email" id="p-em" name="email" required autocomplete="email" /></div>
+          <div class="df-field"><label for="p-ph">Phone</label><input type="tel" id="p-ph" name="phone" autocomplete="tel" /></div>
+          <div class="df-field">
+            <label for="p-ai">I would like to discuss</label>
+            <select id="p-ai" name="area_of_interest" required>
+              <option value="" disabled selected>Select&hellip;</option>
+              <option value="upper-gi">Upper GI care</option>
+              <option value="bariatric">Bariatric surgery</option>
+              <option value="metabolic">Metabolic medicine</option>
+              <option value="glp1">GLP-1 therapy</option>
+            </select>
           </div>
-          <div class="field">
-            <label for="p-ln">Last name</label>
-            <input type="text" id="p-ln" name="last_name" required autocomplete="family-name" />
+          <button type="submit" class="df-submit">Register</button>
+          <p class="df-privacy">Your details will be used only to respond to your enquiry.</p>
+        </form>
+        <div class="df-success" id="patient-success">
+          Thank you. We will be in touch to assist in planning your personal pathway.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ SLIDE 4 — REFERRER ══ -->
+<div class="slide-wrap" id="s3" style="height:200vh">
+  <section class="slide">
+    <div class="slide-bg" style="background-image:url('images/bg-04.png')" data-parallax></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-mono"><img src="images/monogram.png" alt="" aria-hidden="true" /></div>
+    <div class="slide-content">
+      <div class="form-slide-inner">
+        <span class="fs-eyebrow">For referrers</span>
+        <div class="fs-rule"></div>
+        <h2 class="fs-h2">Referrer Enquiries</h2>
+        <p class="fs-body">General practitioners and healthcare professionals can register to receive the Meridian referrer information pack.</p>
+
+        <form id="referrer-form" name="referrer-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-r">
+          <input type="hidden" name="form-name" value="referrer-enquiry" />
+          <p style="display:none"><label>Skip: <input name="bot-r" /></label></p>
+          <div class="df-field"><label for="r-nm">Name</label><input type="text" id="r-nm" name="name" required autocomplete="name" /></div>
+          <div class="df-row">
+            <div class="df-field"><label for="r-cl">Clinic</label><input type="text" id="r-cl" name="clinic" required /></div>
+            <div class="df-field"><label for="r-rl">Role</label><input type="text" id="r-rl" name="role" required /></div>
           </div>
-        </div>
-        <div class="field">
-          <label for="p-em">Email</label>
-          <input type="email" id="p-em" name="email" required autocomplete="email" />
-        </div>
-        <div class="field">
-          <label for="p-ph">Phone</label>
-          <input type="tel" id="p-ph" name="phone" autocomplete="tel" />
-        </div>
-        <div class="field">
-          <label for="p-ai">Area of interest</label>
-          <select id="p-ai" name="area_of_interest" required>
-            <option value="" disabled selected>Select&hellip;</option>
-            <option value="upper-gi">Upper GI care</option>
-            <option value="bariatric">Bariatric surgery</option>
-            <option value="metabolic">Metabolic care</option>
-            <option value="general">General enquiry</option>
-          </select>
-        </div>
-        <button type="submit" class="form-submit">Submit enquiry</button>
-        <p class="form-privacy">Your details will be used only to respond to your enquiry.</p>
-      </form>
-      <div class="form-success" id="patient-success">
-        Thank you. Your details have been received. The team will be in touch ahead of opening.
-      </div>
-    </div>
-
-    <div class="enq-vline" aria-hidden="true"></div>
-
-    <!-- CTA 02 — Referrer Enquiries -->
-    <div class="enq-col">
-      <span class="enq-col-eyebrow">For referrers</span>
-      <span class="enq-col-rule"></span>
-      <h2 class="enq-col-h2">Referrer Enquiries</h2>
-      <p class="enq-col-body">General practitioners and healthcare professionals can request the Meridian referrer information pack.</p>
-      <form name="referrer-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field-r" id="referrer-form">
-        <input type="hidden" name="form-name" value="referrer-enquiry" />
-        <p style="display:none"><label>Skip: <input name="bot-field-r" /></label></p>
-        <div class="field">
-          <label for="r-nm">Name</label>
-          <input type="text" id="r-nm" name="name" required autocomplete="name" />
-        </div>
-        <div class="field">
-          <label for="r-cl">Clinic</label>
-          <input type="text" id="r-cl" name="clinic" required />
-        </div>
-        <div class="field">
-          <label for="r-rl">Role</label>
-          <input type="text" id="r-rl" name="role" required />
-        </div>
-        <div class="field">
-          <label for="r-em">Email</label>
-          <input type="email" id="r-em" name="email" required autocomplete="email" />
-        </div>
-        <div class="field">
-          <label for="r-ph">Phone</label>
-          <input type="tel" id="r-ph" name="phone" autocomplete="tel" />
-        </div>
-        <button type="submit" class="form-submit">Request referrer pack</button>
-        <p class="form-privacy">Details will be used to send the Meridian referrer information pack.</p>
-      </form>
-      <div class="form-success" id="referrer-success">
-        Thank you. Your request has been received. The referrer pack will be forwarded once available.
-      </div>
-      <div class="ref-docs">
-        <span class="ref-docs-label">Clinical documents</span>
-        <div class="ref-doc-item">
-          <span class="ref-doc-name">Referrer information pack</span>
-          <span class="ref-doc-note">Available at opening</span>
-        </div>
-        <div class="ref-doc-item">
-          <span class="ref-doc-name">Specialist information</span>
-          <span class="ref-doc-note">Available at opening</span>
-        </div>
-        <div class="ref-doc-item">
-          <span class="ref-doc-name">Referral pathway guide</span>
-          <span class="ref-doc-note">Available at opening</span>
+          <div class="df-field"><label for="r-em">Email</label><input type="email" id="r-em" name="email" required autocomplete="email" /></div>
+          <div class="df-field"><label for="r-ph">Phone</label><input type="tel" id="r-ph" name="phone" autocomplete="tel" /></div>
+          <div class="df-field">
+            <label for="r-rel">Referrer relationship</label>
+            <select id="r-rel" name="referrer_relationship" required>
+              <option value="" disabled selected>Select&hellip;</option>
+              <option value="mgos">We are existing MGOS referrers</option>
+              <option value="mwls">We are existing MWLS referrers</option>
+              <option value="new">New to Meridian</option>
+            </select>
+          </div>
+          <button type="submit" class="df-submit">Request referrer pack</button>
+          <p class="df-privacy">Details will be used to send the Meridian referrer information pack.</p>
+        </form>
+        <div class="df-success" id="referrer-success">
+          Thank you. Our referrer packs will be with you July 01 2026.
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span class="footer-logo">Meridian Health</span>
-    <span class="footer-copy">&copy; 2026 &middot; Brenan Place, Fitzroy VIC 3065</span>
-  </div>
-</footer>
+  </section>
+</div>
 
 <script>
 (function(){
+  var wh = window.innerHeight;
 
-  // Mobile menu
-  var burger = document.querySelector('.nav-burger');
-  var drawer = document.getElementById('nav-drawer');
-  if(burger){
-    burger.addEventListener('click', function(){
-      var open = document.body.classList.toggle('menu-open');
-      burger.setAttribute('aria-expanded', open);
+  // ── Parallax ──
+  var bgs = document.querySelectorAll('[data-parallax]');
+  function onScroll(){
+    wh = window.innerHeight;
+    bgs.forEach(function(bg){
+      var wrap = bg.closest('.slide-wrap');
+      var rect = wrap.getBoundingClientRect();
+      var progress = -rect.top / wh; // 0 when wrap top at viewport top
+      var shift = (progress - 0.5) * 18;
+      bg.style.transform = 'translateY('+shift+'%)';
     });
-    if(drawer){
-      drawer.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){
-          document.body.classList.remove('menu-open');
-          burger.setAttribute('aria-expanded','false');
-        });
-      });
-    }
+  }
+  if(window.matchMedia('(min-width:769px)').matches){
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
   }
 
-  // Smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href').slice(1);
-      var target = document.getElementById(id);
-      if(!target) return;
-      e.preventDefault();
-      // On mobile sticky is disabled so scroll normally;
-      // On desktop, scroll to the pin-wrap start
-      var pw = target.closest('.pin-wrap') || target;
-      var top = pw.getBoundingClientRect().top + window.pageYOffset - parseInt(getComputedStyle(document.documentElement).getPropertyValue('--off'));
-      window.scrollTo({top: Math.max(0, top), behavior:'smooth'});
+  // ── Nav dots ──
+  var dots = document.querySelectorAll('.nav-dot');
+  var wraps = document.querySelectorAll('.slide-wrap');
+  function updateDots(){
+    var s = window.pageYOffset;
+    var active = 0;
+    wraps.forEach(function(w,i){
+      if(s >= w.offsetTop - wh*0.5) active = i;
+    });
+    dots.forEach(function(d,i){ d.classList.toggle('on',i===active) });
+  }
+  window.addEventListener('scroll', updateDots, {passive:true});
+  dots.forEach(function(dot){
+    dot.addEventListener('click',function(){
+      var i = parseInt(dot.dataset.s);
+      var wrap = wraps[i];
+      if(wrap) window.scrollTo({top: wrap.offsetTop, behavior:'smooth'});
     });
   });
 
-  // Contact & specialists are not inside pin-wraps; scroll directly
-  document.querySelectorAll('a[href="#contact"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      var el = document.getElementById('contact');
-      if(el) el.scrollIntoView({behavior:'smooth'});
-    });
-  });
-
-  // Netlify forms — generic handler
+  // ── Netlify forms ──
   document.querySelectorAll('form[data-netlify]').forEach(function(form){
-    var successId = form.id.replace('-form','-success');
-    var success = document.getElementById(successId);
-    form.addEventListener('submit', function(e){
+    var sid = form.id.replace('-form','-success');
+    var succ = document.getElementById(sid);
+    form.addEventListener('submit',function(e){
       e.preventDefault();
-      var btn = form.querySelector('.form-submit');
-      var origLabel = btn.textContent;
+      var btn = form.querySelector('.df-submit');
+      var orig = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Sending\u2026';
-      var body = new URLSearchParams(new FormData(form)).toString();
-      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-        .then(function(){
-          form.style.display = 'none';
-          if(success) success.classList.add('on');
-        })
-        .catch(function(){
-          btn.disabled = false;
-          btn.textContent = origLabel;
-        });
+      fetch('/',{
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(){
+        form.style.display='none';
+        if(succ) succ.classList.add('on');
+      }).catch(function(){
+        btn.disabled=false;
+        btn.textContent=orig;
+      });
     });
   });
 
-  // Nav active link tracking
-  var sections = document.querySelectorAll('[id]');
-  var links = document.querySelectorAll('.nav-links a');
-  if('IntersectionObserver' in window){
-    var sio = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var id = e.target.id;
-          links.forEach(function(l){
-            var href = l.getAttribute('href');
-            l.style.color = (href === '#'+id) ? 'var(--ink)' : '';
-          });
-        }
-      });
-    },{rootMargin:'-35% 0px -35% 0px'});
-    sections.forEach(function(s){sio.observe(s)});
-  }
+  // ── Dot init ──
+  updateDots();
 
 })();
 </script>
-
-<!-- OPENING BAR -->
-<div class="opening-bar" aria-label="Opening announcement">
-  <p>Opening September 2026.&ensp;Brenan Place, Fitzroy.</p>
-</div>
-
 </body>
 </html>
