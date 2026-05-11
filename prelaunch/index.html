@@ -67,8 +67,8 @@ html,body{
 .mono-fixed img{
   height:56px;width:auto;
   mix-blend-mode:screen;
-  filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
-  opacity:.9;
+  filter:invert(1) sepia(1) saturate(1.9) brightness(0.81) hue-rotate(1deg);
+  opacity:.92;
 }
 @media(max-width:600px){.mono-fixed img{height:88px}}
 /* Darker overlay on referrer slide for legibility */
@@ -87,7 +87,7 @@ html,body{
 .opening-fixed img{
   height:17px;width:auto;
   mix-blend-mode:screen;
-  filter:invert(1) sepia(.7) saturate(2.2) brightness(.78);
+  filter:invert(1) sepia(1) saturate(1.9) brightness(0.81) hue-rotate(1deg);
   opacity:.72;
   max-width:88vw;
 }
@@ -168,7 +168,7 @@ html,body{
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
 }
-@media(max-width:720px){.slide-content{padding:calc(var(--bh)+72px) 24px 48px}}
+@media(max-width:720px){.slide-content{padding:calc(var(--bh)+72px) 24px 52px}}
 
 /* ═══════════════════════════════════════════
    SLIDE 0 — HERO
@@ -176,7 +176,7 @@ html,body{
 .s0-wordmark{
   max-width:min(520px,80vw);width:100%;
   mix-blend-mode:screen;
-  filter:invert(1) sepia(.6) saturate(2) brightness(.82);
+  filter:invert(1) sepia(1) saturate(1.9) brightness(0.81) hue-rotate(1deg);
   opacity:.95;
 }
 @media(max-width:600px){.s0-wordmark{max-width:min(300px,85vw)}}
@@ -331,9 +331,10 @@ html,body{
    ═══════════════════════════════════════════ */
 @media(max-width:768px){
   .slide-content{
-    padding:calc(var(--bh) + 52px) 20px 80px;
+    /* monogram is 88px tall, sits at top:40px → bottom edge at 128px
+       padding-top must clear that + comfortable gap = 140px min        */
+    padding:calc(var(--bh) + 106px) 20px 90px;
     justify-content:flex-start;
-    padding-top:calc(var(--bh) + 52px);
   }
   #s0 .slide-content{
     justify-content:center;
@@ -342,7 +343,15 @@ html,body{
     padding-bottom:0;
   }
   #s1 .slide-content{
-    justify-content:center;
+    justify-content:flex-start;
+    align-items:center;
+  }
+  /* form slides — allow inner scroll so nothing is clipped */
+  #s2 .slide-content,
+  #s3 .slide-content{
+    justify-content:flex-start;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
   }
   /* s1 mobile carousel — 3 visible, swipeable */
   .s1-team-grid{
@@ -554,6 +563,8 @@ html,body{
         <p class="fs-body">Register your details to receive updates regarding Meridian, appointments and future clinical services.</p>
         <form id="patient-form" name="patient-interest" method="POST" data-netlify="true" netlify-honeypot="bot-p">
           <input type="hidden" name="form-name" value="patient-interest" />
+          <input type="hidden" name="_subject" value="Webform Test" />
+          <input type="hidden" name="_to" value="media@meridianhealth.com.au" />
           <p style="display:none"><label>Skip: <input name="bot-p" /></label></p>
           <div class="df-row">
             <div class="df-field"><label for="p-fn">First name</label><input type="text" id="p-fn" name="first_name" required autocomplete="given-name" /></div>
@@ -594,6 +605,8 @@ html,body{
         <p class="fs-body">General practitioners and healthcare professionals can register to receive the Meridian referrer information pack.</p>
         <form id="referrer-form" name="referrer-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-r">
           <input type="hidden" name="form-name" value="referrer-enquiry" />
+          <input type="hidden" name="_subject" value="Webform Test" />
+          <input type="hidden" name="_to" value="media@meridianhealth.com.au" />
           <p style="display:none"><label>Skip: <input name="bot-r" /></label></p>
           <div class="df-field"><label for="r-nm">Name</label><input type="text" id="r-nm" name="name" required autocomplete="name" /></div>
           <div class="df-row">
