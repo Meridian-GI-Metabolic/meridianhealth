@@ -1119,6 +1119,36 @@ main#content > .bleed-deep:last-child{
   .nav-portal svg{width:16px;height:16px}
 }
 
+/* Profile button on team cards */
+.tc-profile-btn{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-size:10px;font-family:"Inter";font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid rgba(154,120,24,.35);padding:0 0 3px;transition:color .18s ease,border-color .18s ease;text-decoration:none}
+.tc-profile-btn::after{content:"→";letter-spacing:0;font-size:12px;opacity:.8}
+.tc-profile-btn:hover{color:var(--ink);border-color:var(--ink-25)}
+
+/* Profile page */
+.profile-hero{padding:64px 0 48px;border-bottom:1px solid var(--ink-08)}
+.profile-hero-inner{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start}
+.profile-hero-img{width:100%;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:radial-gradient(120% 90% at 50% 30%,#ececec 0%,#e2e2e2 55%,#d6d6d6 100%)}
+.profile-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(1) contrast(.96) brightness(1.04)}
+.profile-hero-copy{padding-top:8px}
+.profile-hero-copy .role-chip{display:inline-block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);margin:0 0 20px}
+.profile-hero-copy h1{margin:0 0 10px}
+.profile-hero-copy .role{margin:0 0 8px;color:var(--ink-65);font-size:15px;line-height:1.5}
+.profile-hero-copy .quals{margin:0 0 0;color:var(--ink-45);font-size:13px;line-height:1.65}
+.profile-hero-back{margin-top:28px}
+.profile-bio{max-width:66ch;font-size:16px;line-height:1.8;color:var(--ink-80)}
+.achieve-list{list-style:none;padding:0;margin:0}
+.achieve-list li{padding:14px 0;border-bottom:1px solid var(--ink-08);font-size:15px;color:var(--ink-80);line-height:1.5}
+.achieve-list li:first-child{padding-top:0}
+.pub-list{list-style:none;padding:0;margin:0}
+.pub-list li{padding:16px 0;border-bottom:1px solid var(--ink-08);font-size:14px;color:var(--ink-65);line-height:1.65}
+.pub-list li:first-child{padding-top:0}
+.pub-list li strong{display:block;font-weight:500;color:var(--ink);margin:0 0 3px;font-size:15px}
+@media(max-width:760px){
+  .profile-hero-inner{grid-template-columns:1fr;gap:28px}
+  .profile-hero-img{aspect-ratio:4/3;max-width:280px}
+  .profile-hero{padding:40px 0 32px}
+}
+
 /* Announcement banner */
 .ann-bar{background:#201e11;color:#f7f5ef;text-align:center;padding:10px 24px;font-size:12.5px;font-family:"Inter",system-ui,-apple-system,sans-serif;font-weight:400;letter-spacing:.025em;line-height:1.5;width:100%;box-sizing:border-box}
 .ann-mob{display:none}
