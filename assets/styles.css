@@ -1140,6 +1140,7 @@ main#content > .bleed-deep:last-child{
 .achieve-list li{padding:14px 0;border-bottom:1px solid var(--ink-08);font-size:15px;color:var(--ink-80);line-height:1.5}
 .achieve-list li:first-child{padding-top:0}
 .pub-list{list-style:none;padding:0;margin:0}
+ol.pub-list{list-style:decimal;padding-left:22px}
 .pub-list li{padding:16px 0;border-bottom:1px solid var(--ink-08);font-size:14px;color:var(--ink-65);line-height:1.65}
 .pub-list li:first-child{padding-top:0}
 .pub-list li strong{display:block;font-weight:500;color:var(--ink);margin:0 0 3px;font-size:15px}
