@@ -6,3 +6,9 @@ id = "jCVA6qChiry_0Od0iKpUY"
 uri = "file://prelaunch-meridian.zip"
 type = "unspecified"
 title = "prelaunch-meridian.zip"
+
+[[outputs]]
+id = "9tnYdE6pUzueae92k9Lik"
+uri = "file://exports/meridian-market-context-2026.pdf"
+type = "pdf"
+title = "Meridian Market Context 2026 — A4 PDF"

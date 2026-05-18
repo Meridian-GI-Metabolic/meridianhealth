@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian — Australian Obesity & GLP-1 Market Context 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  :root {
+    --bg-primary: #f7f5ef;
+    --bg-secondary: #ece8df;
+    --text-primary: #15110a;
+    --text-secondary: #4a4132;
+    --accent-gold: #C8A035;
+    --accent-gold-light: #e8d08a;
+    --rule: #d4c9a8;
+  }
+
+  html, body {
+    width: 210mm;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--bg-primary);
+    padding: 14mm 16mm 12mm 16mm;
+    position: relative;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    page-break-after: avoid;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 7mm;
+    border-bottom: 0.5pt solid var(--accent-gold);
+    margin-bottom: 8mm;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 4mm;
+  }
+
+  .monogram {
+    width: 11mm;
+    height: 11mm;
+    object-fit: contain;
+    opacity: 0.9;
+  }
+
+  .header-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5mm;
+  }
+
+  .header-name {
+    font-size: 10pt;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+
+  .header-sub {
+    font-size: 7pt;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .header-doc-title {
+    font-size: 7.5pt;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .header-date {
+    font-size: 7pt;
+    color: var(--accent-gold);
+    letter-spacing: 0.06em;
+    margin-top: 1mm;
+    font-weight: 500;
+  }
+
+  /* ── PAGE TITLE ── */
+  .page-title-block {
+    margin-bottom: 7mm;
+  }
+
+  .page-title {
+    font-size: 17pt;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    line-height: 1.15;
+    margin-bottom: 2mm;
+  }
+
+  .page-title strong {
+    font-weight: 500;
+  }
+
+  .page-descriptor {
+    font-size: 8pt;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    border-left: 1.5pt solid var(--accent-gold);
+    padding-left: 3mm;
+    line-height: 1.5;
+  }
+
+  /* ── GOLD RULE / SECTION DIVIDER ── */
+  .section-rule {
+    width: 100%;
+    height: 0.4pt;
+    background: var(--rule);
+    margin: 5mm 0;
+  }
+
+  .section-rule.gold {
+    background: var(--accent-gold);
+    height: 0.5pt;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-label {
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 2mm;
+  }
+
+  .section-heading {
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 3mm;
+    line-height: 1.3;
+  }
+
+  /* ── STAT CALLOUT GRID ── */
+  .stat-grid {
+    display: grid;
+    gap: 3mm;
+    margin-bottom: 3mm;
+  }
+
+  .stat-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    background: var(--bg-secondary);
+    border-left: 2pt solid var(--accent-gold);
+    padding: 3.5mm 4mm;
+  }
+
+  .stat-number {
+    font-size: 16pt;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8mm;
+  }
+
+  .stat-number em {
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  .stat-label {
+    font-size: 7pt;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
+  /* ── BODY TEXT ── */
+  .body-text {
+    font-size: 8pt;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2.5mm;
+  }
+
+  .body-text.dark {
+    color: var(--text-primary);
+  }
+
+  /* ── INLINE STAT ── */
+  .inline-stat {
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  /* ── LIST ITEMS ── */
+  .criteria-list {
+    list-style: none;
+    margin-bottom: 2.5mm;
+  }
+
+  .criteria-list li {
+    font-size: 7.5pt;
+    color: var(--text-secondary);
+    padding: 1mm 0 1mm 4.5mm;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 0.3pt solid #e2ddd0;
+  }
+
+  .criteria-list li:last-child {
+    border-bottom: none;
+  }
+
+  .criteria-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5pt;
+    height: 1.5pt;
+    border-radius: 50%;
+    background: var(--accent-gold);
+  }
+
+  /* ── NUMBERED REASONS ── */
+  .reason-block {
+    display: flex;
+    gap: 3.5mm;
+    margin-bottom: 4mm;
+    padding-bottom: 4mm;
+    border-bottom: 0.3pt solid #e2ddd0;
+  }
+
+  .reason-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .reason-number {
+    font-size: 14pt;
+    font-weight: 300;
+    color: var(--accent-gold);
+    line-height: 1;
+    min-width: 6mm;
+    padding-top: 0.5mm;
+    letter-spacing: -0.02em;
+  }
+
+  .reason-content {
+    flex: 1;
+  }
+
+  .reason-title {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1mm;
+    line-height: 1.3;
+  }
+
+  .reason-body {
+    font-size: 7.5pt;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── TWO-COLUMN LAYOUT ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+  }
+
+  .col-block {
+    background: var(--bg-secondary);
+    padding: 4mm;
+  }
+
+  .col-block-title {
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 2.5mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 0.4pt solid var(--accent-gold);
+  }
+
+  /* ── MELBOURNE ADVANTAGE ITEMS ── */
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5mm;
+    margin-bottom: 3mm;
+  }
+
+  .advantage-item {
+    padding: 3mm;
+    background: var(--bg-secondary);
+    border-top: 1.5pt solid var(--accent-gold);
+  }
+
+  .advantage-item-label {
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 1mm;
+  }
+
+  .advantage-item-desc {
+    font-size: 6.5pt;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ── POSITIONING STATEMENT ── */
+  .positioning-block {
+    background: #1b180f;
+    padding: 6mm 7mm;
+    margin-top: 5mm;
+  }
+
+  .positioning-text {
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: #f3efe6;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+  }
+
+  .positioning-text strong {
+    font-weight: 500;
+    color: #e8d08a;
+  }
+
+  .positioning-attribution {
+    margin-top: 3mm;
+    font-size: 7pt;
+    color: #8a7d66;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    position: absolute;
+    bottom: 8mm;
+    left: 16mm;
+    right: 16mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.4pt solid var(--rule);
+    padding-top: 2.5mm;
+  }
+
+  .footer-text {
+    font-size: 6.5pt;
+    color: #b0a48a;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-page {
+    font-size: 6.5pt;
+    color: #b0a48a;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ELIGIBILITY COLUMNS ── */
+  .eligibility-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+  }
+
+  .elig-col {
+    padding: 3.5mm 4mm;
+    background: var(--bg-secondary);
+  }
+
+  .elig-col-title {
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 2.5mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 0.4pt solid var(--rule);
+  }
+
+  .elig-bmi {
+    font-size: 20pt;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 0.5mm;
+  }
+
+  .elig-bmi-label {
+    font-size: 7pt;
+    color: var(--text-secondary);
+    margin-bottom: 2mm;
+  }
+
+  .elig-note {
+    font-size: 7pt;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    margin-bottom: 5.5mm;
+  }
+
+  /* ── CONTENT GRID (NATIONAL SNAPSHOT) ── */
+  .snapshot-inline {
+    display: flex;
+    gap: 4mm;
+    align-items: flex-start;
+    margin-bottom: 2mm;
+  }
+
+  .snapshot-stat-large {
+    font-size: 22pt;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .snapshot-stat-unit {
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  .page-2-intro {
+    font-size: 8.5pt;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 4mm;
+    border-left: 1.5pt solid var(--rule);
+    padding-left: 3.5mm;
+  }
+
+  @media print {
+    html, body {
+      width: 210mm;
+    }
+    .page {
+      page-break-after: always;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     PAGE 1
+════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img class="monogram" src="MONOGRAM_PLACEHOLDER" alt="Meridian">
+      <div class="header-brand">
+        <div class="header-name">Meridian</div>
+        <div class="header-sub">GI &amp; Metabolic Health</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-doc-title">Australian Obesity &amp; GLP-1 Market Context<br>Internal Reference Document</div>
+      <div class="header-date">May 2026</div>
+    </div>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <div class="page-title-block">
+    <div class="page-title">Australian Obesity<br><strong>&amp; GLP-1 Market Context</strong></div>
+    <div class="page-descriptor">Demographic and clinical context for the Melbourne and Victorian patient population.<br>Prepared for internal reference — Meridian Health Services.</div>
+  </div>
+
+  <div class="section-rule gold"></div>
+
+  <!-- SECTION 1: NATIONAL OBESITY SNAPSHOT -->
+  <div class="section">
+    <div class="section-label">01 — National Snapshot</div>
+    <div class="section-heading">Australian Obesity Landscape</div>
+
+    <div class="stat-grid stat-grid-3">
+      <div class="stat-card">
+        <div class="stat-number">32<em>%</em></div>
+        <div class="stat-label">Australian adults classified as obese (BMI 30+)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~13<em>%</em></div>
+        <div class="stat-label">Severely obese adults — BMI 35 or above</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">34<em>%</em></div>
+        <div class="stat-label">Additional adults classified as overweight</div>
+      </div>
+    </div>
+
+    <div class="stat-grid stat-grid-3">
+      <div class="stat-card">
+        <div class="stat-number">~7<em>M</em></div>
+        <div class="stat-label">Australians living with obesity</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~3<em>M</em></div>
+        <div class="stat-label">Estimated adults meeting BMI 35+ clinical threshold</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~500<em>k</em></div>
+        <div class="stat-label">Australians using GLP-1 medications monthly (2026 est.)</div>
+      </div>
+    </div>
+
+    <div class="body-text">Australia ranks among the fastest-growing GLP-1 markets globally. Health Minister Mark Butler confirmed approximately 400,000 Australians are paying full private market price for GLP-1 medications, with UNSW-linked research estimating 180,000–240,000 privately accessing them monthly. An estimated 6 million units were dispensed in the 2024–25 year.</div>
+  </div>
+
+  <div class="section-rule"></div>
+
+  <!-- SECTION 2: VICTORIAN & MELBOURNE MARKET -->
+  <div class="section">
+    <div class="section-label">02 — Victorian &amp; Melbourne Market Sizing</div>
+    <div class="section-heading">Regional Population &amp; Clinical Cohort</div>
+
+    <div class="two-col">
+      <div>
+        <div class="col-block">
+          <div class="col-block-title">Victoria — Est. 7 million</div>
+          <div class="stat-grid" style="grid-template-columns: 1fr; gap: 2mm;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 1.5mm 0; border-bottom: 0.3pt solid #e2ddd0;">
+              <span style="font-size:7.5pt; color: var(--text-secondary);">Overweight or obese adults</span>
+              <span style="font-size:9.5pt; font-weight:500; color: var(--text-primary);">~2.2M</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 1.5mm 0; border-bottom: 0.3pt solid #e2ddd0;">
+              <span style="font-size:7.5pt; color: var(--text-secondary);">Obese adults (BMI 30+)</span>
+              <span style="font-size:9.5pt; font-weight:500; color: var(--text-primary);">~900k</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 1.5mm 0;">
+              <span style="font-size:7.5pt; color: var(--text-secondary);">Severe obesity cohort (BMI 35+)</span>
+              <span style="font-size:9.5pt; font-weight:500; color: var(--accent-gold);">~350k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="col-block">
+          <div class="col-block-title">Greater Melbourne — Est. 5.5 million</div>
+          <div style="grid-template-columns: 1fr; gap: 2mm; display: grid;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 1.5mm 0; border-bottom: 0.3pt solid #e2ddd0;">
+              <span style="font-size:7.5pt; color: var(--text-secondary);">Overweight or obese adults</span>
+              <span style="font-size:9.5pt; font-weight:500; color: var(--text-primary);">~1.8M</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 1.5mm 0; border-bottom: 0.3pt solid #e2ddd0;">
+              <span style="font-size:7.5pt; color: var(--text-secondary);">Obese adults (BMI 30+)</span>
+              <span style="font-size:9.5pt; font-weight:500; color: var(--text-primary);">~750k</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 1.5mm 0;">
+              <span style="font-size:7.5pt; color: var(--text-secondary);">Severe obesity cohort (BMI 35+)</span>
+              <span style="font-size:9.5pt; font-weight:500; color: var(--accent-gold);">~280k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-text" style="margin-top:2.5mm;">These cohorts represent the primary clinical population for bariatric surgery, metabolic medicine, GLP-1 programs, and multidisciplinary obesity care. The Melbourne-area BMI 35+ cohort alone — estimated at 220,000–280,000 adults — represents a substantially underpenetrated surgical and metabolic treatment market.</div>
+  </div>
+
+  <!-- FOOTER PAGE 1 -->
+  <div class="footer">
+    <div class="footer-text">Meridian GI &amp; Metabolic Health — Internal Reference — May 2026</div>
+    <div class="footer-page">1 / 2</div>
+  </div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 2
+════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img class="monogram" src="MONOGRAM_PLACEHOLDER" alt="Meridian">
+      <div class="header-brand">
+        <div class="header-name">Meridian</div>
+        <div class="header-sub">GI &amp; Metabolic Health</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-doc-title">Australian Obesity &amp; GLP-1 Market Context<br>Internal Reference Document</div>
+      <div class="header-date">May 2026</div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: GLP-1 ELIGIBILITY -->
+  <div class="section">
+    <div class="section-label">03 — GLP-1 Prescribing Criteria in Australia (2026)</div>
+    <div class="section-heading">Who Qualifies for GLP-1 Therapy</div>
+
+    <div class="eligibility-cols">
+      <div class="elig-col">
+        <div class="elig-col-title">Primary criterion</div>
+        <div class="elig-bmi">BMI ≥30</div>
+        <div class="elig-bmi-label">Obesity diagnosis, no comorbidity required</div>
+        <div class="elig-note">This criterion alone places an estimated 6–7 million Australians within medical obesity treatment eligibility.</div>
+      </div>
+      <div class="elig-col">
+        <div class="elig-col-title">Secondary criterion (with comorbidity)</div>
+        <div class="elig-bmi">BMI ≥27</div>
+        <div class="elig-bmi-label">Overweight, with weight-related condition</div>
+        <ul class="criteria-list" style="margin-top: 1mm;">
+          <li>Type 2 diabetes</li>
+          <li>Obstructive sleep apnoea</li>
+          <li>Hypertension</li>
+          <li>Hypercholesterolaemia</li>
+          <li>Polycystic ovarian syndrome (PCOS)</li>
+          <li>Cardiovascular disease</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="body-text" style="margin-top:2.5mm;">Combined, these criteria potentially place 7–9 million Australians within the scope of medical obesity treatment. GLP-1 awareness has broadly expanded patient engagement with weight management pathways, increasing the number of adults seeking clinical assessment.</div>
+  </div>
+
+  <div class="section-rule gold"></div>
+
+  <!-- SECTION 4: WHY SURGERY REMAINS RELEVANT -->
+  <div class="section">
+    <div class="section-label">04 — Clinical Rationale</div>
+    <div class="section-heading">Why Bariatric Surgery Remains Clinically Relevant</div>
+
+    <div class="reason-block">
+      <div class="reason-number">1</div>
+      <div class="reason-content">
+        <div class="reason-title">GLP-1 medications are expanding the referral funnel</div>
+        <div class="reason-body">GLP-1 uptake has increased awareness of weight-related conditions, reduced stigma, and brought patients into treatment earlier. Many of those patients plateau, discontinue due to cost, or remain severely obese — and in time require stronger metabolic intervention. This creates a sustained pipeline for sleeve gastrectomy, gastric bypass, revisional surgery, and multidisciplinary metabolic programs.</div>
+      </div>
+    </div>
+
+    <div class="reason-block">
+      <div class="reason-number">2</div>
+      <div class="reason-content">
+        <div class="reason-title">Australia's severe obesity cohort remains largely untreated</div>
+        <div class="reason-body">With approximately 13% of Australian adults at BMI 35 or above — roughly 2.7–3 million people — the addressable surgical and metabolic treatment market remains substantially underpenetrated. Only a small fraction undergoes bariatric surgery annually, representing a significant unmet clinical need.</div>
+      </div>
+    </div>
+
+    <div class="reason-block">
+      <div class="reason-number">3</div>
+      <div class="reason-content">
+        <div class="reason-title">GLP-1 discontinuation rates are high</div>
+        <div class="reason-body">2026 data indicates approximately 50% of patients cease GLP-1 therapy within a year, with rapid weight regain commonly following cessation. This pattern is driving a clinical shift toward combination care models — long-term metabolic pathways that pair surgical intervention with GLP-1 maintenance protocols.</div>
+      </div>
+    </div>
+
+    <div class="reason-block">
+      <div class="reason-number">4</div>
+      <div class="reason-content">
+        <div class="reason-title">The field is shifting toward combination and continuity care</div>
+        <div class="reason-body">The emerging clinical consensus integrates GLP-1 medications within broader metabolic care models rather than positioning them as standalone treatments. Bariatric surgery carries a substantial evidence base for durable metabolic outcomes in complex cases — a position reinforced by documented GLP-1 treatment limitations in severe obesity.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-rule"></div>
+
+  <!-- SECTION 5: MELBOURNE AS A MARKET -->
+  <div class="section">
+    <div class="section-label">05 — Melbourne Market Characteristics</div>
+    <div class="section-heading">Structural Advantages for Metabolic &amp; Bariatric Care</div>
+
+    <div class="advantage-grid">
+      <div class="advantage-item">
+        <div class="advantage-item-label">Private healthcare culture</div>
+        <div class="advantage-item-desc">High rates of private health insurance and self-funded specialist care. Strong disposition toward specialist-led pathways.</div>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item-label">Telehealth adoption</div>
+        <div class="advantage-item-desc">Among Australia's highest telehealth utilisation rates, supporting integrated metabolic care and GLP-1 monitoring models.</div>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item-label">GP referrer density</div>
+        <div class="advantage-item-desc">A concentrated GP ecosystem across inner and middle Melbourne — well-positioned to generate consistent specialist referral volume.</div>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item-label">Clinical infrastructure</div>
+        <div class="advantage-item-desc">Major private hospital infrastructure across the metropolitan area supports high procedural throughput and post-operative care continuity.</div>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item-label">Health literacy</div>
+        <div class="advantage-item-desc">Above-average health literacy and GLP-1 awareness in the Melbourne population relative to national benchmarks.</div>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item-label">Wellness engagement</div>
+        <div class="advantage-item-desc">High engagement with evidence-based health, nutrition and body composition — conducive to multidisciplinary metabolic models.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-rule gold"></div>
+
+  <!-- SECTION 6: MERIDIAN POSITIONING -->
+  <div class="section">
+    <div class="section-label">06 — Meridian Positioning</div>
+    <div class="section-heading">Clinical Context &amp; Practice Position</div>
+
+    <div class="positioning-block">
+      <div class="positioning-text">
+        Meridian operates at the intersection of upper gastrointestinal surgery, bariatric care, and metabolic medicine. As GLP-1 medications broaden patient entry into weight management pathways, the clinical need for specialist surgical and metabolic assessment has not diminished — it has expanded. <strong>Bariatric surgery carries a substantial evidence base for durable outcomes in severe obesity</strong>, and combination care models are increasingly the clinical standard for complex metabolic cases. Meridian is structured to address this cohort: patients who have engaged with medical treatments, require specialist assessment, and benefit from continuity of care across surgical, metabolic, and multidisciplinary pathways.
+      </div>
+      <div class="positioning-attribution">Meridian — GI &amp; Metabolic Health, Fitzroy · Melbourne</div>
+    </div>
+  </div>
+
+  <!-- FOOTER PAGE 2 -->
+  <div class="footer">
+    <div class="footer-text">Meridian GI &amp; Metabolic Health — Internal Reference — May 2026</div>
+    <div class="footer-page">2 / 2</div>
+  </div>
+
+</div>
+
+</body>
+</html>
