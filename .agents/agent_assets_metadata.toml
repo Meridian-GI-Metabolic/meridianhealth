@@ -12,3 +12,15 @@ id = "9tnYdE6pUzueae92k9Lik"
 uri = "file://exports/meridian-market-context-2026.pdf"
 type = "pdf"
 title = "Meridian Market Context 2026 — A4 PDF"
+
+[[outputs]]
+id = "UuQqAOyasIcEZmDJyzqHV"
+uri = "file://_docs/meridian-sitemap.doc"
+type = "word_document"
+title = "Meridian Health — Site Map (open in browser for PDF print)"
+
+[[outputs]]
+id = "82OQbanBevjmNcPvp1J8Q"
+uri = "file://_docs/meridian-copy-deck.doc"
+type = "word_document"
+title = "Meridian Health — Complete Copy Deck (Word document)"

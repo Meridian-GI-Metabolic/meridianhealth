@@ -1,0 +1,1084 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8"/>
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<title>Meridian Health — Complete Copy Deck</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>90</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    margin: 25mm 22mm 25mm 28mm;
+    mso-header-margin: 14mm;
+    mso-footer-margin: 14mm;
+  }
+  body {
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 11pt;
+    color: #201e11;
+    line-height: 1.5;
+    margin: 0;
+  }
+  /* ── COVER PAGE ── */
+  .cover { page-break-after: always; text-align: center; padding: 80pt 0 60pt; }
+  .cover-practice { font-size: 9pt; letter-spacing: 3pt; text-transform: uppercase; color: #888; margin-bottom: 18pt; }
+  .cover-title { font-family: Georgia, serif; font-size: 30pt; font-weight: normal; color: #201e11; margin: 0 0 10pt; }
+  .cover-sub { font-size: 13pt; color: #888; margin-bottom: 40pt; }
+  .cover-rule { width: 48pt; height: 2pt; background: #c2a55e; margin: 0 auto 40pt; border: none; }
+  .cover-meta { font-size: 10pt; color: #888; line-height: 2; }
+  /* ── TOC ── */
+  .toc-page { page-break-after: always; }
+  .toc-h { font-family: Georgia, serif; font-size: 16pt; font-weight: normal; color: #201e11; margin: 0 0 6pt; }
+  .toc-rule { width: 30pt; height: 1.5pt; background: #c2a55e; border: none; margin: 0 0 20pt; }
+  .toc-section { margin-bottom: 4pt; }
+  .toc-section a { color: #201e11; text-decoration: none; font-size: 10.5pt; }
+  .toc-num { color: #c2a55e; font-weight: 600; margin-right: 8pt; }
+  .toc-indent { padding-left: 24pt; }
+  /* ── SECTION HEADINGS ── */
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 22pt;
+    font-weight: normal;
+    color: #201e11;
+    margin: 0 0 8pt;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    font-weight: normal;
+    color: #201e11;
+    margin: 22pt 0 6pt;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-weight: 600;
+    color: #201e11;
+    margin: 16pt 0 4pt;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    color: #c2a55e;
+    margin: 14pt 0 4pt;
+    page-break-after: avoid;
+  }
+  /* ── BODY ── */
+  p { margin: 0 0 8pt; font-size: 11pt; }
+  ul, ol { margin: 0 0 10pt 18pt; padding: 0; }
+  li { margin-bottom: 3pt; font-size: 11pt; }
+  /* ── DECORATIVE ── */
+  .page-label {
+    font-size: 8pt;
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    color: #c2a55e;
+    margin-bottom: 4pt;
+    display: block;
+  }
+  .gold-rule { width: 30pt; height: 1.5pt; background: #c2a55e; border: none; margin: 6pt 0 14pt; }
+  .lead-p { font-size: 13pt; font-family: Georgia, serif; color: #201e11; margin: 0 0 10pt; font-weight: normal; font-style: italic; }
+  .body-p { font-size: 11pt; color: #444; }
+  .small-note { font-size: 9pt; color: #888; font-style: italic; margin-top: 6pt; }
+  /* ── SECTION DIVIDERS ── */
+  .section-break { page-break-before: always; }
+  .subsection-label {
+    font-size: 8pt;
+    letter-spacing: 2pt;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 3pt;
+    display: block;
+  }
+  /* ── INFO TABLE ── */
+  table.info { width: 100%; border-collapse: collapse; margin: 10pt 0 16pt; }
+  table.info td { padding: 6pt 10pt; vertical-align: top; font-size: 10.5pt; border-bottom: 1pt solid #e8e4db; }
+  table.info td:first-child { font-weight: 600; width: 30%; color: #555; }
+  /* ── PROCESS STEPS ── */
+  .step { display: flex; gap: 16pt; margin-bottom: 12pt; }
+  .step-num { font-size: 20pt; font-family: Georgia, serif; color: #c2a55e; font-weight: normal; min-width: 28pt; }
+  .step-body h3 { margin: 0 0 3pt; font-size: 11pt; }
+  .step-body p { margin: 0; color: #555; font-size: 10.5pt; }
+  /* ── PROCEDURES ── */
+  .proc { margin-bottom: 12pt; border-left: 3pt solid #c2a55e; padding-left: 12pt; }
+  .proc h3 { margin: 0 0 3pt; font-size: 11.5pt; font-family: Georgia, serif; font-weight: 600; }
+  .proc p { margin: 0; font-size: 10.5pt; color: #444; }
+  /* ── PROFILE BLOCK ── */
+  .profile { border: 1pt solid #e8e4db; padding: 14pt 16pt; margin-bottom: 14pt; }
+  .profile h3 { margin: 0 0 2pt; font-family: Georgia, serif; font-size: 13pt; font-weight: normal; }
+  .profile .p-role { font-size: 10pt; color: #c2a55e; font-weight: 600; margin-bottom: 4pt; }
+  .profile .p-quals { font-size: 9.5pt; color: #888; margin-bottom: 8pt; }
+  .profile p { font-size: 10.5pt; color: #444; margin-bottom: 5pt; }
+  /* ── FELT GRID (copy-friendly) ── */
+  .element { margin-bottom: 10pt; border-left: 2pt solid #e8e4db; padding-left: 10pt; }
+  .element .e-num { font-size: 8pt; letter-spacing: 2pt; text-transform: uppercase; color: #888; }
+  .element .e-title { font-size: 12pt; font-family: Georgia, serif; font-weight: 600; color: #201e11; }
+  .element p { font-size: 10.5pt; color: #444; margin: 2pt 0 0; }
+  /* ── CTA BLOCK ── */
+  .cta { background: #f7f5ef; border: 1pt solid #e8e4db; padding: 14pt 16pt; margin: 16pt 0; }
+  .cta h3 { font-family: Georgia, serif; font-size: 13pt; font-weight: normal; margin: 0 0 6pt; }
+  .cta p { font-size: 10.5pt; color: #555; margin: 0 0 8pt; }
+  .cta .cta-links { font-size: 10pt; font-weight: 600; color: #c2a55e; }
+  /* ── DIVIDER CAPTION ── */
+  .img-cap { background: #f7f5ef; border-left: 3pt solid #c2a55e; padding: 8pt 12pt; margin: 14pt 0; font-size: 10pt; color: #555; font-style: italic; }
+  /* ── SEPARATOR ── */
+  hr.section-rule { border: none; border-top: 1pt solid #e8e4db; margin: 20pt 0; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════ -->
+<div class="cover">
+  <p class="cover-practice">Meridian Health &nbsp;·&nbsp; Gastrointestinal &amp; Metabolic Health</p>
+  <h1 class="cover-title">Complete Copy Deck</h1>
+  <p class="cover-sub">meridianhealth.com.au</p>
+  <hr class="cover-rule">
+  <div class="cover-meta">
+    Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065<br>
+    (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au<br>
+    Mon–Fri 8.30 am–5.00 pm<br><br>
+    Document generated: May 2026<br>
+    All copy drawn verbatim from the live website.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TABLE OF CONTENTS
+══════════════════════════════════════════ -->
+<div class="toc-page">
+  <h1 class="toc-h">Contents</h1>
+  <hr class="toc-rule">
+  <div class="toc-section"><span class="toc-num">01</span> Home</div>
+  <div class="toc-section"><span class="toc-num">02</span> Clinical Pathways</div>
+  <div class="toc-indent toc-section"><span class="toc-num">02a</span> Bariatric (Metabolic) Surgery</div>
+  <div class="toc-indent toc-section"><span class="toc-num">02b</span> Upper GI &amp; Surgical Care</div>
+  <div class="toc-indent toc-section"><span class="toc-num">02c</span> Metabolic Medicine</div>
+  <div class="toc-section"><span class="toc-num">03</span> The Practice</div>
+  <div class="toc-section"><span class="toc-num">04</span> Your Care Team</div>
+  <div class="toc-indent toc-section"><span class="toc-num">04a</span> Team Index</div>
+  <div class="toc-indent toc-section"><span class="toc-num">04b</span> Specialist Profiles</div>
+  <div class="toc-section"><span class="toc-num">05</span> Membership</div>
+  <div class="toc-section"><span class="toc-num">06</span> Patient App</div>
+  <div class="toc-section"><span class="toc-num">07</span> Contact</div>
+  <div class="toc-section"><span class="toc-num">08</span> Sitewide Elements (Navigation &amp; Footer)</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     01  HOME
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 01</span>
+  <h1>Home</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/</em></p>
+
+  <h4>Hero — Headline</h4>
+  <p class="lead-p">One team. One philosophy of care.</p>
+
+  <h4>Hero — Sub-headline</h4>
+  <p>Upper gastrointestinal and bariatric surgery and metabolic medicine.</p>
+
+  <h4>Hero — Body</h4>
+  <p>Meridian is a Melbourne-based specialist practice for upper gastrointestinal health, bariatric surgery and metabolic medicine. A team of surgeons, physicians, dietitians, nurses and psychologists who work from a single model of care.</p>
+
+  <h4>Hero — CTA buttons</h4>
+  <p>Start assessment &nbsp;·&nbsp; Read about the practice</p>
+
+  <h4>Hero — Image caption</h4>
+  <p class="img-cap"><em>Eyebrow:</em> Operating theatre &nbsp;·&nbsp; <em>Caption:</em> Day-stay laparoscopic surgery at St Vincent's Private.</p>
+
+  <hr class="section-rule">
+  <h4>Clinical Pathways intro section</h4>
+  <p><em>Eyebrow:</em> Clinical pathways</p>
+  <h2>Three pathways. One integrated practice.</h2>
+  <p>Each pathway delivers a distinct clinical service, managed within a shared model of care by the same multidisciplinary team.</p>
+
+  <h4>Pathway Cards</h4>
+  <p><strong>Bariatric surgery</strong><br>
+  Sleeve gastrectomy, gastric bypass, revisional bariatric surgery and sleeve fundoplication — surgical care integrated with physician-led metabolic medicine, dietetics and structured follow-up.</p>
+  <p><a>Bariatric surgery →</a></p>
+
+  <p><strong>Upper GI &amp; Surgical Care</strong><br>
+  Anti-reflux surgery, hiatus hernia repair, gallbladder surgery, abdominal hernia repair, oesophageal physiology testing and upper gastrointestinal cancer surgery.</p>
+  <p><a>Upper GI surgical care →</a></p>
+
+  <p><strong>Metabolic Medicine</strong><br>
+  Physician-led medical weight management, including GLP-1 therapy where clinically appropriate. Structured investigations, dietitian input and monthly review.</p>
+  <p><a>Metabolic medicine →</a></p>
+
+  <hr class="section-rule">
+  <h4>The Practice section</h4>
+  <p><em>Eyebrow:</em> The practice</p>
+  <h2>Care works better when it is connected.</h2>
+  <p>At Meridian, consulting, diagnostics and hospital services are centred within the same Fitzroy precinct, creating a more seamless patient experience.</p>
+  <p>The same team remains involved throughout assessment, treatment and follow-up, with continuity of care built into the model.</p>
+  <p>Medical, surgical and multidisciplinary expertise are integrated within a single practice environment grounded in research, collaboration and long-term outcomes.</p>
+  <p><a>Read about the practice →</a></p>
+
+  <hr class="section-rule">
+  <h4>Marquee image captions</h4>
+  <table class="info">
+    <tr><td>Sleeve gastrectomy</td><td>Day-stay laparoscopic procedure.</td></tr>
+    <tr><td>Hiatus hernia repair</td><td>Anatomical restoration with fundoplication.</td></tr>
+    <tr><td>Endoscopy</td><td>Diagnostic and therapeutic upper GI access.</td></tr>
+    <tr><td>Metabolic clinic</td><td>Physician-led, GLP-1 where appropriate.</td></tr>
+    <tr><td>Allied care</td><td>Dietitian and psychology, in the same file.</td></tr>
+  </table>
+
+  <hr class="section-rule">
+  <h4>Breakout grid cards</h4>
+  <p><strong>In one practice</strong><br>A clinical home for upper GI and metabolic health.<br>Surgery, medicine and recovery managed by the same team, in the same building, against the same file.</p>
+  <p><strong>Surgical pathway</strong><br>Plan your procedure with the surgeon who performs it.<br>Sleeve gastrectomy, hiatus hernia repair, anti-reflux and revisional upper GI surgery.</p>
+  <p><strong>Metabolic medicine</strong><br>Track the markers that matter, reviewed by a physician.<br>Structured bloods, body composition and twelve-month follow-up. GLP-1 therapy where clinically appropriate.</p>
+  <p><strong>Patient app</strong><br>Your file, in your pocket.<br>Trackers, appointments and reading material assigned by the team you actually see.</p>
+  <p><strong>Membership</strong><br>A relationship with the practice, not a single appointment.<br>Annual review, priority access and continuity of care across the year.</p>
+
+  <hr class="section-rule">
+  <h4>Surgical leadership section</h4>
+  <p><em>Eyebrow:</em> Surgical leadership</p>
+  <h2>Three surgeons who will stay with you, from the first conversation to the last review.</h2>
+  <table class="info">
+    <tr><td>A/Prof Michael Hii</td><td>Oesophago-Gastric &amp; Bariatric Surgeon &nbsp;·&nbsp; FRACS · MBBS · BMedSci · PGDipSurgAnat</td></tr>
+    <tr><td>Dr Salena Ward</td><td>Gastric, Bariatric &amp; General Surgeon &nbsp;·&nbsp; MBBS · FRACS · MS · PGDipSurgAnat · Adjunct Lecturer, Monash University</td></tr>
+    <tr><td>Dr Nicole Winter</td><td>Oesophago-Gastric &amp; Bariatric Surgeon &nbsp;·&nbsp; FRACS · MBBS (Hons) · BMedSci · AANZGOSA · GChPOM · Clinical Honorary Lecturer, University of Melbourne</td></tr>
+  </table>
+  <p><a>All clinicians →</a></p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     02a  BARIATRIC SURGERY
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 02a &nbsp;·&nbsp; Pathway 01 · Surgical</span>
+  <h1>Bariatric (Metabolic) Surgery</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/clinical-pathways/bariatric-surgery/</em></p>
+
+  <h4>Hero</h4>
+  <p class="lead-p">Bariatric (metabolic) surgery.</p>
+  <p><em>Lead:</em> Personalised surgical options. Structured preparation. Long-term care.</p>
+  <p><em>Body:</em> Surgical weight loss pathways managed by the same surgeon, dietitian and nurse.</p>
+  <p class="img-cap"><em>Eyebrow:</em> Follow-up suite &nbsp;·&nbsp; <em>Caption:</em> Twelve months of structured review, in one place.</p>
+
+  <hr class="section-rule">
+  <h4>Who this pathway is for</h4>
+  <h2>When bariatric surgery may be appropriate.</h2>
+  <p>Bariatric surgery may be considered when excess weight is contributing to long-term health risk and previous attempts at weight reduction have not produced durable results.</p>
+  <p>In general, this includes patients with a BMI above 35, or above 30 in the presence of weight-related medical conditions. Suitability is assessed individually within a comprehensive metabolic and surgical review.</p>
+  <p><em>This pathway commonly includes patients living with:</em></p>
+  <ul>
+    <li>Type 2 diabetes</li>
+    <li>High blood pressure</li>
+    <li>Sleep apnoea</li>
+    <li>Fatty liver disease</li>
+    <li>Reflux associated with excess weight</li>
+    <li>Joint pain affecting mobility and daily activity</li>
+    <li>Repeated cycles of weight loss and regain</li>
+  </ul>
+
+  <hr class="section-rule">
+  <h4>Procedures</h4>
+  <h2>Tailored procedures we have performed thousands of times. Choosing yours is anything but routine.</h2>
+  <p>At Meridian, procedure selection is individualised around metabolic health, eating patterns, reflux, anatomy, previous surgery and long-term treatment goals. Surgical care is integrated with physician-led metabolic medicine, dietetics and structured follow-up.</p>
+
+  <div class="proc">
+    <h3>Laparoscopic sleeve gastrectomy</h3>
+    <p>The most commonly performed bariatric procedure worldwide. A significant portion of the stomach is removed to reduce hunger, improve satiety and support durable weight reduction.</p>
+  </div>
+  <div class="proc">
+    <h3>Roux-en-Y gastric bypass</h3>
+    <p>A well-established bariatric procedure combining restriction and selective malabsorption. Often considered in patients with significant reflux, type 2 diabetes or previous failed weight-loss interventions.</p>
+  </div>
+  <div class="proc">
+    <h3>One anastomosis gastric bypass</h3>
+    <p>A single-anastomosis bypass procedure performed in selected patients. Provides substantial metabolic and weight-loss effects with a streamlined surgical reconstruction.</p>
+  </div>
+  <div class="proc">
+    <h3>Sleeve fundoplication</h3>
+    <p>Combines sleeve gastrectomy with anti-reflux surgery. Considered in selected patients with obesity and coexisting reflux or GORD symptoms.</p>
+  </div>
+  <div class="proc">
+    <h3>Gastric bypass with calibration ring</h3>
+    <p>Gastric bypass with placement of a calibration ring to improve long-term restriction. Most commonly considered in selected revisional or higher-risk weight regain scenarios.</p>
+  </div>
+  <div class="proc">
+    <h3>Gastric band removal</h3>
+    <p>Removal of adjustable gastric bands for symptoms, intolerance, complications or inadequate weight control. Where appropriate, this may be combined with conversion to another bariatric procedure.</p>
+  </div>
+  <div class="proc">
+    <h3>Revision bariatric surgery</h3>
+    <p>Assessment and management of previous bariatric procedures, including weight regain, reflux, nutritional concerns, anatomical problems or procedural complications.</p>
+    <p>Revision surgery is often more complex than primary bariatric surgery and requires careful multidisciplinary assessment and long-term follow-up.</p>
+  </div>
+
+  <p class="img-cap"><em>Image divider — Eyebrow:</em> Recovery &nbsp;·&nbsp; <em>Caption 1:</em> The first year after bariatric surgery is part of the treatment — not an optional extra. &nbsp;·&nbsp; <em>Caption 2:</em> For this reason, Meridian includes twelve months of structured follow-up with the same surgeon, nurse and dietitian involved from the outset. &nbsp;·&nbsp; <em>Caption 3:</em> Patients who remain engaged in longer-term follow-up often achieve more durable nutritional, metabolic and weight outcomes over time.</p>
+
+  <hr class="section-rule">
+  <h4>Process</h4>
+  <h2>From first consultation to long-term follow-up.</h2>
+  <p>Bariatric surgery is not simply an operation. The first twelve months are considered part of the procedure itself — a structured period of recovery, adaptation and metabolic change.</p>
+  <p>For this reason, twelve months of planned follow-up are included within the surgical fee structure at Meridian. Long-term follow-up beyond this period is strongly encouraged, and is associated with better nutritional outcomes, more durable weight maintenance and earlier identification of problems should they arise.</p>
+
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Surgical consultation</h3><p>A bariatric surgeon reviews medical history, weight trajectory, eating patterns, metabolic health and treatment goals. Available surgical and medical pathways are discussed, with a written management plan provided.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Dietitian assessment and investigations</h3><p>Patients undergo baseline assessment including dietitian review, blood tests and body composition analysis. Gastroscopy, sleep studies or additional investigations may be arranged where appropriate. Psychology assessment is recommended in selected patients.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Pre-operative preparation</h3><p>Preparation includes a two-week VLCD liver reduction diet, nurse education, pre-operative surgical review and anaesthetic assessment. Patients receive detailed written information regarding surgery, recovery, supplements, eating progression and expected milestones after the procedure.</p></div></div>
+  <div class="step"><div class="step-num">04</div><div class="step-body"><h3>Surgery and hospital stay</h3><p>Procedures are performed laparoscopically within connected private hospitals experienced in bariatric and upper gastrointestinal surgery. Most patients stay one to two nights. Early mobilisation, anti-nausea pathways and structured recovery protocols are used to support safer recovery and earlier return to function.</p></div></div>
+  <div class="step"><div class="step-num">05</div><div class="step-body"><h3>Twelve months of included follow-up</h3><p>Structured follow-up occurs with the surgical, nursing and dietetic team throughout the first year after surgery. This period focuses on diet progression, behavioural adaptation, vitamin and nutritional monitoring, supplement optimisation and metabolic health review. Patients also have access to the Meridian team between scheduled appointments where required.</p></div></div>
+  <div class="step"><div class="step-num">06</div><div class="step-body"><h3>Long-term metabolic care</h3><p>Many patients choose to continue long-term follow-up beyond the first year. Ongoing review can help support durable weight maintenance, nutritional health, exercise progression and management of metabolic conditions over time.</p></div></div>
+
+  <hr class="section-rule">
+  <h4>Clinical team</h4>
+  <h2>Same names, every visit.</h2>
+  <ul><li>Surgeon</li><li>Dietitian</li><li>Nurse</li><li>Anaesthetist</li><li>Psychologist where indicated</li></ul>
+  <table class="info">
+    <tr><td>Surgeons</td><td>Hii · Ward · Winter</td></tr>
+    <tr><td>Dietetic lead</td><td>Jennifer Tsoutsoulis</td></tr>
+    <tr><td>Nursing lead</td><td>Jessie Leahy</td></tr>
+    <tr><td>Follow-up</td><td>12 months of follow-up is part of the surgical pathway at Meridian. Long-term care provides the best outcomes.</td></tr>
+  </table>
+
+  <div class="cta"><h3>In practice</h3><p>The operation is one day. Preparation, follow-up and clinical continuity determine outcome.</p></div>
+
+  <div class="cta"><h3>Get in touch</h3><p>A clinician will write back within a working day.</p><p class="cta-links">Start assessment &nbsp;·&nbsp; Download the app</p></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     02b  UPPER GI
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 02b &nbsp;·&nbsp; Pathway 02 · Surgical</span>
+  <h1>Upper GI &amp; Surgical Care</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/clinical-pathways/upper-gi-surgical-care/</em></p>
+
+  <h4>Hero</h4>
+  <p class="lead-p">Upper GI &amp; Surgical Care.</p>
+  <p><em>Lead:</em> Anti-reflux surgery, hiatus hernia repair, gallbladder surgery, hernia repair, and oesophageal and gastric cancer surgery.</p>
+  <p><em>Body:</em> Performed by Upper GI surgeons within a single clinical team.</p>
+  <p class="img-cap"><em>Eyebrow:</em> Theatre &nbsp;·&nbsp; <em>Caption:</em> Laparoscopic and open Upper GI surgery, in a single surgical service.</p>
+
+  <hr class="section-rule">
+  <h4>Who this pathway is for</h4>
+  <h2>This pathway is designed for patients requiring specialist upper gastrointestinal surgical assessment.</h2>
+  <p>Patients are commonly referred for reflux, hiatus hernia, gallbladder disease, abdominal wall hernia or upper gastrointestinal cancer care and achalasia.</p>
+  <p>Referrals are welcomed from general practitioners and gastroenterologists. Self-referral is also appropriate.</p>
+  <p><em>This pathway commonly includes patients with:</em></p>
+  <ul>
+    <li>Reflux or regurgitation not adequately controlled with medication</li>
+    <li>Confirmed hiatus hernia or para-oesophageal hernia</li>
+    <li>Symptomatic gallstones or gallbladder disease</li>
+    <li>Inguinal, umbilical or abdominal wall hernias</li>
+    <li>Oesophageal or gastric cancer</li>
+    <li>Difficulty swallowing (dysphagia)</li>
+    <li>Barrett's oesophagus and complex foregut conditions</li>
+  </ul>
+
+  <hr class="section-rule">
+  <h4>Procedures</h4>
+  <h2>Procedures are selected carefully against symptoms, imaging, physiology, prior treatment and long-term goals.</h2>
+  <p>No operation is considered in isolation.</p>
+
+  <div class="proc">
+    <h3>Anti-reflux surgery and hiatus hernia repair</h3>
+    <p>Laparoscopic fundoplication and hiatus hernia repair for reflux, regurgitation and para-oesophageal hernia.</p>
+    <p>Various types of fundoplication are selected according to symptom profile, oesophageal motility testing and anatomical findings. Mesh reinforcement may be used in selected larger hernia repairs.</p>
+  </div>
+  <div class="proc">
+    <h3>Heller myotomy</h3>
+    <p>Minimally invasive treatment for achalasia and oesophageal motility disorders, typically combined with partial fundoplication.</p>
+  </div>
+  <div class="proc">
+    <h3>Gallbladder surgery</h3>
+    <p>Laparoscopic cholecystectomy for symptomatic gallstones, biliary colic, cholecystitis and gallbladder dysfunction.</p>
+    <p>Most procedures are performed as day-stay or overnight surgery.</p>
+  </div>
+  <div class="proc">
+    <h3>Abdominal hernia surgery</h3>
+    <p>Open and minimally invasive repair of inguinal, umbilical, incisional and abdominal wall hernias.</p>
+    <p>Approach is individualised according to anatomy, defect size, previous surgery and recovery goals.</p>
+  </div>
+  <div class="proc">
+    <h3>Upper gastrointestinal cancer surgery</h3>
+    <p>Gastrectomy and oesophagectomy for gastric and oesophageal malignancy, delivered within a multidisciplinary cancer pathway integrating surgery, oncology, gastroenterology, radiology and perioperative care.</p>
+  </div>
+  <div class="proc">
+    <h3>Revisional foregut and complex surgery</h3>
+    <p>Assessment and management of previous anti-reflux, hiatus hernia or upper gastrointestinal surgery, including recurrent reflux, recurrent hernia, dysphagia, mesh-related issues and failed prior procedures.</p>
+  </div>
+  <div class="proc">
+    <h3>Endoscopy and diagnostic procedures</h3>
+    <p>Gastroscopy and related upper gastrointestinal investigations performed as part of diagnostic assessment, surveillance and operative planning where appropriate.</p>
+  </div>
+  <div class="proc">
+    <h3>Oesophageal physiology testing</h3>
+    <p>Comprehensive oesophageal physiology assessment including pH monitoring and high-resolution manometry for reflux, regurgitation, chest pain, swallowing disorders and pre-operative evaluation.</p>
+    <p>Testing is interpreted within the context of symptoms, imaging and endoscopy to guide accurate diagnosis and individualised treatment planning.</p>
+  </div>
+
+  <hr class="section-rule">
+  <h4>Process</h4>
+  <h2>From first consultation through to recovery and follow-up, care remains coordinated through the same surgical team.</h2>
+
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Surgical consultation</h3><p>A surgeon reviews symptoms, prior history, imaging and existing investigations.</p><p>A clear management plan is discussed and documented during the consultation.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Targeted investigations</h3><p>Where required, investigations may include gastroscopy, oesophageal manometry, pH monitoring, CT imaging or ultrasound.</p><p>Testing is selected carefully to clarify diagnosis and guide treatment planning — not simply ordered routinely.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Pre-operative preparation</h3><p>Patients undergo pre-operative assessment with the nursing and anaesthetic team, with detailed written information provided prior to admission.</p><p>Preparation is tailored according to the procedure, underlying condition and overall health status.</p></div></div>
+  <div class="step"><div class="step-num">04</div><div class="step-body"><h3>Surgery and hospital stay</h3><p>A minimally invasive laparoscopic approach is used wherever appropriate.</p><p>Most benign upper gastrointestinal procedures involve day-stay or short inpatient admission. Major cancer surgery may require longer admission with HDU or ICU support as part of a coordinated perioperative pathway.</p></div></div>
+  <div class="step"><div class="step-num">05</div><div class="step-body"><h3>Follow-up and ongoing care</h3><p>Structured post-operative follow-up is provided to monitor recovery, swallowing, nutrition and long-term outcomes.</p><p>Patients undergoing cancer treatment remain within an integrated multidisciplinary oncology pathway involving surgery, oncology, gastroenterology, radiology and supportive care.</p></div></div>
+
+  <hr class="section-rule">
+  <h4>Clinical team</h4>
+  <h2>The same surgeon, from first conversation onward.</h2>
+  <p>Care is delivered by the same surgical, nursing and allied health team.</p>
+  <ul><li>Surgeon</li><li>Anaesthetist</li><li>Nurse</li><li>Dietitian</li><li>Physician where indicated</li></ul>
+
+  <div class="cta"><h3>In practice</h3><p>Most upper gastrointestinal conditions require a defined intervention. The role of assessment is to determine whether that intervention is necessary.</p><p>For many patients, this is a single procedure performed well. For others, the right decision is to hold off.</p></div>
+
+  <p class="img-cap"><em>Image divider — Eyebrow:</em> Considered care &nbsp;·&nbsp; <em>Caption:</em> From the first consultation through structured follow-up. Day-stay procedures, complex resections, and everything in between.</p>
+
+  <div class="cta"><h3>If you are unsure</h3><p>Send your imaging across, and we will review it before your visit.</p><p>A clinician will advise whether further assessment or intervention is required.</p><p class="cta-links">Request review &nbsp;·&nbsp; Download the app</p></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     02c  METABOLIC MEDICINE
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 02c &nbsp;·&nbsp; Pathway 03 · Medical</span>
+  <h1>Metabolic Medicine</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/clinical-pathways/metabolic-medicine/</em></p>
+
+  <h4>Hero</h4>
+  <p class="lead-p">Metabolic Medicine.</p>
+  <p><em>Lead:</em> Physician-led medical weight management, including GLP-1 therapy where appropriate.</p>
+  <p><em>Body:</em> A medical pathway for patients seeking non-surgical weight management, pre-surgical preparation or treatment after weight regain.</p>
+  <p class="img-cap"><em>Eyebrow:</em> Consulting room &nbsp;·&nbsp; <em>Caption:</em> Brenan Place, Fitzroy.</p>
+
+  <hr class="section-rule">
+  <h4>Who this pathway is for</h4>
+  <h2>For adults seeking medically supervised weight loss without surgery, or in the time before it.</h2>
+  <p>GLP-1 medications such as semaglutide and tirzepatide are established therapies. Used carefully, with medical and dietetic supervision, they can produce meaningful weight reduction. Poorly monitored use creates avoidable risk.</p>
+  <p><em>This pathway includes patients with:</em></p>
+  <ul>
+    <li>BMI above 27 with a weight-related condition</li>
+    <li>BMI above 30 without surgical intent</li>
+    <li>Difficulty maintaining lost weight</li>
+    <li>Interest in medical management before surgery</li>
+    <li>Previous bariatric procedure with weight regain</li>
+  </ul>
+
+  <hr class="section-rule">
+  <h4>What is included</h4>
+  <h2>A programme designed around you, in six considered parts.</h2>
+  <div class="proc"><h3>Physician consultation</h3><p>Medical assessment, medication review and assessment of suitability for GLP-1 therapy.</p></div>
+  <div class="proc"><h3>Baseline investigations</h3><p>Bloods, body composition scan and screening for comorbidities.</p></div>
+  <div class="proc"><h3>Dietitian-led plan</h3><p>Protein-led nutrition, side-effect management and eating patterns that can be maintained.</p></div>
+  <div class="proc"><h3>Monthly check-ins</h3><p>Dose adjustments, body composition review and side-effect support.</p></div>
+  <div class="proc"><h3>Muscle preservation</h3><p>Resistance training and protein guidance to protect lean mass.</p></div>
+  <div class="proc"><h3>Surgical option held open</h3><p>Direct access to a bariatric surgeon if surgery becomes appropriate.</p></div>
+
+  <hr class="section-rule">
+  <h4>Process</h4>
+  <h2>The same physician and dietitian, throughout. Treatment that responds to your numbers, not a script.</h2>
+
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Initial enquiry</h3><p>The enquiry is reviewed and directed to the appropriate physician.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Physician consultation</h3><p>Full medical history, weight history, medication review and discussion of realistic expectations.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Bloods and body composition</h3><p>Baseline blood tests, DEXA or InBody scan, and further investigations where required.</p></div></div>
+  <div class="step"><div class="step-num">04</div><div class="step-body"><h3>Treatment commencement</h3><p>If GLP-1 therapy is appropriate, treatment begins with dose escalation, side-effect plan and dietitian support.</p></div></div>
+  <div class="step"><div class="step-num">05</div><div class="step-body"><h3>Monthly review</h3><p>Same physician and dietitian throughout. Body composition is tracked. Treatment is adjusted to measured response.</p></div></div>
+
+  <hr class="section-rule">
+  <h4>Clinical team</h4>
+  <h2>Physician-led. With a surgeon on hand should you ever need one.</h2>
+  <ul><li>Physician</li><li>Dietitian</li><li>Nurse</li><li>Surgeon on request</li></ul>
+
+  <div class="cta"><h3>In practice</h3><p>GLP-1 therapy works better when monitored by a physician and dietitian over time.</p></div>
+
+  <p class="img-cap"><em>Image divider — Eyebrow:</em> Long-term care &nbsp;·&nbsp; <em>Caption:</em> Body composition, blood work and side-effect support. Reviewed monthly by the same physician and dietitian.</p>
+
+  <h4>Continued care (Membership link)</h4>
+  <h2>For patients who need a programme, not an episode.</h2>
+  <p>Many metabolic patients require care that extends well beyond a single consultation. Meridian Membership is the practice's physician-led programme for that arc, quarterly physician review, GLP-1 titration, dietetic and psychology support, and the patient app holding the file in one place.</p>
+  <p>Membership is opened at the recommendation of a Meridian physician at the first consultation, where appropriate.</p>
+  <p><a>Read about Membership →</a></p>
+
+  <div class="cta"><h3>Get in touch</h3><p>A clinician will write back within a working day.</p><p class="cta-links">Start assessment &nbsp;·&nbsp; Download the app</p></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     03  THE PRACTICE
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 03</span>
+  <h1>The Practice</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/the-practice/</em></p>
+
+  <h4>Hero</h4>
+  <p class="lead-p">Specialist care, excellence with continuity.</p>
+  <p><em>Lead:</em> Meridian is a Melbourne-based practice focused on upper gastrointestinal, bariatric and metabolic health.</p>
+  <p><em>Body:</em> Care is delivered through an integrated team of surgeons, physicians and allied health clinicians, with structured follow-up over twelve months. Wherever possible, patients are reviewed by the same clinicians across assessment, treatment and recovery to support continuity and coordinated care.</p>
+  <p class="img-cap"><em>Eyebrow:</em> Consulting suite &nbsp;·&nbsp; <em>Caption:</em> Brenan Place, Fitzroy.</p>
+
+  <hr class="section-rule">
+  <h4>Practice overview section</h4>
+  <h2>Upper GI surgery, bariatric surgery and metabolic medicine — integrated by design.</h2>
+  <p>Meridian combines FRACS-accredited surgical care with physician-led metabolic medicine within one coordinated multidisciplinary practice.</p>
+  <p>The practice holds adjunct and honorary academic appointments with the University of Melbourne and Monash University. Patients are assessed, treated and followed up within the same clinical ecosystem, supported by continuity of care and a unified clinical record.</p>
+  <p class="img-cap"><em>Eyebrow:</em> Brenan Place &nbsp;·&nbsp; <em>Caption:</em> Consulting suites, Fitzroy.</p>
+
+  <hr class="section-rule">
+  <h4>Standard of care</h4>
+  <h2>Specialist surgical and metabolic care, delivered with continuity, coordination and considered detail.</h2>
+
+  <h3>Experienced multidisciplinary team</h3>
+  <p>FRACS-accredited Upper GI and Bariatric surgeons working alongside a physician-led metabolic team, dietitians and psychologists. The practice maintains adjunct and honorary academic appointments with the University of Melbourne and Monash University.</p>
+
+  <h3>Contemporary evidence-based care</h3>
+  <p>Current laparoscopic and endoscopic techniques. Medical therapies, including GLP-1 treatment where clinically appropriate. Ongoing involvement in surgical and metabolic research, education and quality improvement.</p>
+
+  <h3>Coordinated patient care</h3>
+  <p>A single clinical record across the practice. Assessment, treatment and follow-up managed within one multidisciplinary structure, with clinical review occurring at the time decisions are made.</p>
+
+  <h3>Considered practice environment</h3>
+  <p>Private consulting suites, calm interiors and time for unhurried consultation. The patient experience has been designed to support comfort, clarity and confidence throughout care.</p>
+
+  <h3>Continuity throughout treatment</h3>
+  <p>Patients meet their treating surgeon early and continue care with a familiar clinical team across surgery and follow-up wherever possible. Care remains coordinated within the practice rather than across disconnected providers.</p>
+
+  <h3>Care between appointments</h3>
+  <p>The Meridian patient app extends support beyond the consulting room with education, recovery guidance, progress tracking and structured follow-up tools reviewed by the clinical team.</p>
+
+  <hr class="section-rule">
+  <h4>Marquee image captions</h4>
+  <table class="info">
+    <tr><td>Consulting suite</td><td>Private, calm, unhurried.</td></tr>
+    <tr><td>Theatre</td><td>Laparoscopic upper GI surgery.</td></tr>
+    <tr><td>Multidisciplinary</td><td>Surgeons, physicians, dietitians, psychologists.</td></tr>
+    <tr><td>Diagnostics</td><td>Endoscopy, manometry, pH studies.</td></tr>
+    <tr><td>Recovery</td><td>Twelve-month follow-up programme.</td></tr>
+  </table>
+
+  <hr class="section-rule">
+  <h4>Where we operate</h4>
+  <h2>A clinical environment designed around continuity of care.</h2>
+  <p>Meridian is based at Brenan Place in Fitzroy, alongside specialist consulting, diagnostics and hospital services within a connected clinical precinct.</p>
+  <p>The location allows consultation, investigation, procedure and follow-up to occur within one coordinated environment, reducing fragmentation between providers and services.</p>
+  <p class="small-note">Brenan Place was developed as a combined clinical and research facility, adjacent to St Vincent's Hospital Melbourne and the Aikenhead Centre for Medical Discovery.</p>
+
+  <p class="img-cap"><em>Image divider — Eyebrow:</em> In theatre &nbsp;·&nbsp; <em>Caption:</em> Operating at St Vincent's Private. Same surgical team. Same optimal care, every list.</p>
+
+  <div class="cta"><h3>Get in touch</h3><p>A clinician will write back within a working day.</p><p class="cta-links">Start assessment &nbsp;·&nbsp; Download the app</p></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     04a  YOUR CARE TEAM (INDEX)
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 04a</span>
+  <h1>Your Care Team</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/specialists/</em></p>
+
+  <h4>Page header</h4>
+  <p class="lead-p">Your Care Team.</p>
+  <p><em>Lead:</em> Seventeen clinicians and staff. One clinical system.</p>
+  <p><em>Body:</em> Three Upper GI and Bariatric surgeons, three consultant physicians, a bariatric GP, two nurses, two Accredited Practising Dietitians, a registered psychologist, surgical PAs, administration and reception. All operating from one practice.</p>
+  <p class="img-cap"><em>Image divider — Eyebrow:</em> The team &nbsp;·&nbsp; <em>Caption:</em> Twenty-four clinicians and coordinators across surgical, physician, nursing, dietetic and administrative care, in one practice.</p>
+
+  <hr class="section-rule">
+  <h4>Surgeons section</h4>
+  <h2>The surgeons who will lead your care.</h2>
+  <p>Each operates within the same practice and remains involved across assessment, treatment and follow-up.</p>
+  <table class="info">
+    <tr><td>A/Prof Michael Hii</td><td>Oesophago-Gastric &amp; Bariatric Surgeon &nbsp;·&nbsp; FRACS · MBBS · BMedSci · PGDipSurgAnat</td></tr>
+    <tr><td>Dr Salena Ward</td><td>Gastric, Bariatric &amp; General Surgeon &nbsp;·&nbsp; MBBS · FRACS · MS · PGDipSurgAnat · Adjunct Lecturer, Monash University</td></tr>
+    <tr><td>Dr Nicole Winter</td><td>Oesophago-Gastric &amp; Bariatric Surgeon &nbsp;·&nbsp; FRACS · MBBS (Hons) · BMedSci · AANZGOSA · GChPOM · Clinical Honorary Lecturer, University of Melbourne</td></tr>
+  </table>
+
+  <h4>Physicians and Bariatric GP section</h4>
+  <h2>Physicians who will prepare you for surgery, and stay with you long after.</h2>
+  <table class="info">
+    <tr><td>Dr Amy Osborne</td><td>Consultant Physician &nbsp;·&nbsp; Perioperative Medicine &amp; Cardiology</td></tr>
+    <tr><td>Dr Anna Galligan</td><td>Consultant Physician &amp; Endocrinologist</td></tr>
+    <tr><td>Dr Geetha Theverkalam</td><td>Consultant Physician &amp; Endocrinologist</td></tr>
+    <tr><td>Dr Katrina Heggie</td><td>Bariatric General Practitioner &nbsp;·&nbsp; Long-term metabolic care · Shared-care with referring GPs</td></tr>
+  </table>
+
+  <h4>Nursing and perioperative care section</h4>
+  <h2>Nursing leads who will look after you in hospital and the days that follow.</h2>
+  <table class="info">
+    <tr><td>Jessie Leahy</td><td>Lead of Nursing Department / Practice Nurse &nbsp;·&nbsp; Registered Nurse Division 1</td></tr>
+    <tr><td>Isabella Matthews</td><td>Registered Nurse &nbsp;·&nbsp; BN</td></tr>
+  </table>
+
+  <h4>Dietetics and Psychology section</h4>
+  <h2>Dietitians who will guide you before surgery, after, and for the long arc of recovery.</h2>
+  <table class="info">
+    <tr><td>Jennifer Tsoutsoulis</td><td>Lead of Dietetics Department / Business Development Manager &nbsp;·&nbsp; Accredited Practising Dietitian · BHumNut · MDiet</td></tr>
+    <tr><td>Megan Hickey</td><td>Accredited Practising Dietitian &nbsp;·&nbsp; BNutDiet · MDiet</td></tr>
+    <tr><td>Dr Melanie Strang</td><td>Registered Psychologist &nbsp;·&nbsp; BSc · MBBS · GDipPsych · GDipPsych Adv</td></tr>
+  </table>
+
+  <h4>Surgical PAs section</h4>
+  <h2>A personal assistant assigned to each of your surgeons.</h2>
+  <p>Coordination of consultations, imaging, theatre lists and hospital admissions.</p>
+  <table class="info">
+    <tr><td>Katie Wendt</td><td>Personal Assistant to A/Prof Michael Hii</td></tr>
+    <tr><td>Lauren Drummond</td><td>Personal Assistant to Dr Salena Ward</td></tr>
+    <tr><td>Irena Jennings</td><td>Personal Assistant to Dr Nicole Winter</td></tr>
+  </table>
+
+  <h4>Administration and reception section</h4>
+  <h2>The first voice you will hear, and the one who keeps things moving.</h2>
+  <table class="info">
+    <tr><td>Joseph Gallagher</td><td>Administrator and PA to Physicians &nbsp;·&nbsp; Practice administration · Physician coordination</td></tr>
+    <tr><td>Patricia Bouldoh</td><td>Reception &nbsp;·&nbsp; First point of contact · Mon to Fri, 8.30am to 5.00pm</td></tr>
+  </table>
+
+  <div class="cta"><h3>Get in touch</h3><p>A clinician will write back within a working day.</p><p class="cta-links">Start assessment &nbsp;·&nbsp; Download the app</p></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     04b  SPECIALIST PROFILES
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 04b &nbsp;·&nbsp; Specialist profiles</span>
+  <h1>Specialist Profiles</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>Individual profile pages at /specialists/[slug]/</em></p>
+  <p class="small-note">Profile copy for surgeons includes: Biography, Clinical Focus, Academic Appointments, Selected Publications. Non-doctor profiles include: Biography, Focus Areas, Qualifications.</p>
+
+  <hr class="section-rule">
+  <h2>Surgeons</h2>
+
+  <div class="profile">
+    <h3>A/Prof Michael Hii</h3>
+    <p class="p-role">Oesophago-Gastric &amp; Bariatric Surgeon</p>
+    <p class="p-quals">FRACS · MBBS · BMedSci · PGDipSurgAnat</p>
+    <p><em>Profile URL:</em> /specialists/michael-hii/</p>
+    <p class="small-note">[Full biography, clinical focus and publications on live profile page]</p>
+  </div>
+
+  <div class="profile">
+    <h3>Dr Salena Ward</h3>
+    <p class="p-role">Gastric, Bariatric &amp; General Surgeon</p>
+    <p class="p-quals">MBBS · FRACS · MS · PGDipSurgAnat · Adjunct Lecturer, Monash University</p>
+    <p><em>Profile URL:</em> /specialists/salena-ward/</p>
+    <p class="small-note">[Full biography, clinical focus and publications on live profile page]</p>
+  </div>
+
+  <div class="profile">
+    <h3>Dr Nicole Winter</h3>
+    <p class="p-role">Oesophago-Gastric &amp; Bariatric Surgeon</p>
+    <p class="p-quals">FRACS · MBBS (Hons) · BMedSci · AANZGOSA · GChPOM · Clinical Honorary Lecturer, University of Melbourne</p>
+    <p><em>Profile URL:</em> /specialists/nicole-winter/</p>
+    <p class="small-note">[Full biography, clinical focus and publications on live profile page]</p>
+  </div>
+
+  <hr class="section-rule">
+  <h2>Physicians</h2>
+
+  <div class="profile">
+    <h3>Dr Amy Osborne</h3>
+    <p class="p-role">Consultant Physician — Perioperative Medicine &amp; Cardiology</p>
+    <p><em>Profile URL:</em> /specialists/amy-osborne/</p>
+  </div>
+
+  <div class="profile">
+    <h3>Dr Anna Galligan</h3>
+    <p class="p-role">Consultant Physician &amp; Endocrinologist</p>
+    <p><em>Profile URL:</em> /specialists/anna-galligan/</p>
+  </div>
+
+  <div class="profile">
+    <h3>Dr Geetha Theverkalam</h3>
+    <p class="p-role">Consultant Physician &amp; Endocrinologist</p>
+    <p><em>Profile URL:</em> /specialists/geetha-theverkalam/</p>
+  </div>
+
+  <div class="profile">
+    <h3>Dr Katrina Heggie</h3>
+    <p class="p-role">Bariatric General Practitioner</p>
+    <p class="p-quals">Long-term metabolic care · Shared-care with referring GPs</p>
+    <p><em>Profile URL:</em> /specialists/katrina-heggie/</p>
+  </div>
+
+  <hr class="section-rule">
+  <h2>Nursing</h2>
+
+  <div class="profile">
+    <h3>Jessie Leahy</h3>
+    <p class="p-role">Lead of Nursing Department / Practice Nurse</p>
+    <p class="p-quals">Registered Nurse Division 1</p>
+    <p><em>Profile URL:</em> /specialists/jessie-leahy/</p>
+  </div>
+
+  <div class="profile">
+    <h3>Isabella Matthews</h3>
+    <p class="p-role">Registered Nurse</p>
+    <p class="p-quals">BN</p>
+    <p><em>Profile URL:</em> /specialists/isabella-matthews/</p>
+  </div>
+
+  <hr class="section-rule">
+  <h2>Dietetics</h2>
+
+  <div class="profile">
+    <h3>Jennifer Tsoutsoulis</h3>
+    <p class="p-role">Lead of Dietetics Department / Business Development Manager</p>
+    <p class="p-quals">Accredited Practising Dietitian · BHumNut · MDiet</p>
+    <p><em>Profile URL:</em> /specialists/jennifer-tsoutsoulis/</p>
+  </div>
+
+  <div class="profile">
+    <h3>Megan Hickey</h3>
+    <p class="p-role">Accredited Practising Dietitian</p>
+    <p class="p-quals">BNutDiet · MDiet</p>
+    <p><em>Profile URL:</em> /specialists/megan-hickey/</p>
+  </div>
+
+  <hr class="section-rule">
+  <h2>Psychology</h2>
+
+  <div class="profile">
+    <h3>Dr Melanie Strang</h3>
+    <p class="p-role">Registered Psychologist</p>
+    <p class="p-quals">BSc · MBBS · GDipPsych · GDipPsych Adv</p>
+    <p><em>Profile URL:</em> /specialists/melanie-strang/</p>
+  </div>
+
+  <hr class="section-rule">
+  <h2>Surgical PAs</h2>
+
+  <div class="profile">
+    <h3>Katie Wendt</h3>
+    <p class="p-role">Personal Assistant to A/Prof Michael Hii</p>
+    <p><em>Profile URL:</em> /specialists/katie-wendt/</p>
+  </div>
+  <div class="profile">
+    <h3>Lauren Drummond</h3>
+    <p class="p-role">Personal Assistant to Dr Salena Ward</p>
+    <p><em>Profile URL:</em> /specialists/lauren-drummond/</p>
+  </div>
+  <div class="profile">
+    <h3>Irena Jennings</h3>
+    <p class="p-role">Personal Assistant to Dr Nicole Winter</p>
+    <p><em>Profile URL:</em> /specialists/irena-jennings/</p>
+  </div>
+
+  <hr class="section-rule">
+  <h2>Administration</h2>
+
+  <div class="profile">
+    <h3>Joseph Gallagher</h3>
+    <p class="p-role">Administrator and PA to Physicians</p>
+    <p class="p-quals">Practice administration · Physician coordination</p>
+    <p><em>Profile URL:</em> /specialists/joseph-gallagher/</p>
+  </div>
+  <div class="profile">
+    <h3>Patricia Bouldoh</h3>
+    <p class="p-role">Reception</p>
+    <p class="p-quals">First point of contact · Mon to Fri, 8.30am to 5.00pm</p>
+    <p><em>Profile URL:</em> /specialists/patricia-bouldoh/</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     05  MEMBERSHIP
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 05</span>
+  <h1>Membership</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/membership/</em></p>
+
+  <h4>Page header</h4>
+  <p class="lead-p">Long-term metabolic care, under continuous clinical oversight.</p>
+  <p><em>Sub-lead:</em> A physician-led membership for medical weight management and metabolic health.</p>
+
+  <hr class="section-rule">
+  <h4>Membership in Three Steps</h4>
+  <h2>Physician-led metabolic care, coordinated from the beginning.</h2>
+  <p>Join through the Meridian app, complete assessment with a consultant physician, and remain under the care of the same multidisciplinary team across the year.</p>
+
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Download the app</h3><p>Install the Meridian patient app on iPhone or Android.</p><p>Following first contact with the practice, your patient profile is activated to support appointments, communication and ongoing care throughout treatment.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Physician-led GLP-1 care</h3><p>Where clinically appropriate, GLP-1 therapy is prescribed and supervised by a consultant physician within Meridian's metabolic programme.</p><p>Treatment selection, dose titration, monitoring and ongoing support are managed through the same clinical team to support continuity and safety.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Continuous care with the same clinical team</h3><p>Your physician, dietitian and psychologist remain involved across assessment, treatment and follow-up throughout the year wherever possible.</p><p>Care is supported by scheduled review, GP communication and a shared longitudinal clinical record within the Meridian app.</p></div></div>
+
+  <p class="small-note">Membership is opened on the recommendation of a Meridian physician. It is a clinical service, not a subscription product.</p>
+
+  <hr class="section-rule">
+  <h4>What it includes</h4>
+  <h2>Metabolic care rarely succeeds as a single episode of treatment.</h2>
+  <p>Most patients require continuity, periodic review, adjustment of therapy and support that evolves over time.</p>
+  <p>Meridian Membership is designed to provide that ongoing clinical framework.</p>
+  <p>Membership is offered through recommendation by a Meridian physician or surgeon and provides coordinated long-term metabolic care within the broader Meridian model.</p>
+  <p>This is a clinical programme — not a subscription product.</p>
+
+  <hr class="section-rule">
+  <h4>Six elements of care</h4>
+  <h2>Six elements of care, held in one programme.</h2>
+
+  <div class="element"><div class="e-num">No. 01</div><div class="e-title">Physician review</div><p>Quarterly consultation with a consultant physician. Adjustment of medication, review of bloods, escalation if needed.</p></div>
+  <div class="element"><div class="e-num">No. 02</div><div class="e-title">GLP-1 therapy</div><p>Where clinically appropriate, prescribed and titrated under physician supervision. Side-effect management included.</p></div>
+  <div class="element"><div class="e-num">No. 03</div><div class="e-title">Dietetic input</div><p>Sessions with an Accredited Practising Dietitian, scheduled to your phase of care.</p></div>
+  <div class="element"><div class="e-num">No. 04</div><div class="e-title">Psychology</div><p>Registered psychologist available for behavioural support, scheduled when clinically indicated.</p></div>
+  <div class="element"><div class="e-num">No. 05</div><div class="e-title">Patient app</div><p>The Meridian app, with reading, trackers, and direct messaging to your care team between visits.</p></div>
+  <div class="element"><div class="e-num">No. 06</div><div class="e-title">Shared care</div><p>Letters to your GP after every review. Clinical decisions remain visible and continuous.</p></div>
+
+  <hr class="section-rule">
+  <h4>Who it is for</h4>
+  <h2>Designed for patients who benefit from ongoing metabolic care rather than a single episode of treatment.</h2>
+  <p>This pathway commonly includes patients undergoing long-term medical weight management, maintaining outcomes after bariatric surgery, or managing insulin resistance, type 2 diabetes and related metabolic conditions requiring periodic clinical review.</p>
+  <p>Membership is recommended selectively following assessment by a Meridian physician, ensuring the programme aligns appropriately with the patient's medical, metabolic and surgical needs.</p>
+  <p class="small-note">A GP referral is helpful, but not required for initial enquiry. Medicare rebates may apply where eligible services are provided under a valid referral.</p>
+
+  <hr class="section-rule">
+  <h4>How it works</h4>
+  <h2>Three steps to enrolment.</h2>
+
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Initial consultation</h3><p>You meet a Meridian physician. The clinical question is examined in full, history, investigations and any current medication.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Pathway recommendation</h3><p>If membership is the right pathway, the physician explains the programme, the medication plan, the review schedule and what is expected of you.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Twelve-month arc</h3><p>Care unfolds across the year. Quarterly physician review. Dietetic and psychology input as required. The patient app holds the file in one place.</p></div></div>
+
+  <hr class="section-rule">
+  <h4>Diagnostics</h4>
+  <h2>Investigations held in the file, not chased between providers.</h2>
+  <p>Periodic blood work, body composition, lipid and HbA1c monitoring, and other investigations clinically indicated for the medication and the patient. Pathology is requested through the practice and returns into the patient's clinical file.</p>
+  <p>Where additional imaging or specialist investigation is required, the practice arranges it within Brenan Place or with established referral partners.</p>
+
+  <hr class="section-rule">
+  <h4>Escalation</h4>
+  <h2>If the medical pathway reaches its limit, the surgical pathway is in the next room.</h2>
+  <p>Some patients on the metabolic pathway will, over time, become candidates for bariatric surgery. The decision is reached through the same multidisciplinary review that opens the membership, and the surgical team is already known to the patient.</p>
+  <p>The transition is held within one practice. There is no second referral, no new file, no repetition of history.</p>
+
+  <hr class="section-rule">
+  <h4>Bariatric integration</h4>
+  <h2>The operation is only one part of long-term metabolic care.</h2>
+  <p>Meridian Membership supports post-bariatric patients through ongoing physician review, dietetic care, supplement and nutritional monitoring, and management of weight regain or metabolic drift over time.</p>
+  <p>Care remains integrated with the operating surgeon and coordinated with the patient's GP to support continuity across the years following surgery.</p>
+
+  <hr class="section-rule">
+  <h4>Continuity</h4>
+  <h2>The same clinicians remain involved throughout the programme.</h2>
+  <p>The physician who commences care continues review across the year, supported by a consistent dietitian and psychology team. Clinical records, progress and communication are maintained within a single longitudinal patient file through the Meridian app.</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     06  PATIENT APP
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 06</span>
+  <h1>Patient App</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/app/</em></p>
+
+  <h4>Hero</h4>
+  <p class="lead-p">Care between visits, in one place.</p>
+  <p><em>Lead:</em> The Meridian app keeps clinical care continuous from referral through twelve-month follow-up.</p>
+  <p><em>Body:</em> Enter the patient number issued at consultation, and the practice's guided protocols, treatment explanations and trackers unfold to match where you are in care.</p>
+  <p class="img-cap"><em>Eyebrow:</em> In your hand &nbsp;·&nbsp; <em>Caption:</em> A guided patient experience from referral through twelve-month follow-up.</p>
+
+  <hr class="section-rule">
+  <h4>Overview</h4>
+  <h2>A quiet companion to your care. Not another health app.</h2>
+  <p>The Meridian app holds the parts of treatment you would otherwise carry on paper, in your inbox, or in your head.</p>
+
+  <hr class="section-rule">
+  <h4>The four things you will use it for</h4>
+
+  <div class="element"><div class="e-num">No. 01</div><div class="e-title">Today</div><p>Where you are in care, and the next step waiting for you.</p></div>
+  <div class="element"><div class="e-num">No. 02</div><div class="e-title">Library</div><p>Reading and worksheets written by Meridian clinicians, released as you progress.</p></div>
+  <div class="element"><div class="e-num">No. 03</div><div class="e-title">Trackers</div><p>Weight, hydration, protein and pain. Reviewed at each appointment.</p></div>
+  <div class="element"><div class="e-num">No. 04</div><div class="e-title">Messages</div><p>Reach your nurse, dietitian or surgeon between visits.</p></div>
+
+  <hr class="section-rule">
+  <h4>By the numbers</h4>
+  <h2>Held to clinical standards, not consumer ones.</h2>
+  <table class="info">
+    <tr><td>Active patients</td><td>1,800+ &nbsp;·&nbsp; Across surgical and metabolic pathways.</td></tr>
+    <tr><td>Daily prompts</td><td>12 &nbsp;·&nbsp; Average released across recovery, week one.</td></tr>
+    <tr><td>Reading time</td><td>2 min &nbsp;·&nbsp; Average length of a clinician-written piece.</td></tr>
+    <tr><td>Reply window</td><td>1 day &nbsp;·&nbsp; For non-urgent messages from the care team.</td></tr>
+  </table>
+
+  <hr class="section-rule">
+  <h4>How it works</h4>
+  <h2>Three steps. We handle the rest.</h2>
+
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Receive your patient number</h3><p>At your first consultation, the practice issues a patient number. It links your app to your clinical file.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Your plan unfolds</h3><p>The app releases content as you move through pre-surgical preparation, procedure week, and structured recovery. Nothing is shown out of order.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Your team reviews together</h3><p>Trackers, questions and prepared notes appear in your file. Reviewed at each follow-up, not lost between visits.</p></div></div>
+
+  <hr class="section-rule">
+  <h4>Privacy</h4>
+  <h2>Your record stays inside the practice. Where it should.</h2>
+  <p>The Meridian app is operated by Meridian Health. Patient data sits within the practice's clinical system. It is not sold, shared with advertisers or used for any purpose outside your care.</p>
+  <p>Login is tied to your patient number and a private code. The app can be paused or deleted at any time, with no effect on your clinical care.</p>
+
+  <hr class="section-rule">
+  <h4>Download</h4>
+  <h2>Scan to open the Meridian patient app.</h2>
+  <p>Point your phone camera at the code. The link opens the App Store or Google Play, depending on your device.</p>
+  <p class="small-note">QR code download URL: https://meridianhealth.com.au/app/ &nbsp;·&nbsp; Available for iPhone and Android.</p>
+
+  <div class="cta"><h3>Get the app</h3><p>Available to Meridian patients on iPhone and Android.</p><p class="cta-links">Start assessment &nbsp;·&nbsp; Speak to the team</p></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     07  CONTACT
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 07</span>
+  <h1>Contact</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>URL: meridianhealth.com.au/contact/</em></p>
+
+  <h4>Page header</h4>
+  <p class="lead-p">Get in touch.</p>
+  <p><em>Lead:</em> Tell us what you would like help with.</p>
+  <p><em>Body:</em> A clinician will write back within a working day. A referral is not required to enquire.</p>
+
+  <hr class="section-rule">
+  <h4>Start assessment</h4>
+  <h3>Enquiry form fields</h3>
+  <ul>
+    <li>First name (required)</li>
+    <li>Last name (required)</li>
+    <li>Email (required)</li>
+    <li>Phone</li>
+    <li>Which pathway interests you? — Bariatric (metabolic) surgery / Upper GI &amp; Surgical Care / Metabolic Medicine / Unsure (required)</li>
+    <li>In a few sentences, what would you like help with? (required)<br>
+    <em>Placeholder:</em> For example: I have reflux that has not settled on medication. Or: I am considering bariatric surgery and would like to understand my options.</li>
+  </ul>
+  <p><em>Submit button:</em> Send to the team</p>
+  <p class="small-note">Your details are held in confidence and used only to respond to your enquiry.</p>
+
+  <h4>Form success message</h4>
+  <p><em>Eyebrow:</em> Received</p>
+  <p><strong>Thanks. We will be in touch.</strong></p>
+  <p>A clinician will write back within a working day. If your enquiry is urgent, please call (03) 9416 4418.</p>
+
+  <hr class="section-rule">
+  <h4>Speak to the team</h4>
+  <p>You will speak with one of our surgical PAs or nurses. The right clinician will respond.</p>
+  <table class="info">
+    <tr><td>Practice</td><td>Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065</td></tr>
+    <tr><td>Phone</td><td>(03) 9416 4418</td></tr>
+    <tr><td>Fax</td><td>(03) 8692 1190</td></tr>
+    <tr><td>Email</td><td>reception@meridianhealth.com.au</td></tr>
+    <tr><td>Hours</td><td>Mon to Fri, 8.30am to 5.00pm</td></tr>
+    <tr><td>Reply</td><td>Within one working day</td></tr>
+    <tr><td>Referral</td><td>Not required to enquire</td></tr>
+  </table>
+  <p><em>CTA button:</em> Call (03) 9416 4418</p>
+
+  <p class="img-cap"><em>Image divider — Eyebrow:</em> Brenan Place &nbsp;·&nbsp; <em>Caption:</em> Suite 301, Level 3, 33 Victoria Parade. Fitzroy, on the quiet edge of the city.</p>
+
+  <h4>Marquee image captions</h4>
+  <table class="info">
+    <tr><td>Reception</td><td>First voice on the phone, first face on arrival.</td></tr>
+    <tr><td>Consulting suite</td><td>Private, calm, unhurried.</td></tr>
+    <tr><td>Fitzroy</td><td>Brenan Place, St Vincent's precinct.</td></tr>
+    <tr><td>Multidisciplinary</td><td>Surgeons, physicians, dietitians, psychologists, in one practice.</td></tr>
+  </table>
+
+  <hr class="section-rule">
+  <h4>What happens next</h4>
+  <h2>From enquiry to first appointment.</h2>
+  <div class="step"><div class="step-num">01</div><div class="step-body"><h3>We read your enquiry</h3><p>A clinician reviews the message.</p></div></div>
+  <div class="step"><div class="step-num">02</div><div class="step-body"><h3>We reply with the next step</h3><p>If a consultation is appropriate, the practice suggests the right surgeon or physician.</p></div></div>
+  <div class="step"><div class="step-num">03</div><div class="step-body"><h3>You meet the team</h3><p>Appointments are often available within the week.</p></div></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     08  SITEWIDE ELEMENTS
+══════════════════════════════════════════ -->
+<div class="section-break">
+  <span class="page-label">Page 08</span>
+  <h1>Sitewide Elements</h1>
+  <hr class="gold-rule">
+  <p class="body-p"><em>Navigation, footer, and global elements appearing across all pages.</em></p>
+
+  <h4>Navigation — Logo / Brand name</h4>
+  <p>Meridian &nbsp;·&nbsp; Gastrointestinal &amp; Metabolic Health</p>
+
+  <h4>Navigation — Primary links</h4>
+  <ul>
+    <li>Clinical Pathways (dropdown)
+      <ul>
+        <li>Bariatric (metabolic) surgery &nbsp;·&nbsp; /clinical-pathways/bariatric-surgery/</li>
+        <li>Upper GI &amp; Surgical Care &nbsp;·&nbsp; /clinical-pathways/upper-gi-surgical-care/</li>
+        <li>Metabolic Medicine &nbsp;·&nbsp; /clinical-pathways/metabolic-medicine/</li>
+      </ul>
+    </li>
+    <li>The Practice &nbsp;·&nbsp; /the-practice/</li>
+    <li>Your Care Team &nbsp;·&nbsp; /specialists/</li>
+    <li>Membership &nbsp;·&nbsp; /membership/</li>
+  </ul>
+
+  <h4>Navigation — CTA</h4>
+  <p>Start assessment &nbsp;·&nbsp; /contact/#assessment</p>
+
+  <hr class="section-rule">
+  <h4>Footer — Columns</h4>
+
+  <p><strong>Column 1 — Brand</strong><br>
+  Gastrointestinal &amp; Metabolic Health<br>
+  Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065</p>
+
+  <p><strong>Column 2 — Pathways</strong></p>
+  <ul>
+    <li>Bariatric (metabolic) surgery</li>
+    <li>Upper GI &amp; Surgical Care</li>
+    <li>Metabolic Medicine</li>
+  </ul>
+
+  <p><strong>Column 3 — Practice</strong></p>
+  <ul>
+    <li>Your Care Team</li>
+    <li>The practice</li>
+    <li>Membership</li>
+    <li>Contact</li>
+  </ul>
+
+  <p><strong>Column 4 — Get in touch</strong></p>
+  <ul>
+    <li>(03) 9416 4418</li>
+    <li>reception@meridianhealth.com.au</li>
+    <li>Mon to Fri, 8.30am to 5.00pm</li>
+  </ul>
+
+  <h4>Footer — Bottom bar</h4>
+  <p>© 2026 &nbsp;·&nbsp; Fitzroy</p>
+
+  <hr class="section-rule">
+  <h4>Standard CTA block (sitewide)</h4>
+  <p>Used at the bottom of most pages:</p>
+  <p><em>Eyebrow:</em> Get in touch &nbsp;·&nbsp; <em>Headline:</em> A clinician will write back within a working day. &nbsp;·&nbsp; <em>Buttons:</em> Start assessment &nbsp;·&nbsp; Download the app</p>
+
+  <hr class="section-rule">
+  <h4>Password gate (meridianhealth.com.au only)</h4>
+  <p class="small-note">The live site is gated with a login. Gate bypassed in development environments. Credentials held separately.</p>
+</div>
+
+</body>
+</html>
