@@ -1054,6 +1054,9 @@
 </div>
 
 <h3>Test Completion Record</h3>
+<div class="callout">
+  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 08 is at <strong>_docs/brevo-stage-08-setup-checklist.html</strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete.
+</div>
 <table class="attrs">
   <thead><tr><th>Field</th><th>Detail</th></tr></thead>
   <tbody>
@@ -1066,36 +1069,52 @@
       <td><em>To be recorded by admin on test completion</em></td>
     </tr>
     <tr>
-      <td>Test contact</td>
-      <td><em>Record email/mobile used (do not include real patient details)</em></td>
-    </tr>
-    <tr>
-      <td>Appointment_datetime set to</td>
-      <td><em>Record the datetime value used (e.g. 73 hrs from test time)</em></td>
-    </tr>
-    <tr>
-      <td>Appointment type tested</td>
-      <td><em>face_to_face / telehealth — record which conditional block was verified</em></td>
-    </tr>
-    <tr>
-      <td>Email received</td>
-      <td><em>Yes / No — note actual receive time and whether merge tags resolved correctly</em></td>
-    </tr>
-    <tr>
-      <td>SMS received</td>
-      <td><em>Yes / No — note actual receive time and whether date/time displayed correctly</em></td>
-    </tr>
-    <tr>
-      <td>Brevo automation log result</td>
-      <td><em>Confirm contact appeared in Automation → History with status Completed</em></td>
-    </tr>
-    <tr>
       <td>Tested by</td>
       <td><em>Name of admin who performed the test</em></td>
     </tr>
+    <tr>
+      <td>Test contact email</td>
+      <td><em>Record email used (do not use real patient email)</em></td>
+    </tr>
+    <tr>
+      <td>Test contact mobile</td>
+      <td><em>Record mobile used (do not use real patient mobile)</em></td>
+    </tr>
+    <tr>
+      <td>appointment_datetime set to</td>
+      <td><em>Record the datetime value used (e.g. 73 hrs from test time)</em></td>
+    </tr>
+    <tr>
+      <td>Face-to-face — email received</td>
+      <td><em>Yes / No — receive time, merge tags resolved, correct conditional block</em></td>
+    </tr>
+    <tr>
+      <td>Face-to-face — SMS received</td>
+      <td><em>Yes / No — receive time, date/time displayed correctly</em></td>
+    </tr>
+    <tr>
+      <td>Telehealth — email received</td>
+      <td><em>Yes / No — receive time, merge tags resolved, correct conditional block</em></td>
+    </tr>
+    <tr>
+      <td>Telehealth — SMS received</td>
+      <td><em>Yes / No — receive time, date/time displayed correctly</em></td>
+    </tr>
+    <tr>
+      <td>Brevo automation log — face-to-face</td>
+      <td><em>Completed / Failed — confirm contact in Automation → History</em></td>
+    </tr>
+    <tr>
+      <td>Brevo automation log — telehealth</td>
+      <td><em>Completed / Failed — confirm contact in Automation → History</em></td>
+    </tr>
+    <tr>
+      <td>Automation activated for live patients</td>
+      <td><em>Yes — date activated, activated by</em></td>
+    </tr>
   </tbody>
 </table>
-<p class="note">Complete both the face_to_face and telehealth variants before marking Stage 08 fully live. Update this record after each test.</p>
+<p class="note">Complete both the face_to_face and telehealth variants before marking Stage 08 fully live. Update this record and the checklist record at <em>_docs/brevo-stage-08-setup-checklist.html</em> after each test.</p>
 
 <!-- ═══════════════════════════════════════ SECTION 4 ═══════════════════════════════════════ -->
 <h1 id="post-consultation">4 &nbsp; Post-Consultation Automation — Stage 09</h1>
