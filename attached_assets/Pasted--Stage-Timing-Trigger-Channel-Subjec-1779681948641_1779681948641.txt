@@ -1,0 +1,12 @@
+| Stage | Timing                     | Trigger                      | Channel               | Subject Line                                  | Objective              |
+| ----- | -------------------------- | ---------------------------- | --------------------- | --------------------------------------------- | ---------------------- |
+| 01    | Immediate                  | Enquiry submitted            | Email                 | Meridian Health — We’ve received your enquiry | Confirm enquiry        |
+| 02    | +15 mins                   | If no booking made           | SMS                   | Meridian Health follow up                     | Increase contact rate  |
+| 03    | +24 hours                  | If consultation not booked   | Email                 | Following your enquiry with Meridian Health   | Re-engagement          |
+| 04    | +3 days                    | If consultation not booked   | Email                 | What to expect from an initial consultation   | Reduce uncertainty     |
+| 05    | +5 days                    | If consultation not booked   | Email                 | Upper GI, Bariatric & Metabolic care pathways | Education              |
+| 06    | Booking confirmed          | Appointment created in Genie | Email                 | Meridian — Your Initial Consultation          | Operational onboarding |
+| 07    | Immediate post-booking     | SMS                          | Appointment confirmed | Reduce no-shows                               |                        |
+| 08    | 72 hrs pre consult         | Reminder automation          | Email + SMS           | Upcoming consultation reminder                | Form completion        |
+| 09    | Post consultation          | Consultation completed       | Email                 | Your next steps with Meridian                 | Continuity             |
+| 10    | Procedure/pathway specific | Surgeon recommendation       | Email nurture         | Sleeve / bypass / reflux / GLP-1 / metabolic  | Decision support       |
