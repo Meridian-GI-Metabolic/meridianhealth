@@ -36,6 +36,26 @@
   .toc-num { color: #c2a55e; font-weight: 600; margin-right: 8pt; }
   .toc-indent { padding-left: 24pt; }
   .toc-rule { width: 30pt; height: 1.5pt; background: #c2a55e; border: none; margin: 0 0 20pt; }
+  .signoff-page { page-break-before: always; page-break-after: always; }
+  .signoff-banner { background: #fdf6e8; border: 2pt solid #c2a55e; padding: 18pt 20pt 14pt; margin-bottom: 20pt; }
+  .signoff-banner-label { font-size: 8pt; letter-spacing: 3pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; margin-bottom: 6pt; }
+  .signoff-banner-title { font-family: Georgia, serif; font-size: 18pt; font-weight: normal; color: #201e11; margin: 0 0 6pt; }
+  .signoff-banner-sub { font-size: 10pt; color: #5a4e32; margin: 0; }
+  .signoff-instruction { font-size: 10pt; color: #444; line-height: 1.7; margin-bottom: 16pt; }
+  .signoff-table { width: 100%; border-collapse: collapse; font-size: 10pt; margin-bottom: 20pt; }
+  .signoff-table th { background: #f5f0e8; color: #201e11; text-align: left; padding: 7pt 10pt; border: 1pt solid #d8d0c0; font-size: 9pt; letter-spacing: 0.5pt; text-transform: uppercase; }
+  .signoff-table td { padding: 8pt 10pt; border: 1pt solid #d8d0c0; vertical-align: top; }
+  .signoff-table tr.signoff-row td { background: #fff; min-height: 28pt; }
+  .signoff-table tr.signoff-row td.field-label { font-size: 9pt; color: #888; width: 28%; }
+  .signoff-table tr.signoff-row td.field-value { width: 72%; height: 28pt; }
+  .checklist-table { width: 100%; border-collapse: collapse; font-size: 10pt; margin-bottom: 16pt; }
+  .checklist-table th { background: #f5f0e8; color: #201e11; text-align: left; padding: 6pt 10pt; border: 1pt solid #d8d0c0; font-size: 9pt; letter-spacing: 0.5pt; text-transform: uppercase; }
+  .checklist-table td { padding: 6pt 10pt; border: 1pt solid #d8d0c0; vertical-align: middle; }
+  .checklist-table td.check-box { width: 30pt; text-align: center; font-size: 14pt; }
+  .checklist-table td.email-ref { width: 30%; font-size: 9.5pt; color: #555; }
+  .checklist-table td.email-desc { font-size: 9.5pt; }
+  .checklist-table td.notes-col { width: 30%; font-size: 9pt; color: #999; font-style: italic; }
+  .signoff-warning { background: #fff8f0; border-left: 3pt solid #d07030; padding: 10pt 12pt; margin: 14pt 0; font-size: 10pt; color: #5a3010; }
 </style>
 </head>
 <body>
@@ -57,6 +77,9 @@
 <div style="page-break-after: always;">
   <h2 style="border:none; margin-top:0; font-family:Georgia,serif; font-size:16pt; font-weight:normal;">Contents</h2>
   <hr class="toc-rule"/>
+  <div class="toc-section" style="background:#fdf6e8; border:1pt solid #c2a55e; padding:6pt 10pt; margin-bottom:8pt;">
+    <span class="toc-num" style="color:#d07030;">★</span> <strong>Clinical Review &amp; Sign-Off — Stage 10 (action required before activation)</strong>
+  </div>
   <div class="toc-section"><span class="toc-num">A</span> How to use this document</div>
   <br/>
   <div class="toc-section"><strong>Enquiry Nurture — Stub Stages</strong></div>
@@ -70,6 +93,167 @@
   <div class="toc-section toc-indent"><span class="toc-num">10C</span> Reflux &amp; Upper GI (3 emails)</div>
   <div class="toc-section toc-indent"><span class="toc-num">10D</span> GLP-1 &amp; Metabolic Medicine (3 emails)</div>
   <div class="toc-section toc-indent"><span class="toc-num">10E</span> Revision Procedures (3 emails)</div>
+</div>
+
+<!-- CLINICAL SIGN-OFF PAGE -->
+<div class="signoff-page" id="clinical-signoff">
+
+  <div class="signoff-banner">
+    <p class="signoff-banner-label">Action Required Before Activation</p>
+    <p class="signoff-banner-title">Clinical Review &amp; Sign-Off — Stage 10 Pathway Emails</p>
+    <p class="signoff-banner-sub">All five Stage 10 pathway automation tracks must be reviewed and approved by a clinician or nurse lead before the automations are activated in Brevo.</p>
+  </div>
+
+  <div class="signoff-warning">
+    <strong>Do not activate Stage 10 automations until this sign-off is complete.</strong> The automation flow configuration document states: <em>"Do not activate until copy is populated and reviewed clinically."</em> Once sign-off is recorded here, the Brevo activation task can proceed.
+  </div>
+
+  <p class="signoff-instruction">The 15 emails below (three per pathway track, five tracks) contain clinical information including procedure descriptions, supplement regimens, pre-operative protocols and recovery timelines. The reviewing clinician should read each email block in full, note any corrections or amendments required, and record sign-off in the table below. Any amendments should be made to the copy in this document before activating the automations.</p>
+
+  <h3 style="margin-top:0;">Sign-Off Record</h3>
+  <table class="signoff-table">
+    <tr>
+      <th colspan="2">Clinician / Nurse Lead Sign-Off</th>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">Reviewer name</td>
+      <td class="field-value">&nbsp;</td>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">Role / title</td>
+      <td class="field-value">&nbsp;</td>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">Date reviewed</td>
+      <td class="field-value">&nbsp;</td>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">Initials</td>
+      <td class="field-value">&nbsp;</td>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">Amendments required?</td>
+      <td class="field-value">☐ &nbsp;No amendments required &nbsp;&nbsp; ☐ &nbsp;Amendments noted below / in document</td>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">Approved for activation?</td>
+      <td class="field-value">☐ &nbsp;Yes — approved &nbsp;&nbsp; ☐ &nbsp;No — pending amendments</td>
+    </tr>
+    <tr class="signoff-row">
+      <td class="field-label">General notes / amendments</td>
+      <td class="field-value" style="height:54pt;">&nbsp;</td>
+    </tr>
+  </table>
+
+  <h3>Email Review Checklist — Stage 10 (15 Emails)</h3>
+  <p class="signoff-instruction" style="margin-bottom:10pt;">Tick each email once reviewed. Note any specific corrections in the Notes column or mark up the email block directly in the document.</p>
+
+  <table class="checklist-table">
+    <tr>
+      <th class="check-box">✓</th>
+      <th class="email-ref">Email</th>
+      <th class="email-desc">Subject / Content</th>
+      <th class="notes-col">Corrections / Notes</th>
+    </tr>
+    <!-- 10A -->
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10A — Email 1 (Immediate)</td>
+      <td class="email-desc">Sleeve gastrectomy overview; pathway recommended; care coordinator follow-up</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10A — Email 2 (+3 days)</td>
+      <td class="email-desc">VLCD liver reduction; nurse &amp; dietitian meetings; supplement and eating progression planning</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10A — Email 3 (+7 days)</td>
+      <td class="email-desc">12-month follow-up structure; return to activity timeline; long-term care</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <!-- 10B -->
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10B — Email 1 (Immediate)</td>
+      <td class="email-desc">Gastric bypass overview; indications (reflux, T2DM, prior failure); care coordinator follow-up</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10B — Email 2 (+3 days)</td>
+      <td class="email-desc"><strong>PRIORITY REVIEW:</strong> Lifelong supplement regimen (B12, iron, calcium); VLCD; nurse education — confirm accuracy with dietitian</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10B — Email 3 (+7 days)</td>
+      <td class="email-desc">Recovery stages (liquid/pureed/soft); supplement adherence; 12-month follow-up</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <!-- 10C -->
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10C — Email 1 (Immediate)</td>
+      <td class="email-desc">Upper GI pathway overview; investigations (physiology testing, gastroscopy, imaging)</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10C — Email 2 (+4 days)</td>
+      <td class="email-desc">Treatment options spectrum; fundoplication; complex oesophageal/gastric conditions</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10C — Email 3 (+10 days)</td>
+      <td class="email-desc">Chronic condition management; Barrett's oesophagus surveillance; long-term follow-up</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <!-- 10D -->
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10D — Email 1 (Immediate)</td>
+      <td class="email-desc">Metabolic medicine overview; GLP-1 as part of broader plan; dietitian and clinical review</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10D — Email 2 (+4 days)</td>
+      <td class="email-desc">Dietitian review; lean muscle preservation; blood tests and body composition monitoring</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10D — Email 3 (+10 days)</td>
+      <td class="email-desc">Long-term metabolic review; medication adjustment; pathway transitions</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <!-- 10E -->
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10E — Email 1 (Immediate)</td>
+      <td class="email-desc">Revision surgery overview; indications (weight regain, reflux, anatomical); specialist experience</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10E — Email 2 (+4 days)</td>
+      <td class="email-desc">Multidisciplinary pre-op assessment; psychological assessment; liver reduction diet; anatomy review</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="check-box">☐</td>
+      <td class="email-ref">10E — Email 3 (+10 days)</td>
+      <td class="email-desc">Post-operative follow-up; nutritional monitoring; supplement review; long-term care</td>
+      <td class="notes-col">&nbsp;</td>
+    </tr>
+  </table>
+
+  <p class="note" style="margin-top:8pt;">Once all 15 emails are ticked, the sign-off record above is completed, and any amendments have been applied, notify the operations team to proceed with Brevo activation of the five Stage 10 automations.</p>
+
 </div>
 
 <!-- SECTION A -->
