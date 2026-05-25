@@ -934,7 +934,18 @@
 
 <p><strong>Automation name in Brevo:</strong> MH — Pre-Consultation Reminder</p>
 <p><strong>Entry trigger:</strong> Date-based — fires 72 hours (3 days) before the value stored in <span class="mono">appointment_datetime</span></p>
-<p><strong>Brevo configuration note:</strong> In Brevo, set this as a <em>Date-based automation</em> (under Automation → New → Date-based). Select attribute <span class="mono">appointment_datetime</span>, set the offset to <em>3 days before</em>. This automation must be active for all contacts who have a scheduled appointment (i.e., have the <span class="mono">booked_consult</span> tag and a populated <span class="mono">appointment_datetime</span>).</p>
+
+<div class="callout">
+  <strong>Brevo date-based automation setup — step by step:</strong><br/><br/>
+  1. In Brevo, go to <strong>Automation → Create a workflow → Date-based automation</strong>.<br/>
+  2. Name the workflow: <strong>MH — Pre-Consultation Reminder</strong>.<br/>
+  3. Under <em>Start conditions</em>, select attribute: <strong>appointment_datetime</strong>. Set offset to <strong>exactly 72 hours (3 days) before</strong>. <em>Do not set a fixed daily send time.</em> Brevo fires the workflow at the precise datetime offset stored in the attribute — this preserves the exact 72-hour lead regardless of when the appointment falls in the day.<br/>
+  4. Add an <strong>entry condition filter</strong>: contact must have tag <span class="mono">booked_consult</span> AND <span class="mono">appointment_datetime</span> must be populated. This prevents the automation firing for contacts without a confirmed booking.<br/>
+  5. Add a <strong>Send Email</strong> step: select template <strong>MH — Email 08 — Pre-Consultation Reminder</strong>.<br/>
+  6. Add a parallel <strong>Send SMS</strong> step (or add immediately after): use the SMS 08 message body below. Wire to <span class="mono">contact.SMS</span>.<br/>
+  7. Set re-entry: <strong>allow re-entry</strong> — a patient may have multiple appointments over time. Each new <span class="mono">appointment_datetime</span> value should trigger a fresh reminder.<br/>
+  8. Activate the automation. Confirm with a test contact before going live (see testing checklist below).
+</div>
 
 <!-- STAGE 08 -->
 <div class="stage-card">
@@ -955,7 +966,11 @@
     </div>
     <div class="stage-meta-row">
       <span class="stage-meta-key">Template name</span>
-      <span class="stage-meta-val">MH — Email 08 — Pre-Consultation Reminder [STUB]</span>
+      <span class="stage-meta-val">MH — Email 08 — Pre-Consultation Reminder</span>
+    </div>
+    <div class="stage-meta-row">
+      <span class="stage-meta-key">Conditional blocks</span>
+      <span class="stage-meta-val">Block A: face-to-face (tag <span class="mono">face_to_face</span>) &nbsp;·&nbsp; Block B: telehealth (tag <span class="mono">telehealth</span>)</span>
     </div>
     <div class="stage-meta-row">
       <span class="stage-meta-key">Objective</span>
@@ -964,21 +979,123 @@
   </div>
 </div>
 
-<h3>Email 08 — Content Brief (Stub)</h3>
+<h3>Email 08 Template — Verbatim Copy</h3>
+<p class="note">Paste this body copy into the Brevo template editor as <strong>MH — Email 08 — Pre-Consultation Reminder</strong>. The two conditional blocks (dashed boxes) use the same visibility rules as Email 02 — show Block A for contacts with tag <span class="mono">face_to_face</span>, Block B for contacts with tag <span class="mono">telehealth</span>.</p>
+
 <div class="email-block">
-  <p class="email-body">
-    <p class="note"><strong>Content team brief:</strong> Remind the patient their consultation is in 72 hours. Confirm date, time, clinician, and location (conditional face-to-face vs telehealth, same logic as Email 02). List outstanding pre-consultation requirements (forms, referral, pathology). Include direct link to the Patient Registration Form if available. Tone: helpful, not alarmist. Approximately 100–150 words.</p>
-    <p><strong>Required merge tags:</strong> <span class="mono">contact.FIRSTNAME</span>, <span class="mono">contact.CLINICIAN</span>, <span class="mono">contact.APPOINTMENT_DATE</span>, <span class="mono">contact.APPOINTMENT_TIME</span></p>
-    <p><strong>Conditional blocks:</strong> face_to_face vs telehealth (same as Email 02 — reuse template blocks)</p>
-  </p>
+  <p class="email-subject">Subject line</p>
+  <p class="email-subject-line">Upcoming consultation reminder — Meridian Health</p>
+  <div class="email-body">
+    <p>Hi {{ contact.FIRSTNAME }},</p>
+    <p>A reminder that your consultation with {{ contact.CLINICIAN }} is coming up on {{ contact.APPOINTMENT_DATE }} at {{ contact.APPOINTMENT_TIME }}.</p>
+    <p>To ensure your appointment runs as smoothly as possible, please confirm that the following are in order before you attend:</p>
+    <ul>
+      <li>Patient Registration Form — completed and returned to the clinic</li>
+      <li>Relevant clinical questionnaire — completed and returned</li>
+      <li>GP referral — forwarded to us by your GP, or brought with you on the day</li>
+      <li>Relevant pathology or imaging from the past 12 months — forwarded or brought to your appointment</li>
+    </ul>
+  </div>
+
+  <div class="conditional-block">
+    <p class="conditional-label">Conditional Block A — Face-to-Face appointments only<br/>
+    <span style="font-weight:normal;">Show this block when: contact has tag <span class="mono">face_to_face</span></span></p>
+    <div class="email-body">
+      <p>Your appointment will take place at our clinic:</p>
+      <p>
+        Brenan Place<br/>
+        Victoria Parade<br/>
+        Fitzroy VIC 3065
+      </p>
+      <p class="note" style="margin-bottom:6pt;"><strong>Admin note before activating:</strong> Confirm the suite/level number with the clinic and insert it above (matching the address in Email 02). Update both Email 02 and Email 08 templates at the same time so the address is consistent across all patient communications.</p>
+      <p>Paid parking is available on surrounding streets and within nearby car parks. Public transport access is available via Victoria Parade and surrounding tram routes.</p>
+    </div>
+  </div>
+
+  <div class="conditional-block">
+    <p class="conditional-label">Conditional Block B — Telehealth (Coviu) appointments only<br/>
+    <span style="font-weight:normal;">Show this block when: contact has tag <span class="mono">telehealth</span></span></p>
+    <div class="email-body">
+      <p>Your appointment will be conducted via Coviu (telehealth). At the time of your consultation, please use the Coviu link provided in your confirmation email to enter the virtual waiting room as a guest.</p>
+      <p>Please ensure you are in a quiet and private location where you are comfortable discussing your health information. You are welcome to have a support person present if preferred.</p>
+    </div>
+  </div>
+
+  <div class="email-body" style="margin-top:10pt;">
+    <p>If your forms are already complete, there is nothing further to do — we look forward to seeing you shortly.</p>
+    <p>If you have any questions prior to your appointment, please contact the clinic on <strong>(03) 9416 4418</strong> or reply to this email and our team will be happy to assist.</p>
+    <p>Kind regards,<br/>
+    Meridian Health<br/>
+    Upper GI, Bariatric &amp; Metabolic Care</p>
+  </div>
 </div>
 
+<p class="note">Required merge tags: <span class="mono">contact.FIRSTNAME</span>, <span class="mono">contact.CLINICIAN</span>, <span class="mono">contact.APPOINTMENT_DATE</span>, <span class="mono">contact.APPOINTMENT_TIME</span>. Ensure these attributes are populated in Brevo at the time of booking (Stage 06 pre-send checklist). No attachments required for this email.</p>
+
 <h3>SMS 08 — Reminder Message</h3>
+<p class="note">Wire to <span class="mono">contact.SMS</span> as a parallel step in the MH — Pre-Consultation Reminder automation. Send simultaneously with Email 08, or within 5 minutes.</p>
 <div class="email-block">
   <p class="email-body">
     Reminder: your Meridian consultation is on {{ contact.APPOINTMENT_DATE }} at {{ contact.APPOINTMENT_TIME }}. Please ensure your forms are completed before your appointment. Questions? Call (03) 9416 4418.
   </p>
 </div>
+
+<h3>Testing the Date-Based Automation</h3>
+<div class="callout">
+  <strong>How to test Stage 08 before going live:</strong><br/><br/>
+  1. Create a test contact in Brevo (use a real email/mobile you control).<br/>
+  2. Apply the tag <span class="mono">booked_consult</span> to the test contact.<br/>
+  3. Set <span class="mono">appointment_datetime</span> on the test contact to exactly 73–74 hours from now (to allow a small buffer for processing).<br/>
+  4. Populate <span class="mono">contact.CLINICIAN</span>, <span class="mono">contact.APPOINTMENT_DATE</span>, <span class="mono">contact.APPOINTMENT_TIME</span>, and apply either the <span class="mono">face_to_face</span> or <span class="mono">telehealth</span> tag.<br/>
+  5. Confirm the automation is <strong>Active</strong> in Brevo.<br/>
+  6. Wait for the trigger time (72 hrs before the set appointment). Confirm email arrives with the correct conditional block rendered and all merge tags resolved. Confirm SMS arrives with correct date/time.<br/>
+  7. Check Brevo's <strong>Automation logs</strong> (Automation → History) to confirm the contact entered and exited the workflow successfully.<br/>
+  8. Delete the test contact after confirming delivery.
+</div>
+
+<h3>Test Completion Record</h3>
+<table class="attrs">
+  <thead><tr><th>Field</th><th>Detail</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td><strong>Pending — complete this record when live test is performed</strong></td>
+    </tr>
+    <tr>
+      <td>Test date</td>
+      <td><em>To be recorded by admin on test completion</em></td>
+    </tr>
+    <tr>
+      <td>Test contact</td>
+      <td><em>Record email/mobile used (do not include real patient details)</em></td>
+    </tr>
+    <tr>
+      <td>Appointment_datetime set to</td>
+      <td><em>Record the datetime value used (e.g. 73 hrs from test time)</em></td>
+    </tr>
+    <tr>
+      <td>Appointment type tested</td>
+      <td><em>face_to_face / telehealth — record which conditional block was verified</em></td>
+    </tr>
+    <tr>
+      <td>Email received</td>
+      <td><em>Yes / No — note actual receive time and whether merge tags resolved correctly</em></td>
+    </tr>
+    <tr>
+      <td>SMS received</td>
+      <td><em>Yes / No — note actual receive time and whether date/time displayed correctly</em></td>
+    </tr>
+    <tr>
+      <td>Brevo automation log result</td>
+      <td><em>Confirm contact appeared in Automation → History with status Completed</em></td>
+    </tr>
+    <tr>
+      <td>Tested by</td>
+      <td><em>Name of admin who performed the test</em></td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">Complete both the face_to_face and telehealth variants before marking Stage 08 fully live. Update this record after each test.</p>
 
 <!-- ═══════════════════════════════════════ SECTION 4 ═══════════════════════════════════════ -->
 <h1 id="post-consultation">4 &nbsp; Post-Consultation Automation — Stage 09</h1>
