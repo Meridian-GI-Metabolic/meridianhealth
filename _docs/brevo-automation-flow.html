@@ -1123,7 +1123,7 @@
     </div>
     <div class="stage-meta-row">
       <span class="stage-meta-key">Template name</span>
-      <span class="stage-meta-val">MH — Email 09 — Post-Consultation Next Steps [STUB]</span>
+      <span class="stage-meta-val">MH — Email 09 — Post-Consultation Next Steps</span>
     </div>
     <div class="stage-meta-row">
       <span class="stage-meta-key">Objective</span>
@@ -1132,13 +1132,38 @@
   </div>
 </div>
 
-<h3>Email 09 — Content Brief (Stub)</h3>
+<h3>Email 09 Template — Verbatim Copy</h3>
+<p class="note">Paste this body copy into the Brevo template editor as <strong>MH — Email 09 — Post-Consultation Next Steps</strong>. The conditional block (dashed box) uses Brevo's <code>{% if %}</code> syntax to reference the patient's pathway if the <code>PATHWAY</code> attribute is set at send time. Full setup guide: <em>_docs/brevo-email-09-post-consultation.html</em>.</p>
+
 <div class="email-block">
-  <p class="note"><strong>Content team brief:</strong> Thank the patient for attending. Briefly acknowledge that next steps will be communicated by the clinical team. Reinforce that they are well-supported. If <span class="mono">pathway</span> attribute is already set, this email can optionally reference the pathway name. Tone: warm, calm, clinical authority. Approximately 80–120 words. This email bridges to Stage 10 pathway-specific nurture — do not replicate content from Stage 10 here.</p>
+  <p class="email-subject">Subject line</p>
+  <p class="email-subject-line">Your next steps with Meridian</p>
+  <div class="email-body">
+    <p>Hi {{ contact.FIRSTNAME }},</p>
+    <p>Thank you for attending your consultation with {{ contact.CLINICIAN }}. We hope the appointment gave you a clearer picture of your options and the pathway ahead.</p>
+    <p>Your clinical team will be in touch shortly to outline your recommended next steps and confirm the path forward. In the meantime, please know that you are well supported — our team is here to guide you at every stage of your care.</p>
+  </div>
+
+  <div class="conditional-block">
+    <p class="conditional-label">Conditional block — show only when <span class="mono">contact.PATHWAY</span> is set<br/>
+    <span style="font-weight:normal;">Brevo syntax: <span class="mono">{% if contact.PATHWAY %} … {% endif %}</span>. If <span class="mono">PATHWAY</span> is not yet set, this block is silently omitted.</span></p>
+    <div class="email-body">
+      <p>We look forward to supporting you on your {{ contact.PATHWAY }} journey.</p>
+    </div>
+  </div>
+
+  <div class="email-body" style="margin-top:10pt;">
+    <p>If you have any questions in the meantime, please don't hesitate to contact the clinic on <strong>(03) 9416 4418</strong> or reply to this email.</p>
+    <p>Kind regards,<br/>
+    Meridian Health<br/>
+    Upper GI, Bariatric &amp; Metabolic Care</p>
+  </div>
 </div>
 
+<p class="note">Required merge tags: <span class="mono">contact.FIRSTNAME</span>, <span class="mono">contact.CLINICIAN</span>. Optional: <span class="mono">contact.PATHWAY</span> (within conditional block). Word count: approximately 95 words (excluding conditional block). Confirm these attributes are populated in Brevo before activating the automation.</p>
+
 <div class="callout">
-  <strong>Handoff to Stage 10:</strong> After Stage 09 sends, the surgeon or admin sets the <span class="mono">pathway</span> attribute on the contact. This triggers the relevant Stage 10 pathway automation. The two events may be close in time but operate independently.
+  <strong>Handoff to Stage 10:</strong> After Stage 09 sends, the surgeon or admin sets the <span class="mono">pathway</span> attribute on the contact. This triggers the relevant Stage 10 pathway automation. The two events may be close in time but operate independently. Do not chain Stage 10 inside this automation.
 </div>
 
 <!-- ═══════════════════════════════════════ SECTION 5 ═══════════════════════════════════════ -->
@@ -1319,7 +1344,7 @@ Date-based automation. Fires 72 hours before appointment_datetime. Sends reminde
 
 <h4>MH — Post-Consultation</h4>
 <p style="font-family: Courier New, monospace; font-size: 9.5pt; border: 1pt solid #ddd; padding: 8pt; background: #fafafa;">
-Triggers when consult_completed tag applied by admin. Sends Email 09 (next steps stub) immediately. After sending, surgeon or admin sets the pathway attribute — this triggers the relevant Stage 10 pathway automation independently.
+Triggers when consult_completed tag applied by admin. Sends Email 09 (post-consultation next steps) immediately. Confirms consultation occurred, reassures patient, and optionally references their pathway if already set. After sending, surgeon or admin sets the pathway attribute — this triggers the relevant Stage 10 pathway automation independently.
 </p>
 
 <h4>MH — Pathway automations (all five)</h4>
