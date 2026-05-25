@@ -1,0 +1,350 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Meridian Health — Stage 03–05 &amp; Stage 10 Activation Checklist</title>
+<style>
+  @page { margin: 25mm 22mm 25mm 28mm; }
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #201e11; line-height: 1.6; margin: 0; }
+  .cover { page-break-after: always; text-align: center; padding: 60pt 0 40pt; }
+  .cover-practice { font-size: 9pt; letter-spacing: 3pt; text-transform: uppercase; color: #888; margin-bottom: 18pt; }
+  .cover-rule { width: 48pt; height: 2pt; background: #c2a55e; margin: 0 auto 40pt; border: none; }
+  .cover-meta { font-size: 10pt; color: #888; line-height: 2; }
+  h1 { font-family: Georgia, serif; font-size: 20pt; font-weight: normal; color: #201e11; margin: 0 0 6pt; page-break-before: always; }
+  h1.no-break { page-break-before: avoid; }
+  h2 { font-family: Georgia, serif; font-size: 14pt; font-weight: normal; color: #201e11; margin: 24pt 0 4pt; border-bottom: 1px solid #e8e0d0; padding-bottom: 4pt; }
+  h3 { font-size: 11pt; font-weight: 700; color: #201e11; margin: 16pt 0 4pt; text-transform: uppercase; letter-spacing: 0.5pt; }
+  .section-rule { width: 30pt; height: 1.5pt; background: #c2a55e; border: none; margin: 0 0 14pt; }
+  p { margin: 0 0 8pt; }
+  .callout { background: #f5f0e8; border-left: 3pt solid #c2a55e; padding: 10pt 12pt; margin: 14pt 0; font-size: 10pt; font-style: italic; color: #5a4e32; }
+  .callout strong { font-style: normal; color: #201e11; }
+  .warning { background: #fff8f0; border-left: 3pt solid #d07030; padding: 10pt 12pt; margin: 14pt 0; font-size: 10pt; color: #5a3010; }
+  .checklist { width: 100%; border-collapse: collapse; font-size: 10pt; margin-bottom: 20pt; }
+  .checklist th { background: #201e11; color: #fff; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.5pt; padding: 6pt 10pt; text-align: left; }
+  .checklist td { border-bottom: 1pt solid #e8e0d0; padding: 8pt 10pt; vertical-align: top; }
+  .checklist tr:nth-child(even) td { background: #faf8f4; }
+  .checklist td.cb { width: 28pt; text-align: center; font-size: 14pt; }
+  .checklist td.step { width: 22%; font-size: 9.5pt; color: #555; font-weight: 600; }
+  .checklist td.detail { font-size: 9.5pt; }
+  .checklist td.notes { width: 24%; font-size: 9pt; color: #999; font-style: italic; }
+  .phase-header { background: #fdf6e8; border: 1pt solid #c2a55e; padding: 8pt 12pt; margin: 20pt 0 8pt; }
+  .phase-label { font-size: 8pt; letter-spacing: 2pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; margin-bottom: 2pt; }
+  .phase-title { font-family: Georgia, serif; font-size: 13pt; color: #201e11; margin: 0; }
+  .signoff-table { width: 100%; border-collapse: collapse; font-size: 10pt; margin-bottom: 20pt; }
+  .signoff-table th { background: #f5f0e8; color: #201e11; text-align: left; padding: 7pt 10pt; border: 1pt solid #d8d0c0; font-size: 9pt; letter-spacing: 0.5pt; text-transform: uppercase; }
+  .signoff-table td { padding: 8pt 10pt; border: 1pt solid #d8d0c0; vertical-align: top; }
+  .signoff-row td.field-label { font-size: 9pt; color: #888; width: 28%; }
+  .signoff-row td.field-value { width: 72%; height: 28pt; }
+  code { font-family: 'Courier New', monospace; font-size: 9.5pt; background: #f0ece4; padding: 1pt 4pt; }
+  .note { font-size: 9.5pt; color: #666; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <p class="cover-practice">Meridian Health &nbsp;·&nbsp; Operations</p>
+  <h1 class="no-break" style="page-break-before:avoid; font-size:24pt; border:none; margin-bottom:8pt;">Brevo Activation Checklist</h1>
+  <p style="font-size:12pt; color:#888; margin-bottom:40pt;">Stage 03–05 (Enquiry Nurture stubs) &nbsp;·&nbsp; Stage 10 (Pathway Nurture tracks)</p>
+  <hr class="cover-rule"/>
+  <p class="cover-meta">
+    May 2026 &nbsp;·&nbsp; Internal use — Meridian Health Operations
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h1 class="no-break" style="page-break-before:avoid;">Overview</h1>
+<hr class="section-rule"/>
+
+<p>This checklist covers the two-phase process for getting Stages 03–05 and Stage 10 live in Brevo:</p>
+
+<ol style="font-size:10.5pt; line-height:1.8; margin: 0 0 12pt 18pt; padding:0;">
+  <li><strong>Phase A — Push template copy via script</strong> (requires the Replit IP to be authorised in Brevo)</li>
+  <li><strong>Phase B — Activate automations via Brevo UI</strong> (cannot be done via API; must be done in-browser)</li>
+</ol>
+
+<div class="warning">
+  <strong>Stage 10 blocker — clinical sign-off required.</strong>
+  The 15 Stage 10 pathway emails contain clinical information (supplement regimens, pre-operative protocols, recovery timelines). A clinician or nurse lead must review and sign off all 15 emails before the Stage 10 automations are activated. Use the sign-off form at the end of this document. Do not activate Stage 10 automations until sign-off is recorded.
+</div>
+
+<div class="callout">
+  <strong>Script reference:</strong> <code>scripts/brevo-push-templates.js</code> — contains all 18 emails as embeddable HTML. Run it with <code>BREVO_API_KEY=… node scripts/brevo-push-templates.js</code> from a machine whose IP is authorised in Brevo.
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h1>Phase A &nbsp;— Push Template Copy via Script</h1>
+<hr class="section-rule"/>
+
+<div class="phase-header">
+  <p class="phase-label">Prerequisite</p>
+  <p class="phase-title">Authorise the deployment IP in Brevo before running</p>
+</div>
+
+<p>Brevo requires all API-calling IPs to be explicitly whitelisted. Go to <strong>Brevo → Settings → Security → Authorised IPs</strong> and add the server IP before running the script.</p>
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="step">Step</th>
+      <th class="detail">What to do</th>
+      <th class="notes">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">A1 — Authorise IP</td>
+      <td class="detail">In Brevo: <strong>Settings → Security → Authorised IPs</strong>. Add the IP of the machine that will run the script. For the Replit server this is confirmed in the "Whitelist the deployment IP" task.</td>
+      <td class="notes">Without this the script returns a 401 error.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">A2 — Confirm stub templates exist</td>
+      <td class="detail">In Brevo: <strong>Email → Templates</strong>. Confirm all 18 stub templates listed below exist with the exact names shown. Create any missing stubs before running the script.</td>
+      <td class="notes">Script matches by name — names are case-sensitive.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">A3 — Run the script</td>
+      <td class="detail">From the project root: <code>BREVO_API_KEY=your_key node scripts/brevo-push-templates.js</code><br/>The script updates all 18 templates and prints a summary. Review output — any "NOT FOUND" lines mean a stub name doesn't match.</td>
+      <td class="notes">Script sets <code>isActive: true</code> on all templates as part of the update.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">A4 — Spot-check in Brevo</td>
+      <td class="detail">Open two or three templates in the Brevo editor. Confirm body copy is present, subject line is correct, and <code>{{ contact.FIRSTNAME }}</code> merge tags are intact.</td>
+      <td class="notes">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>18 Templates the Script Will Update</h3>
+<table class="checklist" style="font-size:9.5pt;">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th style="width:50%;">Template Name (exact — case-sensitive)</th>
+      <th>Subject Line</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="cb">☐</td><td>MH — Email 03 — Re-Engagement (24hr)</td><td>Following your enquiry with Meridian Health</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Email 04 — Consultation Overview (3 day)</td><td>What to expect from an initial consultation</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Email 05 — Pathway Overview (5 day)</td><td>Upper GI, Bariatric &amp; Metabolic care pathways</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10A — Email 1 — Sleeve Overview</td><td>Your sleeve gastrectomy pathway — what to expect</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10A — Email 2 — Sleeve Preparation</td><td>Preparing for your procedure</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10A — Email 3 — Sleeve Long-Term</td><td>Life after sleeve gastrectomy</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10B — Email 1 — Bypass Overview</td><td>Your gastric bypass pathway — what to expect</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10B — Email 2 — Bypass Preparation</td><td>Preparing for your procedure</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10B — Email 3 — Bypass Long-Term</td><td>Recovery and long-term outcomes</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10C — Email 1 — Upper GI Overview</td><td>Your Upper GI pathway — what happens next</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10C — Email 2 — Upper GI Options</td><td>Understanding your treatment options</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10C — Email 3 — Upper GI Long-Term</td><td>Long-term management of Upper GI conditions</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10D — Email 1 — Metabolic Overview</td><td>Your metabolic medicine pathway — what to expect</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10D — Email 2 — Metabolic Plan</td><td>Getting the most from your treatment plan</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10D — Email 3 — Metabolic Long-Term</td><td>Long-term metabolic health — beyond the prescription</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10E — Email 1 — Revision Overview</td><td>Your revision surgery pathway — what to expect</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10E — Email 2 — Revision Preparation</td><td>Preparing for your revision procedure</td></tr>
+    <tr><td class="cb">☐</td><td>MH — Pathway 10E — Email 3 — Revision Long-Term</td><td>Long-term care after revision surgery</td></tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h1>Phase B &nbsp;— Activate Automations (Brevo UI)</h1>
+<hr class="section-rule"/>
+
+<div class="callout">
+  Brevo automations cannot be activated via API. Every step in this phase must be completed in-browser at <strong>app.brevo.com → Automations</strong>.
+</div>
+
+<h2>B1 — MH — Enquiry Nurture (Stages 03–05)</h2>
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="step">Step</th>
+      <th class="detail">What to do</th>
+      <th class="notes">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B1.1 — Open automation</td>
+      <td class="detail">Go to <strong>Automations → MH — Enquiry Nurture</strong>. Open the automation editor.</td>
+      <td class="notes">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B1.2 — Verify Stage 03 step</td>
+      <td class="detail">Confirm the +24 hr wait step sends template <strong>MH — Email 03 — Re-Engagement (24hr)</strong>. Check the exit condition: <em>"Contact has tag booked_consult"</em>.</td>
+      <td class="notes">Exit condition prevents Stage 03 sending to already-booked patients.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B1.3 — Verify Stage 04 step</td>
+      <td class="detail">Confirm the +3 day wait step sends template <strong>MH — Email 04 — Consultation Overview (3 day)</strong>. Exit condition present.</td>
+      <td class="notes">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B1.4 — Verify Stage 05 step</td>
+      <td class="detail">Confirm the +5 day wait step sends template <strong>MH — Email 05 — Pathway Overview (5 day)</strong>. Exit condition present.</td>
+      <td class="notes">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B1.5 — Activate automation</td>
+      <td class="detail">Click <strong>Activate</strong>. Brevo will validate the flow before activating. Resolve any errors shown.</td>
+      <td class="notes">Automation must be in Draft state before activation.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B1.6 — Test contact</td>
+      <td class="detail">Use a test contact (staff email) to submit a test enquiry. Confirm: Stage 01 fires immediately, Stage 02 SMS fires at +15 min, then Stage 03 at +24 hr. Check that <code>{{ contact.FIRSTNAME }}</code> resolves correctly.</td>
+      <td class="notes">Use a real staff name as the test contact so merge tag is meaningful.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>B2 — Stage 10 Pathway Automations (×5)</h2>
+
+<div class="warning">
+  <strong>Do not proceed with B2 until clinical sign-off is complete.</strong> Complete the sign-off form in Phase C of this document first.
+</div>
+
+<p>Repeat the steps below for each of the five Stage 10 automations:</p>
+
+<table class="checklist" style="font-size:9.5pt; margin-bottom:10pt;">
+  <thead>
+    <tr><th>Automation Name</th><th>Entry Trigger</th><th>Emails (×3)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>MH — Pathway: Sleeve Gastrectomy</td><td><code>pathway = sleeve</code></td><td>10A Email 1 / 2 / 3</td></tr>
+    <tr><td>MH — Pathway: Gastric Bypass</td><td><code>pathway = bypass</code></td><td>10B Email 1 / 2 / 3</td></tr>
+    <tr><td>MH — Pathway: Reflux &amp; Upper GI</td><td><code>pathway = reflux_uppergi</code></td><td>10C Email 1 / 2 / 3</td></tr>
+    <tr><td>MH — Pathway: GLP-1 &amp; Metabolic Medicine</td><td><code>pathway = glp1_metabolic</code></td><td>10D Email 1 / 2 / 3</td></tr>
+    <tr><td>MH — Pathway: Revision Procedures</td><td><code>pathway = revision</code></td><td>10E Email 1 / 2 / 3</td></tr>
+  </tbody>
+</table>
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="step">Step (per automation)</th>
+      <th class="detail">What to do</th>
+      <th class="notes">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B2.1 — Open automation</td>
+      <td class="detail">Go to <strong>Automations → MH — Pathway: [Name]</strong>. Open the editor.</td>
+      <td class="notes">Repeat for each of the 5 automations.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B2.2 — Verify entry trigger</td>
+      <td class="detail">Confirm the entry trigger is: <em>Contact attribute <code>pathway</code> equals [value]</em>. See table above for the correct value per automation.</td>
+      <td class="notes">Attribute must be set by the clinician post-consultation.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B2.3 — Verify three email steps</td>
+      <td class="detail">Confirm steps 1, 2, and 3 reference the correct templates for this track. Check timing: Email 1 = immediate, Email 2 and 3 = per track timing (see automation flow document).</td>
+      <td class="notes">Timing varies: 10A is +3/+7 days; 10C/D/E are +4/+10 days.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B2.4 — Activate automation</td>
+      <td class="detail">Click <strong>Activate</strong>. Resolve any validation errors before confirming.</td>
+      <td class="notes">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">B2.5 — Test contact</td>
+      <td class="detail">Manually set <code>pathway = [value]</code> on a test contact. Confirm Email 1 fires immediately and merge tags resolve. Check the Brevo contact log to confirm entry into the automation.</td>
+      <td class="notes">Remove or reset the <code>pathway</code> attribute on the test contact afterward.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h1>Phase C &nbsp;— Clinical Sign-Off (Stage 10)</h1>
+<hr class="section-rule"/>
+
+<div class="warning">
+  <strong>Action required before activating Stage 10.</strong> A clinician or nurse lead must review all 15 Stage 10 pathway emails and record sign-off below. Once complete, notify the operations team to proceed with Phase B2.
+</div>
+
+<p>The reviewing clinician should read each email in full in <code>_docs/brevo-email-copy-03-05-and-stage-10.html</code>, note any corrections required, and record sign-off here.</p>
+
+<h3>Sign-Off Record</h3>
+<table class="signoff-table">
+  <tr><th colspan="2">Clinician / Nurse Lead Sign-Off</th></tr>
+  <tr class="signoff-row"><td class="field-label">Reviewer name</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Role / title</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Date reviewed</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Initials</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row">
+    <td class="field-label">Amendments required?</td>
+    <td class="field-value">☐ &nbsp;No amendments required &nbsp;&nbsp; ☐ &nbsp;Amendments noted below / in document</td>
+  </tr>
+  <tr class="signoff-row">
+    <td class="field-label">Approved for activation?</td>
+    <td class="field-value">☐ &nbsp;Yes — approved &nbsp;&nbsp; ☐ &nbsp;No — pending amendments</td>
+  </tr>
+  <tr class="signoff-row">
+    <td class="field-label">Notes / amendments</td>
+    <td class="field-value" style="height:60pt;">&nbsp;</td>
+  </tr>
+</table>
+
+<h3>Email Review Checklist — 15 Emails</h3>
+<table class="checklist" style="font-size:9.5pt;">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th style="width:30%;">Email</th>
+      <th>Key clinical content to verify</th>
+      <th class="notes">Corrections / notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="cb">☐</td><td>10A — Email 1 (Immediate)</td><td>Sleeve gastrectomy overview; restriction and appetite signalling; care coordinator follow-up</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10A — Email 2 (+3 days)</td><td>VLCD liver reduction (2 weeks); nurse &amp; dietitian meetings; supplement and eating progression</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10A — Email 3 (+7 days)</td><td>12-month follow-up structure; return to light activity within 2 weeks; long-term care</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10B — Email 1 (Immediate)</td><td>Bypass overview; reflux / T2DM / prior failure indications; 12-month pathway structure</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td style="color:#d07030; font-weight:600;">10B — Email 2 (+3 days) ★ PRIORITY</td><td>Lifelong supplement regimen: B12, iron, calcium — <strong>confirm accuracy with dietitian</strong>; VLCD; nurse education</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10B — Email 3 (+7 days)</td><td>Liquid/pureed/soft food progression; supplement adherence; 12-month follow-up</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10C — Email 1 (Immediate)</td><td>Upper GI conditions listed; physiology testing / gastroscopy / imaging investigations</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10C — Email 2 (+4 days)</td><td>Spectrum of treatment; fundoplication as anti-reflux option; complex oesophageal conditions</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10C — Email 3 (+10 days)</td><td>Barrett's oesophagus surveillance; chronic condition management; long-term follow-up</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10D — Email 1 (Immediate)</td><td>GLP-1 as part of broader plan; physician-led; structured investigations and dietitian input</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10D — Email 2 (+4 days)</td><td>Dietitian review; lean muscle preservation; blood tests and body composition monitoring</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10D — Email 3 (+10 days)</td><td>Long-term metabolic review; medication adjustment; pathway transitions</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10E — Email 1 (Immediate)</td><td>Revision surgery overview; indications (weight regain, reflux, anatomical); specialist experience</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10E — Email 2 (+4 days)</td><td>Multidisciplinary assessment; psychological assessment; liver reduction diet; anatomy review</td><td class="notes">&nbsp;</td></tr>
+    <tr><td class="cb">☐</td><td>10E — Email 3 (+10 days)</td><td>Post-operative follow-up; nutritional monitoring; supplement review; long-term care</td><td class="notes">&nbsp;</td></tr>
+  </tbody>
+</table>
+
+<p class="note" style="margin-top:8pt;">Once all 15 emails are ticked and the sign-off record above is completed, notify the operations team to proceed with Phase B2 (Stage 10 automation activation).</p>
+
+
+<!-- FOOTER -->
+<div style="margin-top:40pt; padding-top:10pt; border-top:1pt solid #e8e0d0; font-size:9pt; color:#aaa; text-align:center;">
+  Meridian Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au<br/>
+  Internal document — not for patient distribution &nbsp;·&nbsp; May 2026
+</div>
+
+</body>
+</html>
