@@ -74,9 +74,8 @@
           <h3 style="font-size:22px;margin:0 0 10px">Thanks. We will be in touch.</h3>
           <p style="margin:0;color:var(--ink-65)">A clinician will write back within a working day. If your enquiry is urgent, please call (03) 9416 4418.</p>
         </div>
-        <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/?sent=1#assessment" class="form-card reveal reveal-2" id="meridian-form">
-          <input type="hidden" name="form-name" value="enquiry" />
-          <p style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <form name="enquiry" class="form-card reveal reveal-2" id="meridian-form" novalidate>
+          <p style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off" /></label></p>
           <div class="form-grid">
             <div class="field">
               <label for="fname">First name</label>
@@ -210,7 +209,49 @@
 </footer>
 
 <script>(function(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('show')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)})})();
-(function(){if(window.location.search.indexOf('sent=1')!==-1){var ok=document.getElementById('meridian-form-success');var f=document.getElementById('meridian-form');if(ok&&f){f.style.display='none';ok.style.display='block';ok.classList.add('show')}}})();</script>
+
+(function(){
+  var form=document.getElementById('meridian-form');
+  var successBox=document.getElementById('meridian-form-success');
+  var submitBtn=form?form.querySelector('button[type=submit]'):null;
+
+  if(!form)return;
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(document.getElementById('bot-field')&&document.getElementById('bot-field').value){return;}
+    var fname=form.querySelector('[name=fname]').value.trim();
+    var lname=form.querySelector('[name=lname]').value.trim();
+    var email=form.querySelector('[name=email]').value.trim();
+    var phone=form.querySelector('[name=phone]').value.trim();
+    var pathway=form.querySelector('[name=pathway]').value;
+    var message=form.querySelector('[name=message]').value.trim();
+
+    if(!fname||!lname||!email||!pathway){return;}
+
+    if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Sending…';}
+
+    fetch('/api/enquiry',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({fname:fname,lname:lname,email:email,phone:phone,pathway:pathway,message:message})
+    })
+    .then(function(r){
+      if(!r.ok){throw new Error('Server error '+r.status);}
+      return r.json();
+    })
+    .then(function(data){
+      if(!data.ok){throw new Error('Unexpected response');}
+      if(successBox){successBox.style.display='block';successBox.classList.add('show');}
+      form.style.display='none';
+    })
+    .catch(function(){
+      if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='Send to the team';}
+      alert('Something went wrong. Please try again or call (03) 9416 4418.');
+    });
+  });
+})();
+</script>
 
 
 <script id="meridian-mobile-nav">(function(){var b=document.querySelector(".nav-burger");if(!b)return;var body=document.body;b.addEventListener("click",function(){var open=body.classList.toggle("nav-open");b.setAttribute("aria-expanded",open?"true":"false")});document.querySelectorAll(".nav-dd > a").forEach(function(a){a.addEventListener("click",function(e){if(window.matchMedia("(max-width:880px)").matches){e.preventDefault();var dd=a.parentNode;var open=dd.classList.toggle("open");a.setAttribute("aria-expanded",open?"true":"false")}})});document.querySelectorAll(".nav-links a").forEach(function(a){if(a.classList.contains("nav-cta-mobile")||(a.parentNode&&a.parentNode.classList&&a.parentNode.classList.contains("nav-dd"))){return}a.addEventListener("click",function(){body.classList.remove("nav-open");b.setAttribute("aria-expanded","false")})});document.querySelectorAll(".nav-dd-panel a").forEach(function(a){a.addEventListener("click",function(){body.classList.remove("nav-open");b.setAttribute("aria-expanded","false")})})})();</script>
