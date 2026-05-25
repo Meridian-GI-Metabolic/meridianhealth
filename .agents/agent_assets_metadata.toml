@@ -24,3 +24,9 @@ id = "82OQbanBevjmNcPvp1J8Q"
 uri = "file://_docs/meridian-copy-deck.doc"
 type = "word_document"
 title = "Meridian Health — Complete Copy Deck (Word document)"
+
+[[outputs]]
+id = "d4EXmI-Dk6_nqGpLgK6ez"
+uri = "file://_docs/meridian-brevo-setup-instructions.doc"
+type = "word_document"
+title = "Meridian Health — Brevo Setup Instructions (outstanding actions)"
