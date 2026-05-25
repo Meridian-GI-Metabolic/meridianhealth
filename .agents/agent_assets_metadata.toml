@@ -30,3 +30,9 @@ id = "d4EXmI-Dk6_nqGpLgK6ez"
 uri = "file://_docs/meridian-brevo-setup-instructions.doc"
 type = "word_document"
 title = "Meridian Health — Brevo Setup Instructions (outstanding actions)"
+
+[[outputs]]
+id = "CkhUCXJsmabkdDPfA-wBs"
+uri = "file://_docs/meridian-wip-to-launch.doc"
+type = "word_document"
+title = "Meridian Health — WIP to Launch (all workstreams)"
