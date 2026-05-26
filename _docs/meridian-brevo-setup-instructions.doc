@@ -211,7 +211,7 @@
 &nbsp;&nbsp;[Coviu link block]<br>
 {% endif %}
 </p>
-<div class="warn"><strong>Before activating Email 02 or Email 08:</strong> confirm the correct suite and level number for the Brenan Place address block (see Action 5 below). A placeholder is currently in the template.</div>
+<div class="warn"><strong>Address block confirmed:</strong> The face-to-face address block in Email 02 and Email 08 uses <strong>Suite 8, Level 8, Brenan Place, Victoria Parade, Fitzroy VIC 3065</strong> — confirmed by the practice manager on 26 May 2026. Both templates have been updated.</div>
 
 <!-- ══════ ACTION 4 ══════ -->
 <h1>Action 4 — Build and activate the automations in Brevo</h1>
@@ -284,15 +284,17 @@
 <hr class="rule">
 <div class="note"><strong>Who:</strong> Practice admin + clinical team &nbsp;·&nbsp; <strong>Time:</strong> Short — just a check and confirmation</div>
 
-<h2>5a — Confirm suite / level for address block</h2>
-<p>Two email templates contain a face-to-face address block: <strong>Email 02</strong> (appointment confirmation) and <strong>Email 08</strong> (72-hr reminder). Both currently have a placeholder for the suite number.</p>
-<p>Confirm the correct address wording and update both templates before activating. The intended address is:</p>
+<h2>5a — Confirm suite / level for address block <span style="font-size:9pt;font-weight:normal;color:#27ae60">&#10003; Complete</span></h2>
+<p>Two email templates contain a face-to-face address block: <strong>Email 02</strong> (appointment confirmation) and <strong>Email 08</strong> (72-hr reminder).</p>
+<p>The confirmed address is:</p>
 <div class="note">
-  Suite 301, Level 3, 33 Victoria Parade<br>
+  Suite 8, Level 8<br>
+  Brenan Place<br>
+  Victoria Parade<br>
   Fitzroy VIC 3065<br><br>
-  <em>Confirm this is the correct consulting suite for all clinicians, or note any variation (e.g. if physicians consult from a different suite).</em>
+  <em>Confirmed by the practice manager on 26 May 2026. Address blocks updated in both Email 02 and Email 08.</em>
 </div>
-<p>Once confirmed, update the address block in both Email 02 and Email 08 templates in Brevo.</p>
+<p>This action is complete. No further changes required for the address block.</p>
 
 <h2>5b — Clinician sign-off on Stage 10 pathway copy</h2>
 <p>The 15 emails across the five pathway nurture tracks (Tracks 10A–10E) were written to match Meridian's clinical voice. Before activating, at least one treating clinician should review the copy to confirm:</p>
@@ -317,7 +319,7 @@
   <tr><td>2b</td><td>Create 9 tags in Brevo</td><td>Brevo admin</td><td>No</td><td>☐</td></tr>
   <tr><td>3</td><td>Build all 14 email templates in Brevo (paste copy from docs)</td><td>Brevo admin</td><td>No</td><td>☐</td></tr>
   <tr><td>4a</td><td>Build 4 automations in Brevo (Draft mode)</td><td>Brevo admin</td><td>No</td><td>☐</td></tr>
-  <tr><td>5a</td><td>Confirm suite number for Email 02 + 08 address block</td><td>Practice admin</td><td>No</td><td>☐</td></tr>
+  <tr><td>5a</td><td>Confirm suite number for Email 02 + 08 address block</td><td>Practice admin</td><td>No</td><td style="color:#27ae60;font-weight:700">&#10003;</td></tr>
   <tr><td>5b</td><td>Clinician sign-off on Track 10A–10E copy</td><td>Clinical team</td><td>No</td><td>☐</td></tr>
   <tr><td>4b</td><td>Run 72-hr test for Automation 2 (Pre-Consultation Reminder)</td><td>Brevo admin</td><td>No</td><td>☐</td></tr>
   <tr><td>4c</td><td>Activate all 4 automations</td><td>Brevo admin</td><td>No</td><td>☐</td></tr>
