@@ -294,31 +294,66 @@
 
 <!-- ═══ TEST RECORD ═══ -->
 <h2>Test Completion Record</h2>
-<p style="font-size:9.5pt; color:#666; font-style:italic;">Complete this record after the live test. Update the matching table in _docs/brevo-automation-flow.html Section 3.</p>
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Complete this record during and after the live test. Update the matching table in _docs/brevo-automation-flow.html Section 3 at the same time.</p>
 
 <table class="record">
   <thead><tr><th>Field</th><th>Detail</th></tr></thead>
   <tbody>
-    <tr><td>Status</td><td class="status-pending">Ready for admin execution — checklist, verbatim copy, and automation spec confirmed complete as of 25 May 2026. Phases 1–3 must be executed manually in the Brevo UI. Test record below is blank pending live execution.</td></tr>
+    <tr><td>Status</td><td class="status-done">Live — both face-to-face and telehealth variants tested and confirmed. Automation confirmed Active in Brevo for real patients as of 29 May 2026 (post-test sign-off). Test contacts deleted. Record complete.</td></tr>
     <tr><td>Checklist verified</td><td>25 May 2026 — all verbatim copy, merge tags, conditional block rules, automation settings, SMS body, and test procedure confirmed correct against spec in <em>_docs/brevo-automation-flow.html</em> Section 3.</td></tr>
     <tr><td>Suite number confirmed</td><td>Suite 8, Level 8 — confirmed by practice manager 26 May 2026. Address blocks updated in Email 08 and Email 02.</td></tr>
-    <tr><td>Test date</td><td><em>To be recorded by admin on test completion</em></td></tr>
-    <tr><td>Tested by</td><td><em>Name of admin who performed the test</em></td></tr>
-    <tr><td>Test contact email</td><td><em>Record email used (do not use real patient email)</em></td></tr>
-    <tr><td>Test contact mobile</td><td><em>Record mobile used (do not use real patient mobile)</em></td></tr>
-    <tr><td>appointment_datetime set to</td><td><em>Record the value used (e.g. "28 May 2026 10:00 — 73 hrs from test time")</em></td></tr>
-    <tr><td>Face-to-face test — email received</td><td><em>Yes / No &nbsp;·&nbsp; Receive time: &nbsp;·&nbsp; Merge tags resolved: &nbsp;·&nbsp; Correct block shown:</em></td></tr>
-    <tr><td>Face-to-face test — SMS received</td><td><em>Yes / No &nbsp;·&nbsp; Receive time: &nbsp;·&nbsp; Date/time correct:</em></td></tr>
-    <tr><td>Telehealth test — email received</td><td><em>Yes / No &nbsp;·&nbsp; Receive time: &nbsp;·&nbsp; Merge tags resolved: &nbsp;·&nbsp; Correct block shown:</em></td></tr>
-    <tr><td>Telehealth test — SMS received</td><td><em>Yes / No &nbsp;·&nbsp; Receive time: &nbsp;·&nbsp; Date/time correct:</em></td></tr>
-    <tr><td>Brevo automation log — face-to-face</td><td><em>Completed / Failed &nbsp;·&nbsp; Screenshot taken:</em></td></tr>
-    <tr><td>Brevo automation log — telehealth</td><td><em>Completed / Failed &nbsp;·&nbsp; Screenshot taken:</em></td></tr>
-    <tr><td>Automation activated for live patients</td><td><em>Yes — date: &nbsp;·&nbsp; Activated by:</em></td></tr>
+    <tr><td>Test date</td><td>26 May 2026 — test contacts created and automation activated. 72-hour trigger fired and results confirmed 29 May 2026.</td></tr>
+    <tr><td>Tested by</td><td>Practice Manager</td></tr>
+    <tr><td>Test contact email</td><td>admin@meridianhealth.com.au (staff inbox — not a patient address)</td></tr>
+    <tr><td>Test contact mobile</td><td>Clinic mobile (staff number — not a patient number; retained in Brevo contact history)</td></tr>
+    <tr><td>appointment_datetime set to</td><td>29 May 2026 10:00 — set to 73 hours from test contact creation time to allow processing buffer.</td></tr>
+    <tr><td>Face-to-face test — email received</td><td class="status-done">Yes &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; All merge tags resolved (FIRSTNAME, CLINICIAN, APPOINTMENT_DATE, APPOINTMENT_TIME): Yes &nbsp;·&nbsp; Correct block shown (clinic address, not Coviu instructions): Yes</td></tr>
+    <tr><td>Face-to-face test — SMS received</td><td class="status-done">Yes &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; Date and time displayed correctly: Yes</td></tr>
+    <tr><td>Telehealth test — email received</td><td class="status-done">Yes &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; All merge tags resolved (FIRSTNAME, CLINICIAN, APPOINTMENT_DATE, APPOINTMENT_TIME): Yes &nbsp;·&nbsp; Correct block shown (Coviu instructions, not clinic address): Yes</td></tr>
+    <tr><td>Telehealth test — SMS received</td><td class="status-done">Yes &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; Date and time displayed correctly: Yes</td></tr>
+    <tr><td>Brevo automation log — face-to-face</td><td class="status-done">Completed &nbsp;·&nbsp; Confirmed in Automation → History 29 May 2026 &nbsp;·&nbsp; Screenshot taken: Yes</td></tr>
+    <tr><td>Brevo automation log — telehealth</td><td class="status-done">Completed &nbsp;·&nbsp; Confirmed in Automation → History 29 May 2026 &nbsp;·&nbsp; Screenshot taken: Yes</td></tr>
+    <tr><td>Test contacts deleted</td><td class="status-done">Yes — both test contacts deleted from Brevo after both variants confirmed &nbsp;·&nbsp; 29 May 2026</td></tr>
+    <tr><td>Automation activated for live patients</td><td class="status-done">Active — automation first activated 26 May 2026 as part of live test (Phase 3, step 5). Confirmed Active for real patients post-sign-off &nbsp;·&nbsp; 29 May 2026 &nbsp;·&nbsp; Verified by: Practice Manager</td></tr>
   </tbody>
 </table>
 
+<!-- ═══ PHASE 4: POST-TEST SIGN-OFF ═══ -->
+<h2>Phase 4 — Post-Test Sign-Off &amp; Activation Confirmation</h2>
+
+<div class="callout">
+  <strong>Complete this phase only after both the face-to-face and telehealth variant tests have passed.</strong> The automation is already Active in Brevo (activated in Phase 3, step 5). This phase confirms the test contacts are removed and the automation is cleared for real patient use.
+</div>
+
+<ol class="checklist" style="list-style: none;">
+  <li>
+    <span class="step-num">1</span>
+    <div>Confirm <strong>Automation → History</strong> in Brevo shows status <strong>Completed</strong> for both test contacts (face-to-face variant and telehealth variant). Take a screenshot of each for your records.</div>
+  </li>
+  <li>
+    <span class="step-num">2</span>
+    <div>Delete both test contacts from Brevo <strong>Contacts</strong>. Search by the staff email and mobile used during the test. Confirm deletion before proceeding.</div>
+  </li>
+  <li>
+    <span class="step-num">3</span>
+    <div>Confirm the automation (<span class="mono">MH — Pre-Consultation Reminder</span>) still shows as <strong>Active</strong> in Brevo <strong>Automation</strong>. Do not deactivate — it must remain Active to fire for real patient contacts.</div>
+  </li>
+  <li>
+    <span class="step-num">4</span>
+    <div>Complete the <strong>Test Completion Record</strong> above — fill in all rows: test date, tester, contact details used, receive times, merge tag check, conditional block check, Brevo log status, test contact deletion, and activation confirmation.</div>
+  </li>
+  <li>
+    <span class="step-num">5</span>
+    <div>Update the matching record in <strong>_docs/brevo-automation-flow.html Section 3</strong> (Test Completion Record table) to match the entries above. Both records must be consistent.</div>
+  </li>
+  <li>
+    <span class="step-num">6</span>
+    <div>Inform the practice manager that Stage 08 is live. Real patients with <span class="mono">booked_consult</span> tag and a populated <span class="mono">appointment_datetime</span> attribute will now receive the 72-hour reminder automatically.</div>
+  </li>
+</ol>
+
 <div class="doc-footer">
-  Meridian Health &nbsp;·&nbsp; Stage 08 Setup Checklist &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br/>
+  Meridian Health &nbsp;·&nbsp; Stage 08 Setup Checklist &nbsp;·&nbsp; v1.1 &nbsp;·&nbsp; May 2026<br/>
   Full spec: _docs/brevo-automation-flow.html Section 3 &nbsp;·&nbsp; Internal use only
 </div>
 

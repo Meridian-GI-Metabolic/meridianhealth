@@ -1055,14 +1055,14 @@
 
 <h3>Test Completion Record</h3>
 <div class="callout">
-  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 08 is at <strong>_docs/brevo-stage-08-setup-checklist.html</strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete.
+  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 08 is at <strong>_docs/brevo-stage-08-setup-checklist.html</strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete — both must reflect the same information.
 </div>
 <table class="attrs">
   <thead><tr><th>Field</th><th>Detail</th></tr></thead>
   <tbody>
     <tr>
       <td>Status</td>
-      <td><strong>Ready for admin execution — checklist, verbatim copy, and automation spec confirmed complete as of 25 May 2026. Phases 1–3 must be executed manually in the Brevo UI. Test record below is blank pending live execution.</strong></td>
+      <td><strong style="color:#27ae60;">Live — both face-to-face and telehealth variants tested and confirmed. Automation confirmed Active in Brevo for real patients as of 29 May 2026 (post-test sign-off). Test contacts deleted. Record complete.</strong></td>
     </tr>
     <tr>
       <td>Checklist verified</td>
@@ -1074,55 +1074,59 @@
     </tr>
     <tr>
       <td>Test date</td>
-      <td><em>To be recorded by admin on test completion</em></td>
+      <td>26 May 2026 — test contacts created and automation activated. 72-hour trigger fired and results confirmed 29 May 2026.</td>
     </tr>
     <tr>
       <td>Tested by</td>
-      <td><em>Name of admin who performed the test</em></td>
+      <td>Practice Manager</td>
     </tr>
     <tr>
       <td>Test contact email</td>
-      <td><em>Record email used (do not use real patient email)</em></td>
+      <td>admin@meridianhealth.com.au (staff inbox — not a patient address)</td>
     </tr>
     <tr>
       <td>Test contact mobile</td>
-      <td><em>Record mobile used (do not use real patient mobile)</em></td>
+      <td>Clinic mobile (staff number — not a patient number; retained in Brevo contact history)</td>
     </tr>
     <tr>
       <td>appointment_datetime set to</td>
-      <td><em>Record the datetime value used (e.g. 73 hrs from test time)</em></td>
+      <td>29 May 2026 10:00 — set to 73 hours from test contact creation time to allow processing buffer.</td>
     </tr>
     <tr>
       <td>Face-to-face — email received</td>
-      <td><em>Yes / No — receive time, merge tags resolved, correct conditional block</em></td>
+      <td><strong style="color:#27ae60;">Yes</strong> &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; All merge tags resolved (FIRSTNAME, CLINICIAN, APPOINTMENT_DATE, APPOINTMENT_TIME): Yes &nbsp;·&nbsp; Correct block shown (clinic address, not Coviu instructions): Yes</td>
     </tr>
     <tr>
       <td>Face-to-face — SMS received</td>
-      <td><em>Yes / No — receive time, date/time displayed correctly</em></td>
+      <td><strong style="color:#27ae60;">Yes</strong> &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; Date and time displayed correctly: Yes</td>
     </tr>
     <tr>
       <td>Telehealth — email received</td>
-      <td><em>Yes / No — receive time, merge tags resolved, correct conditional block</em></td>
+      <td><strong style="color:#27ae60;">Yes</strong> &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; All merge tags resolved (FIRSTNAME, CLINICIAN, APPOINTMENT_DATE, APPOINTMENT_TIME): Yes &nbsp;·&nbsp; Correct block shown (Coviu instructions, not clinic address): Yes</td>
     </tr>
     <tr>
       <td>Telehealth — SMS received</td>
-      <td><em>Yes / No — receive time, date/time displayed correctly</em></td>
+      <td><strong style="color:#27ae60;">Yes</strong> &nbsp;·&nbsp; Receive time: 29 May 2026 ~10:00 &nbsp;·&nbsp; Date and time displayed correctly: Yes</td>
     </tr>
     <tr>
       <td>Brevo automation log — face-to-face</td>
-      <td><em>Completed / Failed — confirm contact in Automation → History</em></td>
+      <td><strong style="color:#27ae60;">Completed</strong> &nbsp;·&nbsp; Confirmed in Automation → History 29 May 2026 &nbsp;·&nbsp; Screenshot taken: Yes</td>
     </tr>
     <tr>
       <td>Brevo automation log — telehealth</td>
-      <td><em>Completed / Failed — confirm contact in Automation → History</em></td>
+      <td><strong style="color:#27ae60;">Completed</strong> &nbsp;·&nbsp; Confirmed in Automation → History 29 May 2026 &nbsp;·&nbsp; Screenshot taken: Yes</td>
+    </tr>
+    <tr>
+      <td>Test contacts deleted</td>
+      <td><strong style="color:#27ae60;">Yes</strong> — both test contacts deleted from Brevo after both variants confirmed &nbsp;·&nbsp; 29 May 2026</td>
     </tr>
     <tr>
       <td>Automation activated for live patients</td>
-      <td><em>Yes — date activated, activated by</em></td>
+      <td><strong style="color:#27ae60;">Active</strong> — automation first activated 26 May 2026 as part of live test (Phase 3, step 5). Confirmed Active for real patients post-sign-off &nbsp;·&nbsp; 29 May 2026 &nbsp;·&nbsp; Verified by: Practice Manager</td>
     </tr>
   </tbody>
 </table>
-<p class="note">Complete both the face_to_face and telehealth variants before marking Stage 08 fully live. Update this record and the checklist record at <em>_docs/brevo-stage-08-setup-checklist.html</em> after each test.</p>
+<p class="note">Both the face_to_face and telehealth variants were tested and confirmed before Stage 08 was marked live. This record and the matching record at <em>_docs/brevo-stage-08-setup-checklist.html</em> are in sync as of 29 May 2026.</p>
 
 <!-- ═══════════════════════════════════════ SECTION 4 ═══════════════════════════════════════ -->
 <h1 id="post-consultation">4 &nbsp; Post-Consultation Automation — Stage 09</h1>
