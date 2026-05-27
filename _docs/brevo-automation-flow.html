@@ -1291,7 +1291,7 @@
 <hr class="section-rule"/>
 
 <p><strong>Entry trigger (all five tracks):</strong> Contact attribute <span class="mono">pathway</span> is set to the corresponding value by surgeon or admin recommendation post-consultation.</p>
-<p><strong>Structure:</strong> Create five separate automations in Brevo, one per pathway. Each begins immediately when the relevant <span class="mono">pathway</span> value is set. All are stubs — structure and subject lines are defined; body copy is to be completed by the content team.</p>
+<p><strong>Structure:</strong> Five separate automations in Brevo, one per pathway. Each begins immediately when the relevant <span class="mono">pathway</span> value is set. Body copy for all five tracks is finalised and held in <em>scripts/brevo-push-templates.js</em> — use this script (run locally with a whitelisted IP) to push copy to Brevo templates before activating automations. See <em>_docs/brevo-stage-10-setup-checklist.html</em> for the full setup procedure.</p>
 
 <div class="callout">
   <strong>Pathway to category mapping:</strong><br/>
@@ -1303,77 +1303,86 @@
 <h2>Track 10A — Sleeve Gastrectomy</h2>
 <div class="pathway-stub">
   <p class="pathway-stub-title">Automation name: MH — Pathway: Sleeve Gastrectomy</p>
-  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">sleeve</span> &nbsp;·&nbsp; Category: Bariatric</p>
+  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">sleeve</span> &nbsp;·&nbsp; Category: Bariatric &nbsp;·&nbsp; Copy status: <strong style="color:#27ae60;">Finalised</strong> — see <em>scripts/brevo-push-templates.js</em></p>
   <table class="flow">
-    <thead><tr><th>Step</th><th>Timing</th><th>Subject Line (stub)</th><th>Theme</th></tr></thead>
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Immediate</td><td><em>Your sleeve gastrectomy pathway — what to expect</em></td><td>Overview, reassurance, next steps</td></tr>
-      <tr><td>2</td><td>+3 days</td><td><em>Preparing for your procedure</em></td><td>Pre-op information, timeline</td></tr>
-      <tr><td>3</td><td>+7 days</td><td><em>Life after sleeve gastrectomy</em></td><td>Long-term outcomes, support</td></tr>
+      <tr><td>1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10A — Email 1 — Sleeve Overview</span></td><td><em>Your sleeve gastrectomy pathway — what to expect</em></td></tr>
+      <tr><td>2</td><td>+3 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10A — Email 2 — Sleeve Preparation</span></td><td><em>Preparing for your procedure</em></td></tr>
+      <tr><td>3</td><td>+7 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10A — Email 3 — Sleeve Long-Term</span></td><td><em>Life after sleeve gastrectomy</em></td></tr>
     </tbody>
   </table>
-  <p class="note">Content team to complete full body copy for each email. Tone: clinically authoritative, emotionally supportive. Reference continuity of care.</p>
 </div>
 
 <h2>Track 10B — Gastric Bypass</h2>
 <div class="pathway-stub">
   <p class="pathway-stub-title">Automation name: MH — Pathway: Gastric Bypass</p>
-  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">bypass</span> &nbsp;·&nbsp; Category: Bariatric</p>
+  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">bypass</span> &nbsp;·&nbsp; Category: Bariatric &nbsp;·&nbsp; Copy status: <strong style="color:#27ae60;">Finalised</strong> — see <em>scripts/brevo-push-templates.js</em></p>
   <table class="flow">
-    <thead><tr><th>Step</th><th>Timing</th><th>Subject Line (stub)</th><th>Theme</th></tr></thead>
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Immediate</td><td><em>Your gastric bypass pathway — what to expect</em></td><td>Overview, reassurance, next steps</td></tr>
-      <tr><td>2</td><td>+3 days</td><td><em>Preparing for your procedure</em></td><td>Pre-op information, timeline</td></tr>
-      <tr><td>3</td><td>+7 days</td><td><em>Recovery and long-term outcomes</em></td><td>Post-op continuity, metabolic follow-up</td></tr>
+      <tr><td>1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10B — Email 1 — Bypass Overview</span></td><td><em>Your gastric bypass pathway — what to expect</em></td></tr>
+      <tr><td>2</td><td>+3 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10B — Email 2 — Bypass Preparation</span></td><td><em>Preparing for your procedure</em></td></tr>
+      <tr><td>3</td><td>+7 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10B — Email 3 — Bypass Long-Term</span></td><td><em>Recovery and long-term outcomes</em></td></tr>
     </tbody>
   </table>
-  <p class="note">Content team to complete full body copy. Note: gastric bypass has specific nutritional and metabolic follow-up considerations — content to address supplement regimen and long-term dietitian involvement.</p>
 </div>
 
 <h2>Track 10C — Reflux / Upper GI</h2>
 <div class="pathway-stub">
   <p class="pathway-stub-title">Automation name: MH — Pathway: Reflux &amp; Upper GI</p>
-  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">reflux_uppergi</span> &nbsp;·&nbsp; Category: Upper GI</p>
+  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">reflux_uppergi</span> &nbsp;·&nbsp; Category: Upper GI &nbsp;·&nbsp; Copy status: <strong style="color:#27ae60;">Finalised</strong> — see <em>scripts/brevo-push-templates.js</em></p>
   <table class="flow">
-    <thead><tr><th>Step</th><th>Timing</th><th>Subject Line (stub)</th><th>Theme</th></tr></thead>
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Immediate</td><td><em>Your Upper GI pathway — what happens next</em></td><td>Overview, specialist care positioning</td></tr>
-      <tr><td>2</td><td>+4 days</td><td><em>Understanding your treatment options</em></td><td>Surgical vs non-surgical pathways</td></tr>
-      <tr><td>3</td><td>+10 days</td><td><em>Long-term management of Upper GI conditions</em></td><td>Continuity, monitoring, support</td></tr>
+      <tr><td>1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10C — Email 1 — Upper GI Overview</span></td><td><em>Your Upper GI pathway — what happens next</em></td></tr>
+      <tr><td>2</td><td>+4 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10C — Email 2 — Upper GI Options</span></td><td><em>Understanding your treatment options</em></td></tr>
+      <tr><td>3</td><td>+10 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10C — Email 3 — Upper GI Long-Term</span></td><td><em>Long-term management of Upper GI conditions</em></td></tr>
     </tbody>
   </table>
-  <p class="note">Content team to complete. Maintain distinct specialist Upper GI tone — separate from bariatric/weight-loss positioning. Cover relevant conditions: reflux, hiatus hernia, oesophageal disease, gastric concerns.</p>
 </div>
 
 <h2>Track 10D — GLP-1 / Metabolic Medicine</h2>
 <div class="pathway-stub">
   <p class="pathway-stub-title">Automation name: MH — Pathway: GLP-1 &amp; Metabolic Medicine</p>
-  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">glp1_metabolic</span> &nbsp;·&nbsp; Category: Metabolic Medicine</p>
+  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">glp1_metabolic</span> &nbsp;·&nbsp; Category: Metabolic Medicine &nbsp;·&nbsp; Copy status: <strong style="color:#27ae60;">Finalised</strong> — see <em>scripts/brevo-push-templates.js</em></p>
   <table class="flow">
-    <thead><tr><th>Step</th><th>Timing</th><th>Subject Line (stub)</th><th>Theme</th></tr></thead>
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Immediate</td><td><em>Your metabolic medicine pathway — what to expect</em></td><td>Overview, GLP-1 positioning, multidisciplinary care</td></tr>
-      <tr><td>2</td><td>+4 days</td><td><em>Getting the most from your treatment plan</em></td><td>Adherence, nutrition, muscle preservation</td></tr>
-      <tr><td>3</td><td>+10 days</td><td><em>Long-term metabolic health — beyond the prescription</em></td><td>Sustainability, monitoring, follow-up</td></tr>
+      <tr><td>1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10D — Email 1 — Metabolic Overview</span></td><td><em>Your metabolic medicine pathway — what to expect</em></td></tr>
+      <tr><td>2</td><td>+4 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10D — Email 2 — Metabolic Plan</span></td><td><em>Getting the most from your treatment plan</em></td></tr>
+      <tr><td>3</td><td>+10 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10D — Email 3 — Metabolic Long-Term</span></td><td><em>Long-term metabolic health — beyond the prescription</em></td></tr>
     </tbody>
   </table>
-  <p class="note">Content team to complete. Key positioning: GLP-1s as part of a broader metabolic care plan, not standalone. Reference multidisciplinary support: physician, dietitian, structured follow-up.</p>
 </div>
 
 <h2>Track 10E — Revision Procedures</h2>
 <div class="pathway-stub">
   <p class="pathway-stub-title">Automation name: MH — Pathway: Revision Procedures</p>
-  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">revision</span> &nbsp;·&nbsp; Category: Bariatric / Upper GI (as appropriate)</p>
+  <p class="pathway-stub-sub">Entry: <span class="mono">pathway</span> = <span class="mono">revision</span> &nbsp;·&nbsp; Category: Bariatric / Upper GI &nbsp;·&nbsp; Copy status: <strong style="color:#27ae60;">Finalised</strong> — see <em>scripts/brevo-push-templates.js</em></p>
   <table class="flow">
-    <thead><tr><th>Step</th><th>Timing</th><th>Subject Line (stub)</th><th>Theme</th></tr></thead>
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Immediate</td><td><em>Your revision surgery pathway — what to expect</em></td><td>Overview, reassurance for returning patients</td></tr>
-      <tr><td>2</td><td>+4 days</td><td><em>Preparing for your revision procedure</em></td><td>Pre-op, specific considerations for revision</td></tr>
-      <tr><td>3</td><td>+10 days</td><td><em>Long-term care after revision surgery</em></td><td>Follow-up, metabolic monitoring, nutrition</td></tr>
+      <tr><td>1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10E — Email 1 — Revision Overview</span></td><td><em>Your revision surgery pathway — what to expect</em></td></tr>
+      <tr><td>2</td><td>+4 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10E — Email 2 — Revision Preparation</span></td><td><em>Preparing for your revision procedure</em></td></tr>
+      <tr><td>3</td><td>+10 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10E — Email 3 — Revision Long-Term</span></td><td><em>Long-term care after revision surgery</em></td></tr>
     </tbody>
   </table>
-  <p class="note">Content team to complete. This pathway covers patients returning for a revision — tone should acknowledge prior experience, validate the decision, and reassure on outcomes. Reference continuity of care with the Meridian team.</p>
 </div>
+
+<h2>Stage 10 — Setup Status Record</h2>
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Update this record as each track is built and tested in Brevo. Full setup procedure: <em>_docs/brevo-stage-10-setup-checklist.html</em>.</p>
+<table class="attrs">
+  <thead><tr><th>Item</th><th>Status</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Body copy — all five tracks</td><td><strong style="color:#27ae60;">Written</strong></td><td>Copy authored in <em>scripts/brevo-push-templates.js</em> (variables body10A1–body10E3). Requires clinical review and sign-off before Brevo push. Run script locally (whitelisted IP) to push to Brevo templates after sign-off.</td></tr>
+    <tr><td>Brevo templates created (15 total)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Run <em>scripts/brevo-push-templates.js</em> locally after IP whitelisted. Creates / updates all 15 templates in one pass.</td></tr>
+    <tr><td>Brevo automations built (5 total)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Build in Brevo UI after templates are confirmed. Attribute-based trigger: <span class="mono">pathway</span> = track value. See <em>_docs/brevo-stage-10-setup-checklist.html</em> Phase 2.</td></tr>
+    <tr><td>Live test — Track 10A (Sleeve)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Test Track 10A first as reference. See <em>_docs/brevo-stage-10-setup-checklist.html</em> Phase 3.</td></tr>
+    <tr><td>Live test — Tracks 10B–10E</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Complete after 10A test passes. Same procedure applies to each track.</td></tr>
+    <tr><td>All five tracks Active in Brevo</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Do not activate any track until its live test is confirmed.</td></tr>
+  </tbody>
+</table>
 
 <!-- ═══════════════════════════════════════ SECTION D ═══════════════════════════════════════ -->
 <h1 id="operational-notes">D &nbsp; Operational Notes &amp; Genie Attachment Checklist</h1>

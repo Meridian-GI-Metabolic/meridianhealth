@@ -1,0 +1,496 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Meridian Health — Stage 10 Setup Checklist: Pathway Nurture Tracks</title>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #201e11; line-height: 1.6; max-width: 860px; margin: 40px auto; padding: 0 24px; }
+  h1 { font-family: Georgia, serif; font-size: 22pt; font-weight: normal; color: #201e11; border-bottom: 2px solid #c2a55e; padding-bottom: 8px; margin-bottom: 6px; }
+  h2 { font-family: Georgia, serif; font-size: 15pt; font-weight: normal; color: #201e11; margin: 28px 0 6px; border-bottom: 1px solid #e8e0d0; padding-bottom: 4px; }
+  h3 { font-size: 11pt; font-weight: 700; color: #201e11; margin: 18px 0 4px; text-transform: uppercase; letter-spacing: 0.5pt; }
+  .meta { font-size: 9.5pt; color: #888; margin-bottom: 20px; }
+  .callout { background: #f5f0e8; border-left: 3px solid #c2a55e; padding: 10px 14px; margin: 14px 0; font-size: 10.5pt; color: #5a4e32; }
+  .callout strong { color: #201e11; }
+  .warn { background: #fff8e1; border-left: 3px solid #e6a817; padding: 10px 14px; margin: 14px 0; font-size: 10.5pt; color: #5a3e00; }
+  .block { background: #fdf3f2; border-left: 3px solid #c0392b; padding: 10px 14px; margin: 14px 0; font-size: 10.5pt; color: #5a1e1e; }
+  .checklist { list-style: none; padding: 0; margin: 0 0 16px; }
+  .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; border-bottom: 1px solid #f0ece4; font-size: 10.5pt; }
+  .checklist li:last-child { border-bottom: none; }
+  .step-num { background: #201e11; color: #c2a55e; font-size: 9pt; font-weight: 700; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .mono { font-family: Courier New, monospace; font-size: 10pt; background: #f0ece4; padding: 1px 4px; border-radius: 2px; }
+  .track-card { border: 1px solid #d8d0c0; border-left: 4px solid #c2a55e; padding: 14px 16px; margin: 16px 0 20px; background: #faf8f4; }
+  .track-label { font-size: 8pt; letter-spacing: 2pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; margin-bottom: 4px; }
+  .track-title { font-family: Georgia, serif; font-size: 13pt; color: #201e11; margin: 0 0 4px; }
+  .track-sub { font-size: 9.5pt; color: #888; margin-bottom: 10px; }
+  table.flow { width: 100%; border-collapse: collapse; font-size: 10pt; margin: 8px 0 12px; }
+  table.flow th { background: #201e11; color: #fff; font-size: 9pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5pt; padding: 5px 8px; text-align: left; }
+  table.flow td { border-bottom: 1px solid #e8e0d0; padding: 6px 8px; vertical-align: top; }
+  table.flow tr:nth-child(even) td { background: #f5f0e8; }
+  .stub-note { font-size: 9.5pt; color: #888; font-style: italic; margin-top: 6px; }
+  table.record { width: 100%; border-collapse: collapse; font-size: 10pt; margin: 10px 0 20px; }
+  table.record th { background: #201e11; color: #fff; font-size: 9pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5pt; padding: 6px 8px; text-align: left; }
+  table.record td { border-bottom: 1px solid #e8e0d0; padding: 7px 8px; vertical-align: top; }
+  table.record td:first-child { font-weight: 600; width: 220px; color: #5a4e32; }
+  table.record tr:nth-child(even) td { background: #faf8f4; }
+  .status-pending { color: #c0392b; font-weight: 600; }
+  .status-done { color: #27ae60; font-weight: 600; }
+  .status-blocked { color: #e6a817; font-weight: 600; }
+  .doc-footer { margin-top: 40px; padding-top: 10px; border-top: 1px solid #e8e0d0; font-size: 9pt; color: #aaa; text-align: center; }
+  p { margin: 0 0 8px; }
+</style>
+</head>
+<body>
+
+<p class="meta">Meridian Health &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Brevo Configuration</p>
+<h1>Stage 10 Setup Checklist<br/><span style="font-size:14pt; color:#888;">MH — Pathway Nurture Tracks</span></h1>
+<p class="meta">Reference document for admin completing the Brevo UI setup &nbsp;·&nbsp; Full spec: <em>_docs/brevo-automation-flow.html</em> Section 5 &nbsp;·&nbsp; Prerequisite: Stage 09 (Post-Consultation) must be live</p>
+
+<p style="margin: 0 0 14pt; font-size: 8.5pt; color: #666;">
+  This document is the setup checklist for Stage 10, the five pathway-specific nurture automations.
+  It is referenced from the <a href="brevo-activation-checklist.html" style="color: #c2a55e;">Brevo Activation Checklist</a>.
+  Complete each phase in order. Do not activate any pathway automation until its live test is confirmed.
+</p>
+
+<div class="callout">
+  <strong>What this covers:</strong> Pushing the 15 Stage 10 email templates to Brevo via the push script, building the five attribute-triggered automations in the Brevo UI, and running a live test on Track 10A (Sleeve Gastrectomy) before activating any track for real patients. The same test procedure applies to each subsequent track.
+</div>
+
+<div class="callout" style="background:#f0faf4; border-left-color:#27ae60; color:#1a4a2e;">
+  <strong style="color:#1a4a2e;">Body copy status — complete:</strong> All 15 emails (3 per track) are finalised and held in <em>scripts/brevo-push-templates.js</em>. Run the push script locally (whitelisted IP required) to create or update the templates in Brevo. See <em>_docs/brevo-push-script-local-run.md</em> for local run instructions. Phase 0 below records the sign-off.
+</div>
+
+<div class="callout">
+  <strong>Prerequisites:</strong> Stage 09 (Post-Consultation) must already be live. The <span class="mono">pathway</span> contact attribute must be created in Brevo before beginning. See <em>_docs/brevo-automation-flow.html</em> Section C for the full attribute and tag list. Valid <span class="mono">pathway</span> values: <span class="mono">sleeve</span>, <span class="mono">bypass</span>, <span class="mono">reflux_uppergi</span>, <span class="mono">glp1_metabolic</span>, <span class="mono">revision</span>.
+</div>
+
+<!-- ═══ PHASE 0: BODY COPY SIGN-OFF ═══ -->
+<h2>Phase 0 — Body Copy Sign-Off</h2>
+
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Body copy for all five tracks is complete. This phase records the sign-off. Proceed to Phase 1 (run the push script) once sign-off is confirmed below.</p>
+
+<ol class="checklist" style="list-style: none;">
+  <li>
+    <span class="step-num">1</span>
+    <div>
+      Body copy for all 15 emails (3 per track) is finalised in <em>scripts/brevo-push-templates.js</em>. Confirm the copy meets the following criteria before proceeding:<br/>
+      — Clinically appropriate for the Meridian patient population<br/>
+      — Tone: clinically authoritative, emotionally supportive, reassuring<br/>
+      — <span class="mono">{{ contact.FIRSTNAME }}</span> merge tag present in all emails<br/>
+      — No copy references procedure costs, waiting times, or guaranteed outcomes
+    </div>
+  </li>
+  <li>
+    <span class="step-num">2</span>
+    <div>Practice manager (or delegated reviewer) reads through the copy in <em>scripts/brevo-push-templates.js</em> — variables <span class="mono">body10A1</span> through <span class="mono">body10E3</span> — and confirms clinical appropriateness before the push script is run.</div>
+  </li>
+  <li>
+    <span class="step-num">3</span>
+    <div>Record reviewer name and date in the <strong>Body Copy Sign-Off Record</strong> below, then proceed to Phase 1.</div>
+  </li>
+</ol>
+
+<h3>Body Copy Sign-Off Record</h3>
+<table class="record">
+  <thead><tr><th>Track</th><th>Automation Name</th><th>Entry Value</th><th>Copy Status</th><th>Approved By</th><th>Date</th></tr></thead>
+  <tbody>
+    <tr><td>10A — Sleeve Gastrectomy</td><td><span class="mono">MH — Pathway: Sleeve Gastrectomy</span></td><td><span class="mono">sleeve</span></td><td class="status-done">Written — in push script (body10A1–10A3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>10B — Gastric Bypass</td><td><span class="mono">MH — Pathway: Gastric Bypass</span></td><td><span class="mono">bypass</span></td><td class="status-done">Written — in push script (body10B1–10B3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>10C — Reflux / Upper GI</td><td><span class="mono">MH — Pathway: Reflux &amp; Upper GI</span></td><td><span class="mono">reflux_uppergi</span></td><td class="status-done">Written — in push script (body10C1–10C3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>10D — GLP-1 / Metabolic</td><td><span class="mono">MH — Pathway: GLP-1 &amp; Metabolic Medicine</span></td><td><span class="mono">glp1_metabolic</span></td><td class="status-done">Written — in push script (body10D1–10D3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>10E — Revision Procedures</td><td><span class="mono">MH — Pathway: Revision Procedures</span></td><td><span class="mono">revision</span></td><td class="status-done">Written — in push script (body10E1–10E3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══ PATHWAY TRACK SPECS ═══ -->
+<h2>Pathway Track Specifications — Quick Reference</h2>
+
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Full spec in <em>_docs/brevo-automation-flow.html</em> Section 5. The five cards below list the automation name, trigger value, and exact Brevo template names to use when building each automation.</p>
+
+<div class="track-card">
+  <p class="track-label">Track 10A &nbsp;·&nbsp; <span style="color:#27ae60;">Copy finalised</span></p>
+  <p class="track-title">Sleeve Gastrectomy</p>
+  <p class="track-sub">Automation name: <span class="mono">MH — Pathway: Sleeve Gastrectomy</span> &nbsp;·&nbsp; Entry trigger: <span class="mono">pathway</span> = <span class="mono">sleeve</span> &nbsp;·&nbsp; Category: Bariatric</p>
+  <table class="flow">
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
+    <tbody>
+      <tr><td>Email 1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10A — Email 1 — Sleeve Overview</span></td><td><em>Your sleeve gastrectomy pathway — what to expect</em></td></tr>
+      <tr><td>Email 2</td><td>+3 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10A — Email 2 — Sleeve Preparation</span></td><td><em>Preparing for your procedure</em></td></tr>
+      <tr><td>Email 3</td><td>+7 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10A — Email 3 — Sleeve Long-Term</span></td><td><em>Life after sleeve gastrectomy</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="track-card">
+  <p class="track-label">Track 10B &nbsp;·&nbsp; <span style="color:#27ae60;">Copy finalised</span></p>
+  <p class="track-title">Gastric Bypass</p>
+  <p class="track-sub">Automation name: <span class="mono">MH — Pathway: Gastric Bypass</span> &nbsp;·&nbsp; Entry trigger: <span class="mono">pathway</span> = <span class="mono">bypass</span> &nbsp;·&nbsp; Category: Bariatric</p>
+  <table class="flow">
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
+    <tbody>
+      <tr><td>Email 1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10B — Email 1 — Bypass Overview</span></td><td><em>Your gastric bypass pathway — what to expect</em></td></tr>
+      <tr><td>Email 2</td><td>+3 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10B — Email 2 — Bypass Preparation</span></td><td><em>Preparing for your procedure</em></td></tr>
+      <tr><td>Email 3</td><td>+7 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10B — Email 3 — Bypass Long-Term</span></td><td><em>Recovery and long-term outcomes</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="track-card">
+  <p class="track-label">Track 10C &nbsp;·&nbsp; <span style="color:#27ae60;">Copy finalised</span></p>
+  <p class="track-title">Reflux &amp; Upper GI</p>
+  <p class="track-sub">Automation name: <span class="mono">MH — Pathway: Reflux &amp; Upper GI</span> &nbsp;·&nbsp; Entry trigger: <span class="mono">pathway</span> = <span class="mono">reflux_uppergi</span> &nbsp;·&nbsp; Category: Upper GI</p>
+  <table class="flow">
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
+    <tbody>
+      <tr><td>Email 1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10C — Email 1 — Upper GI Overview</span></td><td><em>Your Upper GI pathway — what happens next</em></td></tr>
+      <tr><td>Email 2</td><td>+4 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10C — Email 2 — Upper GI Options</span></td><td><em>Understanding your treatment options</em></td></tr>
+      <tr><td>Email 3</td><td>+10 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10C — Email 3 — Upper GI Long-Term</span></td><td><em>Long-term management of Upper GI conditions</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="track-card">
+  <p class="track-label">Track 10D &nbsp;·&nbsp; <span style="color:#27ae60;">Copy finalised</span></p>
+  <p class="track-title">GLP-1 &amp; Metabolic Medicine</p>
+  <p class="track-sub">Automation name: <span class="mono">MH — Pathway: GLP-1 &amp; Metabolic Medicine</span> &nbsp;·&nbsp; Entry trigger: <span class="mono">pathway</span> = <span class="mono">glp1_metabolic</span> &nbsp;·&nbsp; Category: Metabolic Medicine</p>
+  <table class="flow">
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
+    <tbody>
+      <tr><td>Email 1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10D — Email 1 — Metabolic Overview</span></td><td><em>Your metabolic medicine pathway — what to expect</em></td></tr>
+      <tr><td>Email 2</td><td>+4 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10D — Email 2 — Metabolic Plan</span></td><td><em>Getting the most from your treatment plan</em></td></tr>
+      <tr><td>Email 3</td><td>+10 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10D — Email 3 — Metabolic Long-Term</span></td><td><em>Long-term metabolic health — beyond the prescription</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="track-card">
+  <p class="track-label">Track 10E &nbsp;·&nbsp; <span style="color:#27ae60;">Copy finalised</span></p>
+  <p class="track-title">Revision Procedures</p>
+  <p class="track-sub">Automation name: <span class="mono">MH — Pathway: Revision Procedures</span> &nbsp;·&nbsp; Entry trigger: <span class="mono">pathway</span> = <span class="mono">revision</span> &nbsp;·&nbsp; Category: Bariatric / Upper GI</p>
+  <table class="flow">
+    <thead><tr><th>Step</th><th>Timing</th><th>Brevo Template Name</th><th>Subject Line</th></tr></thead>
+    <tbody>
+      <tr><td>Email 1</td><td>Immediate</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10E — Email 1 — Revision Overview</span></td><td><em>Your revision surgery pathway — what to expect</em></td></tr>
+      <tr><td>Email 2</td><td>+4 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10E — Email 2 — Revision Preparation</span></td><td><em>Preparing for your revision procedure</em></td></tr>
+      <tr><td>Email 3</td><td>+10 days</td><td><span class="mono" style="font-size:9pt;">MH — Pathway 10E — Email 3 — Revision Long-Term</span></td><td><em>Long-term care after revision surgery</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ PHASE 1: TEMPLATES ═══ -->
+<h2>Phase 1 — Create the Five Email Templates in Brevo</h2>
+
+<p style="font-size:9.5pt; color:#666; font-style:italic;">The push script handles template content for all 15 emails in one run. Complete the push script step first, then verify each template in the Brevo UI before building automations.</p>
+
+<div class="callout">
+  <strong>Template names (set by the push script):</strong> Template names are defined in <em>scripts/brevo-push-templates.js</em> and match exactly what the push script sends to Brevo. Do not rename templates in the Brevo UI — the script matches by name. See the track cards above for the exact name of each of the 15 templates.
+</div>
+
+<ol class="checklist" style="list-style: none;">
+  <li>
+    <span class="step-num">1</span>
+    <div>
+      <strong>Run the push script locally</strong> to create all 15 Stage 10 email templates in Brevo in one pass:<br/>
+      <span class="mono">BREVO_API_KEY=your_key node scripts/brevo-push-templates.js</span><br/>
+      Your machine's IP must be whitelisted in <strong>Brevo → Settings → Security → Authorised IPs</strong> before running. See <em>_docs/brevo-push-script-local-run.md</em> for full instructions. The script will report success or failure per template.
+    </div>
+  </li>
+  <li>
+    <span class="step-num">2</span>
+    <div>Log into <strong>Brevo → Email → Templates</strong> and confirm all 15 Stage 10 templates are present, showing the correct names (e.g. <span class="mono">MH — Pathway 10A — Email 1 — Sleeve Overview</span>) and are in an <strong>Active</strong> state.</div>
+  </li>
+  <li>
+    <span class="step-num">3</span>
+    <div>
+      For each of the 15 templates, verify:<br/>
+      — Subject line matches the spec in the track card above<br/>
+      — <span class="mono">{{ contact.FIRSTNAME }}</span> merge tag is present in the email body<br/>
+      — No broken syntax, raw placeholder text, or visible template errors in the Brevo preview<br/>
+      — Sender name is <strong>Meridian Health</strong> with the correct verified sending address
+    </div>
+  </li>
+  <li>
+    <span class="step-num">4</span>
+    <div>Send a preview test email from Brevo for at least one template per track (five total). Confirm correct rendering at typical screen widths.</div>
+  </li>
+</ol>
+
+<!-- ═══ PHASE 2: AUTOMATIONS ═══ -->
+<h2>Phase 2 — Build the Five Brevo Automations</h2>
+
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Repeat the steps below for each of the five pathway tracks. All five automations follow the same structure — the only differences are the trigger value and the templates selected at each step.</p>
+
+<ol class="checklist" style="list-style: none;">
+  <li>
+    <span class="step-num">1</span>
+    <div>Go to <strong>Automation → Create a workflow → Contact attribute updated</strong> (or equivalent attribute-change trigger in your Brevo account).</div>
+  </li>
+  <li>
+    <span class="step-num">2</span>
+    <div>Name the workflow using the automation name from the relevant track card above (e.g. <span class="mono">MH — Pathway: Sleeve Gastrectomy</span>).</div>
+  </li>
+  <li>
+    <span class="step-num">3</span>
+    <div>
+      <strong>Entry trigger:</strong><br/>
+      Trigger type: <strong>Contact attribute updated</strong><br/>
+      Attribute: <span class="mono">pathway</span><br/>
+      Condition: attribute value equals the track's entry value (e.g. <span class="mono">sleeve</span> for Track 10A — see track cards above for each track's value)<br/>
+      This attribute is set by surgeon or admin following the post-consultation review.
+    </div>
+  </li>
+  <li>
+    <span class="step-num">4</span>
+    <div>
+      <strong>Add three Send Email steps</strong> in sequence:<br/>
+      — Step 1: Select Email 1 template for this track &nbsp;·&nbsp; Timing: <strong>Immediately</strong><br/>
+      — Step 2: Select Email 2 template for this track &nbsp;·&nbsp; Timing: <strong>Wait as specified for the track</strong> (e.g. +3 days for Sleeve, +4 days for Reflux/Upper GI — see track cards)<br/>
+      — Step 3: Select Email 3 template for this track &nbsp;·&nbsp; Timing: <strong>Wait as specified for the track</strong> (e.g. +7 days for Sleeve, +10 days for Reflux/Upper GI)
+    </div>
+  </li>
+  <li>
+    <span class="step-num">5</span>
+    <div>
+      Set <strong>re-entry: Do not allow re-entry</strong> — a patient's pathway is set once by the clinical team. If a pathway needs to be changed, admin should manage this directly and re-trigger manually if appropriate. Allowing re-entry would risk duplicate sends if the attribute is updated for any reason.
+    </div>
+  </li>
+  <li>
+    <span class="step-num">6</span>
+    <div>Paste the automation description below into the Brevo automation description field (personalise the track name and entry value for each automation).</div>
+  </li>
+  <li>
+    <span class="step-num">7</span>
+    <div><strong>Do not activate yet</strong> — complete the live test in Phase 3 first, then activate. Build all five automations in draft before activating any.</div>
+  </li>
+</ol>
+
+<h3>Automation Description Template (paste into Brevo — update track name and value)</h3>
+<div style="font-family: Courier New, monospace; font-size: 10pt; border: 1px solid #ddd8c8; padding: 12px 16px; background: #f7f5f0; line-height: 1.6;">Triggers when pathway attribute is set to [TRACK VALUE] (e.g. sleeve) by surgeon or admin following post-consultation review. Sends three pathway-specific nurture emails: immediately / +[X] days / +[Y] days. Body copy approved by content team [DATE]. Re-entry disabled — pathway is set once. This automation operates independently of Stage 09. Do not modify wait times without updating _docs/brevo-automation-flow.html Section 5.</div>
+
+<!-- ═══ PHASE 3: LIVE TEST ═══ -->
+<h2>Phase 3 — Live Test (Sleeve Gastrectomy Track — 10A)</h2>
+
+<div class="callout">
+  <strong>Complete this test before activating any pathway automation for real patients.</strong> Test Track 10A (Sleeve Gastrectomy) first as the reference validation. The same procedure applies to each subsequent track. Use a staff email address — not a patient address.
+</div>
+
+<div class="warn">
+  <strong>Use clinic staff contact details only.</strong> Do not create test contacts using patient names, emails, or mobile numbers. Use a staff inbox email address only.
+</div>
+
+<h3>Track 10A Live Test — Sleeve Gastrectomy</h3>
+<ol class="checklist" style="list-style: none;">
+  <li>
+    <span class="step-num">1</span>
+    <div>Create a test contact in Brevo using a real email address you control (clinic staff inbox — not a patient address).</div>
+  </li>
+  <li>
+    <span class="step-num">2</span>
+    <div>
+      Set the following attributes on the test contact:<br/>
+      — <span class="mono">FIRSTNAME</span>: any first name (e.g. <em>Test</em>)<br/>
+      — <span class="mono">CLINICIAN</span>: e.g. <em>A/Prof Michael Hii</em><br/>
+      — <strong>Do not set <span class="mono">pathway</span> yet</strong> — setting it is the trigger
+    </div>
+  </li>
+  <li>
+    <span class="step-num">3</span>
+    <div><strong>Activate the automation</strong> <span class="mono">MH — Pathway: Sleeve Gastrectomy</span> in Brevo — it must be Active for the trigger to fire. Go to <strong>Automation → MH — Pathway: Sleeve Gastrectomy → Activate</strong>.</div>
+  </li>
+  <li>
+    <span class="step-num">4</span>
+    <div>Set the <span class="mono">pathway</span> attribute on the test contact to <span class="mono">sleeve</span>. The automation should fire immediately and send Email 1.</div>
+  </li>
+  <li>
+    <span class="step-num">5</span>
+    <div>
+      Verify Email 1 is received. Confirm all of the following:<br/>
+      — <span class="mono">FIRSTNAME</span> merge tag resolved correctly<br/>
+      — Subject line: <em>Your sleeve gastrectomy pathway — what to expect</em><br/>
+      — No broken merge tags, unresolved placeholders, or syntax errors visible in the rendered email<br/>
+      — Email content is the approved body copy (not a stub or placeholder)
+    </div>
+  </li>
+  <li>
+    <span class="step-num">6</span>
+    <div>Check <strong>Automation → History</strong> in Brevo. Confirm the test contact appears in the workflow and is progressing through the sequence (status: <strong>Running</strong> at this point — subsequent emails will send at their scheduled wait times).</div>
+  </li>
+  <li>
+    <span class="step-num">7</span>
+    <div>Wait for Email 2 (scheduled +3 days from trigger). Confirm it is received and renders correctly. Check Automation History shows the contact progressing.</div>
+  </li>
+  <li>
+    <span class="step-num">8</span>
+    <div>Wait for Email 3 (scheduled +7 days from trigger). Confirm it is received and renders correctly. Check Automation History shows the contact reaching status <strong>Completed</strong>.</div>
+  </li>
+  <li>
+    <span class="step-num">9</span>
+    <div><strong>Delete the test contact</strong> from Brevo Contacts after confirming all three emails. Search by the staff email used. Confirm deletion before proceeding.</div>
+  </li>
+  <li>
+    <span class="step-num">10</span>
+    <div>Confirm <span class="mono">MH — Pathway: Sleeve Gastrectomy</span> still shows as <strong>Active</strong> in Brevo. Do not deactivate.</div>
+  </li>
+  <li>
+    <span class="step-num">11</span>
+    <div>Complete the <strong>Test Completion Record</strong> below and update the matching record in <strong>_docs/brevo-automation-flow.html Section 5</strong>. Both records must be consistent.</div>
+  </li>
+</ol>
+
+<div class="callout">
+  <strong>Remaining four tracks:</strong> Repeat the same live test procedure (steps 1–11 above) for Tracks 10B, 10C, 10D, and 10E. Body copy for all tracks is already finalised. Activate each automation only after its live test is confirmed. Record each test result in the Test Completion Record below.
+</div>
+
+<!-- ═══ PHASE 4: POST-TEST SIGN-OFF ═══ -->
+<h2>Phase 4 — Post-Test Sign-Off &amp; Activation Confirmation</h2>
+
+<div class="callout">
+  <strong>Complete this phase only after all live tests have passed for a given track.</strong> Confirm test contacts are removed and the automation is cleared for real patient use before informing the practice manager.
+</div>
+
+<ol class="checklist" style="list-style: none;">
+  <li>
+    <span class="step-num">1</span>
+    <div>Confirm <strong>Automation → History</strong> in Brevo shows status <strong>Completed</strong> for the test contact on each activated track. Take a screenshot for records.</div>
+  </li>
+  <li>
+    <span class="step-num">2</span>
+    <div>Confirm the test contact has been deleted from Brevo Contacts for each track tested.</div>
+  </li>
+  <li>
+    <span class="step-num">3</span>
+    <div>Confirm each tested automation shows as <strong>Active</strong> in Brevo Automation.</div>
+  </li>
+  <li>
+    <span class="step-num">4</span>
+    <div>Complete the <strong>Test Completion Record</strong> table below — fill in all rows for each track as tests are completed.</div>
+  </li>
+  <li>
+    <span class="step-num">5</span>
+    <div>Update the matching record in <strong>_docs/brevo-automation-flow.html Section 5</strong> to be consistent with the entries below.</div>
+  </li>
+  <li>
+    <span class="step-num">6</span>
+    <div>Inform the practice manager which pathway tracks are now live. Real patients with the matching <span class="mono">pathway</span> attribute value set will receive the nurture sequence automatically.</div>
+  </li>
+</ol>
+
+<!-- ═══ TEST RECORD ═══ -->
+<h2>Test Completion Record</h2>
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Complete this record as each track is tested and activated. Update the matching table in _docs/brevo-automation-flow.html Section 5 at the same time. All five tracks should reach "Live" status before Stage 10 is considered complete.</p>
+
+<table class="record">
+  <thead><tr><th>Field</th><th>Track 10A — Sleeve</th><th>Track 10B — Bypass</th><th>Track 10C — Reflux/UGI</th><th>Track 10D — GLP-1</th><th>Track 10E — Revision</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td class="status-pending">Pending — copy ready, awaiting Brevo setup &amp; test</td>
+      <td class="status-pending">Pending — copy ready, awaiting Brevo setup &amp; test</td>
+      <td class="status-pending">Pending — copy ready, awaiting Brevo setup &amp; test</td>
+      <td class="status-pending">Pending — copy ready, awaiting Brevo setup &amp; test</td>
+      <td class="status-pending">Pending — copy ready, awaiting Brevo setup &amp; test</td>
+    </tr>
+    <tr>
+      <td>Copy approved by</td>
+      <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Copy location</td>
+      <td colspan="5"><em>scripts/brevo-push-templates.js</em> — variables body10A1–body10E3. Run push script locally to deploy to Brevo templates.</td>
+    </tr>
+    <tr>
+      <td>Templates created in Brevo</td>
+      <td class="status-pending">Pending — run push script</td>
+      <td class="status-pending">Pending — run push script</td>
+      <td class="status-pending">Pending — run push script</td>
+      <td class="status-pending">Pending — run push script</td>
+      <td class="status-pending">Pending — run push script</td>
+    </tr>
+    <tr>
+      <td>Automation built in Brevo</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Live test date</td>
+      <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Tested by</td>
+      <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Test contact email used</td>
+      <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Email 1 received</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Email 2 received</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Email 3 received</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Merge tags resolved correctly</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Automation log: Completed</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Test contact deleted</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Automation Active for real patients</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+      <td class="status-pending">Pending</td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td colspan="5">All five tracks ready to proceed to Brevo setup once push script is run locally (requires whitelisted IP). Body copy signed off 27 May 2026. Checklist and spec cross-referenced: <em>_docs/brevo-automation-flow.html</em> Section 5.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="doc-footer">
+  Meridian Health &nbsp;·&nbsp; Stage 10 Setup Checklist &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br/>
+  Full spec: _docs/brevo-automation-flow.html Section 5 &nbsp;·&nbsp; Prerequisite: Stage 09 Setup Checklist &nbsp;·&nbsp; Internal use only
+</div>
+
+</body>
+</html>
