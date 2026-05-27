@@ -97,7 +97,7 @@ Templates updated:  18 / 18
 
 ### 6 — Run the verification script
 
-> **Checklist cross-reference:** this step corresponds to **step A4** in `brevo-stage-03-05-and-10-activation-checklist.html`.
+> **Checklist cross-reference:** this step corresponds to **step A4** in `brevo-activation-checklist.html`.
 
 Instead of manual spot-checking, run the read-back script to confirm all 18 templates pushed correctly:
 
@@ -127,7 +127,7 @@ If any template fails, the script prints the specific mismatch and exits with a 
 
 ### 7 — Spot-check one template in Brevo (optional)
 
-> **Checklist cross-reference:** this step corresponds to **step A5 (optional)** in `brevo-stage-03-05-and-10-activation-checklist.html`.
+> **Checklist cross-reference:** this step corresponds to **step A5 (optional)** in `brevo-activation-checklist.html`.
 
 As a final sanity check, open any one template in the Brevo editor and confirm:
 - Body copy is present and formatted correctly
@@ -137,6 +137,6 @@ As a final sanity check, open any one template in the Brevo editor and confirm:
 
 ## After the script runs
 
-Refer to `_docs/brevo-stage-03-05-and-10-activation-checklist.html` for the full activation checklist (Phase B — activating the automations in the Brevo UI, and Phase C — clinical sign-off for Stage 10).
+Refer to `_docs/brevo-activation-checklist.html` for the full activation checklist (Phase B — activating the automations in the Brevo UI, and Phase C — clinical sign-off for Stage 10).
 
 **Important:** Do not activate Stage 10 automations until the clinical sign-off in Phase C is complete.

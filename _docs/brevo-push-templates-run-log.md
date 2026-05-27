@@ -65,7 +65,7 @@ All three spot-checked templates: subject correct, body copy present, merge tags
 
 ## Next steps
 
-See `_docs/brevo-stage-03-05-and-10-activation-checklist.html` for Phase B (activate
+See `_docs/brevo-activation-checklist.html` for Phase B (activate
 automations in Brevo UI) and Phase C (clinical sign-off for Stage 10).
 
 **Do not activate Stage 10 automations until clinical sign-off (Phase C) is complete.**
