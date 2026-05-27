@@ -402,6 +402,7 @@ async function brevoPut(path, body) {
   return res.status === 204 ? null : res.json();
 }
 
+
 async function getAllTemplates() {
   const results = [];
   let offset = 0;
