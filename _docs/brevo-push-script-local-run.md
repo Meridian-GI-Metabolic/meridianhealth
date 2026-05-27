@@ -95,11 +95,38 @@ Templates updated:  18 / 18
 
 **If you get a 401 error:** your IP is not yet authorised. Confirm it in Brevo → Settings → Security → Authorised IPs and try again.
 
-### 6 — Spot-check three templates in Brevo
+### 6 — Run the verification script
 
-Open any two or three templates in the Brevo editor and confirm:
-- Body copy is present (not blank / not the old placeholder)
-- Subject line matches the table above
+Instead of manual spot-checking, run the read-back script to confirm all 18 templates pushed correctly:
+
+```bash
+BREVO_API_KEY=your_key_here node scripts/brevo-verify-templates.js
+```
+
+The script fetches each template from Brevo by name and checks that the subject line matches the manifest and the body contains the clinic phone number. A successful run looks like:
+
+```
+=== Brevo Template Verification ===
+
+Checking 18 templates against manifest…
+
+  ✓ PASS         "MH — Email 03 — Re-Engagement (24hr)"
+  ✓ PASS         "MH — Email 04 — Consultation Overview (3 day)"
+  … (18 lines total)
+
+──────────────────────────────────────────
+Passed: 18 / 18
+Failed: 0 / 18
+
+✓ All 18 templates verified. Push completed successfully.
+```
+
+If any template fails, the script prints the specific mismatch and exits with a non-zero code. Re-run `brevo-push-templates.js` to correct content issues.
+
+### 7 — Spot-check one template in Brevo (optional)
+
+As a final sanity check, open any one template in the Brevo editor and confirm:
+- Body copy is present and formatted correctly
 - `{{ contact.FIRSTNAME }}` merge tag is intact in the greeting
 
 ---
