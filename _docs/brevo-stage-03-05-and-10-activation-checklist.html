@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>Meridian Health — Stage 03–05 &amp; Stage 10 Activation Checklist</title>
+<title>Meridian Health — Stage 03–05, Stage 08, Stage 09 &amp; Stage 10 Activation Checklist</title>
 <style>
   @page { margin: 25mm 22mm 25mm 28mm; }
   body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #201e11; line-height: 1.6; margin: 0; }
@@ -44,7 +44,7 @@
 <div class="cover">
   <p class="cover-practice">Meridian Health &nbsp;·&nbsp; Operations</p>
   <h1 class="no-break" style="page-break-before:avoid; font-size:24pt; border:none; margin-bottom:8pt;">Brevo Activation Checklist</h1>
-  <p style="font-size:12pt; color:#888; margin-bottom:40pt;">Stage 03–05 (Enquiry Nurture stubs) &nbsp;·&nbsp; Stage 08 (Pre-Consultation Reminder) &nbsp;·&nbsp; Stage 10 (Pathway Nurture tracks)</p>
+  <p style="font-size:12pt; color:#888; margin-bottom:40pt;">Stage 03–05 (Enquiry Nurture stubs) &nbsp;·&nbsp; Stage 08 (Pre-Consultation Reminder) &nbsp;·&nbsp; Stage 09 (Post-Consultation) &nbsp;·&nbsp; Stage 10 (Pathway Nurture tracks)</p>
   <hr class="cover-rule"/>
   <p class="cover-meta">
     29 May 2026 &nbsp;·&nbsp; Internal use — Meridian Health Operations
@@ -410,6 +410,70 @@
     <td class="field-value">Both face-to-face and telehealth variants tested and confirmed. 72-hour date-based trigger fired correctly. All merge tags resolved. Both Brevo automation logs show Completed. Test contacts deleted. Automation confirmed Active for real patients.</td>
   </tr>
   <tr class="signoff-row"><td class="field-label">Full test record</td><td class="field-value"><code>_docs/brevo-stage-08-setup-checklist.html</code> — Test Completion Record &nbsp;·&nbsp; <code>_docs/brevo-automation-flow.html</code> Section 3</td></tr>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h1>Phase E &nbsp;— Stage 09 Status Record (Post-Consultation)</h1>
+<hr class="section-rule"/>
+
+<div class="callout">
+  Stage 09 (Post-Consultation) is managed separately from Stages 03–05 and Stage 10. Its setup checklist and full test record are in <code>_docs/brevo-stage-09-setup-checklist.html</code> and the matching spec in <code>_docs/brevo-automation-flow.html</code> Section 4. This section records the sign-off status for completeness.
+</div>
+
+<div class="warning">
+  <strong>Stage 09 must be live before Stage 10 can function correctly.</strong> Stage 09 is the handoff point: it fires after a consultation is marked complete and, once the clinician sets the <code>pathway</code> attribute, triggers the patient's Stage 10 nurture track. Do not activate Stage 10 automations until Stage 09 is confirmed Active.
+</div>
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="step">Step</th>
+      <th class="detail">What to do</th>
+      <th class="notes">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">E1 — Confirm template exists</td>
+      <td class="detail">In Brevo: <strong>Email → Templates</strong>. Confirm the template <strong>MH — Email 09 — Post-Consultation Next Steps</strong> exists and is active. If not, follow Phase 1 of <code>_docs/brevo-stage-09-setup-checklist.html</code> to create it.</td>
+      <td class="notes">Template must be active before the automation can reference it.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">E2 — Confirm automation exists and is configured</td>
+      <td class="detail">In Brevo: <strong>Automations → MH — Post-Consultation</strong>. Confirm the entry trigger is <em>Tag <code>consult_completed</code> applied to contact</em> and the single send step references <strong>MH — Email 09 — Post-Consultation Next Steps</strong>. Full spec: <code>_docs/brevo-automation-flow.html</code> Section 4.</td>
+      <td class="notes">If the automation does not exist, follow Phase 2 of <code>_docs/brevo-stage-09-setup-checklist.html</code>.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">E3 — Confirm automation is Active</td>
+      <td class="detail">Verify the <strong>MH — Post-Consultation</strong> automation shows status <strong>Active</strong> in the Brevo Automations list. If still in Draft, click <strong>Activate</strong> and resolve any validation errors.</td>
+      <td class="notes">Automation must be Active before real patients reach Stage 09.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">E4 — Confirm live test completed</td>
+      <td class="detail">Confirm both test variants were run and passed: (a) test contact <em>with</em> <code>PATHWAY</code> set — conditional pathway block renders; (b) test contact <em>without</em> <code>PATHWAY</code> — conditional block is absent. Full test record in <code>_docs/brevo-stage-09-setup-checklist.html</code>.</td>
+      <td class="notes">Both variants must pass before Stage 09 is considered live.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>E Completion Record</h3>
+<table class="signoff-table">
+  <tr><th colspan="2">Stage 09 — Sign-Off Record</th></tr>
+  <tr class="signoff-row"><td class="field-label">Automation name</td><td class="field-value">MH — Post-Consultation</td></tr>
+  <tr class="signoff-row"><td class="field-label">Status</td><td class="field-value">☐ &nbsp;Active / Live &nbsp;&nbsp; ☐ &nbsp;Pending</td></tr>
+  <tr class="signoff-row"><td class="field-label">Date of sign-off</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Signed off by</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row">
+    <td class="field-label">Test result</td>
+    <td class="field-value" style="height:40pt;">&nbsp;</td>
+  </tr>
+  <tr class="signoff-row"><td class="field-label">Full test record</td><td class="field-value"><code>_docs/brevo-stage-09-setup-checklist.html</code> — Test Completion Record &nbsp;·&nbsp; <code>_docs/brevo-automation-flow.html</code> Section 4</td></tr>
 </table>
 
 
