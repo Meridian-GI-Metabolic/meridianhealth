@@ -1,0 +1,305 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Meridian Health — Stage 10 Clinical Sign-Off Checklist</title>
+<style>
+  @page { margin: 20mm 22mm 20mm 28mm; }
+  body { font-family: Calibri, Arial, sans-serif; font-size: 10.5pt; color: #201e11; line-height: 1.5; margin: 0; }
+  .cover-bar { border-bottom: 2pt solid #c2a55e; padding-bottom: 12pt; margin-bottom: 18pt; }
+  .cover-practice { font-size: 8.5pt; letter-spacing: 3pt; text-transform: uppercase; color: #888; margin: 0 0 6pt; }
+  h1 { font-family: Georgia, serif; font-size: 19pt; font-weight: normal; color: #201e11; margin: 0 0 4pt; }
+  .subtitle { font-size: 10pt; color: #888; margin: 0 0 0; }
+  h2 { font-family: Georgia, serif; font-size: 12.5pt; font-weight: normal; color: #201e11; margin: 20pt 0 4pt; border-bottom: 1px solid #e8e0d0; padding-bottom: 3pt; }
+  h3 { font-size: 10pt; font-weight: 700; color: #201e11; margin: 14pt 0 4pt; text-transform: uppercase; letter-spacing: 0.5pt; }
+  .section-rule { width: 28pt; height: 1.5pt; background: #c2a55e; border: none; margin: 0 0 12pt; }
+  p { margin: 0 0 7pt; font-size: 10pt; }
+  .instructions { background: #f5f0e8; border-left: 3pt solid #c2a55e; padding: 9pt 11pt; margin: 10pt 0 16pt; font-size: 9.5pt; color: #5a4e32; }
+  .instructions strong { color: #201e11; }
+  .warning { background: #fff8f0; border-left: 3pt solid #d07030; padding: 9pt 11pt; margin: 10pt 0 16pt; font-size: 9.5pt; color: #5a3010; }
+
+  /* Declaration block */
+  .declaration { width: 100%; border-collapse: collapse; margin-bottom: 16pt; font-size: 9.5pt; }
+  .declaration th { background: #201e11; color: #fff; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5pt; padding: 5pt 9pt; text-align: left; }
+  .declaration td { border: 1pt solid #d8d0c0; padding: 7pt 9pt; vertical-align: top; }
+  .declaration td.lbl { width: 26%; font-size: 9pt; color: #888; background: #faf8f4; }
+  .declaration td.val { width: 74%; height: 24pt; }
+  .declaration td.val-tall { width: 74%; height: 52pt; vertical-align: top; }
+  .declaration td.val-sig { width: 74%; height: 32pt; vertical-align: bottom; padding-bottom: 4pt; border-bottom: none; }
+  .sig-line { border-top: 1pt solid #888; margin-top: 20pt; font-size: 8pt; color: #aaa; padding-top: 2pt; }
+
+  /* Review table */
+  .review { width: 100%; border-collapse: collapse; font-size: 9pt; margin-bottom: 16pt; }
+  .review thead tr th { background: #201e11; color: #fff; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5pt; padding: 5pt 8pt; text-align: left; }
+  .review tbody tr:nth-child(even) td { background: #faf8f4; }
+  .review td { border-bottom: 1pt solid #e8e0d0; padding: 6pt 8pt; vertical-align: top; }
+  .review td.cb { width: 20pt; text-align: center; font-size: 13pt; }
+  .review td.ini { width: 44pt; text-align: center; color: #aaa; font-style: italic; font-size: 8.5pt; }
+  .review td.email-id { width: 20%; font-size: 8.5pt; color: #444; font-weight: 700; }
+  .review td.email-id .timing { font-weight: normal; color: #888; }
+  .review td.clinical { font-size: 8.5pt; }
+  .review td.corr { width: 26%; font-size: 8.5pt; color: #aaa; font-style: italic; }
+  .priority td.email-id { color: #d07030; }
+  .priority-flag { color: #d07030; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.5pt; text-transform: uppercase; }
+
+  /* Track group row */
+  .track-row td { background: #fdf6e8; border-top: 1pt solid #c2a55e; border-bottom: 0; padding: 4pt 8pt; font-size: 8.5pt; letter-spacing: 1pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; }
+
+  /* Amendments block */
+  .amendments { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-bottom: 16pt; }
+  .amendments th { background: #f5f0e8; color: #201e11; text-align: left; padding: 6pt 9pt; border: 1pt solid #d8d0c0; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5pt; }
+  .amendments td { border: 1pt solid #d8d0c0; padding: 7pt 9pt; vertical-align: top; }
+  .amendments td.lbl { width: 26%; font-size: 9pt; color: #888; }
+  .amendments td.val { height: 28pt; }
+  .amendments td.val-tall { height: 72pt; vertical-align: top; }
+
+  .note { font-size: 8.5pt; color: #666; font-style: italic; }
+  .footer { margin-top: 28pt; padding-top: 8pt; border-top: 1pt solid #e8e0d0; font-size: 8pt; color: #aaa; text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="cover-bar">
+  <p class="cover-practice">Meridian Health &nbsp;·&nbsp; Clinical Governance</p>
+  <h1>Stage 10 Clinical Sign-Off Checklist</h1>
+  <p class="subtitle">Pathway Nurture Emails — 15 Emails across Tracks 10A–10E &nbsp;·&nbsp; For clinician / nurse lead review</p>
+</div>
+
+<div class="instructions">
+  <strong>Instructions for the reviewer.</strong> Read each of the 15 Stage 10 pathway emails in full in the copy document
+  <code>_docs/brevo-email-copy-03-05-and-stage-10.html</code>. For each email: tick the ☐ box when reviewed,
+  add your initials in the <em>Initials</em> column, and record any corrections needed in the <em>Corrections / notes</em> column.
+  Once all 15 rows are complete, fill in the declaration below and return the signed form to the operations team.
+  <strong>Stage 10 automations will not be activated until this form is completed and returned.</strong>
+</div>
+
+<div class="warning">
+  <strong>10B — Email 2 contains a lifelong supplement regimen</strong> (B12, iron, calcium) and is flagged as a priority review item.
+  Please confirm the supplement details with the dietitian before signing off this email.
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h2>1 &nbsp;— Email Review</h2>
+<hr class="section-rule"/>
+
+<table class="review">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="email-id">Email</th>
+      <th class="clinical">Key clinical content to verify</th>
+      <th class="corr">Corrections / notes</th>
+      <th class="ini">Initials</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- Track 10A -->
+    <tr class="track-row"><td colspan="5">Track 10A — Sleeve Gastrectomy</td></tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10A — Email 1<br/><span class="timing">(Immediate)</span></td>
+      <td class="clinical">Sleeve gastrectomy mechanism — restriction and appetite-signalling explanation; care coordinator follow-up process; overview accuracy</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10A — Email 2<br/><span class="timing">(+3 days)</span></td>
+      <td class="clinical">VLCD liver-reduction diet duration (2 weeks); nurse and dietitian pre-op meetings; supplement and eating progression stages</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10A — Email 3<br/><span class="timing">(+7 days)</span></td>
+      <td class="clinical">12-month follow-up structure; return to light activity within 2 weeks statement; long-term lifestyle and dietary guidance</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+
+    <!-- Track 10B -->
+    <tr class="track-row"><td colspan="5">Track 10B — Gastric Bypass</td></tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10B — Email 1<br/><span class="timing">(Immediate)</span></td>
+      <td class="clinical">Bypass overview; indications listed (reflux, T2DM, prior bariatric failure); 12-month pathway structure accuracy</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr class="priority">
+      <td class="cb">☐</td>
+      <td class="email-id">10B — Email 2<br/><span class="timing">(+3 days)</span><br/><span class="priority-flag">★ Priority</span></td>
+      <td class="clinical"><strong>Lifelong supplement regimen — confirm accuracy with dietitian:</strong> B12 injection / sublingual frequency; iron supplement dosing; calcium with vitamin D form and dose. Also: VLCD duration; nurse education sessions</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10B — Email 3<br/><span class="timing">(+7 days)</span></td>
+      <td class="clinical">Liquid / pureed / soft food dietary progression timeline; long-term supplement adherence messaging; 12-month follow-up structure</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+
+    <!-- Track 10C -->
+    <tr class="track-row"><td colspan="5">Track 10C — Reflux &amp; Upper GI</td></tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10C — Email 1<br/><span class="timing">(Immediate)</span></td>
+      <td class="clinical">Upper GI conditions listed (GORD, hiatus hernia, oesophageal conditions); investigations described — physiology testing, gastroscopy, imaging; accuracy of scope</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10C — Email 2<br/><span class="timing">(+4 days)</span></td>
+      <td class="clinical">Spectrum of treatment described; fundoplication presented as anti-reflux surgical option; complex oesophageal conditions referenced accurately</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10C — Email 3<br/><span class="timing">(+10 days)</span></td>
+      <td class="clinical">Barrett's oesophagus surveillance intervals; chronic condition long-term management approach; follow-up cadence described</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+
+    <!-- Track 10D -->
+    <tr class="track-row"><td colspan="5">Track 10D — GLP-1 &amp; Metabolic Medicine</td></tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10D — Email 1<br/><span class="timing">(Immediate)</span></td>
+      <td class="clinical">GLP-1 positioned as part of a broader physician-led plan (not standalone); structured investigations described; dietitian input referenced</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10D — Email 2<br/><span class="timing">(+4 days)</span></td>
+      <td class="clinical">Dietitian review role; lean muscle mass preservation messaging; blood tests and body composition monitoring described accurately</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10D — Email 3<br/><span class="timing">(+10 days)</span></td>
+      <td class="clinical">Long-term metabolic review structure; medication adjustment process; pathway transition options described</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+
+    <!-- Track 10E -->
+    <tr class="track-row"><td colspan="5">Track 10E — Revision Procedures</td></tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10E — Email 1<br/><span class="timing">(Immediate)</span></td>
+      <td class="clinical">Revision surgery overview; indications listed (weight regain, reflux, anatomical complications, inadequate primary outcome); specialist experience claim accuracy</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10E — Email 2<br/><span class="timing">(+4 days)</span></td>
+      <td class="clinical">Multidisciplinary assessment described; psychological assessment referenced; liver-reduction diet pre-op; prior anatomy review process</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="email-id">10E — Email 3<br/><span class="timing">(+10 days)</span></td>
+      <td class="clinical">Post-operative follow-up structure; nutritional monitoring plan; supplement review; long-term care pathway accuracy</td>
+      <td class="corr">&nbsp;</td>
+      <td class="ini">&nbsp;</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<p class="note">Once all 15 rows are ticked and initialled, proceed to the declaration section below.</p>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h2>2 &nbsp;— Amendments Required</h2>
+<hr class="section-rule"/>
+
+<p>If any corrections were noted in the table above, summarise them here. Attach additional pages if needed. Operations staff will not action amendments unless they are recorded in writing.</p>
+
+<table class="amendments">
+  <thead>
+    <tr><th colspan="2">Amendment Summary</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="lbl">Amendments required?</td>
+      <td>☐ &nbsp;No amendments — all content approved as written &nbsp;&nbsp;&nbsp;&nbsp; ☐ &nbsp;Amendments required — see below</td>
+    </tr>
+    <tr>
+      <td class="lbl">Email(s) affected</td>
+      <td class="val">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="lbl">Amendment details</td>
+      <td class="val-tall">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="lbl">Action taken / by whom</td>
+      <td class="val">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="lbl">Re-review required?</td>
+      <td>☐ &nbsp;No — minor corrections only &nbsp;&nbsp;&nbsp;&nbsp; ☐ &nbsp;Yes — amended copy to be returned for re-review before activation</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h2>3 &nbsp;— Clinician Declaration</h2>
+<hr class="section-rule"/>
+
+<p>By completing this section the reviewer confirms they have read all 15 Stage 10 emails in full and that, subject to any amendments noted above, the clinical content is accurate and appropriate for patient communication.</p>
+
+<table class="declaration">
+  <thead>
+    <tr><th colspan="2">Reviewer Declaration</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="lbl">Full name</td><td class="val">&nbsp;</td></tr>
+    <tr><td class="lbl">Role / title</td><td class="val">&nbsp;</td></tr>
+    <tr><td class="lbl">AHPRA registration no. <span style="font-weight:normal; color:#aaa;">(if applicable)</span></td><td class="val">&nbsp;</td></tr>
+    <tr><td class="lbl">Date reviewed</td><td class="val">&nbsp;</td></tr>
+    <tr>
+      <td class="lbl">Review outcome</td>
+      <td>
+        ☐ &nbsp;<strong>Approved</strong> — all 15 emails reviewed; no amendments (or amendments noted and completed); Stage 10 may proceed to activation<br/>
+        ☐ &nbsp;<strong>Conditional</strong> — approved subject to amendments noted above being applied before activation<br/>
+        ☐ &nbsp;<strong>Not approved</strong> — significant changes required; re-review needed before activation
+      </td>
+    </tr>
+    <tr>
+      <td class="lbl">Signature</td>
+      <td class="val-sig">
+        <div class="sig-line">Signature &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="instructions" style="margin-top:10pt;">
+  <strong>After signing:</strong> Scan or photograph this completed form and save it to
+  <code>_docs/</code> alongside the activation checklist. Notify the operations team by email so they can proceed with Phase B2 (Stage 10 automation activation).
+  File name convention: <code>stage-10-clinical-signoff-[REVIEWER INITIALS]-[YYYYMMDD].pdf</code>
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  Meridian Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au<br/>
+  Internal document — not for patient distribution &nbsp;·&nbsp; Stage 10 Clinical Sign-Off Checklist &nbsp;·&nbsp; May 2026
+</div>
+
+</body>
+</html>
