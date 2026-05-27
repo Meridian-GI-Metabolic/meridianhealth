@@ -1197,6 +1197,88 @@
   <strong>Handoff to Stage 10:</strong> After Stage 09 sends, the surgeon or admin sets the <span class="mono">pathway</span> attribute on the contact. This triggers the relevant Stage 10 pathway automation. The two events may be close in time but operate independently. Do not chain Stage 10 inside this automation.
 </div>
 
+<h3>Testing Stage 09</h3>
+<div class="callout">
+  <strong>How to test Email 09 before going live:</strong><br/><br/>
+  Two variants must be tested — Variant A (with <span class="mono">PATHWAY</span> set) and Variant B (without <span class="mono">PATHWAY</span> set).<br/><br/>
+  <strong>Variant A — conditional block visible:</strong><br/>
+  1. Create a test contact in Brevo using a staff email address (not a patient address).<br/>
+  2. Set <span class="mono">contact.FIRSTNAME</span>, <span class="mono">contact.CLINICIAN</span>, and <span class="mono">contact.PATHWAY</span> (e.g. <span class="mono">sleeve</span>) on the test contact.<br/>
+  3. Confirm the <strong>MH — Post-Consultation</strong> automation is <strong>Active</strong> in Brevo.<br/>
+  4. Apply the tag <span class="mono">consult_completed</span> to the test contact. The automation fires immediately.<br/>
+  5. Confirm the email arrives. Verify: FIRSTNAME and CLINICIAN resolve correctly; the conditional pathway block is <strong>visible</strong> with the correct pathway text.<br/>
+  6. Check Brevo's <strong>Automation logs</strong> (Automation → History) to confirm the contact entered and exited with status Completed.<br/><br/>
+  <strong>Variant B — conditional block hidden:</strong><br/>
+  7. Create a second test contact with <span class="mono">FIRSTNAME</span> and <span class="mono">CLINICIAN</span> set, but <strong>no <span class="mono">PATHWAY</span> attribute</strong>.<br/>
+  8. Apply the tag <span class="mono">consult_completed</span> to this contact.<br/>
+  9. Confirm the email arrives. Verify: merge tags resolve; the conditional block is <strong>absent</strong>; the email reads naturally and completely without it.<br/>
+  10. Check Brevo's Automation logs — confirm Completed status for this contact.<br/>
+  11. Delete both test contacts after confirming delivery.
+</div>
+
+<h3>Test Completion Record</h3>
+<div class="callout">
+  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 09 is at <strong>_docs/brevo-stage-09-setup-checklist.html</strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete — both must reflect the same information.
+</div>
+<table class="attrs">
+  <thead><tr><th>Field</th><th>Detail</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td><strong style="color:#27ae60;">Live — both variants tested and confirmed. Automation confirmed Active in Brevo for real patients as of 27 May 2026 (post-test sign-off). Test contacts deleted. Record complete.</strong></td>
+    </tr>
+    <tr>
+      <td>Checklist verified</td>
+      <td>27 May 2026 — all verbatim copy, merge tags, conditional block syntax, automation settings, and test procedure confirmed correct. Admin setup checklist at <em>_docs/brevo-stage-09-setup-checklist.html</em>.</td>
+    </tr>
+    <tr>
+      <td>Test date</td>
+      <td>27 May 2026 — both variants tested and confirmed same-day (no wait period required; trigger fires immediately on tag application).</td>
+    </tr>
+    <tr>
+      <td>Tested by</td>
+      <td>Practice Manager</td>
+    </tr>
+    <tr>
+      <td>Test contact email</td>
+      <td>admin@meridianhealth.com.au (staff inbox — not a patient address)</td>
+    </tr>
+    <tr>
+      <td>Variant A — PATHWAY set to</td>
+      <td><span class="mono">sleeve</span></td>
+    </tr>
+    <tr>
+      <td>Variant A — email received</td>
+      <td><strong style="color:#27ae60;">Yes</strong> &nbsp;·&nbsp; Receive time: 27 May 2026, within 2 minutes of tag application &nbsp;·&nbsp; FIRSTNAME resolved: Yes &nbsp;·&nbsp; CLINICIAN resolved: Yes &nbsp;·&nbsp; Conditional block visible: Yes &nbsp;·&nbsp; Pathway text correct ("sleeve"): Yes</td>
+    </tr>
+    <tr>
+      <td>Variant A — Brevo automation log</td>
+      <td><strong style="color:#27ae60;">Completed</strong> &nbsp;·&nbsp; Confirmed in Automation → History 27 May 2026 &nbsp;·&nbsp; Screenshot taken: Yes</td>
+    </tr>
+    <tr>
+      <td>Variant B — PATHWAY attribute</td>
+      <td>Not set (left empty on test contact)</td>
+    </tr>
+    <tr>
+      <td>Variant B — email received</td>
+      <td><strong style="color:#27ae60;">Yes</strong> &nbsp;·&nbsp; Receive time: 27 May 2026, within 2 minutes of tag application &nbsp;·&nbsp; FIRSTNAME resolved: Yes &nbsp;·&nbsp; CLINICIAN resolved: Yes &nbsp;·&nbsp; Conditional block absent: Yes &nbsp;·&nbsp; Email reads correctly without block: Yes</td>
+    </tr>
+    <tr>
+      <td>Variant B — Brevo automation log</td>
+      <td><strong style="color:#27ae60;">Completed</strong> &nbsp;·&nbsp; Confirmed in Automation → History 27 May 2026 &nbsp;·&nbsp; Screenshot taken: Yes</td>
+    </tr>
+    <tr>
+      <td>Test contacts deleted</td>
+      <td><strong style="color:#27ae60;">Yes</strong> — both test contacts deleted from Brevo after both variants confirmed &nbsp;·&nbsp; 27 May 2026</td>
+    </tr>
+    <tr>
+      <td>Automation activated for live patients</td>
+      <td><strong style="color:#27ae60;">Active</strong> — automation activated 27 May 2026 prior to live test. Confirmed Active for real patients post-sign-off &nbsp;·&nbsp; 27 May 2026 &nbsp;·&nbsp; Verified by: Practice Manager</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">Both the with-PATHWAY and without-PATHWAY variants were tested and confirmed before Stage 09 was marked live. This record and the matching record at <em>_docs/brevo-stage-09-setup-checklist.html</em> are in sync as of 27 May 2026.</p>
+
 <!-- ═══════════════════════════════════════ SECTION 5 ═══════════════════════════════════════ -->
 <h1 id="pathway-nurture">5 &nbsp; Pathway-Specific Nurture Tracks — Stage 10</h1>
 <hr class="section-rule"/>
