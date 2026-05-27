@@ -113,9 +113,28 @@
     </tr>
     <tr>
       <td class="cb">☐</td>
-      <td class="step">A4 — Spot-check in Brevo</td>
-      <td class="detail">Open two or three templates in the Brevo editor. Confirm body copy is present, subject line is correct, and <code>{{ contact.FIRSTNAME }}</code> merge tags are intact.</td>
-      <td class="notes">&nbsp;</td>
+      <td class="step">A4 — Run the verification script</td>
+      <td class="detail">
+        From the project root:<br/>
+        <code>BREVO_API_KEY=your_key node scripts/brevo-verify-templates.js</code><br/><br/>
+        The script reads all 18 templates back from Brevo and checks that each subject line matches the manifest and the body contains the clinic phone number. A successful run looks like:<br/><br/>
+        <code>=== Brevo Template Verification ===</code><br/>
+        <code>Checking 18 templates against manifest…</code><br/>
+        <code>&nbsp;&nbsp;✓ PASS &nbsp;&nbsp;"MH — Email 03 — Re-Engagement (24hr)"</code><br/>
+        <code>&nbsp;&nbsp;✓ PASS &nbsp;&nbsp;"MH — Email 04 — Consultation Overview (3 day)"</code><br/>
+        <code>&nbsp;&nbsp;… (18 lines total)</code><br/>
+        <code>──────────────────────────────────</code><br/>
+        <code>Passed: 18 / 18 &nbsp; Failed: 0 / 18</code><br/>
+        <code>✓ All 18 templates verified.</code><br/><br/>
+        If any template fails, the script prints the specific mismatch and exits with a non-zero code. Re-run <code>brevo-push-templates.js</code> to correct content issues, then re-verify.
+      </td>
+      <td class="notes">Exit code 0 = all pass. Exit code 1 = one or more failures — do not proceed to Phase B until all 18 pass.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">A5 — Spot-check in Brevo <em>(optional)</em></td>
+      <td class="detail">As an additional sanity check, open one or two templates in the Brevo editor and confirm body copy is present, subject line is correct, and <code>{{ contact.FIRSTNAME }}</code> merge tags are intact.</td>
+      <td class="notes">Optional — the verification script in A4 covers this automatically.</td>
     </tr>
   </tbody>
 </table>
