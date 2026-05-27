@@ -480,6 +480,122 @@
 </table>
 
 
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<h1>Phase F &nbsp;— Preview Environment Isolation Verification</h1>
+<hr class="section-rule"/>
+
+<div class="callout">
+  This phase verifies that the enquiry form on Netlify deploy-preview URLs routes submissions to the <strong>test</strong> Brevo account and never to the live patient database. Full log and instructions: <code>_docs/brevo-preview-form-test-log.md</code> &nbsp;·&nbsp; <code>_docs/brevo-preview-env-setup.md</code> § 3.
+</div>
+
+<h2>F1 — Routing Logic (Local Simulation)</h2>
+
+<p>The Netlify function routing logic was verified by local Node.js simulation on 27 May 2026. Three scenarios were tested against the code in <code>netlify/functions/enquiry.js</code>:</p>
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="step">Scenario</th>
+      <th class="detail">Expected log output</th>
+      <th class="notes">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cb">☑</td>
+      <td class="step">A — deploy-preview context</td>
+      <td class="detail"><code>Brevo enquiry — context: deploy-preview | key: TEST (BREVO_TEST_API_KEY)</code></td>
+      <td class="notes">Pass — test key selected correctly</td>
+    </tr>
+    <tr>
+      <td class="cb">☑</td>
+      <td class="step">B — production context</td>
+      <td class="detail"><code>Brevo enquiry — context: production | key: LIVE (BREVO_API_KEY)</code></td>
+      <td class="notes">Pass — live key selected for production</td>
+    </tr>
+    <tr>
+      <td class="cb">☑</td>
+      <td class="step">C — fail-closed (missing test key)</td>
+      <td class="detail"><code>BREVO_TEST_API_KEY is not set for non-production context: deploy-preview — refusing to fall back to live key.</code> HTTP 500 returned.</td>
+      <td class="notes">Pass — function refuses fallback to live key</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="note">All three routing scenarios confirmed by Replit agent simulation, 27 May 2026. Full output recorded in <code>_docs/brevo-preview-form-test-log.md</code> — Routing logic section.</p>
+
+<h2>F2 — Live Deploy-Preview Test (Human verification required)</h2>
+
+<div class="warning">
+  <strong>This step requires a human with Netlify and Brevo account access.</strong> The steps below must be run against the live <strong>meridianhealthau</strong> Netlify site. See <code>_docs/brevo-preview-form-test-log.md</code> — "How to run the live test" for full instructions.
+</div>
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th class="cb">✓</th>
+      <th class="step">Step</th>
+      <th class="detail">What to do</th>
+      <th class="notes">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">F2.1 — Trigger deploy-preview</td>
+      <td class="detail">Open a pull request or push a branch to the <strong>meridianhealthau</strong> Netlify site (ID <code>2eca808c-e9c5-4e8a-8146-3de47b788281</code>). Confirm Netlify generates a deploy-preview URL.</td>
+      <td class="notes">URL format: <code>deploy-preview-N--meridianhealthau.netlify.app</code></td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">F2.2 — Submit enquiry form</td>
+      <td class="detail">Navigate to the enquiry form on the deploy-preview URL and submit using a staff test email address.</td>
+      <td class="notes">Use a staff email — not a patient address.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">F2.3 — Confirm Netlify function log</td>
+      <td class="detail">In Netlify: <strong>Functions → enquiry → Logs</strong>. Confirm the log line reads:<br/><code>Brevo enquiry — context: deploy-preview | key: TEST (BREVO_TEST_API_KEY)</code></td>
+      <td class="notes">Any other key selection is a fail.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">F2.4 — Confirm test Brevo contact</td>
+      <td class="detail">In the <strong>test</strong> Brevo account: <strong>Contacts</strong>. Confirm the submission appears as a new contact.</td>
+      <td class="notes">Contact should appear within 60 seconds.</td>
+    </tr>
+    <tr>
+      <td class="cb">☐</td>
+      <td class="step">F2.5 — Confirm live account untouched</td>
+      <td class="detail">In the <strong>live / production</strong> Brevo account: <strong>Contacts</strong>. Confirm no new contact was created by the test submission.</td>
+      <td class="notes">This is the critical isolation check.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>F2 Sign-Off Record</h3>
+<table class="signoff-table">
+  <tr><th colspan="2">Preview Form Isolation — Live Test Sign-Off</th></tr>
+  <tr class="signoff-row"><td class="field-label">Date run</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Executed by</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Deploy-preview URL used</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row"><td class="field-label">Test contact email used</td><td class="field-value">&nbsp;</td></tr>
+  <tr class="signoff-row">
+    <td class="field-label">All 5 steps passed?</td>
+    <td class="field-value">☐ &nbsp;Yes — PASS &nbsp;&nbsp; ☐ &nbsp;No — FAIL (see notes)</td>
+  </tr>
+  <tr class="signoff-row">
+    <td class="field-label">Notes / issues</td>
+    <td class="field-value" style="height:40pt;">&nbsp;</td>
+  </tr>
+  <tr class="signoff-row">
+    <td class="field-label">Full test log</td>
+    <td class="field-value"><code>_docs/brevo-preview-form-test-log.md</code> — fill in the table in that file and tick the overall result once complete.</td>
+  </tr>
+</table>
+
+
 <!-- FOOTER -->
 <div style="margin-top:40pt; padding-top:10pt; border-top:1pt solid #e8e0d0; font-size:9pt; color:#aaa; text-align:center;">
   Meridian Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au<br/>
