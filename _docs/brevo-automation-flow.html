@@ -1062,7 +1062,7 @@
 
 <h3>Test Completion Record</h3>
 <div class="callout">
-  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 08 is at <strong>_docs/brevo-stage-08-setup-checklist.html</strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete — both must reflect the same information.
+  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 08 is at <strong><a href="brevo-stage-08-setup-checklist.html" style="color:#c2a55e;">brevo-stage-08-setup-checklist.html</a></strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete — both must reflect the same information.
 </div>
 <table class="attrs">
   <thead><tr><th>Field</th><th>Detail</th></tr></thead>
@@ -1073,7 +1073,7 @@
     </tr>
     <tr>
       <td>Checklist verified</td>
-      <td>25 May 2026 — all verbatim copy, merge tags, conditional block rules, automation settings, SMS body, and test procedure confirmed correct. Admin setup checklist at <em>_docs/brevo-stage-08-setup-checklist.html</em>.</td>
+      <td>25 May 2026 — all verbatim copy, merge tags, conditional block rules, automation settings, SMS body, and test procedure confirmed correct. Admin setup checklist at <a href="brevo-stage-08-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-08-setup-checklist.html</em></a>.</td>
     </tr>
     <tr>
       <td>Suite number confirmed</td>
@@ -1133,7 +1133,7 @@
     </tr>
   </tbody>
 </table>
-<p class="note">Both the face_to_face and telehealth variants were tested and confirmed before Stage 08 was marked live. This record and the matching record at <em>_docs/brevo-stage-08-setup-checklist.html</em> are in sync as of 29 May 2026.</p>
+<p class="note">Both the face_to_face and telehealth variants were tested and confirmed before Stage 08 was marked live. This record and the matching record at <a href="brevo-stage-08-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-08-setup-checklist.html</em></a> are in sync as of 29 May 2026.</p>
 
 <!-- ═══════════════════════════════════════ SECTION 4 ═══════════════════════════════════════ -->
 <h1 id="post-consultation">4 &nbsp; Post-Consultation Automation — Stage 09</h1>
@@ -1171,7 +1171,7 @@
 </div>
 
 <h3>Email 09 Template — Verbatim Copy</h3>
-<p class="note">Paste this body copy into the Brevo template editor as <strong>MH — Email 09 — Post-Consultation Next Steps</strong>. The conditional block (dashed box) uses Brevo's <code>{% if %}</code> syntax to reference the patient's pathway if the <code>PATHWAY</code> attribute is set at send time. Full setup guide: <em>_docs/brevo-email-09-post-consultation.html</em>.</p>
+<p class="note">Paste this body copy into the Brevo template editor as <strong>MH — Email 09 — Post-Consultation Next Steps</strong>. The conditional block (dashed box) uses Brevo's <code>{% if %}</code> syntax to reference the patient's pathway if the <code>PATHWAY</code> attribute is set at send time. Full setup guide: <a href="brevo-email-09-post-consultation.html" style="color:#c2a55e;"><em>brevo-email-09-post-consultation.html</em></a>.</p>
 
 <div class="email-block">
   <p class="email-subject">Subject line</p>
@@ -1225,7 +1225,7 @@
 
 <h3>Test Completion Record</h3>
 <div class="callout">
-  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 09 is at <strong>_docs/brevo-stage-09-setup-checklist.html</strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete — both must reflect the same information.
+  <strong>Admin checklist available:</strong> A printable step-by-step setup and test checklist for Stage 09 is at <strong><a href="brevo-stage-09-setup-checklist.html" style="color:#c2a55e;">brevo-stage-09-setup-checklist.html</a></strong>. Use it to build the template, configure the automation, and record test results. Update this record and the checklist record together once testing is complete — both must reflect the same information.
 </div>
 <table class="attrs">
   <thead><tr><th>Field</th><th>Detail</th></tr></thead>
@@ -1236,7 +1236,7 @@
     </tr>
     <tr>
       <td>Checklist verified</td>
-      <td>27 May 2026 — all verbatim copy, merge tags, conditional block syntax, automation settings, and test procedure confirmed correct. Admin setup checklist at <em>_docs/brevo-stage-09-setup-checklist.html</em>.</td>
+      <td>27 May 2026 — all verbatim copy, merge tags, conditional block syntax, automation settings, and test procedure confirmed correct. Admin setup checklist at <a href="brevo-stage-09-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-09-setup-checklist.html</em></a>.</td>
     </tr>
     <tr>
       <td>Test date</td>
@@ -1284,14 +1284,14 @@
     </tr>
   </tbody>
 </table>
-<p class="note">Both the with-PATHWAY and without-PATHWAY variants were tested and confirmed before Stage 09 was marked live. This record and the matching record at <em>_docs/brevo-stage-09-setup-checklist.html</em> are in sync as of 27 May 2026.</p>
+<p class="note">Both the with-PATHWAY and without-PATHWAY variants were tested and confirmed before Stage 09 was marked live. This record and the matching record at <a href="brevo-stage-09-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-09-setup-checklist.html</em></a> are in sync as of 27 May 2026.</p>
 
 <!-- ═══════════════════════════════════════ SECTION 5 ═══════════════════════════════════════ -->
 <h1 id="pathway-nurture">5 &nbsp; Pathway-Specific Nurture Tracks — Stage 10</h1>
 <hr class="section-rule"/>
 
 <p><strong>Entry trigger (all five tracks):</strong> Contact attribute <span class="mono">pathway</span> is set to the corresponding value by surgeon or admin recommendation post-consultation.</p>
-<p><strong>Structure:</strong> Five separate automations in Brevo, one per pathway. Each begins immediately when the relevant <span class="mono">pathway</span> value is set. Body copy for all five tracks is finalised and held in <em>scripts/brevo-push-templates.js</em> — use this script (run locally with a whitelisted IP) to push copy to Brevo templates before activating automations. See <em>_docs/brevo-stage-10-setup-checklist.html</em> for the full setup procedure.</p>
+<p><strong>Structure:</strong> Five separate automations in Brevo, one per pathway. Each begins immediately when the relevant <span class="mono">pathway</span> value is set. Body copy for all five tracks is finalised and held in <em>scripts/brevo-push-templates.js</em> — use this script (run locally with a whitelisted IP) to push copy to Brevo templates before activating automations. See <a href="brevo-stage-10-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-10-setup-checklist.html</em></a> for the full setup procedure.</p>
 
 <div class="callout">
   <strong>Pathway to category mapping:</strong><br/>
@@ -1371,14 +1371,14 @@
 </div>
 
 <h2>Stage 10 — Setup Status Record</h2>
-<p style="font-size:9.5pt; color:#666; font-style:italic;">Update this record as each track is built and tested in Brevo. Full setup procedure: <em>_docs/brevo-stage-10-setup-checklist.html</em>.</p>
+<p style="font-size:9.5pt; color:#666; font-style:italic;">Update this record as each track is built and tested in Brevo. Full setup procedure: <a href="brevo-stage-10-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-10-setup-checklist.html</em></a>.</p>
 <table class="attrs">
   <thead><tr><th>Item</th><th>Status</th><th>Notes</th></tr></thead>
   <tbody>
     <tr><td>Body copy — all five tracks</td><td><strong style="color:#27ae60;">Written</strong></td><td>Copy authored in <em>scripts/brevo-push-templates.js</em> (variables body10A1–body10E3). Requires clinical review and sign-off before Brevo push. Run script locally (whitelisted IP) to push to Brevo templates after sign-off.</td></tr>
     <tr><td>Brevo templates created (15 total)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Run <em>scripts/brevo-push-templates.js</em> locally after IP whitelisted. Creates / updates all 15 templates in one pass.</td></tr>
-    <tr><td>Brevo automations built (5 total)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Build in Brevo UI after templates are confirmed. Attribute-based trigger: <span class="mono">pathway</span> = track value. See <em>_docs/brevo-stage-10-setup-checklist.html</em> Phase 2.</td></tr>
-    <tr><td>Live test — Track 10A (Sleeve)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Test Track 10A first as reference. See <em>_docs/brevo-stage-10-setup-checklist.html</em> Phase 3.</td></tr>
+    <tr><td>Brevo automations built (5 total)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Build in Brevo UI after templates are confirmed. Attribute-based trigger: <span class="mono">pathway</span> = track value. See <a href="brevo-stage-10-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-10-setup-checklist.html</em></a> Phase 2.</td></tr>
+    <tr><td>Live test — Track 10A (Sleeve)</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Test Track 10A first as reference. See <a href="brevo-stage-10-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-10-setup-checklist.html</em></a> Phase 3.</td></tr>
     <tr><td>Live test — Tracks 10B–10E</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Complete after 10A test passes. Same procedure applies to each track.</td></tr>
     <tr><td>All five tracks Active in Brevo</td><td><strong style="color:#c0392b;">Pending</strong></td><td>Do not activate any track until its live test is confirmed.</td></tr>
   </tbody>
