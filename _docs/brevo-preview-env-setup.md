@@ -19,7 +19,8 @@ context. The production context continues to use `BREVO_API_KEY`.
 | `dev`            | `BREVO_TEST_API_KEY`  |
 
 If `BREVO_TEST_API_KEY` is not set in a non-production context, the function
-falls back to `BREVO_API_KEY` and logs a warning in the function log.
+refuses the request, logs an error, and returns HTTP 500. It never falls back
+to the live key — see [Fail-closed behaviour](#fail-closed-behaviour) below.
 
 ---
 
@@ -50,7 +51,7 @@ falls back to `BREVO_API_KEY` and logs a warning in the function log.
 2. Submit the enquiry form on the preview URL.
 3. Check the Netlify function log — you should see:
    ```
-   Brevo enquiry — context: deploy-preview | using TEST key
+   Brevo enquiry — context: deploy-preview | key: TEST (BREVO_TEST_API_KEY)
    ```
 4. Confirm the submission appears in the **test** Brevo account's contacts, not
    the production account.
