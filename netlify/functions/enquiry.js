@@ -3,11 +3,32 @@ exports.handler = async function (event) {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const BREVO_API_KEY = process.env.BREVO_API_KEY;
-  if (!BREVO_API_KEY) {
-    console.error("BREVO_API_KEY is not set");
-    return { statusCode: 500, body: JSON.stringify({ error: "Server misconfiguration" }) };
+  const netlifyContext = process.env.CONTEXT || "dev";
+  const isProduction = netlifyContext === "production";
+
+  let BREVO_API_KEY;
+  let keySource;
+
+  if (isProduction) {
+    BREVO_API_KEY = process.env.BREVO_API_KEY;
+    keySource = "LIVE (BREVO_API_KEY)";
+    if (!BREVO_API_KEY) {
+      console.error("BREVO_API_KEY is not set in production context");
+      return { statusCode: 500, body: JSON.stringify({ error: "Server misconfiguration" }) };
+    }
+  } else {
+    BREVO_API_KEY = process.env.BREVO_TEST_API_KEY;
+    keySource = "TEST (BREVO_TEST_API_KEY)";
+    if (!BREVO_API_KEY) {
+      console.error(
+        "BREVO_TEST_API_KEY is not set for non-production context:", netlifyContext,
+        "— refusing to fall back to live key. Add BREVO_TEST_API_KEY in Netlify → Site settings → Environment variables."
+      );
+      return { statusCode: 500, body: JSON.stringify({ error: "Server misconfiguration" }) };
+    }
   }
+
+  console.log("Brevo enquiry — context:", netlifyContext, "| key:", keySource);
 
   let body;
   try {

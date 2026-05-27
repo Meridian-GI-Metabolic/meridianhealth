@@ -2,6 +2,11 @@
   publish = "."
   functions = "netlify/functions"
 
+# Non-production contexts (deploy-preview, branch-deploy, dev) automatically
+# use BREVO_TEST_API_KEY instead of BREVO_API_KEY — see enquiry.js and
+# _docs/brevo-preview-env-setup.md for details.
+# BREVO_TEST_API_KEY must be set in Netlify → Site settings → Environment variables.
+
 [[headers]]
   for = "/*.html"
   [headers.values]
