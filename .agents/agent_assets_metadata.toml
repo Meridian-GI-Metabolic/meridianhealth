@@ -36,3 +36,15 @@ id = "CkhUCXJsmabkdDPfA-wBs"
 uri = "file://_docs/meridian-wip-to-launch.doc"
 type = "word_document"
 title = "Meridian Health — WIP to Launch (all workstreams)"
+
+[[outputs]]
+id = "3Chws_dqSc4WEuotFdM9A"
+uri = "file://_docs/stage-10-email-review.pdf"
+type = "pdf"
+title = "Stage 10 — Email Review (352 KB)"
+
+[[outputs]]
+id = "DIveyqoTvx4RbpUZES3zk"
+uri = "file://_docs/stage-10-clinical-signoff-checklist.pdf"
+type = "pdf"
+title = "Stage 10 — Clinical Signoff Checklist (232 KB)"

@@ -1,2 +1,1 @@
-- [Stage 00 lead nurture](stage-00-lead-nurture.md) — Instagram/@meridiangimetabolic + website subscribe sequence; AHPRA rules and Everlab funnel reference.
-- [Stage 10 sequence config](stage-10-sequence-config.md) — 5 procedure tracks saved as draft; activation gate requires clinical sign-off before going live.
+- [NixOS PDF generation](nixos-pdf.md) — use `nix-shell -p chromium --run "chromium --headless --no-sandbox --disable-gpu --print-to-pdf=..."` for reliable PDF output
