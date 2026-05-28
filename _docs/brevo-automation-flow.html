@@ -1478,7 +1478,7 @@ Triggers when consult_completed tag applied by admin. Sends Email 09 (post-consu
 
 <h4>MH — Pathway automations (all five)</h4>
 <p style="font-family: Courier New, monospace; font-size: 9.5pt; border: 1pt solid #ddd; padding: 8pt; background: #fafafa;">
-Triggers when pathway attribute is set to the corresponding value (sleeve / bypass / reflux_uppergi / glp1_metabolic / revision). Each track contains 3 email stubs at immediate / +3-4 days / +7-10 days. Body copy to be completed by content team. Do not activate until copy is populated and reviewed clinically.
+Triggers when pathway attribute is set to the corresponding value (sleeve / bypass / reflux_uppergi / glp1_metabolic / revision). Each track sends 3 emails at immediate / +3–4 days / +7–10 days. Body copy is finalised for all five tracks in scripts/brevo-push-templates.js (variables body10A1–body10E3). Run the push script locally (whitelisted IP required) after clinical sign-off to create templates in Brevo, then build the automations per brevo-stage-10-setup-checklist.html. Do not activate any track until clinical sign-off is recorded and its live test is confirmed.
 </p>
 
 <!-- ═══════════════════════════════════════ SECTION E ═══════════════════════════════════════ -->
