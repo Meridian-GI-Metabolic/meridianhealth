@@ -80,15 +80,54 @@
   /* FOOTER */
   .doc-footer { margin-top: 40px; padding-top: 10px; border-top: 1px solid #e8e0d0; font-size: 9pt; color: #aaa; text-align: center; }
 
+  /* LAST REVIEWED STAMP */
+  .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid #c2a55e; border-radius: 3px; padding: 5px 12px; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 18px; }
+  .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
+  .last-reviewed .lr-date { font-weight: 700; color: #201e11; }
+
   /* MONO */
   .mono { font-family: Courier New, monospace; font-size: 9.5pt; background: #f0ece4; padding: 1px 4px; border-radius: 2px; }
 </style>
 </head>
 <body>
 
+<!--
+  ═══════════════════════════════════════════════════════════════════════════
+  EDITOR GUIDE — update these fields whenever a stage status changes
+  ═══════════════════════════════════════════════════════════════════════════
+
+  1. LAST REVIEWED DATE  ←  the most important one
+     Find the <span class="lr-date"> tag just below the <h1> and update the
+     date to today. Format: DD Month YYYY  (e.g. 28 May 2026)
+
+  2. STATUS TABLE
+     Each row has a <span class="badge badge-*"> element.
+     Change badge-not-started → badge-pending → badge-live as stages progress.
+     Also update the "Test date" cell in the same row.
+
+  3. SUMMARY STRIP (the four count cards near the top)
+     Update the numbers and the stage-list annotations in each card to match
+     the new totals (Live / Pending / Not started / Total).
+
+  4. NOTES SECTION ("What needs to happen next")
+     Remove or strike completed items from the ordered list as stages go live.
+
+  5. TEST RECORD TABLES (Stage 08 and Stage 09 detail tables)
+     Add a new table here when additional stages reach "Live" status.
+  ═══════════════════════════════════════════════════════════════════════════
+-->
+
 <p class="meta">Meridian Health &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Brevo CRM</p>
 <h1>Brevo Automation Status Summary</h1>
-<p class="meta">At-a-glance reference for the Practice Manager and admin team &nbsp;·&nbsp; Full spec: <a href="brevo-automation-flow.html" style="color:#c2a55e;">brevo-automation-flow.html</a> &nbsp;·&nbsp; Last updated: 28 May 2026</p>
+<p class="meta">At-a-glance reference for the Practice Manager and admin team &nbsp;·&nbsp; Full spec: <a href="brevo-automation-flow.html" style="color:#c2a55e;">brevo-automation-flow.html</a></p>
+
+<div>
+  <span class="last-reviewed">
+    <span class="lr-label">Last reviewed</span>
+    <span class="lr-date">28 May 2026</span>
+    <span style="font-size:8.5pt; color:#888;">— update this date whenever any stage status changes (see source comment for full edit guide)</span>
+  </span>
+</div>
 
 <div class="callout">
   <strong>How to use this page:</strong> This is a single-glance status summary of all 10 automation stages, including the five Stage 10 pathway sub-tracks. For full configuration detail, email copy, and test records, follow the <em>Spec</em> links to the relevant section of the automation flow document. Update this page and the flow document together whenever a stage status changes.
@@ -432,7 +471,8 @@
 
 <div class="doc-footer">
   Meridian Health &nbsp;·&nbsp; Brevo Automation Status Summary &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br/>
-  Full spec: <a href="brevo-automation-flow.html" style="color:#aaa;">brevo-automation-flow.html</a> &nbsp;·&nbsp; Internal use only
+  Full spec: <a href="brevo-automation-flow.html" style="color:#aaa;">brevo-automation-flow.html</a> &nbsp;·&nbsp; Internal use only<br/>
+  <span style="color:#c2a55e; font-weight:600;">When editing this page: update the "Last reviewed" date at the top and the status badges in the table.</span>
 </div>
 
 </body>
