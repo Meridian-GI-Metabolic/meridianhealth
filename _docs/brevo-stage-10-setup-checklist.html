@@ -80,11 +80,11 @@
   </li>
   <li>
     <span class="step-num">2</span>
-    <div>Practice manager (or delegated reviewer) reads through the copy in <em>scripts/brevo-push-templates.js</em> — variables <span class="mono">body10A1</span> through <span class="mono">body10E3</span> — and confirms clinical appropriateness before the push script is run.</div>
+    <div>Practice manager (or delegated reviewer) reads through the 15 pathway emails in <a href="brevo-email-copy.html#stage-10" style="color:#c2a55e;"><em>_docs/brevo-email-copy.html</em> — Stage 10 section</a>. The copy is presented there in readable, formatted form (the same text is held in <em>scripts/brevo-push-templates.js</em> variables <span class="mono">body10A1</span>–<span class="mono">body10E3</span> for the push script). The reviewer confirms clinical appropriateness for all 15 emails before the push script is run.</div>
   </li>
   <li>
     <span class="step-num">3</span>
-    <div>Record reviewer name and date in the <strong>Body Copy Sign-Off Record</strong> below, then proceed to Phase 1.</div>
+    <div>Complete and return the standalone <strong><a href="stage-10-clinical-signoff-checklist.html" style="color:#c2a55e;">Stage 10 Clinical Sign-Off Checklist</a></strong> (<em>_docs/stage-10-clinical-signoff-checklist.html</em>) — it includes a per-email review table, an amendments block and a clinician declaration. Once signed, record the reviewer name and date in the <strong>Body Copy Sign-Off Record</strong> below, then proceed to Phase 1.</div>
   </li>
 </ol>
 
@@ -92,13 +92,17 @@
 <table class="record">
   <thead><tr><th>Track</th><th>Automation Name</th><th>Entry Value</th><th>Copy Status</th><th>Approved By</th><th>Date</th></tr></thead>
   <tbody>
-    <tr><td>10A — Sleeve Gastrectomy</td><td><span class="mono">MH — Pathway: Sleeve Gastrectomy</span></td><td><span class="mono">sleeve</span></td><td class="status-done">Written — in push script (body10A1–10A3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>10B — Gastric Bypass</td><td><span class="mono">MH — Pathway: Gastric Bypass</span></td><td><span class="mono">bypass</span></td><td class="status-done">Written — in push script (body10B1–10B3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>10C — Reflux / Upper GI</td><td><span class="mono">MH — Pathway: Reflux &amp; Upper GI</span></td><td><span class="mono">reflux_uppergi</span></td><td class="status-done">Written — in push script (body10C1–10C3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>10D — GLP-1 / Metabolic</td><td><span class="mono">MH — Pathway: GLP-1 &amp; Metabolic Medicine</span></td><td><span class="mono">glp1_metabolic</span></td><td class="status-done">Written — in push script (body10D1–10D3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>10E — Revision Procedures</td><td><span class="mono">MH — Pathway: Revision Procedures</span></td><td><span class="mono">revision</span></td><td class="status-done">Written — in push script (body10E1–10E3)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>10A — Sleeve Gastrectomy</td><td><span class="mono">MH — Pathway: Sleeve Gastrectomy</span></td><td><span class="mono">sleeve</span></td><td class="status-done">Written — in push script (body10A1–10A3)</td><td class="status-blocked">Pending sign-off</td><td class="status-blocked">—</td></tr>
+    <tr><td>10B — Gastric Bypass</td><td><span class="mono">MH — Pathway: Gastric Bypass</span></td><td><span class="mono">bypass</span></td><td class="status-done">Written — in push script (body10B1–10B3)</td><td class="status-blocked">Pending sign-off</td><td class="status-blocked">—</td></tr>
+    <tr><td>10C — Reflux / Upper GI</td><td><span class="mono">MH — Pathway: Reflux &amp; Upper GI</span></td><td><span class="mono">reflux_uppergi</span></td><td class="status-done">Written — in push script (body10C1–10C3)</td><td class="status-blocked">Pending sign-off</td><td class="status-blocked">—</td></tr>
+    <tr><td>10D — GLP-1 / Metabolic</td><td><span class="mono">MH — Pathway: GLP-1 &amp; Metabolic Medicine</span></td><td><span class="mono">glp1_metabolic</span></td><td class="status-done">Written — in push script (body10D1–10D3)</td><td class="status-blocked">Pending sign-off</td><td class="status-blocked">—</td></tr>
+    <tr><td>10E — Revision Procedures</td><td><span class="mono">MH — Pathway: Revision Procedures</span></td><td><span class="mono">revision</span></td><td class="status-done">Written — in push script (body10E1–10E3)</td><td class="status-blocked">Pending sign-off</td><td class="status-blocked">—</td></tr>
   </tbody>
 </table>
+
+<div class="warn">
+  <strong>Sign-off action required:</strong> Copy is written and ready. The practice manager or delegated clinical reviewer must complete the <a href="stage-10-clinical-signoff-checklist.html" style="color:#5a3e00; font-weight:700;">Stage 10 Clinical Sign-Off Checklist</a> (<em>_docs/stage-10-clinical-signoff-checklist.html</em>), which contains the per-email review table, amendments block and clinician declaration. Once the form is signed, update the <em>Approved By</em> and <em>Date</em> cells above and proceed to Phase 1. <strong>Do not run the push script or activate any automation until sign-off is recorded.</strong>
+</div>
 
 <!-- ═══ PATHWAY TRACK SPECS ═══ -->
 <h2>Pathway Track Specifications — Quick Reference</h2>
