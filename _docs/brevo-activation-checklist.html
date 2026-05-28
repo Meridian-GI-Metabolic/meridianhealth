@@ -36,6 +36,9 @@
   .signoff-row td.field-value { width: 72%; height: 28pt; }
   code { font-family: 'Courier New', monospace; font-size: 9.5pt; background: #f0ece4; padding: 1pt 4pt; }
   .note { font-size: 9.5pt; color: #666; font-style: italic; }
+  .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1pt solid #c2a55e; border-radius: 3px; padding: 5pt 12pt; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 14pt; }
+  .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
+  .last-reviewed .lr-date { font-weight: 700; color: #201e11; }
 </style>
 </head>
 <body>
@@ -51,9 +54,36 @@
   </p>
 </div>
 
+<!--
+  ═══════════════════════════════════════════════════════════════════════════
+  EDITOR GUIDE — update these fields whenever a stage is activated
+  ═══════════════════════════════════════════════════════════════════════════
+
+  1. LAST REVIEWED DATE  ←  the most important one
+     Find the <span class="lr-date"> tag just below the Overview heading and
+     update the date to today. Format: D Month YYYY  (e.g. 29 May 2026)
+
+  2. CHECKLIST ROWS
+     Tick the □ checkbox cells and fill in any Notes as each step is completed.
+
+  3. SIGN-OFF TABLE (at the end of each stage section)
+     Fill in the tester name, date, and result once the stage is confirmed live.
+
+  4. STATUS SUMMARY
+     Update brevo-automation-status.html to reflect the new live/pending counts.
+  ═══════════════════════════════════════════════════════════════════════════
+-->
+
 <!-- ══════════════════════════════════════════════════════════════════════ -->
 <h1 class="no-break" style="page-break-before:avoid;">Overview</h1>
 <hr class="section-rule"/>
+<div>
+  <span class="last-reviewed">
+    <span class="lr-label">Last reviewed</span>
+    <span class="lr-date">29 May 2026</span>
+    <span style="font-size:8.5pt; color:#888;">— update this date whenever a stage is activated or a checklist phase is completed (see source comment for full edit guide)</span>
+  </span>
+</div>
 
 <p>This checklist covers the two-phase process for getting Stages 03–05 and Stage 10 live in Brevo:</p>
 
@@ -599,7 +629,8 @@
 <!-- FOOTER -->
 <div style="margin-top:40pt; padding-top:10pt; border-top:1pt solid #e8e0d0; font-size:9pt; color:#aaa; text-align:center;">
   Meridian Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au<br/>
-  Internal document — not for patient distribution &nbsp;·&nbsp; 29 May 2026
+  Internal document — not for patient distribution &nbsp;·&nbsp; 29 May 2026<br/>
+  <span style="color:#c2a55e; font-weight:600;">When editing this page: update the "Last reviewed" date at the top and the relevant sign-off table(s).</span>
 </div>
 
 </body>
