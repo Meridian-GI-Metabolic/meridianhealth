@@ -35,6 +35,9 @@
   .status-done { color: #27ae60; font-weight: 600; }
   .status-blocked { color: #e6a817; font-weight: 600; }
   .doc-footer { margin-top: 40px; padding-top: 10px; border-top: 1px solid #e8e0d0; font-size: 9pt; color: #aaa; text-align: center; }
+  .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid #c2a55e; border-radius: 3px; padding: 5px 12px; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 18px; }
+  .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
+  .last-reviewed .lr-date { font-weight: 700; color: #201e11; }
   p { margin: 0 0 8px; }
 </style>
 </head>
@@ -43,6 +46,19 @@
 <p class="meta">Meridian Health &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Brevo Configuration</p>
 <h1>Stage 10 Setup Checklist<br/><span style="font-size:14pt; color:#888;">MH — Pathway Nurture Tracks</span></h1>
 <p class="meta">Reference document for admin completing the Brevo UI setup &nbsp;·&nbsp; Full spec: <a href="brevo-automation-flow.html#pathway-nurture" style="color:#c2a55e;"><em>brevo-automation-flow.html</em> Section 5</a> &nbsp;·&nbsp; Prerequisite: Stage 09 (Post-Consultation) must be live</p>
+
+<!-- EDIT GUIDE: When a track goes live or a checkbox is ticked, update three things:
+     1. The "Last reviewed" date in the stamp below (format: D Month YYYY).
+     2. The Status column in the Track Progress record table at the bottom of this page.
+     3. The Stage 10 row(s) in brevo-automation-status.html.
+-->
+<div>
+  <span class="last-reviewed">
+    <span class="lr-label">Last reviewed</span>
+    <span class="lr-date">28 May 2026</span>
+    <span style="font-size:8.5pt; color:#888;">— update this date whenever a track goes live or a checklist phase is completed (see source comment for full edit guide)</span>
+  </span>
+</div>
 
 <p style="margin: 0 0 14pt; font-size: 8.5pt; color: #666;">
   This document is the setup checklist for Stage 10, the five pathway-specific nurture automations.
@@ -497,7 +513,8 @@
 
 <div class="doc-footer">
   Meridian Health &nbsp;·&nbsp; Stage 10 Setup Checklist &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br/>
-  Full spec: <a href="brevo-automation-flow.html#pathway-nurture" style="color:#c2a55e;">brevo-automation-flow.html Section 5</a> &nbsp;·&nbsp; Prerequisite: Stage 09 Setup Checklist &nbsp;·&nbsp; Internal use only
+  Full spec: <a href="brevo-automation-flow.html#pathway-nurture" style="color:#aaa;">brevo-automation-flow.html Section 5</a> &nbsp;·&nbsp; Prerequisite: Stage 09 Setup Checklist &nbsp;·&nbsp; Internal use only<br/>
+  <span style="color:#c2a55e; font-weight:600;">When editing this page: update the "Last reviewed" date at the top, the Status column in the Track Progress table, and the matching rows in brevo-automation-status.html.</span>
 </div>
 
 </body>
