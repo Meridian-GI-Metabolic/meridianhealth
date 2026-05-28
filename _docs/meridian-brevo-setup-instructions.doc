@@ -76,7 +76,7 @@
   <br>
   <div class="note"><strong>Reference documents</strong> (all in the <span class="path">_docs/</span> folder of the project):<br><br>
   <span class="path">brevo-automation-flow.doc</span> — Master spec: all 10 stages, contact attributes, tags, automation descriptions<br>
-  <span class="path">brevo-email-copy-03-05-and-stage-10.html</span> — Verbatim copy for Emails 03–05 and all 15 pathway track emails<br>
+  <span class="path">brevo-email-copy.html</span> — Verbatim copy for Emails 03–05 and all 15 pathway track emails<br>
   <span class="path">brevo-email-09-post-consultation.html</span> — Email 09 copy and Brevo setup guide<br>
   <span class="path">brevo-stage-08-setup-checklist.html</span> — Step-by-step admin checklist for the 72-hr reminder automation
   </div>
@@ -188,18 +188,18 @@
   <tr><th>Template name</th><th>Subject line</th><th>Copy source</th></tr>
   <tr><td><span class="path">MH — Email 01 Enquiry Received</span></td><td>Meridian Health — We've received your enquiry</td><td><span class="path">brevo-automation-flow.doc</span> Stage 01</td></tr>
   <tr><td><span class="path">MH — Email 02 Appointment Confirmed</span></td><td>Your Meridian consultation is confirmed</td><td><span class="path">brevo-automation-flow.doc</span> Stage 06</td></tr>
-  <tr><td><span class="path">MH — Email 03 Re-Engagement</span></td><td>Still thinking things through?</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Email 03</td></tr>
-  <tr><td><span class="path">MH — Email 04 Consultation Overview</span></td><td>What to expect at your first Meridian consultation</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Email 04</td></tr>
-  <tr><td><span class="path">MH — Email 05 Pathway Education</span></td><td>Three pathways. One team.</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Email 05</td></tr>
+  <tr><td><span class="path">MH — Email 03 Re-Engagement</span></td><td>Still thinking things through?</td><td><span class="path">brevo-email-copy.html</span> Email 03</td></tr>
+  <tr><td><span class="path">MH — Email 04 Consultation Overview</span></td><td>What to expect at your first Meridian consultation</td><td><span class="path">brevo-email-copy.html</span> Email 04</td></tr>
+  <tr><td><span class="path">MH — Email 05 Pathway Education</span></td><td>Three pathways. One team.</td><td><span class="path">brevo-email-copy.html</span> Email 05</td></tr>
   <tr><td><span class="path">MH — Email 08 Pre-Consultation Reminder</span></td><td>Your Meridian consultation is tomorrow</td><td><span class="path">brevo-stage-08-setup-checklist.html</span> Phase 1</td></tr>
   <tr><td><span class="path">MH — Email 09 Post-Consultation Next Steps</span></td><td>Your next steps with Meridian</td><td><span class="path">brevo-email-09-post-consultation.html</span> Section 2</td></tr>
-  <tr><td><span class="path">MH — Track 10A Sleeve Email 1</span></td><td>Your sleeve gastrectomy — what to expect</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10A</td></tr>
-  <tr><td><span class="path">MH — Track 10A Sleeve Email 2</span></td><td>Preparing well makes a real difference</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10A</td></tr>
-  <tr><td><span class="path">MH — Track 10A Sleeve Email 3</span></td><td>Life after your sleeve gastrectomy</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10A</td></tr>
-  <tr><td><span class="path">MH — Track 10B Bypass Emails 1–3</span></td><td>(see Track 10B in copy doc)</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10B</td></tr>
-  <tr><td><span class="path">MH — Track 10C Upper GI Emails 1–3</span></td><td>(see Track 10C in copy doc)</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10C</td></tr>
-  <tr><td><span class="path">MH — Track 10D GLP-1 Emails 1–3</span></td><td>(see Track 10D in copy doc)</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10D</td></tr>
-  <tr><td><span class="path">MH — Track 10E Revision Emails 1–3</span></td><td>(see Track 10E in copy doc)</td><td><span class="path">brevo-email-copy-03-05-and-stage-10.html</span> Track 10E</td></tr>
+  <tr><td><span class="path">MH — Track 10A Sleeve Email 1</span></td><td>Your sleeve gastrectomy — what to expect</td><td><span class="path">brevo-email-copy.html</span> Track 10A</td></tr>
+  <tr><td><span class="path">MH — Track 10A Sleeve Email 2</span></td><td>Preparing well makes a real difference</td><td><span class="path">brevo-email-copy.html</span> Track 10A</td></tr>
+  <tr><td><span class="path">MH — Track 10A Sleeve Email 3</span></td><td>Life after your sleeve gastrectomy</td><td><span class="path">brevo-email-copy.html</span> Track 10A</td></tr>
+  <tr><td><span class="path">MH — Track 10B Bypass Emails 1–3</span></td><td>(see Track 10B in copy doc)</td><td><span class="path">brevo-email-copy.html</span> Track 10B</td></tr>
+  <tr><td><span class="path">MH — Track 10C Upper GI Emails 1–3</span></td><td>(see Track 10C in copy doc)</td><td><span class="path">brevo-email-copy.html</span> Track 10C</td></tr>
+  <tr><td><span class="path">MH — Track 10D GLP-1 Emails 1–3</span></td><td>(see Track 10D in copy doc)</td><td><span class="path">brevo-email-copy.html</span> Track 10D</td></tr>
+  <tr><td><span class="path">MH — Track 10E Revision Emails 1–3</span></td><td>(see Track 10E in copy doc)</td><td><span class="path">brevo-email-copy.html</span> Track 10E</td></tr>
 </table>
 
 <h2>Conditional blocks (Emails 02 and 08)</h2>
@@ -305,7 +305,7 @@
   <li>Track 10D (GLP-1 / Metabolic medicine) — 3 emails — reviewed by physician</li>
   <li>Track 10E (Revision surgery) — 3 emails — reviewed by surgeon</li>
 </ul>
-<p>Copy is in: <span class="path">brevo-email-copy-03-05-and-stage-10.html</span></p>
+<p>Copy is in: <span class="path">brevo-email-copy.html</span></p>
 <p>Any amendments should be made to the Brevo templates before activating the Post-Consultation automation (Automation 4).</p>
 
 <!-- ══════ SUMMARY ══════ -->

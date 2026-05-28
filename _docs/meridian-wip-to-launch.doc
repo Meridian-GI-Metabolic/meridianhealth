@@ -231,7 +231,7 @@
   <tr>
     <td>5</td>
     <td><strong>Clinical sign-off on Track 10 copy</strong><br>
-    <span style="font-size:10pt;color:#555">15 pathway emails (10A–10E) — sign-off form in <span class="path">brevo-email-copy-03-05-and-stage-10.html</span></span></td>
+    <span style="font-size:10pt;color:#555">15 pathway emails (10A–10E) — sign-off form in <span class="path">brevo-email-copy.html</span></span></td>
     <td>Clinicians review + sign form</td>
     <td class="owner">Surgeons + physician</td>
     <td>No</td>
@@ -273,7 +273,7 @@
 <div class="note"><strong>Reference documents</strong> (all in <span class="path">_docs/</span>):<br>
 <span class="path">brevo-automation-flow.doc</span> — master spec<br>
 <span class="path">meridian-brevo-setup-instructions.doc</span> — step-by-step admin instructions<br>
-<span class="path">brevo-email-copy-03-05-and-stage-10.html</span> — all email copy + clinical sign-off form<br>
+<span class="path">brevo-email-copy.html</span> — all email copy + clinical sign-off form<br>
 <span class="path">brevo-stage-08-setup-checklist.html</span> — Stage 08 detailed checklist<br>
 <span class="path">brevo-enquiry-nurture-trigger-verification.html</span> — live test procedure
 </div>
