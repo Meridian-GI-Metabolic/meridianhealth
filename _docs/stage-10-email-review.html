@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>MERIDIAN Health — Stage 10 Email Review Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  @page { margin: 18mm 20mm 18mm 24mm; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #201e11; line-height: 1.5; margin: 0; }
+
+  /* ── Page breaks ── */
+  .page { page-break-after: always; padding-bottom: 8pt; }
+  .page:last-child { page-break-after: auto; }
+
+  /* ── Cover bar ── */
+  .cover-bar { border-bottom: 2pt solid #c2a55e; padding-bottom: 10pt; margin-bottom: 16pt; }
+  .cover-practice { font-size: 8pt; letter-spacing: 3pt; text-transform: uppercase; color: #888; margin: 0 0 4pt; }
+  h1 { font-family: 'Inter', sans-serif; font-size: 20pt; font-weight: 600; color: #201e11; margin: 0 0 3pt; }
+  .subtitle { font-size: 10pt; color: #888; margin: 0; }
+
+  /* ── Section headings ── */
+  h2 { font-family: 'Inter', sans-serif; font-size: 13pt; font-weight: 500; color: #201e11; margin: 18pt 0 4pt; border-bottom: 1pt solid #e8e0d0; padding-bottom: 3pt; }
+  h3 { font-size: 10pt; font-weight: 700; color: #201e11; margin: 12pt 0 4pt; text-transform: uppercase; letter-spacing: 0.5pt; }
+
+  /* ── Overview table ── */
+  table.overview { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 8pt 0 16pt; }
+  table.overview th { background: #201e11; color: #fff; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4pt; padding: 5pt 8pt; text-align: left; }
+  table.overview td { border-bottom: 1pt solid #e8e0d0; padding: 6pt 8pt; vertical-align: top; }
+  table.overview tr:nth-child(even) td { background: #faf8f4; }
+  table.overview td.track { font-weight: 700; width: 22%; }
+  table.overview td.timing { width: 10%; color: #555; font-size: 8.5pt; white-space: nowrap; }
+  table.overview td.subject { font-style: italic; }
+  .track-group td { background: #fdf6e8 !important; border-top: 1pt solid #c2a55e; padding: 3pt 8pt; font-size: 8pt; letter-spacing: 1.5pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; }
+
+  /* ── Instructions box ── */
+  .instructions { background: #f5f0e8; border-left: 3pt solid #c2a55e; padding: 9pt 11pt; margin: 10pt 0 14pt; font-size: 9.5pt; color: #5a4e32; }
+  .instructions strong { color: #201e11; }
+  .warning { background: #fff8f0; border-left: 3pt solid #d07030; padding: 9pt 11pt; margin: 10pt 0 14pt; font-size: 9.5pt; color: #5a3010; }
+
+  /* ── Email page header ── */
+  .email-page-header { margin-bottom: 12pt; }
+  .email-track-label { font-size: 7.5pt; letter-spacing: 2.5pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; margin: 0 0 2pt; }
+  .email-title { font-family: 'Inter', sans-serif; font-size: 14pt; font-weight: 600; color: #201e11; margin: 0 0 2pt; }
+  .email-meta { font-size: 8.5pt; color: #888; margin: 0 0 10pt; }
+  .email-meta span { margin-right: 16pt; }
+  .email-meta .label { color: #aaa; margin-right: 3pt; }
+
+  /* ── Email render ── */
+  .email-render { border: 1pt solid #ddd8c8; border-top: 3pt solid #c2a55e; background: #ffffff; padding: 24pt 28pt 20pt; max-width: 480pt; margin: 0 auto; }
+  .email-render p { font-family: 'Inter', sans-serif; font-size: 11pt; line-height: 1.7; color: #201e11; margin: 0 0 10pt; }
+  .email-footer-render { max-width: 480pt; margin: 8pt auto 0; font-size: 8pt; color: #aaa; line-height: 1.6; }
+
+  /* ── Review strip ── */
+  .review-strip { border: 1pt solid #d8d0c0; padding: 8pt 12pt; margin: 12pt auto 0; max-width: 480pt; font-size: 8.5pt; background: #faf8f4; display: flex; gap: 24pt; }
+  .review-strip .rfield { flex: 1; }
+  .review-strip .rfield .rlabel { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5pt; color: #aaa; display: block; margin-bottom: 3pt; }
+  .review-strip .rfield .rval { border-bottom: 0.75pt solid #888; height: 14pt; display: block; }
+
+  /* ── Priority flag ── */
+  .priority-flag { display: inline-block; background: #fff0e8; border: 1pt solid #d07030; color: #d07030; font-size: 7pt; font-weight: 700; letter-spacing: 0.5pt; text-transform: uppercase; padding: 1pt 5pt; border-radius: 2pt; margin-left: 6pt; vertical-align: middle; }
+
+  /* ── Page footer ── */
+  .doc-footer { margin-top: 20pt; padding-top: 8pt; border-top: 1pt solid #e8e0d0; font-size: 7.5pt; color: #aaa; text-align: center; }
+
+  /* ── Print-only ── */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- PAGE 1: OVERVIEW                                          -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="cover-bar">
+  <p class="cover-practice">MERIDIAN Health &nbsp;·&nbsp; Clinical Governance &nbsp;·&nbsp; Stage 10 Review</p>
+  <h1>Stage 10 Pathway Email Review Pack</h1>
+  <p class="subtitle">All 15 patient emails across Tracks 10A–10E &nbsp;·&nbsp; For clinical review and sign-off &nbsp;·&nbsp; 28 May 2026</p>
+</div>
+
+<div class="instructions">
+  <strong>How to use this document.</strong> This pack contains all 15 Stage 10 pathway nurture emails as patients will receive them. Read each email in full. When you are satisfied with the content, complete the sign-off checklist at <code>_docs/stage-10-clinical-signoff-checklist.html</code> — print it, tick each row, fill in the declaration, and sign. Return the signed PDF to the operations team.
+  <br/><br/>
+  <strong>Note:</strong> <code>{{ contact.FIRSTNAME }}</code> is a merge tag — it will be replaced with the patient's first name when the email is sent.
+</div>
+
+<div class="warning">
+  <strong>10B — Email 2 (Gastric Bypass Preparation) contains a lifelong supplement regimen</strong> — B12, iron, calcium. Please confirm the supplement details with the dietitian before signing off this email. It is marked ★ Priority in the table below.
+</div>
+
+<h2>Contents — All 15 Emails</h2>
+
+<table class="overview">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Send timing</th>
+      <th>Subject line</th>
+      <th style="width:8%;">Page</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr class="track-group"><td colspan="4">Track 10A &nbsp;—&nbsp; Sleeve Gastrectomy &nbsp;·&nbsp; Trigger: pathway = sleeve</td></tr>
+    <tr><td class="track">10A — Email 1</td><td class="timing">Immediate</td><td class="subject">Your sleeve gastrectomy pathway — what to expect</td><td>3</td></tr>
+    <tr><td class="track">10A — Email 2</td><td class="timing">+3 days</td><td class="subject">Preparing for your procedure</td><td>4</td></tr>
+    <tr><td class="track">10A — Email 3</td><td class="timing">+7 days</td><td class="subject">Life after sleeve gastrectomy</td><td>5</td></tr>
+
+    <tr class="track-group"><td colspan="4">Track 10B &nbsp;—&nbsp; Gastric Bypass &nbsp;·&nbsp; Trigger: pathway = bypass</td></tr>
+    <tr><td class="track">10B — Email 1</td><td class="timing">Immediate</td><td class="subject">Your gastric bypass pathway — what to expect</td><td>6</td></tr>
+    <tr><td class="track">10B — Email 2 ★</td><td class="timing">+3 days</td><td class="subject">Preparing for your procedure</td><td>7</td></tr>
+    <tr><td class="track">10B — Email 3</td><td class="timing">+7 days</td><td class="subject">Recovery and long-term outcomes</td><td>8</td></tr>
+
+    <tr class="track-group"><td colspan="4">Track 10C &nbsp;—&nbsp; Reflux &amp; Upper GI &nbsp;·&nbsp; Trigger: pathway = reflux_uppergi</td></tr>
+    <tr><td class="track">10C — Email 1</td><td class="timing">Immediate</td><td class="subject">Your Upper GI pathway — what happens next</td><td>9</td></tr>
+    <tr><td class="track">10C — Email 2</td><td class="timing">+4 days</td><td class="subject">Understanding your treatment options</td><td>10</td></tr>
+    <tr><td class="track">10C — Email 3</td><td class="timing">+10 days</td><td class="subject">Long-term management of Upper GI conditions</td><td>11</td></tr>
+
+    <tr class="track-group"><td colspan="4">Track 10D &nbsp;—&nbsp; GLP-1 &amp; Metabolic Medicine &nbsp;·&nbsp; Trigger: pathway = glp1_metabolic</td></tr>
+    <tr><td class="track">10D — Email 1</td><td class="timing">Immediate</td><td class="subject">Your metabolic medicine pathway — what to expect</td><td>12</td></tr>
+    <tr><td class="track">10D — Email 2</td><td class="timing">+4 days</td><td class="subject">Getting the most from your treatment plan</td><td>13</td></tr>
+    <tr><td class="track">10D — Email 3</td><td class="timing">+10 days</td><td class="subject">Long-term metabolic health — beyond the prescription</td><td>14</td></tr>
+
+    <tr class="track-group"><td colspan="4">Track 10E &nbsp;—&nbsp; Revision Procedures &nbsp;·&nbsp; Trigger: pathway = revision</td></tr>
+    <tr><td class="track">10E — Email 1</td><td class="timing">Immediate</td><td class="subject">Your revision surgery pathway — what to expect</td><td>15</td></tr>
+    <tr><td class="track">10E — Email 2</td><td class="timing">+4 days</td><td class="subject">Preparing for your revision procedure</td><td>16</td></tr>
+    <tr><td class="track">10E — Email 3</td><td class="timing">+10 days</td><td class="subject">Long-term care after revision surgery</td><td>17</td></tr>
+
+  </tbody>
+</table>
+
+<h2>Automation Summary</h2>
+<table class="overview">
+  <thead><tr><th>Track</th><th>Automation name (Brevo)</th><th>Entry trigger</th><th>Emails</th><th>Sequence</th></tr></thead>
+  <tbody>
+    <tr><td class="track">10A — Sleeve Gastrectomy</td><td>MH — Pathway: Sleeve Gastrectomy</td><td><code>pathway</code> = <code>sleeve</code></td><td>3</td><td>Immediate · +3 days · +7 days</td></tr>
+    <tr><td class="track">10B — Gastric Bypass</td><td>MH — Pathway: Gastric Bypass</td><td><code>pathway</code> = <code>bypass</code></td><td>3</td><td>Immediate · +3 days · +7 days</td></tr>
+    <tr><td class="track">10C — Reflux &amp; Upper GI</td><td>MH — Pathway: Reflux &amp; Upper GI</td><td><code>pathway</code> = <code>reflux_uppergi</code></td><td>3</td><td>Immediate · +4 days · +10 days</td></tr>
+    <tr><td class="track">10D — GLP-1 &amp; Metabolic</td><td>MH — Pathway: GLP-1 &amp; Metabolic Medicine</td><td><code>pathway</code> = <code>glp1_metabolic</code></td><td>3</td><td>Immediate · +4 days · +10 days</td></tr>
+    <tr><td class="track">10E — Revision Procedures</td><td>MH — Pathway: Revision Procedures</td><td><code>pathway</code> = <code>revision</code></td><td>3</td><td>Immediate · +4 days · +10 days</td></tr>
+  </tbody>
+</table>
+
+<div class="doc-footer">
+  MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; Internal use only &nbsp;·&nbsp; Not for patient distribution &nbsp;·&nbsp; 28 May 2026
+</div>
+</div><!-- /page 1 -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- PAGE 2: SIGN-OFF SUMMARY (quick-reference for reviewer)  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="cover-bar">
+  <p class="cover-practice">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Review &nbsp;·&nbsp; Reviewer Quick Reference</p>
+  <h1>What to check in each email</h1>
+  <p class="subtitle">Clinical review criteria — one row per email &nbsp;·&nbsp; Full sign-off form: <code>_docs/stage-10-clinical-signoff-checklist.html</code></p>
+</div>
+
+<table class="overview">
+  <thead><tr><th style="width:18%;">Email</th><th>Key clinical content to verify</th></tr></thead>
+  <tbody>
+    <tr class="track-group"><td colspan="2">Track 10A — Sleeve Gastrectomy</td></tr>
+    <tr><td class="track">10A — Email 1<br/><span style="font-weight:normal; color:#888; font-size:8pt;">Immediate</span></td><td>Sleeve mechanism (restriction + appetite signalling) described accurately; care coordinator follow-up process mentioned; no guaranteed outcomes stated</td></tr>
+    <tr><td class="track">10A — Email 2<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+3 days</span></td><td>VLCD liver-reduction diet duration (2 weeks) correct; nurse and dietitian pre-op meetings referenced; supplement and eating progression mentioned</td></tr>
+    <tr><td class="track">10A — Email 3<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+7 days</span></td><td>12-month follow-up structure described; return to light activity within 2 weeks stated; long-term lifestyle and dietary guidance appropriate</td></tr>
+
+    <tr class="track-group"><td colspan="2">Track 10B — Gastric Bypass</td></tr>
+    <tr><td class="track">10B — Email 1<br/><span style="font-weight:normal; color:#888; font-size:8pt;">Immediate</span></td><td>Bypass overview accurate; indications listed (reflux, T2DM, prior bariatric failure); 12-month pathway structure correct</td></tr>
+    <tr><td class="track" style="color:#d07030;">10B — Email 2 ★<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+3 days</span></td><td><strong>Priority — confirm with dietitian:</strong> B12 injection/sublingual frequency; iron supplement dosing; calcium with vitamin D form and dose. Also: VLCD duration; nurse education sessions</td></tr>
+    <tr><td class="track">10B — Email 3<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+7 days</span></td><td>Dietary progression timeline (liquid/pureed/soft) correct; long-term supplement adherence messaging appropriate; 12-month follow-up structure accurate</td></tr>
+
+    <tr class="track-group"><td colspan="2">Track 10C — Reflux &amp; Upper GI</td></tr>
+    <tr><td class="track">10C — Email 1<br/><span style="font-weight:normal; color:#888; font-size:8pt;">Immediate</span></td><td>Conditions listed accurately (GORD, hiatus hernia, oesophageal); investigations described (physiology testing, gastroscopy, imaging); scope of service accurate</td></tr>
+    <tr><td class="track">10C — Email 2<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+4 days</span></td><td>Spectrum of treatment described correctly; fundoplication presented as anti-reflux surgical option accurately; complex oesophageal conditions referenced appropriately</td></tr>
+    <tr><td class="track">10C — Email 3<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+10 days</span></td><td>Barrett's oesophagus surveillance intervals appropriate; chronic condition long-term management approach correct; follow-up cadence described accurately</td></tr>
+
+    <tr class="track-group"><td colspan="2">Track 10D — GLP-1 &amp; Metabolic Medicine</td></tr>
+    <tr><td class="track">10D — Email 1<br/><span style="font-weight:normal; color:#888; font-size:8pt;">Immediate</span></td><td>GLP-1 positioned as part of a broader physician-led plan (not standalone); structured investigations described; dietitian input referenced</td></tr>
+    <tr><td class="track">10D — Email 2<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+4 days</span></td><td>Dietitian review role described; lean muscle mass preservation messaging appropriate; blood tests and body composition monitoring described accurately</td></tr>
+    <tr><td class="track">10D — Email 3<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+10 days</span></td><td>Long-term metabolic review structure described; medication adjustment process accurate; pathway transition options referenced appropriately</td></tr>
+
+    <tr class="track-group"><td colspan="2">Track 10E — Revision Procedures</td></tr>
+    <tr><td class="track">10E — Email 1<br/><span style="font-weight:normal; color:#888; font-size:8pt;">Immediate</span></td><td>Revision surgery overview accurate; indications listed correctly (weight regain, reflux, anatomical complications, inadequate primary outcome); specialist experience claim appropriate</td></tr>
+    <tr><td class="track">10E — Email 2<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+4 days</span></td><td>Multidisciplinary assessment described; psychological assessment referenced; liver-reduction diet pre-op mentioned; prior anatomy review process accurate</td></tr>
+    <tr><td class="track">10E — Email 3<br/><span style="font-weight:normal; color:#888; font-size:8pt;">+10 days</span></td><td>Post-operative follow-up structure accurate; nutritional monitoring plan described; supplement review mentioned; long-term care pathway appropriate</td></tr>
+  </tbody>
+</table>
+
+<div class="doc-footer">
+  MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; Internal use only &nbsp;·&nbsp; Not for patient distribution &nbsp;·&nbsp; 28 May 2026
+</div>
+</div><!-- /page 2 -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TRACK 10A                                                 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10A &nbsp;·&nbsp; Sleeve Gastrectomy &nbsp;·&nbsp; Trigger: pathway = sleeve</p>
+  <p class="email-title">Email 1 of 3 — Sleeve Overview</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> Immediately on pathway attribute set</span>
+    <span><span class="label">Subject:</span> <em>Your sleeve gastrectomy pathway — what to expect</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Thank you for attending your initial consultation with the MERIDIAN team. Following your appointment, your clinician has recommended the sleeve gastrectomy pathway as the appropriate next step in your care.</p>
+  <p>Sleeve gastrectomy is a laparoscopic procedure that reduces stomach volume and influences appetite signalling pathways associated with hunger and satiety. At MERIDIAN, surgery is delivered within a broader multidisciplinary care pathway.</p>
+  <p>In the coming days, your care coordinator will be in touch to outline your pre-operative timeline. If you have any questions in the meantime, please contact the clinic on <strong>(03) 9416 4418</strong> or reply to this email.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10A — Email 1 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10A &nbsp;·&nbsp; Sleeve Gastrectomy &nbsp;·&nbsp; Trigger: pathway = sleeve</p>
+  <p class="email-title">Email 2 of 3 — Sleeve Preparation</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +3 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Preparing for your procedure</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Preparation for sleeve gastrectomy begins before your procedure date.</p>
+  <p>In the weeks leading up to surgery, your care team will guide you through a two-week Very Low Calorie Diet (VLCD) liver reduction program. This reduces liver size, which may assist surgical access during the procedure.</p>
+  <p>You will also meet with your nurse and dietitian to cover surgical education, supplement planning, eating progression after surgery and what to expect in the days immediately following your procedure.</p>
+  <p>Pre-operative preparation assists patients in understanding the recovery process and post-operative dietary progression.</p>
+  <p>Your care team will be in contact to confirm your pre-operative appointments. In the meantime, please don't hesitate to call us on <strong>(03) 9416 4418</strong>.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10A — Email 2 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10A &nbsp;·&nbsp; Sleeve Gastrectomy &nbsp;·&nbsp; Trigger: pathway = sleeve</p>
+  <p class="email-title">Email 3 of 3 — Sleeve Long-Term</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +7 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Life after sleeve gastrectomy</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>The period following sleeve gastrectomy is an important part of your ongoing care pathway.</p>
+  <p>At MERIDIAN, twelve months of follow-up are included as part of your surgical pathway. This involves planned appointments with your surgeon, nurse and dietitian, focused on diet progression, nutritional monitoring, supplement optimisation and metabolic health review.</p>
+  <p>Most patients return to light daily activity within two weeks of surgery. Your team will provide milestone guidance at each stage of your recovery.</p>
+  <p>Beyond the first year, many patients choose to continue long-term care with the MERIDIAN team. Ongoing follow-up supports nutritional monitoring and long-term metabolic review.</p>
+  <p>We are here throughout the process. Please contact us on <strong>(03) 9416 4418</strong> if you have any questions before your next appointment.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10A — Email 3 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TRACK 10B                                                 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10B &nbsp;·&nbsp; Gastric Bypass &nbsp;·&nbsp; Trigger: pathway = bypass</p>
+  <p class="email-title">Email 1 of 3 — Bypass Overview</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> Immediately on pathway attribute set</span>
+    <span><span class="label">Subject:</span> <em>Your gastric bypass pathway — what to expect</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Thank you for attending your consultation with the MERIDIAN team. Your clinician has recommended the gastric bypass pathway as the most appropriate next step for your care.</p>
+  <p>Gastric bypass is a well-established bariatric procedure combining restriction with selective changes to nutrient absorption. It is often considered in patients with significant reflux, type 2 diabetes or where previous weight management approaches have not achieved the intended clinical outcome.</p>
+  <p>Your care pathway at MERIDIAN will involve preparation, surgery and a structured twelve-month follow-up period. Each stage is supported by the same team throughout.</p>
+  <p>Your care coordinator will be in contact shortly to outline your pre-operative timeline. Questions in the meantime? Call us on <strong>(03) 9416 4418</strong>.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10B — Email 1 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10B &nbsp;·&nbsp; Gastric Bypass &nbsp;·&nbsp; Trigger: pathway = bypass</p>
+  <p class="email-title">Email 2 of 3 — Bypass Preparation <span class="priority-flag">★ Priority review</span></p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +3 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Preparing for your procedure</em></span>
+  </p>
+</div>
+<div class="warning" style="margin: 0 0 10pt; font-size:9pt;">
+  <strong>Priority review item.</strong> This email contains a lifelong supplement regimen (B12, iron, calcium). Please confirm supplement details with the dietitian before signing off.
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Preparation forms an important part of your bypass pathway.</p>
+  <p>In the weeks prior to surgery, you will complete a two-week VLCD liver reduction program, attend a pre-operative nurse education session, and meet with your dietitian to begin planning your supplement protocol and post-operative eating progression.</p>
+  <p>Gastric bypass involves changes to how your digestive system processes nutrients. For this reason, a lifelong supplement regimen — typically including B12, iron, calcium and other vitamins — will be part of your care plan from the outset. Your dietitian will tailor this to your needs.</p>
+  <p>Pre-operative preparation assists patients in understanding recovery and post-operative nutritional requirements. Your care team will confirm your pre-operative appointments shortly. In the meantime, please contact us on <strong>(03) 9416 4418</strong> with any questions.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes (incl. supplement details)</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10B — Email 2 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10B &nbsp;·&nbsp; Gastric Bypass &nbsp;·&nbsp; Trigger: pathway = bypass</p>
+  <p class="email-title">Email 3 of 3 — Bypass Long-Term</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +7 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Recovery and long-term outcomes</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Recovery from gastric bypass occurs in stages and involves ongoing follow-up with your care team.</p>
+  <p>Most patients return to light daily activity within two to three weeks of surgery. Your dietitian will guide your eating progression through liquid, pureed and soft food stages before transitioning to a regular, nutrient-dense diet. Supplement adherence during this period is important for your long-term nutritional health.</p>
+  <p>At MERIDIAN, twelve months of structured follow-up are included as part of your surgical pathway — with ongoing access to your surgeon, nurse and dietitian. Beyond this period, longer-term metabolic and nutritional review is recommended as part of ongoing nutritional and metabolic monitoring.</p>
+  <p>If you have questions between appointments, please contact the clinic on <strong>(03) 9416 4418</strong> or reply to this email.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10B — Email 3 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TRACK 10C                                                 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10C &nbsp;·&nbsp; Reflux &amp; Upper GI &nbsp;·&nbsp; Trigger: pathway = reflux_uppergi</p>
+  <p class="email-title">Email 1 of 3 — Upper GI Overview</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> Immediately on pathway attribute set</span>
+    <span><span class="label">Subject:</span> <em>Your Upper GI pathway — what happens next</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Thank you for your consultation with the MERIDIAN team. Your clinician has recommended an Upper GI care pathway for further assessment and management.</p>
+  <p>MERIDIAN's Upper GI service manages a range of conditions including reflux, hiatus hernia, oesophageal disease, Barrett's oesophagus and related gastric concerns. Your care will be led by specialist Upper GI surgeons within a multidisciplinary team.</p>
+  <p>Depending on your condition, your pathway may involve further investigations — such as oesophageal physiology testing, gastroscopy or imaging — before a treatment plan is confirmed.</p>
+  <p>Your care coordinator will be in contact to outline your specific next steps. If you have questions in the meantime, please call us on <strong>(03) 9416 4418</strong> or reply to this email.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10C — Email 1 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10C &nbsp;·&nbsp; Reflux &amp; Upper GI &nbsp;·&nbsp; Trigger: pathway = reflux_uppergi</p>
+  <p class="email-title">Email 2 of 3 — Upper GI Options</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +4 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Understanding your treatment options</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Upper GI conditions are managed using a range of medical and surgical approaches — from optimised medical therapy through to surgical intervention. The right approach depends on your symptoms, physiology, anatomy and how you have responded to previous treatment.</p>
+  <p>For conditions such as reflux and hiatus hernia, anti-reflux surgery — including fundoplication — is a well-established surgical option when symptoms are not adequately controlled with medication. Your surgeon will discuss the evidence and what is most appropriate for your situation.</p>
+  <p>For more complex oesophageal and gastric conditions, further investigation is typically required before a treatment plan is finalised.</p>
+  <p>Your team will walk you through your specific options at your next appointment. If anything is unclear before then, please contact us on <strong>(03) 9416 4418</strong>.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10C — Email 2 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10C &nbsp;·&nbsp; Reflux &amp; Upper GI &nbsp;·&nbsp; Trigger: pathway = reflux_uppergi</p>
+  <p class="email-title">Email 3 of 3 — Upper GI Long-Term</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +10 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Long-term management of Upper GI conditions</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Many Upper GI conditions are chronic — and often require ongoing review over time.</p>
+  <p>Whether your pathway involves surgery, ongoing medical management or structured monitoring, the MERIDIAN team remains involved throughout. This includes follow-up with your specialist, access to nursing support and coordination with other members of your care team where required.</p>
+  <p>For conditions such as Barrett's oesophagus, long-term surveillance is an important part of your care plan. Your clinician will advise on the appropriate interval and approach for your situation.</p>
+  <p>We are here to support you at every stage. Please do not hesitate to contact us on <strong>(03) 9416 4418</strong> or reply to this email with any questions.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10C — Email 3 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TRACK 10D                                                 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10D &nbsp;·&nbsp; GLP-1 &amp; Metabolic Medicine &nbsp;·&nbsp; Trigger: pathway = glp1_metabolic</p>
+  <p class="email-title">Email 1 of 3 — Metabolic Overview</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> Immediately on pathway attribute set</span>
+    <span><span class="label">Subject:</span> <em>Your metabolic medicine pathway — what to expect</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Thank you for your consultation with the MERIDIAN team. Your clinician has recommended a metabolic medicine pathway as the appropriate approach for your care.</p>
+  <p>Metabolic medicine at MERIDIAN is physician-led and structured around your individual health profile and broader clinical assessment. Where GLP-1 therapy is clinically appropriate, it will be part of a broader care plan that includes structured investigations, dietitian input and regular clinical review.</p>
+  <p>Metabolic health management often involves multiple components including nutrition, physical activity, behavioural support and medical review. Your plan is designed to support ongoing metabolic health management with the right clinical oversight throughout.</p>
+  <p>Your care coordinator will be in touch to confirm your next appointment. Questions in the meantime? Call us on <strong>(03) 9416 4418</strong>.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10D — Email 1 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10D &nbsp;·&nbsp; GLP-1 &amp; Metabolic Medicine &nbsp;·&nbsp; Trigger: pathway = glp1_metabolic</p>
+  <p class="email-title">Email 2 of 3 — Metabolic Plan</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +4 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Getting the most from your treatment plan</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Metabolic medicine pathways generally involve multiple components delivered together over time.</p>
+  <p>Alongside any prescribed therapy, your care plan will typically include regular dietitian review — focusing on nutrition quality, eating patterns and the preservation of lean muscle mass. Maintenance of lean muscle mass is an important consideration during weight reduction treatment, and your team will support this from the outset.</p>
+  <p>Structured blood tests and body composition assessments will help your physician track what is working and adjust your plan over time.</p>
+  <p>If you have questions about your plan or your progress at any stage, please contact us on <strong>(03) 9416 4418</strong> or reply to this email.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10D — Email 2 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10D &nbsp;·&nbsp; GLP-1 &amp; Metabolic Medicine &nbsp;·&nbsp; Trigger: pathway = glp1_metabolic</p>
+  <p class="email-title">Email 3 of 3 — Metabolic Long-Term</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +10 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Long-term metabolic health — beyond the prescription</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Metabolic health management typically involves ongoing clinical review over time.</p>
+  <p>At MERIDIAN, your physician will continue to review your metabolic markers, medication plan and overall health trajectory at scheduled intervals. As your health changes, your plan can be adjusted — this may involve changes to medication, nutritional goals, or a conversation about additional pathways where appropriate.</p>
+  <p>Many patients on GLP-1 therapy find that their needs evolve over time. Having a structured clinical relationship means those changes are reviewed and adjusted with ongoing clinical oversight.</p>
+  <p>We are here to support your health over the long term. Please contact us on <strong>(03) 9416 4418</strong> or reply to this email with any questions.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10D — Email 3 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TRACK 10E                                                 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10E &nbsp;·&nbsp; Revision Procedures &nbsp;·&nbsp; Trigger: pathway = revision</p>
+  <p class="email-title">Email 1 of 3 — Revision Overview</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> Immediately on pathway attribute set</span>
+    <span><span class="label">Subject:</span> <em>Your revision surgery pathway — what to expect</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Thank you for your consultation with the MERIDIAN team. Your clinician has recommended a revision surgery pathway as the appropriate next step in your care.</p>
+  <p>Revision bariatric surgery addresses the outcomes of a previous procedure — whether that involves weight regain, reflux, nutritional concerns, anatomical changes or another clinical consideration. It is a complex area requiring detailed assessment and multidisciplinary review.</p>
+  <p>Revision pathways are individualised and developed according to your previous procedure, anatomy and clinical history.</p>
+  <p>Your care coordinator will be in contact to outline your pre-operative timeline and next steps. In the meantime, please contact us on <strong>(03) 9416 4418</strong> or reply to this email.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10E — Email 1 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10E &nbsp;·&nbsp; Revision Procedures &nbsp;·&nbsp; Trigger: pathway = revision</p>
+  <p class="email-title">Email 2 of 3 — Revision Preparation</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +4 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Preparing for your revision procedure</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Revision surgery often requires additional assessment and planning prior to surgery.</p>
+  <p>Before your procedure, your care team will arrange a detailed multidisciplinary assessment, including surgical review, dietitian consultation, relevant investigations and where appropriate, psychological assessment. Understanding the anatomy and outcomes of your previous procedure is central to this process.</p>
+  <p>Pre-operative preparation will also include a liver reduction diet, nurse education and a structured discussion about what to expect in recovery. Your team will walk you through each stage.</p>
+  <p>This preparation process assists surgical planning and post-operative care. Please contact us on <strong>(03) 9416 4418</strong> if you have any questions before your pre-operative appointments.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10E — Email 2 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+<div class="page">
+<div class="email-page-header">
+  <p class="email-track-label">Track 10E &nbsp;·&nbsp; Revision Procedures &nbsp;·&nbsp; Trigger: pathway = revision</p>
+  <p class="email-title">Email 3 of 3 — Revision Long-Term</p>
+  <p class="email-meta">
+    <span><span class="label">Send timing:</span> +10 days after Email 1</span>
+    <span><span class="label">Subject:</span> <em>Long-term care after revision surgery</em></span>
+  </p>
+</div>
+<div class="email-render">
+  <p>Hi {{ contact.FIRSTNAME }},</p>
+  <p>Recovery and follow-up after revision surgery requires structured post-operative follow-up and ongoing clinical review.</p>
+  <p>At MERIDIAN, your post-operative care will involve planned appointments with your surgeon, nurse and dietitian throughout the first twelve months. Nutritional monitoring, supplement review and metabolic assessment are central to this period.</p>
+  <p>For many revision patients, long-term follow-up extends well beyond the first year. Ongoing clinical review supports ongoing nutritional and metabolic monitoring over time.</p>
+  <p>Your MERIDIAN team remains your care team. Please contact us on <strong>(03) 9416 4418</strong> or reply to this email at any stage.</p>
+  <p>Kind regards,<br/>MERIDIAN Health<br/>Upper GI, Bariatric &amp; Metabolic Care</p>
+</div>
+<div class="email-footer-render">MERIDIAN Health &nbsp;·&nbsp; Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065 &nbsp;·&nbsp; (03) 9416 4418 &nbsp;·&nbsp; reception@meridianhealth.com.au &nbsp;·&nbsp; Unsubscribe</div>
+<div class="review-strip">
+  <div class="rfield"><span class="rlabel">Reviewed ✓</span><span class="rval"></span></div>
+  <div class="rfield"><span class="rlabel">Initials</span><span class="rval"></span></div>
+  <div class="rfield" style="flex:2;"><span class="rlabel">Corrections / notes</span><span class="rval"></span></div>
+</div>
+<div class="doc-footer">MERIDIAN Health &nbsp;·&nbsp; Stage 10 Email Review Pack &nbsp;·&nbsp; 10E — Email 3 &nbsp;·&nbsp; Internal use only</div>
+</div>
+
+
+</body>
+</html>
