@@ -274,6 +274,10 @@
   .mono { font-family: Courier New, monospace; font-size: 10pt; }
   .note { font-size: 9.5pt; color: #666; font-style: italic; }
   .page-break { page-break-before: always; }
+  /* LAST REVIEWED STAMP */
+  .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1pt solid #c2a55e; border-radius: 3px; padding: 5pt 12pt; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 14pt; }
+  .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
+  .last-reviewed .lr-date { font-weight: 700; color: #201e11; }
 </style>
 </head>
 <body>
@@ -938,6 +942,10 @@
 <!-- ═══════════════════════════════════════ SECTION 3 ═══════════════════════════════════════ -->
 <h1 id="pre-consult-reminder">3 &nbsp; Pre-Consultation Reminder — Stage 08</h1>
 <hr class="section-rule"/>
+<span class="last-reviewed">
+  <span class="lr-label">Last reviewed</span>
+  <span class="lr-date">29 May 2026</span>
+</span>
 
 <p><strong>Automation name in Brevo:</strong> MH — Pre-Consultation Reminder</p>
 <p><strong>Entry trigger:</strong> Date-based — fires 72 hours (3 days) before the value stored in <span class="mono">appointment_datetime</span></p>
