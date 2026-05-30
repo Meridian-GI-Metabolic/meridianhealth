@@ -31,6 +31,9 @@
   .status-pending { color: #c0392b; font-weight: 600; }
   .status-done { color: #27ae60; font-weight: 600; }
   .doc-footer { margin-top: 40px; padding-top: 10px; border-top: 1px solid #e8e0d0; font-size: 9pt; color: #aaa; text-align: center; }
+  .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid #c2a55e; border-radius: 3px; padding: 5px 12px; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 18px; }
+  .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
+  .last-reviewed .lr-date { font-weight: 700; color: #201e11; }
   p { margin: 0 0 8px; }
 </style>
 </head>
@@ -39,6 +42,20 @@
 <p class="meta">Meridian Health &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Brevo Configuration</p>
 <h1>Stage 09 Setup Checklist<br/><span style="font-size:14pt; color:#888;">MH — Post-Consultation</span></h1>
 <p class="meta">Reference document for admin completing the Brevo UI setup &nbsp;·&nbsp; Full spec: <a href="brevo-automation-flow.html" style="color:#c2a55e;"><em>brevo-automation-flow.html</em></a> Section 4 &nbsp;·&nbsp; Verbatim copy &amp; setup guide: <a href="brevo-email-09-post-consultation.html" style="color:#c2a55e;"><em>brevo-email-09-post-consultation.html</em></a></p>
+
+<!-- EDIT GUIDE: When Stage 09 details change, update these fields:
+     1. The "Last reviewed" date in the stamp below (format: D Month YYYY).
+     2. The Status div below (Active/Pending + date) if the live status changes.
+     3. The Test Completion Record table at the bottom of this page.
+     4. The matching record in brevo-automation-flow.html Section 4.
+-->
+<div>
+  <span class="last-reviewed">
+    <span class="lr-label">Last reviewed</span>
+    <span class="lr-date">29 May 2026</span>
+    <span style="font-size:8.5pt; color:#888;">— update this date whenever the setup details, live status, or test record changes (see source comment for full edit guide)</span>
+  </span>
+</div>
 
 <div style="background:#f0faf4; border-left:3px solid #27ae60; padding:8px 14px; margin:12px 0 18px; font-size:10.5pt; color:#1a6b3c;">
   <strong>Status:</strong> <strong style="color:#27ae60;">Active / Live — 27 May 2026</strong>
@@ -350,7 +367,8 @@
 
 <div class="doc-footer">
   Meridian Health &nbsp;·&nbsp; Stage 09 Setup Checklist &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br/>
-  Full spec: <a href="brevo-automation-flow.html" style="color:#c2a55e;">brevo-automation-flow.html</a> Section 4 &nbsp;·&nbsp; Verbatim copy: <a href="brevo-email-09-post-consultation.html" style="color:#c2a55e;">brevo-email-09-post-consultation.html</a> &nbsp;·&nbsp; Internal use only
+  Full spec: <a href="brevo-automation-flow.html" style="color:#aaa;">brevo-automation-flow.html</a> Section 4 &nbsp;·&nbsp; Verbatim copy: <a href="brevo-email-09-post-consultation.html" style="color:#aaa;">brevo-email-09-post-consultation.html</a> &nbsp;·&nbsp; Internal use only<br/>
+  <span style="color:#c2a55e; font-weight:600;">When editing this page: update the "Last reviewed" date at the top, the Status div, the Test Completion Record, and the matching record in <a href="brevo-automation-flow.html" style="color:#c2a55e;">brevo-automation-flow.html</a> Section 4.</span>
 </div>
 
 </body>
