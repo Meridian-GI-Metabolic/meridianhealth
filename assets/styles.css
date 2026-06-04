@@ -242,6 +242,8 @@ body.nav-open .nav-burger span::before{opacity:0}
 
 /* List tight (clinical bullets) */
 .list-tight{margin:0 0 24px;padding-left:0;list-style:none}
+.list-two-col{columns:2;column-gap:48px}
+@media(max-width:720px){.list-two-col{columns:1}}
 .list-tight li{position:relative;padding:8px 0 8px 24px;color:var(--ink-80);font-size:15.5px;line-height:1.55;border-bottom:1px solid var(--ink-08)}
 .list-tight li:last-child{border-bottom:1px solid var(--ink-08)}
 .list-tight li::before{content:"";position:absolute;left:0;top:18px;width:10px;height:1px;background:var(--gold)}
