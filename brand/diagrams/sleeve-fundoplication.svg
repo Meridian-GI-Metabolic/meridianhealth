@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 110" fill="none" stroke="#564929" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9">
+  <!-- Esophagus -->
+  <line x1="40" y1="5" x2="40" y2="20"/>
+  <!-- Fundoplication wrap — concentric arcs at GEJ -->
+  <path d="M30 24 C32 18 36 15 40 15 C44 15 48 18 50 24"/>
+  <path d="M27 28 C29 20 34 14 40 14 C46 14 51 20 53 28" stroke-width="0.6" opacity="0.6"/>
+  <path d="M25 32 C27 22 33 13 40 13 C47 13 53 22 55 32" stroke-width="0.4" opacity="0.35"/>
+  <!-- Sleeve (narrow tube) -->
+  <path d="M32 30 C29 30 27 34 27 41 L27 76 C27 81 31 85 37 85 L43 85 C49 85 53 81 53 76 L53 41 C53 34 51 30 48 30 Z"/>
+  <!-- Staple/removed indication -->
+  <path d="M32 30 C22 34 14 46 14 60 C14 74 22 84 32 86" stroke-dasharray="3 2" stroke-width="0.65"/>
+  <line x1="27" y1="31" x2="27" y2="82" stroke-dasharray="2 1.5" stroke-width="0.5"/>
+  <!-- Duodenum -->
+  <path d="M43 85 C46 90 52 96 58 98"/>
+</svg>

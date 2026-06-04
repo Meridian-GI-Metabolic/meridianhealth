@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 110" fill="none" stroke="#564929" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9">
+  <!-- Esophagus -->
+  <line x1="38" y1="5" x2="38" y2="22"/>
+  <!-- Prior anatomy (dashed — original/previous procedure) -->
+  <path d="M38 22 C32 22 22 28 18 42 C14 56 16 72 24 82 C30 88 38 90 46 88 C54 86 62 80 64 70" stroke-dasharray="3 2" stroke-width="0.7"/>
+  <!-- Revised anatomy (solid — new reconstruction) -->
+  <path d="M38 22 C34 22 26 28 24 40 C22 52 26 66 34 76 C38 80 44 82 50 80 C58 77 64 68 64 58 C64 46 58 34 50 26 C46 22 42 22 38 22"/>
+  <!-- Revision indicator — small curved arrow -->
+  <path d="M58 88 C64 82 68 72 66 62"/>
+  <path d="M66 62 L62 68 M66 62 L72 64" stroke-width="0.7"/>
+  <!-- Duodenum -->
+  <path d="M50 80 C54 86 60 94 64 98"/>
+</svg>

@@ -250,11 +250,14 @@ body.nav-open .nav-burger span::before{opacity:0}
 
 /* Procedures */
 .proc-list{display:flex;flex-direction:column;border-top:1px solid var(--ink-08)}
-.proc-item{padding:28px 0;border-bottom:1px solid var(--ink-08);display:grid;grid-template-columns:1fr 2fr;column-gap:36px;row-gap:8px;align-items:start}
-.proc-name{font-family:"Inter";font-weight:500;font-size:17px;letter-spacing:-.008em;color:var(--ink);margin:0;grid-column:1;grid-row:1/span 20;align-self:start}
-.proc-desc{font-size:15px;color:var(--ink-65);line-height:1.6;margin:0;max-width:54ch;grid-column:2}
+.proc-item{padding:28px 0;border-bottom:1px solid var(--ink-08);display:grid;grid-template-columns:1fr 2fr;column-gap:36px;row-gap:0;align-items:start}
+.proc-diagram{grid-column:1;grid-row:1;margin:0 0 16px;padding:0;line-height:0}
+.proc-diagram img{width:72px;height:auto;opacity:.72;color:var(--ink)}
+.proc-name{font-family:"Inter";font-weight:500;font-size:17px;letter-spacing:-.008em;color:var(--ink);margin:0;grid-column:1;grid-row:2;align-self:start}
+.proc-desc{font-size:15px;color:var(--ink-65);line-height:1.6;margin:0;max-width:54ch;grid-column:2;grid-row:1/span 20}
 @media(max-width:720px){
   .proc-item{grid-template-columns:1fr;gap:0;padding:0}
+  .proc-diagram{display:none}
   .proc-name{font-size:16px;grid-column:auto;grid-row:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;-webkit-user-select:none;user-select:none}
   .proc-name::after{content:'+';font-size:20px;font-weight:300;color:var(--ink-45);flex-shrink:0;margin-left:16px;line-height:1;transition:transform .2s ease}
   .proc-item.open .proc-name::after{transform:rotate(45deg)}
