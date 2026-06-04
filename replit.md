@@ -26,3 +26,4 @@ Full instructions: `_docs/brevo-push-script-local-run.md`
 
 - Documents follow Meridian Health brand conventions (Georgia serif headings, `#c2a55e` gold rule, `#201e11` body text).
 - HTML documents in `_docs/` are designed for browser/print viewing and use inline styles only.
+- Never use the em dash character (—) anywhere in copy, titles, or responses. Use a comma, colon, or pipe (|) instead depending on context.
