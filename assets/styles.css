@@ -5,14 +5,14 @@
 @font-face{font-family:"Inter";src:url("/fonts/Inter_700Bold.ttf") format("truetype");font-weight:700;font-display:swap}
 
 :root{
-  --ink:#201e11;
-  --ink-90:rgba(32,30,17,.92);
-  --ink-80:rgba(32,30,17,.78);
-  --ink-65:rgba(32,30,17,.62);
-  --ink-45:rgba(32,30,17,.42);
-  --ink-25:rgba(32,30,17,.22);
-  --ink-15:rgba(32,30,17,.14);
-  --ink-08:rgba(32,30,17,.07);
+  --ink:#564929;
+  --ink-90:rgba(86,73,41,.92);
+  --ink-80:rgba(86,73,41,.78);
+  --ink-65:rgba(86,73,41,.62);
+  --ink-45:rgba(86,73,41,.42);
+  --ink-25:rgba(86,73,41,.22);
+  --ink-15:rgba(86,73,41,.14);
+  --ink-08:rgba(86,73,41,.07);
   --deep:#38301e;
   --deep-2:#2c2517;
   --cream:#f7f5ef;
