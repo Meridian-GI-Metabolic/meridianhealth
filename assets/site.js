@@ -18,19 +18,17 @@
     });
   }
 
-  // Reveal on scroll
+  // Reveal on scroll (adds both 'in' and 'show' for cross-page compatibility)
+  function showEl(el) { el.classList.add('in'); el.classList.add('show'); }
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-        }
+        if (en.isIntersecting) { showEl(en.target); io.unobserve(en.target); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    document.querySelectorAll('.reveal').forEach(showEl);
   }
 
   // Nav active link based on path
