@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
 <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
 <link rel="apple-touch-icon" sizes="180x180" href="/brand/favicon-180.png?v=6.7q" />
-<style id="meridian-gate-style">html.meridian-locked #content{visibility:hidden!important}#meridian-gate{position:fixed!important;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:24px;background:#e8e4dc;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#564929;visibility:visible!important;opacity:1!important;box-sizing:border-box}#meridian-gate.hidden{display:none}#meridian-gate .card{background:#eeebe4;border:1px solid rgba(86,73,41,.10);border-radius:12px;padding:36px 32px 30px;width:100%;max-width:360px;box-sizing:border-box}#meridian-gate h1{margin:0 0 6px;font-size:22px;font-family:"Inter";font-weight:500;letter-spacing:-.012em;line-height:1.2}#meridian-gate p.sub{margin:0 0 22px;font-size:14px;color:rgba(86,73,41,.62);line-height:1.45}#meridian-gate label{display:block;font-size:11px;font-family:"Inter";font-weight:500;text-transform:uppercase;letter-spacing:1.2px;color:rgba(86,73,41,.55);margin:14px 0 6px}#meridian-gate input{width:100%;padding:12px 14px;font-size:15px;font-family:"Inter";border:1px solid rgba(86,73,41,.18);border-radius:6px;background:#fff;color:#564929;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none}#meridian-gate input:focus{border-color:#564929;box-shadow:0 0 0 3px rgba(86,73,41,.06)}#meridian-gate button{margin-top:22px;width:100%;padding:12px 16px;font-size:13px;font-family:"Inter";font-weight:500;letter-spacing:.6px;text-transform:uppercase;background:transparent;color:#564929;border:1px solid #564929;border-radius:999px;cursor:pointer;transition:background .15s ease,color .15s ease;-webkit-appearance:none;appearance:none}#meridian-gate button:hover{background:#564929;color:#e8e4dc}#meridian-gate .err{margin-top:14px;font-size:13px;color:#b3261e;min-height:16px;font-family:"Inter"}#meridian-gate .brand{display:block;width:108px;height:15px;margin:0 0 18px;background-color:#9a7818;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat}</style>
+<style id="meridian-gate-style">html.meridian-locked #content{visibility:hidden!important}#meridian-gate{position:fixed!important;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:24px;background:#f3f1ef;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#564929;visibility:visible!important;opacity:1!important;box-sizing:border-box}#meridian-gate.hidden{display:none}#meridian-gate .card{background:#eeebe4;border:1px solid rgba(86,73,41,.10);border-radius:12px;padding:36px 32px 30px;width:100%;max-width:360px;box-sizing:border-box}#meridian-gate h1{margin:0 0 6px;font-size:22px;font-family:"Inter";font-weight:500;letter-spacing:-.012em;line-height:1.2}#meridian-gate p.sub{margin:0 0 22px;font-size:14px;color:rgba(86,73,41,.62);line-height:1.45}#meridian-gate label{display:block;font-size:11px;font-family:"Inter";font-weight:500;text-transform:uppercase;letter-spacing:1.2px;color:rgba(86,73,41,.55);margin:14px 0 6px}#meridian-gate input{width:100%;padding:12px 14px;font-size:15px;font-family:"Inter";border:1px solid rgba(86,73,41,.18);border-radius:6px;background:#fff;color:#564929;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none}#meridian-gate input:focus{border-color:#564929;box-shadow:0 0 0 3px rgba(86,73,41,.06)}#meridian-gate button{margin-top:22px;width:100%;padding:12px 16px;font-size:13px;font-family:"Inter";font-weight:500;letter-spacing:.6px;text-transform:uppercase;background:transparent;color:#564929;border:1px solid #564929;border-radius:999px;cursor:pointer;transition:background .15s ease,color .15s ease;-webkit-appearance:none;appearance:none}#meridian-gate button:hover{background:#564929;color:#f3f1ef}#meridian-gate .err{margin-top:14px;font-size:13px;color:#b3261e;min-height:16px;font-family:"Inter"}#meridian-gate .brand{display:block;width:108px;height:15px;margin:0 0 18px;background-color:#9a7818;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat}</style>
 <script id="meridian-gate-script">(function(){if(location.hostname==="localhost"||location.hostname==="127.0.0.1"||location.hostname.endsWith(".replit.dev"))return;var KEY="meridian_auth_v1";var U="MHII";var P="MERIDIANMHII2026@!";var root=document.documentElement;function isAuthed(){try{return window.localStorage.getItem(KEY)==="1"}catch(e){return false}}function lock(){root.classList.add("meridian-locked")}function unlock(){root.classList.remove("meridian-locked")}if(!isAuthed()){lock()}function buildOverlay(){var d=document.createElement("div");d.id="meridian-gate";d.innerHTML='<div class="card" role="dialog" aria-modal="true" aria-labelledby="mg-title"><span class="brand">Meridian Health</span><h1 id="mg-title">Sign in</h1><p class="sub">Enter your credentials to continue.</p><form id="meridian-gate-form" autocomplete="off"><label for="mg-user">Username</label><input id="mg-user" name="username" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" required /><label for="mg-pass">Password</label><input id="mg-pass" name="password" type="password" required /><button type="submit">Enter</button><div class="err" id="mg-err" aria-live="polite"></div></form></div>';return d}function buildLogout(){var b=document.createElement("button");b.id="meridian-logout";b.type="button";b.textContent="Log out";b.addEventListener("click",function(){try{window.localStorage.removeItem(KEY)}catch(e){}window.location.reload()});return b}function mountLogout(){if(document.getElementById("meridian-logout"))return;var btn=buildLogout();(document.body||document.documentElement).appendChild(btn)}function mountOverlay(){if(document.getElementById("meridian-gate"))return;var ov=buildOverlay();(document.body||document.documentElement).appendChild(ov);var form=document.getElementById("meridian-gate-form");var err=document.getElementById("mg-err");form.addEventListener("submit",function(e){e.preventDefault();var u=document.getElementById("mg-user").value;var p=document.getElementById("mg-pass").value;if(u===U&&p===P){try{window.localStorage.setItem(KEY,"1")}catch(e){}unlock();ov.classList.add("hidden");mountLogout()}else{err.textContent="Incorrect username or password."}});if(!isAuthed()){mountOverlay()}else{unlock();mountLogout()}}window.addEventListener("DOMContentLoaded",function(){if(!isAuthed()){mountOverlay()}else{mountLogout()}})})()</script>
 <link rel="stylesheet" href="/assets/styles.css?v=8" />
 <link rel="stylesheet" href="/assets/gate.css?v=2" />
@@ -33,7 +33,7 @@
 
 /* ── Hero ── */
 .v3-hero {
-  background: linear-gradient(160deg, #e8e4dc 0%, #ddd8cc 55%, #d8d2c4 100%);
+  background: linear-gradient(160deg, #f3f1ef 0%, #ede9e2 55%, #e2ded7 100%);
   padding: 80px 0 0;
   overflow: hidden;
   position: relative;
@@ -69,7 +69,7 @@
   flex-shrink: 0;
 }
 .v3-hero h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(44px, 6.5vw, 82px);
   font-weight: 400;
   line-height: 1.04;
@@ -187,7 +187,7 @@
 
 /* ── Intro split ── */
 .v3-intro {
-  background: #e8e4dc;
+  background: #f3f1ef;
 }
 .v3-intro-inner {
   display: grid;
@@ -205,7 +205,7 @@
   display: block;
 }
 .v3-intro h2 {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(30px, 3.8vw, 48px);
   font-weight: 400;
   line-height: 1.1;
@@ -231,7 +231,7 @@
 }
 .v3-thing:first-child { border-top: 1px solid rgba(86,73,41,.1); }
 .v3-thing-n {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: 28px;
   font-weight: 400;
   color: #c8a035;
@@ -247,7 +247,7 @@
 .v3-how { background: #fff; }
 .v3-how-head { text-align: center; margin-bottom: 64px; }
 .v3-how-head h2 {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(30px, 3.8vw, 48px);
   font-weight: 400;
   letter-spacing: -.025em;
@@ -266,12 +266,12 @@
   overflow: hidden;
 }
 .v3-step {
-  background: #e8e4dc;
+  background: #f3f1ef;
   padding: 40px 32px;
   position: relative;
 }
 .v3-step-num {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: 52px;
   font-weight: 400;
   color: rgba(86,73,41,.1);
@@ -325,7 +325,7 @@
   display: block;
 }
 .v3-prog h2 {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(30px, 3.8vw, 48px);
   font-weight: 400;
   letter-spacing: -.025em;
@@ -368,7 +368,7 @@
 .v3-incl-text { font-size: 15px; color: rgba(241,239,235,.85); line-height: 1.5; }
 .v3-incl-text strong { color: #e2ded7; font-weight: 600; display: block; margin-bottom: 2px; font-size: 15px; }
 .v3-plan-card {
-  background: #e8e4dc;
+  background: #f3f1ef;
   border-radius: 24px;
   padding: 40px 36px;
   position: sticky;
@@ -384,7 +384,7 @@
   margin-bottom: 16px;
 }
 .v3-plan-name {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: 26px;
   font-weight: 400;
   color: #564929;
@@ -432,10 +432,10 @@
 .v3-plan-cta-sec:hover { border-color: #564929; }
 
 /* ── Is this for me ── */
-.v3-qualify { background: #e8e4dc; }
+.v3-qualify { background: #f3f1ef; }
 .v3-qualify-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .v3-qualify h2 {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(30px, 3.5vw, 44px);
   font-weight: 400;
   letter-spacing: -.025em;
@@ -475,7 +475,7 @@
 .v3-qualify-note {
   margin-top: 28px;
   padding: 18px 20px;
-  background: rgba(86,73,41,.05);
+  background: rgba(86,73,41,.04);
   border-radius: 12px;
   font-size: 13px;
   color: rgba(86,73,41,.6);
@@ -486,7 +486,7 @@
 .v3-faq { background: #fff; }
 .v3-faq-head { text-align: center; margin-bottom: 56px; }
 .v3-faq-head h2 {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 400;
   letter-spacing: -.025em;
@@ -554,13 +554,13 @@
 
 /* ── Final CTA ── */
 .v3-cta {
-  background: linear-gradient(150deg, #ddd8cc 0%, #d4cebc 100%);
+  background: linear-gradient(150deg, #ede9e2 0%, #e2ded7 100%);
   padding: 100px 0;
   text-align: center;
 }
 .v3-cta-inner { max-width: 680px; margin: 0 auto; padding: 0 40px; }
 .v3-cta h2 {
-  font-family: Georgia, serif;
+  font-family: "Inter", -apple-system, sans-serif;
   font-size: clamp(34px, 5vw, 60px);
   font-weight: 400;
   letter-spacing: -.03em;
@@ -574,7 +574,7 @@
 
 /* ── AHPRA disclaimer ── */
 .v3-ahpra {
-  background: #e4e0d6;
+  background: #ede9e2;
   border-top: 1px solid rgba(86,73,41,.12);
   padding: 28px 0;
 }
