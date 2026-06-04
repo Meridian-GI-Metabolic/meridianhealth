@@ -218,8 +218,10 @@ body.nav-open .nav-burger span::before{opacity:0}
 /* Two-col layout */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .two-col-asymm{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start}
+.two-col-asymm>div:last-child>.list-tight:first-child{margin-top:30px}
 @media(max-width:880px){
   .two-col,.two-col-asymm{grid-template-columns:1fr;gap:40px}
+  .two-col-asymm>div:last-child>.list-tight:first-child{margin-top:0}
 }
 
 /* Section head */
