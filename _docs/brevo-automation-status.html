@@ -3,13 +3,13 @@
 <meta charset="UTF-8"/>
 <title>Meridian Health — Brevo Automation Status Summary</title>
 <style>
-  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #201e11; line-height: 1.6; max-width: 920px; margin: 40px auto; padding: 0 24px; }
-  h1 { font-family: Georgia, serif; font-size: 22pt; font-weight: normal; color: #201e11; border-bottom: 2px solid #c2a55e; padding-bottom: 8px; margin-bottom: 6px; }
-  h2 { font-family: Georgia, serif; font-size: 15pt; font-weight: normal; color: #201e11; margin: 32px 0 6px; border-bottom: 1px solid #e8e0d0; padding-bottom: 4px; }
-  h3 { font-size: 10.5pt; font-weight: 700; color: #201e11; margin: 20px 0 4px; text-transform: uppercase; letter-spacing: 0.5pt; }
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #564929; line-height: 1.6; max-width: 920px; margin: 40px auto; padding: 0 24px; }
+  h1 { font-family: Georgia, serif; font-size: 22pt; font-weight: normal; color: #564929; border-bottom: 2px solid #c2a55e; padding-bottom: 8px; margin-bottom: 6px; }
+  h2 { font-family: Georgia, serif; font-size: 15pt; font-weight: normal; color: #564929; margin: 32px 0 6px; border-bottom: 1px solid #e8e0d0; padding-bottom: 4px; }
+  h3 { font-size: 10.5pt; font-weight: 700; color: #564929; margin: 20px 0 4px; text-transform: uppercase; letter-spacing: 0.5pt; }
   .meta { font-size: 9.5pt; color: #888; margin-bottom: 20px; }
   .callout { background: #f5f0e8; border-left: 3px solid #c2a55e; padding: 10px 14px; margin: 14px 0; font-size: 10.5pt; color: #5a4e32; }
-  .callout strong { color: #201e11; }
+  .callout strong { color: #564929; }
   p { margin: 0 0 8px; }
 
   /* STATUS BADGES */
@@ -26,7 +26,7 @@
     margin: 12px 0 28px;
   }
   table.status thead th {
-    background: #201e11;
+    background: #564929;
     color: #fff;
     font-size: 8.5pt;
     font-weight: 600;
@@ -39,7 +39,7 @@
   table.status tbody tr:nth-child(even) td { background: #faf8f4; }
   table.status td { padding: 8px 10px; vertical-align: top; }
   table.status .stage-num { font-weight: 700; color: #c2a55e; white-space: nowrap; font-size: 10.5pt; }
-  table.status .stage-name { font-weight: 600; color: #201e11; }
+  table.status .stage-name { font-weight: 600; color: #564929; }
   table.status .trigger { font-size: 9.5pt; color: #555; }
   table.status .test-date { font-size: 9.5pt; color: #555; white-space: nowrap; }
   table.status .spec-link a { color: #c2a55e; font-size: 9.5pt; text-decoration: none; }
@@ -75,7 +75,7 @@
   .sc-live .sc-number { color: #1a7a47; }
   .sc-pending .sc-number { color: #7a5200; }
   .sc-notstarted .sc-number { color: #8b1a1a; }
-  .sc-total .sc-number { color: #201e11; }
+  .sc-total .sc-number { color: #564929; }
 
   /* FOOTER */
   .doc-footer { margin-top: 40px; padding-top: 10px; border-top: 1px solid #e8e0d0; font-size: 9pt; color: #aaa; text-align: center; }
@@ -83,7 +83,7 @@
   /* LAST REVIEWED STAMP */
   .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid #c2a55e; border-radius: 3px; padding: 5px 12px; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 18px; }
   .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
-  .last-reviewed .lr-date { font-weight: 700; color: #201e11; }
+  .last-reviewed .lr-date { font-weight: 700; color: #564929; }
 
   /* MONO */
   .mono { font-family: Courier New, monospace; font-size: 9.5pt; background: #f0ece4; padding: 1px 4px; border-radius: 2px; }
@@ -438,8 +438,8 @@
 <p>Full record: <a href="brevo-automation-flow.html#pre-consult-reminder" style="color:#c2a55e;">brevo-automation-flow.html § Section 3</a> and <a href="brevo-stage-08-setup-checklist.html" style="color:#c2a55e;">brevo-stage-08-setup-checklist.html</a>.</p>
 <table style="width:100%; border-collapse:collapse; font-size:10pt; margin:8px 0 20px;">
   <thead><tr>
-    <th style="background:#201e11; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left; width:200px;">Field</th>
-    <th style="background:#201e11; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left;">Detail</th>
+    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left; width:200px;">Field</th>
+    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left;">Detail</th>
   </tr></thead>
   <tbody>
     <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Status</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Live</span> — both face-to-face and telehealth variants tested and confirmed. Test contacts deleted. Record complete.</td></tr>
@@ -456,8 +456,8 @@
 <p>Full record: <a href="brevo-automation-flow.html#post-consultation" style="color:#c2a55e;">brevo-automation-flow.html § Section 4</a> and <a href="brevo-stage-09-setup-checklist.html" style="color:#c2a55e;">brevo-stage-09-setup-checklist.html</a>.</p>
 <table style="width:100%; border-collapse:collapse; font-size:10pt; margin:8px 0 20px;">
   <thead><tr>
-    <th style="background:#201e11; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left; width:200px;">Field</th>
-    <th style="background:#201e11; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left;">Detail</th>
+    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left; width:200px;">Field</th>
+    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left;">Detail</th>
   </tr></thead>
   <tbody>
     <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Status</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Live</span> — both variants (with and without PATHWAY attribute) tested and confirmed. Test contacts deleted. Record complete.</td></tr>

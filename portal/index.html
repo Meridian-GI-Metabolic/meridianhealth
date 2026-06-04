@@ -13,19 +13,19 @@
 <link rel="stylesheet" href="/assets/gate.css?v=2" />
 <script defer src="/assets/gate.js?v=2"></script>
 <style>
-  html,body{height:100%;margin:0;background:#f7f5ef;color:#201e11;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;overflow:hidden}
-  .portal{position:fixed;inset:0;display:flex;background:#f7f5ef}
-  .portal-main{position:relative;flex:1;display:flex;background:#f7f5ef;min-width:0}
+  html,body{height:100%;margin:0;background:#e8e4dc;color:#564929;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+  .portal{position:fixed;inset:0;display:flex;background:#e8e4dc}
+  .portal-main{position:relative;flex:1;display:flex;background:#e8e4dc;min-width:0}
   .portal-frame{
-    flex:1;border:0;background:#f7f5ef;display:block;width:100%;height:100%;
+    flex:1;border:0;background:#e8e4dc;display:block;width:100%;height:100%;
     opacity:1;transition:opacity .28s ease;
   }
   .portal-frame.is-loading{opacity:0}
   /* Desktop: vertical mega-menu (sized per Apple sidebar conventions) */
   .portal-aside{
     width:var(--aside-w,280px);flex:0 0 var(--aside-w,280px);
-    background:#fbf9f3;
-    box-shadow:inset -1px 0 0 rgba(32,30,17,.06);
+    background:#eeebe4;
+    box-shadow:inset -1px 0 0 rgba(86,73,41,.06);
     display:flex;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;
     position:relative;
   }
@@ -38,23 +38,23 @@
   .portal-resize:hover,.portal-resize.is-active{background:rgba(200,160,53,.35)}
   body.is-resizing{cursor:col-resize;user-select:none}
   body.is-resizing .portal-frame{pointer-events:none}
-  .portal-brand{padding:22px 24px 18px;border-bottom:1px solid rgba(32,30,17,.06);display:flex;align-items:center;gap:10px;color:#201e11;text-decoration:none}
-  .portal-brand .mark{width:180px;height:23px;background-color:#201e11;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;font-size:0;overflow:hidden}
-  .portal-back{display:block;padding:16px 24px 20px;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(32,30,17,.55);text-decoration:none;border-bottom:1px solid rgba(32,30,17,.06)}
-  .portal-back:hover{color:#201e11}
+  .portal-brand{padding:22px 24px 18px;border-bottom:1px solid rgba(86,73,41,.06);display:flex;align-items:center;gap:10px;color:#564929;text-decoration:none}
+  .portal-brand .mark{width:180px;height:23px;background-color:#564929;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;font-size:0;overflow:hidden}
+  .portal-back{display:block;padding:16px 24px 20px;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(86,73,41,.55);text-decoration:none;border-bottom:1px solid rgba(86,73,41,.06)}
+  .portal-back:hover{color:#564929}
   .portal-back::before{content:"\2190\00a0\00a0"}
   .portal-nav{padding:10px 0 30px;flex:1}
   .portal-group{padding:22px 24px 6px}
   .portal-group .eyebrow{display:block;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#9a7818;font-weight:500;margin:0 0 5px}
   .portal-group .gold-rule{width:28px;height:1px;background:#c8a035;margin:0 0 12px}
   .portal-link{
-    display:block;padding:13px 24px;font-size:17px;color:rgba(32,30,17,.82);
+    display:block;padding:13px 24px;font-size:17px;color:rgba(86,73,41,.82);
     text-decoration:none;border-left:2px solid transparent;letter-spacing:-.01em;line-height:1.35;
     transition:color .15s ease,background .15s ease,border-color .15s ease;cursor:pointer;
   }
-  .portal-link:hover{color:#201e11;background:rgba(32,30,17,.04)}
-  .portal-link.active{color:#201e11;border-left-color:#c8a035;background:rgba(200,160,53,.06);font-weight:500}
-  .portal-foot{padding:20px 24px 24px;border-top:1px solid rgba(32,30,17,.06);font-size:13px;color:rgba(32,30,17,.5);line-height:1.5}
+  .portal-link:hover{color:#564929;background:rgba(86,73,41,.04)}
+  .portal-link.active{color:#564929;border-left-color:#c8a035;background:rgba(200,160,53,.06);font-weight:500}
+  .portal-foot{padding:20px 24px 24px;border-top:1px solid rgba(86,73,41,.06);font-size:13px;color:rgba(86,73,41,.5);line-height:1.5}
   /* Mobile: pure Expo web app, full-screen, no marketing chrome */
   @media(max-width:899px){
     .portal-aside{display:none}
