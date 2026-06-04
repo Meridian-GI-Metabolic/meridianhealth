@@ -12,6 +12,18 @@ uri = "file://brand/editorial/mc-allied.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "BqHf0ZcEU22dzDWauAYEx"
+uri = "file://brand/editorial/bo-portrait.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "y_df2IyN0aULXxoGeFxqR"
+uri = "file://brand/practice/membership-v2.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "jCVA6qChiry_0Od0iKpUY"
 uri = "file://prelaunch-meridian.zip"
