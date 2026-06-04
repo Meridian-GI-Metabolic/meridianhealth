@@ -1,5 +1,16 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "Ck3Hd4Z-87b6MnKqXckm4"
+uri = "file://brand/editorial/mc-metabolic.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "UKCVVxJ3wyJyWlQzVH3PU"
+uri = "file://brand/editorial/mc-allied.png"
+type = "image"
+title = "generated_image"
 
 [[outputs]]
 id = "jCVA6qChiry_0Od0iKpUY"
