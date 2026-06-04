@@ -15,12 +15,12 @@
   --ink-08:rgba(86,73,41,.07);
   --deep:#231d10;
   --deep-2:#1a1509;
-  --cream:#f3f1ef;
-  --cream-2:#f5f4f2;
-  --cream-3:#ede9e2;
-  --stone:#e2ded7;
-  --stone-2:#d8d4cb;
-  --soft:#f3f1ef;
+  --cream:#c8b896;
+  --cream-2:#ded4c0;
+  --cream-3:#d3c6ab;
+  --stone:#b4a587;
+  --stone-2:#a09378;
+  --soft:#c8b896;
   --gold:#c8a035;
   --gold-soft:#e0c170;
   --gold-deep:#9a7818;
@@ -68,7 +68,7 @@ hr{border:0;border-top:1px solid var(--ink-08);margin:48px 0}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px}
 
 /* Nav */
-.nav{position:sticky;top:0;z-index:100;background:rgba(243,241,239,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-08)}
+.nav{position:sticky;top:0;z-index:100;background:rgba(200,184,150,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-08)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px var(--gut);display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-mark{display:flex;align-items:center;gap:11px;color:var(--ink)}
 .brand-mono{width:22px;height:22px;background-color:var(--ink);-webkit-mask:url('/brand/monogram.png') center/contain no-repeat;mask:url('/brand/monogram.png') center/contain no-repeat}
