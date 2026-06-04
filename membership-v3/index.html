@@ -587,6 +587,67 @@
 }
 .v3-ahpra p:last-child { margin: 0; }
 
+/* ── Comparison table ── */
+.v3-compare { background: #f3f1ef; }
+.v3-compare-head { text-align: center; margin-bottom: 48px; }
+.v3-compare-head h2 {
+  font-family: "Inter", -apple-system, sans-serif;
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  color: #564929;
+  margin: 12px auto 0;
+  max-width: 22ch;
+  line-height: 1.08;
+}
+.v3-compare-wrap {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(86,73,41,.1);
+}
+.v3-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.v3-compare-table thead tr {
+  background: #564929;
+}
+.v3-compare-table thead th {
+  padding: 18px 28px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(241,239,235,.6);
+  text-align: left;
+}
+.v3-compare-table thead th:nth-child(3) { color: rgba(241,239,235,.9); }
+.v3-compare-table tbody tr {
+  border-bottom: 1px solid rgba(86,73,41,.08);
+}
+.v3-compare-table tbody tr:last-child { border-bottom: none; }
+.v3-compare-table tbody td {
+  padding: 20px 28px;
+  font-size: 14px;
+  color: rgba(86,73,41,.65);
+  vertical-align: middle;
+  line-height: 1.4;
+}
+.v3-compare-table tbody td:first-child { color: rgba(86,73,41,.75); }
+.v3-compare-table tbody td:nth-child(2) { color: rgba(86,73,41,.5); text-align: center; }
+.v3-compare-table tbody td:nth-child(3) {
+  font-weight: 700;
+  color: #564929;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .v3-compare-table thead th:nth-child(2),
+  .v3-compare-table tbody td:nth-child(2) { display: none; }
+  .v3-compare-table thead th,
+  .v3-compare-table tbody td { padding: 16px 20px; }
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .v3-hero-inner,
@@ -699,38 +760,60 @@
   </div>
 </div>
 
-<!-- INTRO -->
-<section class="v3-intro">
+<!-- COMPARISON TABLE -->
+<section class="v3-compare">
   <div class="v3-section">
-    <div class="v3-intro-inner">
-      <div class="reveal">
-        <span class="v3-intro-kicker">Why it works</span>
-        <h2>Three reasons to prescribe MM with Meridian.</h2>
-        <p>Fragmented care, unmonitored prescriptions, and no continuity after the first appointment. Meridian is built to fix all three.</p>
-      </div>
-      <ul class="v3-three-things">
-        <li class="v3-thing reveal reveal-1">
-          <span class="v3-thing-n">1</span>
-          <div class="v3-thing-body">
-            <h3>One physician, not a rotating roster</h3>
-            <p>Your consultant physician knows your file, your bloods, and your history at every review. No re-explaining. No strangers.</p>
-          </div>
-        </li>
-        <li class="v3-thing reveal reveal-2">
-          <span class="v3-thing-n">2</span>
-          <div class="v3-thing-body">
-            <h3>Medication supervised, not just prescribed</h3>
-            <p>Where GLP-1 therapy is clinically appropriate, it is prescribed and titrated by your physician, with side-effect management included throughout.</p>
-          </div>
-        </li>
-        <li class="v3-thing reveal reveal-3">
-          <span class="v3-thing-n">3</span>
-          <div class="v3-thing-body">
-            <h3>Dietitian and psychology in the same file</h3>
-            <p>Not referred out. Not separate providers. The same clinical record, reviewed by the same team, across the full twelve months.</p>
-          </div>
-        </li>
-      </ul>
+    <div class="v3-compare-head reveal">
+      <span class="v3-intro-kicker">Why it matters</span>
+      <h2>Meridian Membership versus the standard of care.</h2>
+    </div>
+    <div class="v3-compare-wrap reveal">
+      <table class="v3-compare-table">
+        <thead>
+          <tr>
+            <th>Care element</th>
+            <th>Standard fragmented care</th>
+            <th>Meridian Membership</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Physician oversight of medication</td>
+            <td>Inconsistent</td>
+            <td>Quarterly, same physician</td>
+          </tr>
+          <tr>
+            <td>GLP-1 titration and monitoring</td>
+            <td>Often via telehealth or pharmacy</td>
+            <td>Supervised by a consultant</td>
+          </tr>
+          <tr>
+            <td>Dietitian and psychology in same file</td>
+            <td>Separate providers, no shared record</td>
+            <td>Single clinical file</td>
+          </tr>
+          <tr>
+            <td>Escalation pathway to surgery</td>
+            <td>New referral, new assessment</td>
+            <td>Internal, same team</td>
+          </tr>
+          <tr>
+            <td>Blood work and investigations</td>
+            <td>Ordered and chased separately</td>
+            <td>Requested and reviewed in file</td>
+          </tr>
+          <tr>
+            <td>GP communication</td>
+            <td>Variable, sometimes none</td>
+            <td>Letter after every review</td>
+          </tr>
+          <tr>
+            <td>Patient app and clinical messaging</td>
+            <td>Usually unavailable</td>
+            <td>Included, 1-day reply</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
