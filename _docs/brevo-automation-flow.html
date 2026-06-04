@@ -1158,6 +1158,10 @@
 <!-- ═══════════════════════════════════════ SECTION 4 ═══════════════════════════════════════ -->
 <h1 id="post-consultation">4 &nbsp; Post-Consultation Automation — Stage 09</h1>
 <hr class="section-rule"/>
+<span class="last-reviewed">
+  <span class="lr-label">Last reviewed</span>
+  <span class="lr-date">27 May 2026</span>
+</span>
 
 <p><strong>Automation name in Brevo:</strong> MH — Post-Consultation</p>
 <p><strong>Entry trigger:</strong> Tag <span class="mono">consult_completed</span> is applied to contact (applied by admin after consultation is marked complete)</p>
@@ -1313,6 +1317,10 @@
 <!-- ═══════════════════════════════════════ SECTION 5 ═══════════════════════════════════════ -->
 <h1 id="pathway-nurture">5 &nbsp; Pathway-Specific Nurture Tracks — Stage 10</h1>
 <hr class="section-rule"/>
+<span class="last-reviewed">
+  <span class="lr-label">Last reviewed</span>
+  <span class="lr-date">4 Jun 2026</span>
+</span>
 
 <p><strong>Entry trigger (all five tracks):</strong> Contact attribute <span class="mono">pathway</span> is set to the corresponding value by surgeon or admin recommendation post-consultation.</p>
 <p><strong>Structure:</strong> Five separate automations in Brevo, one per pathway. Each begins immediately when the relevant <span class="mono">pathway</span> value is set. Body copy for all five tracks is finalised and held in <em>scripts/brevo-push-templates.js</em> — use this script (run locally with a whitelisted IP) to push copy to Brevo templates before activating automations. See <a href="brevo-stage-10-setup-checklist.html" style="color:#c2a55e;"><em>brevo-stage-10-setup-checklist.html</em></a> for the full setup procedure.</p>
