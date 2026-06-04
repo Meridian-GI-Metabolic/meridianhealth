@@ -495,10 +495,62 @@
   max-width: 22ch;
   line-height: 1.1;
 }
-.v3-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(86,73,41,.08); border-radius: 20px; overflow: hidden; }
-.v3-faq-item { background: #e8e4dc; padding: 32px 36px; }
-.v3-faq-q { font-size: 16px; font-weight: 600; color: #564929; margin: 0 0 10px; line-height: 1.4; }
-.v3-faq-a { font-size: 14px; color: rgba(86,73,41,.65); line-height: 1.7; margin: 0; }
+.v3-faq-list { border-top: 1px solid rgba(86,73,41,.14); }
+.v3-faq-item { border-bottom: 1px solid rgba(86,73,41,.14); }
+.v3-faq-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  cursor: pointer;
+  text-align: left;
+}
+.v3-faq-q {
+  font-size: 16px;
+  font-weight: 600;
+  color: #564929;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+.v3-faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(86,73,41,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color .2s, background .2s;
+  color: #564929;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+}
+.v3-faq-btn[aria-expanded="true"] .v3-faq-icon {
+  background: #564929;
+  border-color: #564929;
+  color: #e2ded7;
+}
+.v3-faq-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .35s cubic-bezier(.4,0,.2,1);
+}
+.v3-faq-panel.open { max-height: 400px; }
+.v3-faq-a {
+  font-size: 15px;
+  color: rgba(86,73,41,.68);
+  line-height: 1.75;
+  margin: 0;
+  padding-bottom: 28px;
+  max-width: 68ch;
+}
 
 /* ── Final CTA ── */
 .v3-cta {
@@ -544,7 +596,6 @@
   .v3-hero-img { display: none; }
   .v3-hero-left { padding-bottom: 64px; }
   .v3-steps { grid-template-columns: repeat(2,1fr); }
-  .v3-faq-grid { grid-template-columns: 1fr; }
   .v3-plan-card { position: static; }
   .v3-trust-inner { gap: 16px; }
 }
@@ -838,30 +889,60 @@
       <span class="v3-intro-kicker">Common questions</span>
       <h2>What people ask before they enquire.</h2>
     </div>
-    <div class="v3-faq-grid">
-      <div class="v3-faq-item reveal reveal-1">
-        <p class="v3-faq-q">Is a GP referral required?</p>
-        <p class="v3-faq-a">No. You can contact Meridian directly. A referral is not required for your initial enquiry or first consultation. Having one may allow Medicare rebates to apply to eligible services.</p>
+    <div class="v3-faq-list reveal">
+      <div class="v3-faq-item">
+        <button class="v3-faq-btn" aria-expanded="false" aria-controls="faq1">
+          <span class="v3-faq-q">Is a GP referral required?</span>
+          <span class="v3-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="v3-faq-panel" id="faq1" role="region">
+          <p class="v3-faq-a">No. You can contact Meridian directly. A referral is not required for your initial enquiry or first consultation. Having one may allow Medicare rebates to apply to eligible services.</p>
+        </div>
       </div>
-      <div class="v3-faq-item reveal reveal-2">
-        <p class="v3-faq-q">Will I definitely receive GLP-1 therapy?</p>
-        <p class="v3-faq-a">Not automatically. GLP-1 therapy is only prescribed following a clinical assessment by a Meridian physician. It is offered where clinically appropriate. A prescription is not guaranteed as part of enrolment.</p>
+      <div class="v3-faq-item">
+        <button class="v3-faq-btn" aria-expanded="false" aria-controls="faq2">
+          <span class="v3-faq-q">Will I definitely receive GLP-1 therapy?</span>
+          <span class="v3-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="v3-faq-panel" id="faq2" role="region">
+          <p class="v3-faq-a">Not automatically. GLP-1 therapy is only prescribed following a clinical assessment by a Meridian physician. It is offered where clinically appropriate. A prescription is not guaranteed as part of enrolment.</p>
+        </div>
       </div>
-      <div class="v3-faq-item reveal reveal-3">
-        <p class="v3-faq-q">What does the medication cost?</p>
-        <p class="v3-faq-a">GLP-1 medication is not included in the programme fee. It is dispensed through a pharmacy and costs vary depending on the medication, dose, and any applicable PBS subsidies. Your physician will explain options at your consultation.</p>
+      <div class="v3-faq-item">
+        <button class="v3-faq-btn" aria-expanded="false" aria-controls="faq3">
+          <span class="v3-faq-q">What does the medication cost?</span>
+          <span class="v3-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="v3-faq-panel" id="faq3" role="region">
+          <p class="v3-faq-a">GLP-1 medication is not included in the programme fee. It is dispensed through a pharmacy and costs vary depending on the medication, dose, and any applicable PBS subsidies. Your physician will explain options at your consultation.</p>
+        </div>
       </div>
-      <div class="v3-faq-item reveal reveal-4">
-        <p class="v3-faq-q">I am not in Melbourne. Can I still join?</p>
-        <p class="v3-faq-a">Meridian is an in-person practice based in Fitzroy, Melbourne. Initial and quarterly consultations are face-to-face. Some interim communication can be managed through the Meridian app.</p>
+      <div class="v3-faq-item">
+        <button class="v3-faq-btn" aria-expanded="false" aria-controls="faq4">
+          <span class="v3-faq-q">I am not in Melbourne. Can I still join?</span>
+          <span class="v3-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="v3-faq-panel" id="faq4" role="region">
+          <p class="v3-faq-a">Meridian is an in-person practice based in Fitzroy, Melbourne. Initial and quarterly consultations are face-to-face. Some interim communication can be managed through the Meridian app.</p>
+        </div>
       </div>
-      <div class="v3-faq-item reveal reveal-1">
-        <p class="v3-faq-q">Can I pause or cancel the programme?</p>
-        <p class="v3-faq-a">Yes. Membership can be paused or concluded at any time. Your clinical record and relationship with the practice remain intact. Ongoing surgical follow-up, where applicable, continues independently.</p>
+      <div class="v3-faq-item">
+        <button class="v3-faq-btn" aria-expanded="false" aria-controls="faq5">
+          <span class="v3-faq-q">Can I pause or cancel the programme?</span>
+          <span class="v3-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="v3-faq-panel" id="faq5" role="region">
+          <p class="v3-faq-a">Yes. Membership can be paused or concluded at any time. Your clinical record and relationship with the practice remain intact. Ongoing surgical follow-up, where applicable, continues independently.</p>
+        </div>
       </div>
-      <div class="v3-faq-item reveal reveal-2">
-        <p class="v3-faq-q">What if I need surgery during the programme?</p>
-        <p class="v3-faq-a">The surgical team is in the same building. If your physician determines bariatric or upper GI surgery is the appropriate next step, the transition is managed entirely within Meridian. No new referral, no new file.</p>
+      <div class="v3-faq-item">
+        <button class="v3-faq-btn" aria-expanded="false" aria-controls="faq6">
+          <span class="v3-faq-q">What if I need surgery during the programme?</span>
+          <span class="v3-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="v3-faq-panel" id="faq6" role="region">
+          <p class="v3-faq-a">The surgical team is in the same building. If your physician determines bariatric or upper GI surgery is the appropriate next step, the transition is managed entirely within Meridian. No new referral, no new file.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -925,5 +1006,19 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  document.querySelectorAll('.v3-faq-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var icon = btn.querySelector('.v3-faq-icon');
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      panel.classList.toggle('open', !expanded);
+      icon.textContent = expanded ? '+' : '−';
+    });
+  });
+})();
+</script>
 </body>
 </html>
