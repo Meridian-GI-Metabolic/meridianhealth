@@ -252,9 +252,12 @@ body.nav-open .nav-burger span::before{opacity:0}
 .proc-name{font-family:"Inter";font-weight:500;font-size:17px;letter-spacing:-.008em;color:var(--ink);margin:0;grid-column:1;grid-row:1/span 20;align-self:start}
 .proc-desc{font-size:15px;color:var(--ink-65);line-height:1.6;margin:0;max-width:54ch;grid-column:2}
 @media(max-width:720px){
-  .proc-item{grid-template-columns:1fr;gap:8px;padding:22px 0}
-  .proc-name{font-size:16px;grid-column:auto;grid-row:auto}
-  .proc-desc{grid-column:auto}
+  .proc-item{grid-template-columns:1fr;gap:0;padding:0}
+  .proc-name{font-size:16px;grid-column:auto;grid-row:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;-webkit-user-select:none;user-select:none}
+  .proc-name::after{content:'+';font-size:20px;font-weight:300;color:var(--ink-45);flex-shrink:0;margin-left:16px;line-height:1;transition:transform .2s ease}
+  .proc-item.open .proc-name::after{transform:rotate(45deg)}
+  .proc-desc{grid-column:auto;display:none;padding-bottom:16px}
+  .proc-item.open .proc-desc{display:block}
 }
 
 /* Team grid */
