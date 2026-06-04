@@ -21,9 +21,9 @@
   --stone:#e2ded7;
   --stone-2:#d8d4cb;
   --soft:#f3f1ef;
-  --gold:#c8a035;
-  --gold-soft:#e0c170;
-  --gold-deep:#9a7818;
+  --gold:#9a8b62;
+  --gold-soft:#cac2ad;
+  --gold-deep:#6e6446;
   
   --maxw:1240px;
   --gut:32px;
@@ -1121,8 +1121,8 @@ main#content > .bleed-deep:last-child{
 @media(max-width:560px){.felt-grid.with-photos{grid-template-columns:1fr;gap:32px}}
 
 /* Patient sign-in pill (top-right of nav) */
-.nav-portal{display:inline-flex;align-items:center;gap:9px;height:40px;padding:0 18px 0 14px;border-radius:999px;border:1px solid #c8a035;color:#564929;background:transparent;font-size:13.5px;font-weight:500;letter-spacing:.01em;line-height:1;transition:border-color .15s ease,color .15s ease,background .15s ease,box-shadow .15s ease;flex:0 0 auto;text-decoration:none;white-space:nowrap}
-.nav-portal:hover{background:#c8a035;color:#fff;border-color:#c8a035;box-shadow:0 1px 2px rgba(86,73,41,.08)}
+.nav-portal{display:inline-flex;align-items:center;gap:9px;height:40px;padding:0 18px 0 14px;border-radius:999px;border:1px solid #9a8b62;color:#564929;background:transparent;font-size:13.5px;font-weight:500;letter-spacing:.01em;line-height:1;transition:border-color .15s ease,color .15s ease,background .15s ease,box-shadow .15s ease;flex:0 0 auto;text-decoration:none;white-space:nowrap}
+.nav-portal:hover{background:#9a8b62;color:#fff;border-color:#9a8b62;box-shadow:0 1px 2px rgba(86,73,41,.08)}
 .nav-portal svg{width:17px;height:17px;display:block;stroke:currentColor}
 .nav-portal span{display:inline-block}
 @media(max-width:880px){
