@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Membership V4 | Meridian Health, Fitzroy</title>
+<meta name="description" content="Meridian's physician-led metabolic medicine programme. Video-first care, Medicare rebates, medication home delivery. Structured annual care from AHPRA-registered physicians." />
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/favicon-180.png?v=6.7q" />
+<style id="meridian-gate-style">html.meridian-locked #content{visibility:hidden!important}#meridian-gate{position:fixed!important;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:24px;background:#e2ded7;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#564929;visibility:visible!important;opacity:1!important;box-sizing:border-box}#meridian-gate.hidden{display:none}#meridian-gate .card{background:#ded4c0;border:1px solid rgba(86,73,41,.10);border-radius:12px;padding:36px 32px 30px;width:100%;max-width:360px;box-sizing:border-box}#meridian-gate h1{margin:0 0 6px;font-size:22px;font-family:"Inter";font-weight:500;letter-spacing:-.012em;line-height:1.2}#meridian-gate p.sub{margin:0 0 22px;font-size:14px;color:rgba(86,73,41,.62);line-height:1.45}#meridian-gate label{display:block;font-size:11px;font-family:"Inter";font-weight:500;text-transform:uppercase;letter-spacing:1.2px;color:rgba(86,73,41,.55);margin:14px 0 6px}#meridian-gate input{width:100%;padding:12px 14px;font-size:15px;font-family:"Inter";border:1px solid rgba(86,73,41,.18);border-radius:6px;background:#fff;color:#564929;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none}#meridian-gate input:focus{border-color:#564929;box-shadow:0 0 0 3px rgba(86,73,41,.06)}#meridian-gate button{margin-top:22px;width:100%;padding:12px 16px;font-size:13px;font-family:"Inter";font-weight:500;letter-spacing:.6px;text-transform:uppercase;background:transparent;color:#564929;border:1px solid #564929;border-radius:999px;cursor:pointer;transition:background .15s ease,color .15s ease;-webkit-appearance:none;appearance:none}#meridian-gate button:hover{background:#564929;color:#e2ded7}#meridian-gate .err{margin-top:14px;font-size:13px;color:#b3261e;min-height:16px;font-family:"Inter"}#meridian-gate .brand{display:block;width:108px;height:15px;margin:0 0 18px;background-color:#888273;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat}</style>
+<script id="meridian-gate-script">(function(){if(location.hostname==="localhost"||location.hostname==="127.0.0.1"||location.hostname.endsWith(".replit.dev"))return;var KEY="meridian_auth_v1";var U="MHII";var P="MERIDIANMHII2026@!";var root=document.documentElement;function isAuthed(){try{return window.localStorage.getItem(KEY)==="1"}catch(e){return false}}function lock(){root.classList.add("meridian-locked")}function unlock(){root.classList.remove("meridian-locked")}if(!isAuthed()){lock()}function buildOverlay(){var d=document.createElement("div");d.id="meridian-gate";d.innerHTML='<div class="card" role="dialog" aria-modal="true" aria-labelledby="mg-title"><span class="brand">Meridian Health</span><h1 id="mg-title">Sign in</h1><p class="sub">Enter your credentials to continue.</p><form id="meridian-gate-form" autocomplete="off"><label for="mg-user">Username</label><input id="mg-user" name="username" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" required /><label for="mg-pass">Password</label><input id="mg-pass" name="password" type="password" required /><button type="submit">Enter</button><div class="err" id="mg-err" aria-live="polite"></div></form></div>';return d}function buildLogout(){var b=document.createElement("button");b.id="meridian-logout";b.type="button";b.textContent="Log out";b.addEventListener("click",function(){try{window.localStorage.removeItem(KEY)}catch(e){}window.location.reload()});return b}function mountLogout(){if(document.getElementById("meridian-logout"))return;var btn=buildLogout();(document.body||document.documentElement).appendChild(btn)}function mountOverlay(){if(document.getElementById("meridian-gate"))return;var ov=buildOverlay();(document.body||document.documentElement).appendChild(ov);var form=document.getElementById("meridian-gate-form");var err=document.getElementById("mg-err");form.addEventListener("submit",function(e){e.preventDefault();var u=document.getElementById("mg-user").value;var p=document.getElementById("mg-pass").value;if(u===U&&p===P){try{window.localStorage.setItem(KEY,"1")}catch(e){}unlock();ov.classList.add("hidden");mountLogout()}else{err.textContent="Incorrect username or password."}});if(!isAuthed()){mountOverlay()}else{unlock();mountLogout()}}window.addEventListener("DOMContentLoaded",function(){if(!isAuthed()){mountOverlay()}else{mountLogout()}})})()</script>
+<link rel="stylesheet" href="/assets/styles.css?v=8" />
+<link rel="stylesheet" href="/assets/gate.css?v=2" />
+<script defer src="/assets/gate.js?v=2"></script>
+<script defer src="/assets/site.js"></script>
+<style>
+.v4 * { box-sizing: border-box; }
+.v4 { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; }
+
+/* Ann bar */
+.v4-ann { background: #29210b; color: #b4a587; font-size: 13px; font-weight: 500; text-align: center; padding: 10px 16px; letter-spacing: .01em; }
+.v4-ann a { color: #b4a587; text-decoration: underline; text-underline-offset: 3px; margin-left: 8px; font-weight: 600; }
+
+/* Hero — programme card moved to top */
+.v4-hero { background: #29210b; padding: 80px 0 96px; }
+.v4-hero-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: start;
+}
+.v4-kicker {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: #888273; margin-bottom: 20px; display: block;
+}
+.v4-hero h1 {
+  font-family: "Inter", -apple-system, sans-serif;
+  font-size: clamp(30px, 3.8vw, 48px); font-weight: 400;
+  letter-spacing: -.025em; color: #b4a587;
+  margin: 0 0 20px; max-width: 18ch; line-height: 1.1;
+}
+.v4-hero-sub { font-size: 16px; color: rgba(241,239,235,.62); line-height: 1.7; margin: 0 0 36px; max-width: 44ch; }
+.v4-incl { list-style: none; padding: 0; margin: 0; }
+.v4-incl-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 15px 0; border-bottom: 1px solid rgba(241,239,235,.08);
+}
+.v4-incl-item:last-child { border-bottom: none; }
+.v4-incl-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(136,130,115,.2); border: 1.5px solid #888273;
+  flex-shrink: 0; margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+}
+.v4-incl-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #888273; }
+.v4-incl-text { font-size: 15px; color: rgba(241,239,235,.85); line-height: 1.5; }
+.v4-incl-text strong { color: #b4a587; font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* Plan card */
+.v4-plan-card {
+  background: #f3f1ef; border-radius: 24px; padding: 40px 36px;
+  position: sticky; top: 120px;
+}
+.v4-plan-eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: #888273; display: block; margin-bottom: 16px;
+}
+.v4-plan-name { font-family: "Inter", -apple-system, sans-serif; font-size: 26px; font-weight: 400; color: #564929; margin: 0 0 6px; letter-spacing: -.02em; }
+.v4-plan-desc { font-size: 13.5px; color: rgba(86,73,41,.6); margin: 0 0 28px; line-height: 1.5; }
+.v4-plan-divider { border: none; border-top: 1px solid rgba(86,73,41,.1); margin: 20px 0; }
+.v4-plan-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; gap: 8px; }
+.v4-plan-row-l { font-size: 14px; color: rgba(86,73,41,.7); }
+.v4-plan-row-v { font-size: 14px; font-weight: 600; color: #564929; text-align: right; }
+.v4-plan-note { font-size: 12px; color: rgba(86,73,41,.5); line-height: 1.5; margin: 0 0 24px; }
+.v4-plan-cta {
+  display: block; text-align: center; padding: 15px 24px;
+  background: #231d10; color: #b4a587; border-radius: 999px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: background .15s; margin-bottom: 12px;
+}
+.v4-plan-cta:hover { background: #564929; }
+.v4-plan-cta-sec {
+  display: block; text-align: center; padding: 13px 24px;
+  border: 1.5px solid rgba(86,73,41,.2); color: #564929;
+  border-radius: 999px; font-size: 14px; font-weight: 500;
+  text-decoration: none; transition: border-color .15s;
+}
+.v4-plan-cta-sec:hover { border-color: #564929; }
+
+/* Trust strip */
+.v4-trust { background: #231d10; padding: 20px 0; }
+.v4-trust-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  display: flex; gap: 0; justify-content: space-between; align-items: center; flex-wrap: wrap;
+}
+.v4-trust-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; flex: 1; min-width: 180px; justify-content: center; }
+.v4-trust-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(136,130,115,.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+.v4-trust-text { font-size: 13px; font-weight: 500; color: rgba(241,239,235,.8); line-height: 1.3; }
+.v4-trust-text strong { color: #b4a587; font-weight: 600; display: block; }
+
+/* Section wrappers */
+.v4-section { max-width: 1200px; margin: 0 auto; padding: 88px 40px; }
+.v4-section-sm { max-width: 1200px; margin: 0 auto; padding: 64px 40px; }
+.v4-split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.v4-split-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.v4-section-kicker { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #888273; display: block; margin-bottom: 16px; }
+.v4-h2 {
+  font-family: "Inter", -apple-system, sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px); font-weight: 400;
+  letter-spacing: -.025em; color: #564929; margin: 0 0 20px; line-height: 1.1;
+}
+.v4-body { font-size: 15px; color: rgba(86,73,41,.72); line-height: 1.75; margin: 0 0 16px; max-width: 46ch; }
+
+/* Care delivery */
+.v4-care { background: #f3f1ef; }
+.v4-care-card {
+  background: #fff; border-radius: 16px;
+  padding: 40px 36px; border: 1px solid rgba(86,73,41,.08);
+}
+.v4-care-card h3 { font-size: 18px; font-weight: 600; color: #564929; margin: 0 0 8px; }
+.v4-care-card p { font-size: 14px; color: rgba(86,73,41,.65); line-height: 1.65; margin: 0 0 20px; }
+.v4-care-list { list-style: none; padding: 0; margin: 0; }
+.v4-care-list li {
+  font-size: 14px; color: rgba(86,73,41,.75); padding: 10px 0;
+  border-bottom: 1px solid rgba(86,73,41,.08); display: flex; gap: 10px; align-items: center;
+}
+.v4-care-list li:last-child { border-bottom: none; }
+.v4-care-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #888273; flex-shrink: 0; }
+.v4-care-note {
+  margin-top: 32px; padding: 20px 24px; background: rgba(86,73,41,.04);
+  border-radius: 12px; font-size: 14px; color: rgba(86,73,41,.65); line-height: 1.6; text-align: center;
+}
+
+/* Medicare callout */
+.v4-medicare { background: #fff; }
+.v4-medicare-card {
+  background: #29210b; border-radius: 16px; padding: 56px 64px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+}
+.v4-medicare-card .v4-h2 { color: #b4a587; }
+.v4-medicare-card .v4-body { color: rgba(241,239,235,.65); max-width: 42ch; }
+.v4-med-items { list-style: none; padding: 0; margin: 0; }
+.v4-med-item { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(241,239,235,.08); align-items: flex-start; }
+.v4-med-item:first-child { border-top: 1px solid rgba(241,239,235,.08); }
+.v4-med-num { font-size: 22px; font-weight: 300; color: #888273; flex-shrink: 0; line-height: 1; padding-top: 2px; min-width: 28px; }
+.v4-med-text { font-size: 14px; color: rgba(241,239,235,.8); line-height: 1.55; }
+.v4-med-text strong { color: #b4a587; font-weight: 600; display: block; margin-bottom: 2px; font-size: 14px; }
+
+/* Medication */
+.v4-meds { background: #f3f1ef; }
+.v4-meds-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.v4-meds-list { list-style: none; padding: 0; margin: 0 0 28px; }
+.v4-meds-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(86,73,41,.1); align-items: flex-start; }
+.v4-meds-item:first-child { border-top: 1px solid rgba(86,73,41,.1); }
+.v4-meds-icon { font-size: 18px; flex-shrink: 0; padding-top: 1px; }
+.v4-meds-item span { font-size: 15px; color: rgba(86,73,41,.8); line-height: 1.5; }
+
+/* Models A vs B */
+.v4-models { background: #fff; }
+.v4-models-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+.v4-model-card {
+  border: 1px solid rgba(86,73,41,.12); border-radius: 20px; padding: 40px 36px;
+}
+.v4-model-card.featured { background: #29210b; border-color: transparent; }
+.v4-model-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #888273; display: block; margin-bottom: 16px; }
+.v4-model-card.featured .v4-model-label { color: #888273; }
+.v4-model-title { font-size: 22px; font-weight: 400; color: #564929; margin: 0 0 6px; letter-spacing: -.015em; }
+.v4-model-card.featured .v4-model-title { color: #b4a587; }
+.v4-model-sub { font-size: 13.5px; color: rgba(86,73,41,.6); margin: 0 0 28px; line-height: 1.5; }
+.v4-model-card.featured .v4-model-sub { color: rgba(241,239,235,.55); }
+.v4-model-divider { border: none; border-top: 1px solid rgba(86,73,41,.1); margin: 0 0 24px; }
+.v4-model-card.featured .v4-model-divider { border-color: rgba(241,239,235,.12); }
+.v4-model-includes { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(86,73,41,.45); margin: 0 0 14px; }
+.v4-model-card.featured .v4-model-includes { color: rgba(241,239,235,.4); }
+.v4-model-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.v4-model-list li { font-size: 14px; color: rgba(86,73,41,.75); padding: 8px 0; border-bottom: 1px solid rgba(86,73,41,.07); display: flex; gap: 10px; align-items: center; }
+.v4-model-list li:last-child { border-bottom: none; }
+.v4-model-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #888273; flex-shrink: 0; }
+.v4-model-card.featured .v4-model-list li { color: rgba(241,239,235,.75); border-color: rgba(241,239,235,.08); }
+.v4-model-benefits-head { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(86,73,41,.45); margin: 20px 0 10px; }
+.v4-model-card.featured .v4-model-benefits-head { color: rgba(241,239,235,.4); }
+.v4-model-tag { display: inline-block; padding: 4px 12px; background: rgba(86,73,41,.06); border-radius: 999px; font-size: 12px; color: rgba(86,73,41,.7); margin: 4px 4px 0 0; }
+.v4-model-card.featured .v4-model-tag { background: rgba(241,239,235,.1); color: rgba(241,239,235,.7); }
+
+/* Journey */
+.v4-journey { background: #f3f1ef; }
+.v4-journey-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+.v4-journey-phase { }
+.v4-phase-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #888273; display: block; margin-bottom: 24px; }
+.v4-journey-steps { list-style: none; padding: 0; margin: 0; }
+.v4-journey-step { display: flex; gap: 16px; padding-bottom: 20px; position: relative; }
+.v4-journey-step:last-child { padding-bottom: 0; }
+.v4-step-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: #888273;
+  flex-shrink: 0; margin-top: 5px; position: relative; z-index: 1;
+}
+.v4-journey-step:not(:last-child) .v4-step-dot::after {
+  content: ''; position: absolute; left: 4px; top: 12px;
+  width: 1px; height: calc(100% + 8px); background: rgba(86,73,41,.15);
+}
+.v4-step-text { font-size: 14px; color: rgba(86,73,41,.75); line-height: 1.55; }
+.v4-step-text strong { color: #564929; font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* CTA */
+.v4-cta {
+  background: linear-gradient(150deg, #ede9e2 0%, #e2ded7 100%);
+  padding: 100px 0; text-align: center;
+}
+.v4-cta-inner { max-width: 680px; margin: 0 auto; padding: 0 40px; }
+.v4-cta h2 {
+  font-family: "Inter", -apple-system, sans-serif;
+  font-size: clamp(34px, 5vw, 60px); font-weight: 400;
+  letter-spacing: -.03em; color: #564929; margin: 0 0 20px; line-height: 1.08;
+}
+.v4-cta-sub { font-size: 17px; color: rgba(86,73,41,.68); line-height: 1.65; margin: 0 0 40px; }
+.v4-cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.v4-btn-primary { display: inline-block; padding: 16px 32px; background: #231d10; color: #b4a587; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; transition: background .15s; white-space: nowrap; }
+.v4-btn-primary:hover { background: #564929; }
+.v4-btn-ghost { display: inline-block; padding: 15px 28px; border: 1.5px solid rgba(86,73,41,.3); color: #564929; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .15s; white-space: nowrap; }
+.v4-btn-ghost:hover { border-color: #564929; }
+.v4-cta-legal { margin-top: 24px; font-size: 12px; color: rgba(86,73,41,.45); line-height: 1.55; }
+
+/* AHPRA */
+.v4-ahpra { background: #ede9e2; border-top: 1px solid rgba(86,73,41,.12); padding: 28px 0; }
+.v4-ahpra-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.v4-ahpra p { font-size: 11.5px; color: rgba(86,73,41,.52); line-height: 1.65; margin: 0 0 6px; }
+.v4-ahpra p:last-child { margin: 0; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .v4-hero-inner, .v4-split, .v4-meds-inner, .v4-models-grid, .v4-journey-inner { grid-template-columns: 1fr; gap: 40px; }
+  .v4-medicare-card { grid-template-columns: 1fr; padding: 40px 36px; gap: 36px; }
+  .v4-plan-card { position: static; }
+}
+@media (max-width: 600px) {
+  .v4-section, .v4-section-sm { padding: 56px 24px; }
+  .v4-hero { padding: 60px 0 72px; }
+  .v4-hero-inner { padding: 0 24px; }
+  .v4-trust-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
+  .v4-medicare-card { padding: 32px 28px; }
+}
+</style>
+</head>
+<body class="v4">
+
+<div class="v4-ann">Now accepting new patients. AHPRA-registered consultant physicians. <a href="/contact/#assessment">Start your assessment</a></div>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="/" class="nav-mark" aria-label="Meridian Health"><span class="logotype">Meridian Health</span></a>
+    <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav-links"><span></span></button>
+    <div class="nav-links" id="primary-nav-links">
+      <div class="nav-dd">
+        <a href="/clinical-pathways/" aria-haspopup="true" aria-expanded="false">Clinical Pathways</a>
+        <div class="nav-dd-panel" role="menu">
+          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Metabolic Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
+          <a href="/clinical-pathways/upper-gi-surgical-care/" role="menuitem"><span class="dd-t">Upper GI &amp; Surgical Care</span><span class="dd-s">Reflux, hernia, oesophago-gastric and revisional surgery.</span></a>
+          <a href="/clinical-pathways/metabolic-medicine/" role="menuitem"><span class="dd-t">Metabolic Medicine</span><span class="dd-s">Physician-led weight management and GLP-1 therapy.</span></a>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <a href="/the-practice/" aria-haspopup="true" aria-expanded="false">The Practice</a>
+        <div class="nav-dd-panel" role="menu">
+          <a href="/the-practice/" role="menuitem"><span class="dd-t">Overview</span><span class="dd-s">Clinic, theatres and the multidisciplinary team.</span></a>
+          <a href="/specialists/" role="menuitem"><span class="dd-t">Your Care Team</span><span class="dd-s">Surgeons, physicians and the multidisciplinary team.</span></a>
+          <a href="/contact/" role="menuitem"><span class="dd-t">Contact and visit</span><span class="dd-s">Enquiries, appointments and Brenan Place.</span></a>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <a href="/app/" aria-haspopup="true" aria-expanded="false" class="active">Patient Hub</a>
+        <div class="nav-dd-panel" role="menu">
+          <a href="/app/" role="menuitem"><span class="dd-t">App</span><span class="dd-s">Track progress and stay connected between appointments.</span></a>
+          <a href="/membership/" role="menuitem"><span class="dd-t">Membership V1</span><span class="dd-s">Annual care, priority access and continuity.</span></a>
+          <a href="/membership-v2/" role="menuitem"><span class="dd-t">Membership V2</span><span class="dd-s">Outcome-led programme overview and enrolment.</span></a>
+          <a href="/membership-v3/" role="menuitem"><span class="dd-t">Membership V3</span><span class="dd-s">Physician-led metabolic programme, simply explained.</span></a>
+          <a href="/membership-v4/" role="menuitem"><span class="dd-t">Membership V4</span><span class="dd-s">Video-first care, Medicare rebates, medication delivery.</span></a>
+        </div>
+      </div>
+      <a href="/contact/#assessment" class="nav-cta-mobile">Start assessment</a>
+    </div>
+    <a href="/contact/#assessment" class="btn btn-key nav-cta">Start assessment</a>
+    <a href="/portal/" class="nav-portal" aria-label="Patient sign in" title="Patient sign in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 19.5c1.4-3.4 4.4-5.2 7.5-5.2s6.1 1.8 7.5 5.2"/></svg><span>Patient sign in</span></a>
+  </div>
+</nav>
+
+<main id="content">
+
+<!-- HERO: PROGRAMME CARD — right below banner -->
+<section class="v4-hero" aria-label="Meridian metabolic programme inclusions">
+  <div class="v4-hero-inner">
+    <div class="reveal">
+      <span class="v4-kicker">What is included</span>
+      <h1>Everything in the programme, upfront.</h1>
+      <p class="v4-hero-sub">No hidden extras. No referrals to chase. The six elements of the Meridian metabolic programme, held in one annual fee.</p>
+      <ul class="v4-incl">
+        <li class="v4-incl-item">
+          <div class="v4-incl-dot"></div>
+          <span class="v4-incl-text"><strong>Physician review, quarterly</strong>Four consultations per year with the same AHPRA-registered consultant physician. Bloods reviewed, medication titrated, escalation managed.</span>
+        </li>
+        <li class="v4-incl-item">
+          <div class="v4-incl-dot"></div>
+          <span class="v4-incl-text"><strong>GLP-1 therapy, where clinically indicated</strong>Physician-assessed and prescribed where appropriate. Titration, monitoring and side-effect management included. Prescription is not guaranteed and is determined by clinical assessment.</span>
+        </li>
+        <li class="v4-incl-item">
+          <div class="v4-incl-dot"></div>
+          <span class="v4-incl-text"><strong>Dietitian sessions</strong>Scheduled with an Accredited Practising Dietitian, timed to your phase of care. Nutritional assessment, planning and ongoing adjustment.</span>
+        </li>
+        <li class="v4-incl-item">
+          <div class="v4-incl-dot"></div>
+          <span class="v4-incl-text"><strong>Psychology support</strong>Access to a registered psychologist for behavioural and eating-related support. Scheduled when clinically indicated.</span>
+        </li>
+        <li class="v4-incl-item">
+          <div class="v4-incl-dot"></div>
+          <span class="v4-incl-text"><strong>Meridian patient app</strong>Your clinical file, trackers, reading and direct messaging to your care team. Clinical team responds within one business day.</span>
+        </li>
+        <li class="v4-incl-item">
+          <div class="v4-incl-dot"></div>
+          <span class="v4-incl-text"><strong>Shared care with your GP</strong>Clinical letter sent to your GP after every review. Your whole care network stays informed.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="reveal reveal-2">
+      <div class="v4-plan-card">
+        <span class="v4-plan-eyebrow">Annual programme</span>
+        <p class="v4-plan-name">Meridian Membership</p>
+        <p class="v4-plan-desc">Twelve-month structured care. Fee confirmed at enrolment.</p>
+        <hr class="v4-plan-divider" />
+        <div class="v4-plan-row"><span class="v4-plan-row-l">Physician reviews</span><span class="v4-plan-row-v">4 per year</span></div>
+        <div class="v4-plan-row"><span class="v4-plan-row-l">GLP-1 supervision</span><span class="v4-plan-row-v">Where indicated</span></div>
+        <div class="v4-plan-row"><span class="v4-plan-row-l">Dietitian sessions</span><span class="v4-plan-row-v">Included</span></div>
+        <div class="v4-plan-row"><span class="v4-plan-row-l">Psychology access</span><span class="v4-plan-row-v">Included</span></div>
+        <div class="v4-plan-row"><span class="v4-plan-row-l">Patient app</span><span class="v4-plan-row-v">Included</span></div>
+        <div class="v4-plan-row"><span class="v4-plan-row-l">GP letters</span><span class="v4-plan-row-v">After every review</span></div>
+        <div class="v4-plan-row"><span class="v4-plan-row-l">Telehealth reviews</span><span class="v4-plan-row-v">Included</span></div>
+        <hr class="v4-plan-divider" />
+        <p class="v4-plan-note">Medicare rebates may apply to eligible consultations under a valid GP referral. GLP-1 medication costs are additional and arranged via pharmacy. Programme fee discussed at first consultation.</p>
+        <a href="/contact/#assessment" class="v4-plan-cta">Check your eligibility</a>
+        <a href="tel:0394164418" class="v4-plan-cta-sec">Speak to reception</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="v4-trust" aria-label="Credentials">
+  <div class="v4-trust-inner">
+    <div class="v4-trust-item">
+      <div class="v4-trust-icon" aria-hidden="true">✦</div>
+      <span class="v4-trust-text"><strong>AHPRA-registered</strong>Consultant physicians</span>
+    </div>
+    <div class="v4-trust-item">
+      <div class="v4-trust-icon" aria-hidden="true">✦</div>
+      <span class="v4-trust-text"><strong>TGA-regulated</strong>Medications where prescribed</span>
+    </div>
+    <div class="v4-trust-item">
+      <div class="v4-trust-icon" aria-hidden="true">✦</div>
+      <span class="v4-trust-text"><strong>Medicare rebates</strong>May apply to eligible services</span>
+    </div>
+    <div class="v4-trust-item">
+      <div class="v4-trust-icon" aria-hidden="true">✦</div>
+      <span class="v4-trust-text"><strong>Video first</strong>Most reviews from home</span>
+    </div>
+  </div>
+</div>
+
+<!-- HOW CARE IS DELIVERED -->
+<section class="v4-care">
+  <div class="v4-section">
+    <span class="v4-section-kicker reveal">How care is delivered</span>
+    <h2 class="v4-h2 reveal" style="max-width:22ch;margin-bottom:48px">Video first. Clinic when needed.</h2>
+    <div class="v4-split">
+      <div class="v4-care-card reveal">
+        <h3>Telehealth video reviews</h3>
+        <p>The majority of ongoing care can occur from home. Specialist consultations, medication reviews, progress monitoring and treatment planning delivered via secure video.</p>
+        <ul class="v4-care-list">
+          <li>Specialist physician consultations</li>
+          <li>Medication review and titration</li>
+          <li>Progress monitoring</li>
+          <li>Treatment planning</li>
+        </ul>
+      </div>
+      <div class="v4-care-card reveal reveal-2">
+        <h3>In clinic</h3>
+        <p>Initial assessments and body composition analysis are conducted at Meridian in Fitzroy. Procedures requiring physical attendance are managed on-site.</p>
+        <ul class="v4-care-list">
+          <li>Initial clinical assessment</li>
+          <li>Body composition analysis</li>
+          <li>Procedures where required</li>
+          <li>Quarterly physician reviews (where preferred)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="v4-care-note reveal">The majority of ongoing care can occur from home. In-person attendance is required for the initial assessment and body composition scan.</div>
+  </div>
+</section>
+
+<!-- MEDICARE REBATES -->
+<section class="v4-medicare">
+  <div class="v4-section">
+    <div class="v4-medicare-card reveal">
+      <div>
+        <span class="v4-kicker" style="color:#888273">Medicare rebates</span>
+        <h2 class="v4-h2" style="color:#b4a587;max-width:20ch">Eligible consultations may attract Medicare rebates.</h2>
+        <p class="v4-body" style="color:rgba(241,239,235,.65);max-width:42ch">With a valid GP referral, specialist physician consultations may attract Medicare rebates, reducing your out-of-pocket costs. A referral is not required to enquire or attend an initial consultation.</p>
+      </div>
+      <div>
+        <ul class="v4-med-items">
+          <li class="v4-med-item">
+            <span class="v4-med-num">01</span>
+            <span class="v4-med-text"><strong>Specialist physician reviews</strong>Quarterly consultations reviewed under the applicable MBS item number where a referral applies.</span>
+          </li>
+          <li class="v4-med-item">
+            <span class="v4-med-num">02</span>
+            <span class="v4-med-text"><strong>Ongoing monitoring</strong>Progress reviews, blood work interpretation and medication titration may attract rebates under applicable items.</span>
+          </li>
+          <li class="v4-med-item">
+            <span class="v4-med-num">03</span>
+            <span class="v4-med-text"><strong>Shared care with your GP</strong>Clinical letters after every review keep your GP informed, supporting shared care arrangements and referral continuity.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDICATION DELIVERY -->
+<section class="v4-meds">
+  <div class="v4-section">
+    <div class="v4-meds-inner">
+      <div class="reveal">
+        <span class="v4-section-kicker">Medication fulfilment</span>
+        <h2 class="v4-h2">Medication delivered to your door.</h2>
+        <p class="v4-body">Where medication is prescribed following clinical assessment, Meridian supports fulfilment through a partner pharmacy. Patients receive medication directly, without needing to visit a pharmacy.</p>
+        <p class="v4-body">Medication costs are separate to the programme fee and are arranged directly via pharmacy. PBS subsidies may apply to certain medications.</p>
+      </div>
+      <div class="reveal reveal-2">
+        <ul class="v4-meds-list">
+          <li class="v4-meds-item"><span class="v4-meds-icon">&#x2709;</span><span>Electronic prescriptions issued by your physician</span></li>
+          <li class="v4-meds-item"><span class="v4-meds-icon">&#x1f3ea;</span><span>Partner pharmacy dispensing</span></li>
+          <li class="v4-meds-item"><span class="v4-meds-icon">&#x1f4e6;</span><span>Home delivery Australia-wide</span></li>
+          <li class="v4-meds-item"><span class="v4-meds-icon">&#x1f501;</span><span>Repeat prescription management</span></li>
+          <li class="v4-meds-item"><span class="v4-meds-icon">&#x1f489;</span><span>Dose titration support from your physician</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL MODELS -->
+<section class="v4-models">
+  <div class="v4-section">
+    <div class="reveal">
+      <span class="v4-section-kicker">Programme options</span>
+      <h2 class="v4-h2" style="max-width:22ch">Two ways to structure your care.</h2>
+      <p class="v4-body">Both models include the same physician-led clinical programme. The difference is how medication is arranged. Your physician will discuss which model suits your situation at your first consultation.</p>
+    </div>
+    <div class="v4-models-grid">
+      <div class="v4-model-card reveal">
+        <span class="v4-model-label">Model A</span>
+        <p class="v4-model-title">Membership + medication separate</p>
+        <p class="v4-model-sub">Programme fee covers clinical care. Medication is arranged and purchased separately through pharmacy.</p>
+        <hr class="v4-model-divider" />
+        <p class="v4-model-includes">Programme includes</p>
+        <ul class="v4-model-list">
+          <li>Physician reviews</li>
+          <li>Dietitian</li>
+          <li>Psychology</li>
+          <li>Patient app</li>
+          <li>Care coordination</li>
+        </ul>
+        <p class="v4-model-includes">Medication</p>
+        <ul class="v4-model-list">
+          <li>Purchased separately via pharmacy</li>
+        </ul>
+        <p class="v4-model-benefits-head">Benefits</p>
+        <span class="v4-model-tag">Lower entry price</span>
+        <span class="v4-model-tag">Maximum flexibility</span>
+        <span class="v4-model-tag">Simpler administration</span>
+      </div>
+      <div class="v4-model-card featured reveal reveal-2">
+        <span class="v4-model-label">Model B</span>
+        <p class="v4-model-title">Membership + medication included</p>
+        <p class="v4-model-sub">One monthly fee. Clinical care and medication delivered together for a fully integrated experience.</p>
+        <hr class="v4-model-divider" />
+        <p class="v4-model-includes">Programme includes</p>
+        <ul class="v4-model-list">
+          <li>Physician reviews</li>
+          <li>Dietitian</li>
+          <li>Psychology</li>
+          <li>Patient app</li>
+          <li>Care coordination</li>
+          <li>Medication</li>
+          <li>Home delivery</li>
+        </ul>
+        <p class="v4-model-benefits-head">Benefits</p>
+        <span class="v4-model-tag">Simplicity</span>
+        <span class="v4-model-tag">Predictable costs</span>
+        <span class="v4-model-tag">Premium experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATIENT JOURNEY -->
+<section class="v4-journey">
+  <div class="v4-section">
+    <div class="reveal" style="margin-bottom:56px">
+      <span class="v4-section-kicker">Example patient journey</span>
+      <h2 class="v4-h2" style="max-width:22ch">From first consultation to ongoing care.</h2>
+    </div>
+    <div class="v4-journey-inner">
+      <div class="v4-journey-phase reveal">
+        <span class="v4-phase-label">Month 1</span>
+        <ul class="v4-journey-steps">
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Initial consultation</strong>In-person with a Meridian consultant physician.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Clinical assessment</strong>History, bloods, metabolic markers reviewed.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Body composition scan</strong>Baseline measurement at Fitzroy clinic.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Treatment plan</strong>Personalised plan set by your physician.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Medication initiated</strong>Where clinically appropriate, prescription issued.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Medication delivered</strong>Partner pharmacy dispatches to your home.</span></li>
+        </ul>
+      </div>
+      <div class="v4-journey-phase reveal reveal-2">
+        <span class="v4-phase-label">Months 2 to 12</span>
+        <ul class="v4-journey-steps">
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Regular telehealth reviews</strong>Quarterly physician consultations via video, from home.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Dietitian support</strong>Sessions timed to your phase of care.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Psychology support</strong>Behavioural and eating-related support where indicated.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Medication optimisation</strong>Titration adjusted at each physician review.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>Progress tracked through app</strong>Clinical file, trackers and messaging in one place.</span></li>
+          <li class="v4-journey-step"><div class="v4-step-dot"></div><span class="v4-step-text"><strong>GP updated</strong>Clinical letter sent after each review.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="v4-cta" aria-label="Start your assessment">
+  <div class="v4-cta-inner">
+    <h2>Find out if you qualify.</h2>
+    <p class="v4-cta-sub">Complete the short assessment form. A Meridian clinician will respond within one business day to discuss next steps.</p>
+    <div class="v4-cta-btns">
+      <a href="/contact/#assessment" class="v4-btn-primary">Start assessment</a>
+      <a href="/clinical-pathways/metabolic-medicine/" class="v4-btn-ghost">Read the metabolic pathway</a>
+    </div>
+    <p class="v4-cta-legal">Enrolment requires physician assessment and recommendation. Results are not guaranteed. Individual clinical outcomes vary.</p>
+  </div>
+</section>
+
+<!-- AHPRA DISCLAIMER -->
+<div class="v4-ahpra">
+  <div class="v4-ahpra-inner">
+    <p><strong>Medical advertising compliance notice.</strong> This page is produced in accordance with the AHPRA and National Boards' Guidelines for Advertising Regulated Health Services. Meridian Health does not make therapeutic claims, guarantee clinical outcomes, or advertise prescription medicines. GLP-1 therapy is only prescribed following individual clinical assessment by an AHPRA-registered physician and where clinically appropriate. Results are not guaranteed and individual outcomes vary.</p>
+    <p>Medications prescribed through Meridian are TGA-regulated. PBS subsidies may apply to certain medications. Medicare rebates may apply to eligible consultations under a valid GP referral or applicable care plan. This content is for informational purposes only and does not constitute medical advice. Seek independent medical advice from a qualified practitioner before commencing any treatment programme.</p>
+    <p>Meridian Health, Suite 301, Level 3, 33 Victoria Parade, Fitzroy VIC 3065. ABN available on request. Physician registration details available at the practice.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-mark" aria-label="Meridian Health"><img src="/brand/monogram.png" alt="Meridian monogram" width="76" height="76" style="display:block;width:76px;height:76px;object-fit:contain" /></div>
+        <p style="margin:0 0 6px;color:var(--ink-65);font-size:13px">Gastrointestinal &amp; Metabolic Health</p>
+        <p style="margin:0;color:var(--ink-45);font-size:12.5px;line-height:1.55">Suite 301, Level 3<br/>33 Victoria Parade<br/>Fitzroy VIC 3065</p>
+      </div>
+      <div class="footer-col"><h4>Pathways</h4><ul>
+        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Metabolic Surgery</a></li>
+        <li><a href="/clinical-pathways/upper-gi-surgical-care/">Upper GI &amp; Surgical Care</a></li>
+        <li><a href="/clinical-pathways/metabolic-medicine/">Metabolic Medicine</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Practice</h4><ul>
+        <li><a href="/specialists/">Your Care Team</a></li>
+        <li><a href="/the-practice/">The practice</a></li>
+        <li><a href="/membership/">Membership V1</a></li>
+        <li><a href="/membership-v2/">Membership V2</a></li>
+        <li><a href="/membership-v3/">Membership V3</a></li>
+        <li><a href="/membership-v4/">Membership V4</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Get in touch</h4><ul>
+        <li>(03) 9416 4418</li>
+        <li><a href="mailto:reception@meridianhealth.com.au">reception@meridianhealth.com.au</a></li>
+        <li>Mon to Fri, 8.30am to 5.00pm</li>
+      </ul></div>
+    </div>
+    <div class="footer-legal">
+      <p>Meridian Health is a specialist medical practice. Content on this website is for informational purposes only and does not constitute medical advice. Consult a qualified clinician for assessment and treatment recommendations.</p>
+      <p style="margin-top:8px">&copy; 2025 Meridian Health. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
