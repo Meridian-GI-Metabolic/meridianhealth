@@ -446,7 +446,7 @@ body.nav-open .nav-burger span::before{opacity:0}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-item{flex:0 0 auto;width:clamp(280px,32vw,420px)}
 .marquee-item .media-card{aspect-ratio:5/3}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marquee{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
 /* App showcase */
