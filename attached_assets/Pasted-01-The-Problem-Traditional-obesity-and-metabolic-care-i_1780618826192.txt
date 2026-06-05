@@ -1,0 +1,379 @@
+01
+The Problem
+
+Traditional obesity and metabolic care is fragmented.
+
+Patients are often required to:
+
+Coordinate multiple providers
+Manage referrals independently
+Source medication separately
+Attend numerous appointments
+Navigate changing treatment options alone
+
+The result is inconsistent support and poorer long-term outcomes.
+
+02
+The Opportunity
+
+Build Australia's most seamless specialist-led metabolic care programme.
+
+One team.
+One pathway.
+One membership.
+
+A modern care model that combines:
+
+Specialist medicine
+GLP-1 therapies
+Nutrition
+Behavioural support
+Digital tools
+Ongoing accountability
+
+Delivered through a combination of telehealth and in-person care.
+
+03
+The Meridian Membership
+
+A structured 12-month programme designed to support long-term metabolic health.
+
+Included:
+
+Quarterly physician reviews
+GLP-1 supervision (where clinically indicated)
+Dietitian consultations
+Psychology support
+Patient app
+Care coordination
+GP communication
+
+One programme.
+One team.
+One plan.
+
+04
+How Care Is Delivered
+Video First. Clinic When Needed.
+
+Patients can access care through:
+
+Telehealth Video Reviews
+
+Specialist physician consultations
+Medication reviews
+Progress monitoring
+Treatment planning
+
+In Clinic
+
+Initial assessments
+Body composition analysis
+Procedures where required
+
+The majority of ongoing care can occur from home.
+
+05
+Medicare Rebates
+
+Eligible consultations may attract Medicare rebates with a valid GP referral.
+
+This allows patients to access specialist-led care while reducing out-of-pocket costs.
+
+Patients receive:
+
+Specialist physician reviews
+Ongoing monitoring
+Shared care communication with their GP
+
+All within a structured programme.
+
+06
+Medication Delivered To Your Door
+Optional Medication Fulfilment
+
+Where prescribed:
+
+Electronic prescriptions
+Partner pharmacy dispensing
+Home delivery Australia-wide
+Repeat prescription management
+Dose titration support
+
+Patients receive medication directly to their home without needing to visit a pharmacy.
+
+07
+Two Commercial Models
+Model A
+Membership + Medication Separate
+
+Membership Includes:
+
+Physician reviews
+Dietitian
+Psychology
+App
+Care coordination
+
+Medication:
+
+Purchased separately via pharmacy
+
+Benefits
+
+Lower entry price
+Maximum flexibility
+Simpler administration
+08
+Alternative Commercial Model
+Model B
+Membership + Medication Included
+
+One monthly fee.
+
+Includes:
+
+Physician reviews
+Dietitian
+Psychology
+App
+Care coordination
+Medication
+Home delivery
+
+Benefits
+
+Simplicity
+Predictable costs
+Premium patient experience
+
+Similar to leading US digital health models.
+
+09
+Example Patient Journey
+Month 1
+
+Initial Consultation
+
+↓
+
+Clinical Assessment
+
+↓
+
+Body Composition Scan
+
+↓
+
+Treatment Plan
+
+↓
+
+Medication Initiated (where appropriate)
+
+↓
+
+Medication Delivered
+
+Months 2–12
+
+Regular Telehealth Reviews
+
+↓
+
+Dietitian Support
+
+↓
+
+Psychology Support
+
+↓
+
+Medication Optimisation
+
+↓
+
+Progress Tracking Through App
+
+↓
+
+GP Updated Following Reviews
+
+10
+The Meridian App
+
+The digital front door to care.
+
+Patients can:
+
+View appointments
+Complete forms
+Access educational content
+Track progress
+Message the care team
+Receive reminders
+
+A connected experience between consultations.
+
+11
+Why This Matters
+
+Healthcare is moving from episodic treatment to continuous care.
+
+Patients increasingly expect:
+
+Digital access
+Convenience
+Ongoing support
+Personalisation
+Fewer administrative barriers
+
+The most successful healthcare organisations of the next decade will operate more like platforms than practices.
+
+12
+The Meridian Difference
+
+Most clinics provide appointments.
+
+Meridian provides a care ecosystem.
+
+Combining:
+
+Upper GI Surgery
++
+Bariatric Surgery
++
+Metabolic Medicine
++
+Digital Health
+
+Into a single, integrated patient journey.
+
+13
+Future State Vision
+
+A patient can:
+
+Book online
+
+↓
+
+Meet their physician via video
+
+↓
+
+Receive Medicare rebates
+
+↓
+
+Have medication delivered
+
+↓
+
+Access dietitians and psychology
+
+↓
+
+Track progress in the app
+
+↓
+
+Stay connected to their care team
+
+Without needing to navigate multiple providers.
+
+This is the future of specialist metabolic care.
+
+MERIDIAN
+A more connected model for metabolic health.
+
+want to include all different medications like hims would, retatrutize, tia, semaglutide
+
+I would be careful about presenting it like Hims.
+
+In Australia, and particularly under AHPRA advertising guidelines, you generally cannot market prescription medicines directly to consumers in the way US platforms do. You can discuss treatment options in an educational context, but you cannot advertise specific prescription medicines as consumer products.
+
+Instead, I'd position it like this:
+
+Treatment Pathways
+Evidence-Based Metabolic Medicine
+
+Every treatment plan is individualised following assessment by a Meridian physician.
+
+Treatment options may include:
+
+Lifestyle & Behavioural Intervention
+
+Nutrition, movement, sleep, stress management and habit formation.
+
+GLP-1 Receptor Agonists
+
+Where clinically appropriate and prescribed by a physician.
+
+Dual Agonist Therapies
+
+Including newer generation medications where approved and clinically indicated.
+
+Emerging Metabolic Therapies
+
+As evidence evolves and regulatory approvals occur.
+
+Bariatric Surgery
+
+For eligible patients seeking the most effective long-term intervention for obesity and metabolic disease.
+
+Then on the physician-facing or educational section:
+
+Current and Emerging Therapies
+Class	Examples
+GLP-1 Receptor Agonists	Semaglutide
+Dual GIP / GLP-1 Agonists	Tirzepatide
+Triple Hormone Agonists	Retatrutide*
+Amylin Analogues	Cagrilintide*
+Combination Therapies	Emerging
+
+*Subject to regulatory approval and clinical availability.
+
+Steve Jobs Version
+
+Rather than selling drugs.
+
+Sell access.
+
+One Programme.
+Multiple Pathways.
+
+Not every patient requires the same treatment.
+
+Some achieve success through nutritional intervention.
+
+Some benefit from modern metabolic medicines.
+
+Some require surgery.
+
+The role of Meridian is not to promote a particular treatment.
+
+It is to identify the most appropriate pathway for the individual sitting in front of us.
+
+Then visually have:
+
+Lifestyle
+⬤
+
+Semaglutide
+⬤
+
+Tirzepatide
+⬤
+
+Future Therapies
+⬤
+
+Surgery
+⬤
+
+All feeding into:
+
+Personalised Care
+
+This feels much more premium, clinically credible and APHRA-safe than a Hims-style page listing "Retatrutide", "Tirzepatide", "Semaglutide" as products to buy. It positions Meridian as the expert navigator of a rapidly evolving metabolic medicine landscape rather than a medication seller.
