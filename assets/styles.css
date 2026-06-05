@@ -615,17 +615,17 @@ body.nav-open .nav-burger span::before{opacity:0}
 .breakout-card.tall .bo-img{aspect-ratio:4/5}
 .breakout-card .bo-img img{width:100%;height:100%;object-fit:cover;display:block}
 /* Tinted variants — all stay within Meridian palette, no dark page areas */
-.breakout-card.olive{background:#dbd9d7;color:var(--ink)}
+.breakout-card.olive{background:#ebe8e3;color:var(--ink)}
 .breakout-card.olive .bo-eyebrow{color:var(--ink-55)}
 .breakout-card.olive .bo-rule{background:var(--ink-25)}
 .breakout-card.olive .bo-body{color:rgba(86,73,41,.72)}
-.breakout-card.warm{background:#dbd9d7;color:var(--ink)}
+.breakout-card.warm{background:#ebe8e3;color:var(--ink)}
 .breakout-card.warm .bo-eyebrow{color:var(--gold-deep)}
 .breakout-card.warm .bo-body{color:rgba(86,73,41,.72)}
-.breakout-card.cream{background:#dbd9d7;color:var(--ink)}
+.breakout-card.cream{background:#ebe8e3;color:var(--ink)}
 .breakout-card.cream .bo-eyebrow{color:var(--gold-deep)}
 .breakout-card.cream .bo-body{color:var(--ink-65)}
-.breakout-card.stone{background:#dbd9d7;color:var(--ink)}
+.breakout-card.stone{background:#ebe8e3;color:var(--ink)}
 .breakout-card.stone .bo-eyebrow{color:var(--gold-deep)}
 .breakout-card.stone .bo-body{color:var(--ink-65)}
 /* Biomarker chip cloud (decorative) */
@@ -841,7 +841,7 @@ main#content{margin:0;padding:0;background:transparent}
 .breakout-card .bo-body{font-size:13.5px;line-height:1.6;color:var(--ink-65);max-width:42ch;margin:0}
 
 /* Olive tall card refinement */
-.breakout-card.olive{background:#dbd9d7}
+.breakout-card.olive{background:#ebe8e3}
 .breakout-card.olive .bo-eyebrow{color:#6b5828!important}
 .breakout-card.olive .bo-body{color:rgba(86,73,41,.7)}
 
