@@ -83,3 +83,9 @@ id = "8j9T5DPFEo8VydHsVjHXs"
 uri = "file://brand/assets/badge-opening.png"
 type = "image"
 title = "Badge: Opening September 01 2026"
+
+[[outputs]]
+id = "lXd_MEkTbsYNzQcYgi_Wm"
+uri = "file://_docs/meridian-glass-badges.zip"
+type = "unspecified"
+title = "Meridian Glass Badges (badge-mdt.png + badge-opening.png)"
