@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Referring Clinicians | Meridian Health | Bariatric Metabolic Surgery, Melbourne</title>
+  <meta name="description" content="Refer a patient to Meridian Health's specialist-led bariatric metabolic surgery practice. Comprehensive MDT assessment, outcomes that last, and a written report back to the referring clinician." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:   #c2a55e;
+      --ink:    #201e11;
+      --ink-60: rgba(32,30,17,0.60);
+      --ink-20: rgba(32,30,17,0.20);
+      --cream:  #f4f0e8;
+      --stone:  #faf9f6;
+      --white:  #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Georgia, serif;
+      color: var(--ink);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    /* ── TYPOGRAPHY ────────────────────────────────── */
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: normal;
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: normal;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    .eyebrow {
+      font-family: Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      font-family: Georgia, serif;
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      color: var(--ink-60);
+      line-height: 1.7;
+    }
+
+    /* ── LAYOUT ────────────────────────────────────── */
+    .wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── SITE HEADER ───────────────────────────────── */
+    .site-header {
+      border-bottom: 1px solid var(--ink-20);
+      padding: 18px 0;
+    }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .site-logo {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .site-logo span { color: var(--gold); }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      font-family: Georgia, serif;
+      font-size: 13px;
+      color: var(--ink-60);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .site-nav a:hover { color: var(--ink); }
+    .site-nav a.active { color: var(--gold); font-weight: 600; }
+    .nav-cta {
+      background: var(--ink);
+      color: var(--white) !important;
+      padding: 9px 18px;
+      font-size: 12px !important;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: #3a3620 !important; color: var(--white) !important; }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      border-bottom: 2px solid var(--gold);
+      padding: 64px 0 52px;
+      background: var(--white);
+    }
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 56px;
+      align-items: end;
+    }
+    .hero-left { }
+    .hero h1 { margin: 16px 0 20px; }
+    .hero-contact-card {
+      background: var(--ink);
+      padding: 28px 32px;
+      color: var(--white);
+    }
+    .hero-contact-card .card-eyebrow {
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: block;
+    }
+    .hero-contact-card .contact-row {
+      margin-bottom: 16px;
+    }
+    .hero-contact-card .contact-row:last-child { margin-bottom: 0; }
+    .hero-contact-card .c-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .hero-contact-card .c-value {
+      font-size: 15px;
+      color: var(--white);
+    }
+    .hero-contact-card .c-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 2px;
+    }
+    .hero-contact-card .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 18px 0;
+    }
+    .hero-contact-card .refer-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── INTRO STATEMENT ───────────────────────────── */
+    .intro-section {
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .intro-section .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .intro-quote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      background: var(--cream);
+    }
+    .intro-quote p {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* ── CRITERIA ──────────────────────────────────── */
+    .criteria-section {
+      padding: 52px 0;
+      background: var(--stone);
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .criteria-section .wrap { }
+    .criteria-header {
+      margin-bottom: 36px;
+    }
+    .criteria-header h2 { margin-bottom: 10px; }
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .criterion {
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      padding: 22px 24px;
+    }
+    .criterion h3 { margin-bottom: 8px; font-size: 15px; }
+    .criterion p { font-size: 14px; color: var(--ink-60); line-height: 1.65; margin: 0; }
+
+    /* ── EVIDENCE BOX ──────────────────────────────── */
+    .evidence-band {
+      background: var(--ink);
+      padding: 40px 0;
+    }
+    .evidence-band .wrap {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .evidence-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+    }
+    .evidence-item {
+      border-left: 1px solid rgba(194,165,94,0.3);
+      padding-left: 20px;
+    }
+    .evidence-item p {
+      font-size: 13.5px;
+      color: rgba(240,235,224,0.85);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── MDT ASSESSMENT ────────────────────────────── */
+    .assessment-section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .assessment-section .wrap {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .assessment-intro h2 { margin-bottom: 14px; }
+    .assessment-intro p { font-size: 14px; color: var(--ink-60); line-height: 1.7; }
+    .assessment-steps { }
+    .a-step {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--ink-20);
+      align-items: flex-start;
+    }
+    .a-step:last-child { border-bottom: none; }
+    .a-step-num {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: var(--gold);
+      font-weight: normal;
+      min-width: 36px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .a-step-body h3 { font-size: 15px; margin-bottom: 4px; }
+    .a-step-body p { font-size: 13.5px; color: var(--ink-60); line-height: 1.65; margin: 0; }
+
+    /* ── WHAT TO TELL THE PATIENT ───────────────────── */
+    .patient-section {
+      padding: 52px 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .patient-section .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+    }
+    .patient-points { }
+    .patient-point {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .patient-point:last-child { margin-bottom: 0; }
+    .point-arrow {
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+    .patient-point p { font-size: 14px; color: var(--ink); line-height: 1.7; margin: 0; }
+
+    /* ── OUTCOMES ──────────────────────────────────── */
+    .outcomes-section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .outcomes-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .outcomes-header h2 { margin-bottom: 6px; }
+    .outcomes-header p { font-size: 14px; color: var(--ink-60); }
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--ink-20);
+    }
+    .outcome-cell {
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid var(--ink-20);
+    }
+    .outcome-cell:last-child { border-right: none; }
+    .outcome-metric {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .outcome-change {
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .outcome-desc {
+      font-size: 11.5px;
+      color: var(--ink-60);
+      line-height: 1.5;
+    }
+    .outcomes-disclaimer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--ink-60);
+      font-style: italic;
+      margin-top: 16px;
+    }
+
+    /* ── CARE TEAM ─────────────────────────────────── */
+    .team-section {
+      padding: 56px 0;
+      background: var(--stone);
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .team-section .wrap {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .team-intro h2 { margin-bottom: 14px; }
+    .team-intro p { font-size: 14px; color: var(--ink-60); line-height: 1.7; }
+    .team-members {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .team-member {
+      background: var(--white);
+      border: 1px solid var(--ink-20);
+      border-left: 3px solid var(--gold);
+      padding: 18px 22px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .member-bullet {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .member-body h3 { font-size: 15px; margin-bottom: 4px; }
+    .member-body p { font-size: 13px; color: var(--ink-60); line-height: 1.6; margin: 0; }
+    .team-note {
+      border-left: 2px solid var(--gold);
+      padding: 14px 18px;
+      background: var(--cream);
+      margin-top: 20px;
+    }
+    .team-note p { font-size: 13px; color: var(--ink-60); font-style: italic; line-height: 1.7; margin: 0; }
+
+    /* ── HOW TO REFER CTA ──────────────────────────── */
+    .refer-cta-section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .refer-cta-section .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .refer-cta-left { }
+    .refer-cta-left h2 { margin-bottom: 14px; }
+    .refer-cta-left p { font-size: 14px; color: var(--ink-60); line-height: 1.7; }
+    .refer-methods { display: flex; flex-direction: column; gap: 16px; }
+    .refer-method {
+      background: var(--ink);
+      padding: 22px 26px;
+    }
+    .refer-method .m-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .refer-method .m-value {
+      font-size: 18px;
+      color: var(--white);
+      display: block;
+    }
+    .refer-method .m-note {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 3px;
+    }
+    .refer-download {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      margin-top: 8px;
+    }
+    .refer-download p { font-size: 13.5px; color: var(--ink); line-height: 1.6; margin-bottom: 12px; }
+    .dl-link {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+    }
+    .dl-link:hover { color: var(--ink); border-color: var(--ink); }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    .site-footer {
+      background: var(--ink);
+      padding: 44px 0 28px;
+      color: rgba(255,255,255,0.55);
+    }
+    .site-footer .wrap {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 10px;
+    }
+    .footer-address {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-col ul li a.highlighted { color: var(--gold); }
+    .footer-bar {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bar p { font-size: 11px; color: rgba(255,255,255,0.3); margin: 0; }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero .wrap { grid-template-columns: 1fr; }
+      .intro-section .wrap { grid-template-columns: 1fr; }
+      .criteria-grid { grid-template-columns: 1fr; }
+      .evidence-band .wrap { grid-template-columns: 1fr; }
+      .evidence-label { writing-mode: horizontal-tb; transform: none; }
+      .assessment-section .wrap { grid-template-columns: 1fr; }
+      .patient-section .wrap { grid-template-columns: 1fr; }
+      .outcomes-grid { grid-template-columns: 1fr 1fr; }
+      .outcome-cell { border-bottom: 1px solid var(--ink-20); }
+      .team-section .wrap { grid-template-columns: 1fr; }
+      .refer-cta-section .wrap { grid-template-columns: 1fr; }
+      .site-footer .wrap { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .wrap { padding: 0 20px; }
+      .hero { padding: 40px 0 36px; }
+      .site-nav { gap: 14px; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .site-footer .wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="site-logo">Meridian &nbsp;<span>·</span>&nbsp; Gastrointestinal &amp; Metabolic Health</a>
+    <nav class="site-nav">
+      <a href="/clinical-pathways/bariatric-surgery/">Bariatric Surgery</a>
+      <a href="/clinical-pathways/upper-gi-surgical-care/">Upper GI</a>
+      <a href="/clinical-pathways/metabolic-medicine/">Metabolic Medicine</a>
+      <a href="/specialists/">Care Team</a>
+      <a href="/refer/" class="active">Referring Clinicians</a>
+      <a href="/contact/" class="nav-cta">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-left">
+      <span class="eyebrow">For GPs and referring clinicians</span>
+      <h1>A specialist-led pathway for your complex metabolic patients.</h1>
+      <p class="lead" style="margin-top:20px;">Meridian Health is a multidisciplinary bariatric metabolic surgery practice. Our team provides comprehensive assessment, evidence-based surgical and medical management, and long-term follow-up for patients with chronic metabolic disease.</p>
+    </div>
+    <div class="hero-contact-card">
+      <span class="card-eyebrow">Referral contact</span>
+      <div class="contact-row">
+        <span class="c-label">By phone</span>
+        <span class="c-value">(03) 9416 4418</span>
+        <span class="c-note">Monday to Friday, 8:30am to 5:00pm</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">By email</span>
+        <span class="c-value" style="font-size:13px;">reception@meridianhealth.com.au</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Online</span>
+        <span class="c-value" style="font-size:13px;">/contact/</span>
+      </div>
+      <hr class="divider">
+      <p class="refer-note">A GP referral is helpful but not required for initial enquiry. Our team will contact your patient within one business day to arrange assessment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STATEMENT -->
+<section class="intro-section">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The practice</span>
+      <h2>Anchored in a world-class clinical precinct.</h2>
+      <p style="font-size:14px;color:var(--ink-60);line-height:1.75;margin-top:10px;">Meridian Health operates from the Aitkenhead Medical Discovery Precinct at Brenan Place, Melbourne, alongside St Vincent's Private Hospital. Consulting, diagnostics and hospital services are integrated within the same precinct, creating continuity across the referral arc.</p>
+      <p style="font-size:14px;color:var(--ink-60);line-height:1.75;">The referring GP receives a written summary following every assessment and remains an active part of the patient's care record. We welcome direct clinical conversations before referral.</p>
+    </div>
+    <div class="intro-quote">
+      <p>Our multi-disciplinary team delivers bariatric metabolic surgery outcomes that are among the most durable in chronic metabolic disease management. BMI alone is not the determinant of candidacy; metabolic burden and long-term trajectory are the primary clinical considerations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL CRITERIA -->
+<section class="criteria-section">
+  <div class="wrap">
+    <div class="criteria-header">
+      <span class="eyebrow">Referral criteria</span>
+      <h2>Who to refer</h2>
+      <p style="font-size:14px;color:var(--ink-60);">Consider a Meridian referral for patients presenting with any of the following clinical profiles.</p>
+    </div>
+    <div class="criteria-grid">
+      <div class="criterion">
+        <h3>Type 2 Diabetes with Medication Escalation</h3>
+        <p>Long-standing T2DM with poor glycaemic control despite multiple agents; HbA1c persistently above 7.5%; patients who have not achieved remission through lifestyle or pharmacological intervention.</p>
+      </div>
+      <div class="criterion">
+        <h3>Elevated Metabolic and Cardiovascular Risk</h3>
+        <p>BMI 35 or above with one or more metabolic comorbidities; BMI 30 to 35 with severe insulin resistance, cardiovascular risk, or metabolic syndrome. BMI alone is not the determinant of candidacy.</p>
+      </div>
+      <div class="criterion">
+        <h3>GLP-1 Plateau or Cessation</h3>
+        <p>Patients whose GLP-1 pharmacotherapy has plateaued, is unsustainable long-term, or has been ceased with significant weight and metabolic recurrence.</p>
+      </div>
+      <div class="criterion">
+        <h3>Complex Obesity with Failed Conservative Management</h3>
+        <p>Patients who have made sustained lifestyle effort over two or more years without durable metabolic benefit and are seeking a definitive, evidence-based intervention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE BAND -->
+<div class="evidence-band">
+  <div class="wrap">
+    <div class="evidence-label">The evidence</div>
+    <div class="evidence-item">
+      <p>T2DM remission rates in appropriately selected surgical patients exceed those of any pharmacological intervention at the five-year mark.</p>
+    </div>
+    <div class="evidence-item">
+      <p>Long-term weight loss maintenance is superior to every non-surgical intervention at both the five and ten-year marks.</p>
+    </div>
+    <div class="evidence-item">
+      <p>All-cause cardiovascular mortality is meaningfully reduced in surgical patients versus matched non-surgical controls.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MDT ASSESSMENT -->
+<section class="assessment-section">
+  <div class="wrap">
+    <div class="assessment-intro">
+      <span class="eyebrow">MDT assessment</span>
+      <h2>What every referred patient receives.</h2>
+      <p>No surgical decision is made before the full multi-disciplinary team review is complete. The assessment is a clinical process, not a commitment to surgery.</p>
+      <p>The referring GP receives a written summary of all assessment findings and is invited to provide clinical context at any stage of the process.</p>
+    </div>
+    <div class="assessment-steps">
+      <div class="a-step">
+        <div class="a-step-num">01</div>
+        <div class="a-step-body">
+          <h3>Surgical Consultation</h3>
+          <p>Specialist assessment by the bariatric metabolic surgeon, including full clinical history, surgical candidacy review, and discussion of procedure options where appropriate.</p>
+        </div>
+      </div>
+      <div class="a-step">
+        <div class="a-step-num">02</div>
+        <div class="a-step-body">
+          <h3>Seca Body Composition Analysis</h3>
+          <p>Medical-grade measurement of skeletal muscle mass, visceral fat, bone mineral density, and metabolic phase angle. Results inform the surgical plan and post-operative monitoring targets.</p>
+        </div>
+      </div>
+      <div class="a-step">
+        <div class="a-step-num">03</div>
+        <div class="a-step-body">
+          <h3>Dietitian Review</h3>
+          <p>Nutritional assessment and pre-operative optimisation by the MDT dietitian, with a protocol tailored to the patient's surgical pathway and existing metabolic profile.</p>
+        </div>
+      </div>
+      <div class="a-step">
+        <div class="a-step-num">04</div>
+        <div class="a-step-body">
+          <h3>Psychological Readiness Evaluation</h3>
+          <p>Structured readiness assessment to confirm the patient's preparedness for the pre- and post-operative process, including lifestyle expectations and behavioural support needs.</p>
+        </div>
+      </div>
+      <div class="a-step">
+        <div class="a-step-num">05</div>
+        <div class="a-step-body">
+          <h3>Written Care Plan</h3>
+          <p>A complete, patient-reviewed plan covering the surgical pathway, post-operative follow-up, and long-term monitoring schedule. A copy is shared with the referring GP and held in the patient's care record.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO TELL THE PATIENT -->
+<section class="patient-section">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For the conversation with your patient</span>
+      <h2>What to tell them before the referral.</h2>
+    </div>
+    <div class="patient-points">
+      <div class="patient-point">
+        <span class="point-arrow">&#8250;</span>
+        <p>This is a specialist consultation, not a commitment to surgery. The assessment determines candidacy; no surgical decision is made before the MDT review is complete.</p>
+      </div>
+      <div class="patient-point">
+        <span class="point-arrow">&#8250;</span>
+        <p>Bariatric metabolic surgery is not a procedure of last resort. It is the most evidence-supported long-term intervention available for complex metabolic disease.</p>
+      </div>
+      <div class="patient-point">
+        <span class="point-arrow">&#8250;</span>
+        <p>Meridian's care does not end at surgery. Patients remain under active team care through twelve-month follow-up and long-term monitoring, with the referring GP kept informed throughout.</p>
+      </div>
+      <div class="patient-point">
+        <span class="point-arrow">&#8250;</span>
+        <p>Medicare rebates may apply where eligible services are provided under a valid referral. Our team will clarify eligibility at the initial assessment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES SNAPSHOT -->
+<section class="outcomes-section">
+  <div class="wrap">
+    <div class="outcomes-header">
+      <span class="eyebrow">Outcomes snapshot</span>
+      <h2>Indicative twelve-month outcomes</h2>
+      <p>T2DM patient, post bariatric metabolic surgery</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-cell">
+        <div class="outcome-metric">HbA1c</div>
+        <div class="outcome-change">8.4% to 5.9%</div>
+        <div class="outcome-desc">Returned to normal range</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-metric">Medications</div>
+        <div class="outcome-change">4 agents to 2</div>
+        <div class="outcome-desc">Continuing to taper</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-metric">Blood Pressure</div>
+        <div class="outcome-change">138/88 to 118/76</div>
+        <div class="outcome-desc">Normalised</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-metric">Triglycerides</div>
+        <div class="outcome-change">3.2 to 1.1 mmol/L</div>
+        <div class="outcome-desc">Within normal range</div>
+      </div>
+    </div>
+    <p class="outcomes-disclaimer">Representative patient outcomes. Individual results vary. Published with patient consent. Long-term monitoring plan is maintained for all surgical patients.</p>
+  </div>
+</section>
+
+<!-- CARE TEAM -->
+<section class="team-section">
+  <div class="wrap">
+    <div class="team-intro">
+      <span class="eyebrow">The care team</span>
+      <h2>Your patient's clinical team.</h2>
+      <p>Every referred patient is managed by the same core MDT, with surgical, nursing, nutritional, and psychological expertise present throughout the assessment and post-operative pathway.</p>
+    </div>
+    <div>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="member-bullet"></div>
+          <div class="member-body">
+            <h3>Michael, Bariatric Metabolic Surgeon</h3>
+            <p>Fellowship-trained specialist surgeon with full professional accountability for surgical outcomes and long-term care. Leads the surgical candidacy review and the written plan shared with the referring GP.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-bullet"></div>
+          <div class="member-body">
+            <h3>Salena, MDT Dietitian</h3>
+            <p>Pre- and post-operative nutritional assessment, optimisation, and ongoing dietary support throughout the care continuum. Provides a structured protocol aligned with the patient's surgical pathway.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-bullet"></div>
+          <div class="member-body">
+            <h3>Nicole, Metabolic Nurse Specialist</h3>
+            <p>Clinical coordination, pre-admission management, and the primary point of contact for patients between appointments. Ensures continuity of care and timely updates to the referring clinician.</p>
+          </div>
+        </div>
+      </div>
+      <div class="team-note">
+        <p>The referring GP receives a written summary following the initial assessment and remains an active part of the patient's care record. We welcome clinical correspondence and direct conversations about patient candidacy before referral.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO REFER -->
+<section class="refer-cta-section">
+  <div class="wrap">
+    <div class="refer-cta-left">
+      <span class="eyebrow">How to refer</span>
+      <h2>Send us a referral.</h2>
+      <p>You can refer by phone, email, or via our online enquiry form. A clinician will review the referral and contact your patient within one business day to arrange an initial assessment appointment.</p>
+      <p>If you would like to discuss clinical candidacy before referring, call the practice directly. We welcome conversations with GPs before the patient is seen.</p>
+      <div class="refer-download">
+        <p>The Meridian GP Referral Guide summarises referral criteria, the MDT assessment process, and contact details in a single print-ready page.</p>
+        <a href="/gp-referral-guide.pdf" class="dl-link">Download referral guide (PDF)</a>
+      </div>
+    </div>
+    <div class="refer-methods">
+      <div class="refer-method">
+        <span class="m-label">By phone</span>
+        <span class="m-value">(03) 9416 4418</span>
+        <span class="m-note">Monday to Friday, 8:30am to 5:00pm</span>
+      </div>
+      <div class="refer-method">
+        <span class="m-label">By email</span>
+        <span class="m-value" style="font-size:14px;">reception@meridianhealth.com.au</span>
+      </div>
+      <div class="refer-method">
+        <span class="m-label">Online referral form</span>
+        <span class="m-value" style="font-size:14px;">meridianhealth.com.au/contact/</span>
+        <span class="m-note">Secure enquiry form. Reply within one business day.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="footer-brand">Meridian Health</div>
+      <div class="footer-address">
+        Gastrointestinal &amp; Metabolic Health<br>
+        Brenan Place, Aitkenhead Medical Discovery Precinct<br>
+        Melbourne VIC<br><br>
+        (03) 9416 4418<br>
+        reception@meridianhealth.com.au<br>
+        Mon to Fri, 8:30am to 5:00pm
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Pathways</h4>
+      <ul>
+        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Surgery</a></li>
+        <li><a href="/clinical-pathways/upper-gi-surgical-care/">Upper GI &amp; Surgical Care</a></li>
+        <li><a href="/clinical-pathways/metabolic-medicine/">Metabolic Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="/the-practice/">The Practice</a></li>
+        <li><a href="/specialists/">Your Care Team</a></li>
+        <li><a href="/membership/">Membership</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Clinicians</h4>
+      <ul>
+        <li><a href="/refer/" class="highlighted">Referring Clinicians</a></li>
+        <li><a href="/gp-referral-guide.pdf">Download Referral Guide</a></li>
+        <li><a href="/contact/">Send a Referral</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-bar">
+      <p>© 2026 Meridian Health &nbsp;·&nbsp; Fitzroy VIC</p>
+      <p>meridianhealth.com.au/refer/</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

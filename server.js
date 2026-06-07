@@ -23,6 +23,7 @@ const MIME = {
   ".woff2": "font/woff2",
   ".mp4": "video/mp4",
   ".txt": "text/plain",
+  ".pdf": "application/pdf",
 };
 
 function serveFile(res, filePath) {
