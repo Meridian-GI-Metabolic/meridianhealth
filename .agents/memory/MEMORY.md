@@ -1,1 +1,2 @@
 - [NixOS PDF generation](nixos-pdf.md) — use `nix-shell -p chromium --run "chromium --headless --no-sandbox --disable-gpu --print-to-pdf=..."` for reliable PDF output
+- [Meridian team definitions](meridian-team.md) — all three named clinicians (Michael, Salena, Nicole) are FRACS surgeons; never describe Salena or Nicole as physicians.
