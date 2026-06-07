@@ -415,7 +415,7 @@ body.nav-open .nav-burger span::before{opacity:0}
 .hero-art .hero-art-frame{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--stone) 0%,var(--cream-3) 100%);border-radius:14px;overflow:hidden;border:1px solid var(--ink-08);display:flex;align-items:center;justify-content:center}
 .hero-art .hero-art-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0;filter:saturate(.88) brightness(1.02)}
 .hero-art .hero-art-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,29,16,0) 50%,rgba(35,29,16,.38) 100%);pointer-events:none;z-index:1}
-.hero-art-badge{position:absolute;bottom:22px;left:22px;z-index:2;background:rgba(243,241,239,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:10px;padding:13px 18px;border:1px solid rgba(86,73,41,.1)}
+.hero-art-badge{position:absolute;bottom:22px;left:22px;z-index:2;background:rgba(255,255,255,.18);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-radius:12px;padding:13px 18px;border:1px solid rgba(255,255,255,.38);box-shadow:0 2px 16px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.45)}
 .hero-art-badge-label{font-size:10px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:4px}
 .hero-art-badge-val{font-size:13.5px;font-weight:500;color:var(--ink);letter-spacing:-.005em;display:block;line-height:1.35}
 /* Homepage trust strip */
