@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Health | Shooting Schedule | Metabolic Dominance Campaign</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: #f9f7f3; font-family: Arial, sans-serif; color: #201e11; }
+    .page { max-width: 960px; margin: 0 auto; padding: 60px 40px 80px; }
+
+    /* ---- FORMAT BADGES ---- */
+    .badge-reel         { display: inline-block; background: #201e11; color: #c2a55e; padding: 2px 8px; border-radius: 2px; font-size: 10px; font-weight: bold; letter-spacing: 1px; }
+    .badge-story        { display: inline-block; background: #3a6a8a; color: #fff; padding: 2px 8px; border-radius: 2px; font-size: 10px; font-weight: bold; letter-spacing: 1px; }
+
+    /* ---- LOCATION COLOUR BANDS ---- */
+    .loc-michael        { border-left: 4px solid #c2a55e; }
+    .loc-brenan         { border-left: 4px solid #4a7c59; }
+    .loc-aitkenhead     { border-left: 4px solid #3a6a8a; }
+    .loc-patient        { border-left: 4px solid #7a5c8a; }
+    .loc-lifestyle      { border-left: 4px solid #888; }
+    .loc-theatre        { border-left: 4px solid #a83232; }
+
+    /* ---- WEEK TABLE ---- */
+    .week-block         { margin-bottom: 48px; }
+    .week-header        { background: #201e11; color: #c2a55e; padding: 11px 18px; display: flex; align-items: baseline; gap: 18px; border-radius: 4px 4px 0 0; }
+    .week-header .wnum  { font-family: Georgia, serif; font-size: 20px; font-weight: bold; }
+    .week-header .wlabel { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+    .week-header .wcount { font-size: 11px; margin-left: auto; opacity: 0.7; }
+
+    table.shoot-table   { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.shoot-table thead tr { background: #f4f0e8; border-bottom: 2px solid #c2a55e; }
+    table.shoot-table th { padding: 7px 10px; text-align: left; color: #201e11; font-family: Georgia, serif; font-weight: normal; font-size: 11px; }
+    table.shoot-table td { padding: 8px 10px; vertical-align: top; }
+    table.shoot-table tr + tr { border-top: 1px solid #eee; }
+    table.shoot-table tbody tr:nth-child(even) { background: #faf9f6; }
+
+    .post-num   { font-family: Georgia, serif; font-size: 14px; font-weight: bold; color: #c2a55e; white-space: nowrap; }
+    .post-title { color: #201e11; font-weight: bold; font-size: 12px; line-height: 1.4; }
+    .day-label  { font-weight: bold; color: #201e11; white-space: nowrap; }
+    .duration   { color: #555; white-space: nowrap; }
+    .talent-cell { color: #201e11; font-size: 11px; line-height: 1.5; }
+    .location-cell { color: #201e11; font-size: 11px; line-height: 1.5; }
+    .notes-cell { color: #555; font-size: 11px; line-height: 1.5; font-style: italic; }
+
+    .flag-michael   { display: inline-block; background: #c2a55e; color: #201e11; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .flag-salena    { display: inline-block; background: #4a7c59; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .flag-nicole    { display: inline-block; background: #3a6a8a; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .flag-patient   { display: inline-block; background: #7a5c8a; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .flag-none      { display: inline-block; background: #ccc; color: #201e11; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .flag-special   { display: inline-block; background: #a83232; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.5px; margin-bottom: 2px; }
+
+    .week-note { background: #f4f0e8; border-left: 3px solid #c2a55e; padding: 9px 14px; margin-top: 1px; border-radius: 0 0 4px 4px; font-size: 11px; color: #201e11; line-height: 1.6; }
+    .week-note strong { color: #201e11; }
+
+    /* ---- BATCH SHOOT DAYS ---- */
+    .batch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 48px; }
+    .batch-card { border: 1px solid #ddd; border-radius: 4px; background: #fff; overflow: hidden; }
+    .batch-card-header { padding: 10px 14px; font-family: Georgia, serif; font-size: 13px; font-weight: bold; color: #fff; }
+    .bh-michael   { background: #c2a55e; color: #201e11; }
+    .bh-brenan    { background: #4a7c59; }
+    .bh-patient   { background: #7a5c8a; }
+    .bh-lifestyle { background: #888; }
+    .bh-theatre   { background: #a83232; }
+    .batch-card-body { padding: 12px 14px; font-size: 12px; line-height: 1.7; }
+    .batch-card-body strong { color: #201e11; }
+    .batch-card-body .posts-list { margin: 6px 0; }
+    .batch-card-body .posts-list span { display: inline-block; background: #f4f0e8; border: 1px solid #ddd; border-radius: 2px; padding: 1px 6px; margin: 2px 2px 2px 0; font-size: 11px; font-weight: bold; color: #c2a55e; font-family: Georgia, serif; }
+    .batch-meta { font-size: 11px; color: #666; margin-top: 6px; }
+    .batch-meta span { display: block; }
+
+    /* ---- LEGEND ---- */
+    .legend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 40px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #201e11; }
+    .legend-swatch { width: 16px; height: 16px; border-radius: 2px; flex-shrink: 0; }
+
+    /* ---- PRINT ---- */
+    @media print {
+      body { background: #fff; }
+      .page { padding: 20px 16px; max-width: 100%; }
+      .batch-grid { grid-template-columns: 1fr 1fr; }
+      .legend-grid { grid-template-columns: repeat(3, 1fr); }
+      .week-block { page-break-inside: avoid; margin-bottom: 28px; }
+      .batch-card { page-break-inside: avoid; }
+      .section-break { page-break-before: always; padding-top: 20px; }
+      .no-print { display: none; }
+    }
+
+    @page { size: A4; margin: 15mm; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- =========================================== COVER =========================================== -->
+  <div style="border-bottom: 2px solid #c2a55e; padding-bottom: 32px; margin-bottom: 48px;">
+    <p style="font-family: Georgia, serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #c2a55e; margin: 0 0 16px;">Meridian Health | Content Production</p>
+    <h1 style="font-family: Georgia, serif; font-size: 34px; color: #201e11; margin: 0 0 10px; font-weight: normal; line-height: 1.2;">Shooting Schedule</h1>
+    <h2 style="font-family: Georgia, serif; font-size: 20px; color: #201e11; margin: 0 0 24px; font-weight: normal;">Metabolic Dominance Campaign | Reels and Story Series</h2>
+    <p style="font-size: 13px; color: #666; margin: 0;">Prepared June 2026 | For videographer and production coordinator use</p>
+  </div>
+
+  <!-- =========================================== HOW TO USE =========================================== -->
+  <div style="margin-bottom: 48px;">
+    <h2 style="font-family: Georgia, serif; font-size: 19px; color: #201e11; font-weight: normal; border-bottom: 1px solid #c2a55e; padding-bottom: 10px; margin-bottom: 20px;">How to Use This Schedule</h2>
+    <p style="font-size: 13px; color: #201e11; line-height: 1.9; margin-bottom: 16px;">This document lists only the posts that require filming: all Reels and the one Story Series across the 12-week Metabolic Dominance Campaign. Carousel, Static, and graphic-only posts are excluded. Each weekly table shows the publish week, publish day, format, location, talent required, and estimated shoot time. Posts sharing the same location and talent are highlighted so the videographer can batch them into a single shoot day.</p>
+    <p style="font-size: 13px; color: #201e11; line-height: 1.9; margin-bottom: 20px;">The <strong>Batch Shoot Day Guide</strong> at the end groups every filmable post into logical production blocks. Filming the correct batches in advance of each week's publish date is the critical path. Weeks 1 and 6 have the tightest deadlines and require the most pre-production lead time.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+      <div style="background: #f4f0e8; border-left: 3px solid #c2a55e; padding: 14px 16px;">
+        <p style="font-family: Georgia, serif; font-size: 12px; font-weight: bold; color: #201e11; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 1px;">Total filmable posts</p>
+        <p style="font-family: Georgia, serif; font-size: 26px; color: #c2a55e; font-weight: bold; margin: 0;">22</p>
+        <p style="font-size: 11px; color: #666; margin: 4px 0 0;">21 Reels + 1 Story Series</p>
+      </div>
+      <div style="background: #f4f0e8; border-left: 3px solid #c2a55e; padding: 14px 16px;">
+        <p style="font-family: Georgia, serif; font-size: 12px; font-weight: bold; color: #201e11; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 1px;">Recommended shoot days</p>
+        <p style="font-family: Georgia, serif; font-size: 26px; color: #c2a55e; font-weight: bold; margin: 0;">10</p>
+        <p style="font-size: 11px; color: #666; margin: 4px 0 0;">When batched by location + talent</p>
+      </div>
+      <div style="background: #f4f0e8; border-left: 3px solid #c2a55e; padding: 14px 16px;">
+        <p style="font-family: Georgia, serif; font-size: 12px; font-weight: bold; color: #201e11; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 1px;">Priority before Week 1</p>
+        <p style="font-family: Georgia, serif; font-size: 26px; color: #c2a55e; font-weight: bold; margin: 0;">6</p>
+        <p style="font-size: 11px; color: #666; margin: 4px 0 0;">Posts 01, 04, 11, 13, 16, 21</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== LEGEND =========================================== -->
+  <div style="margin-bottom: 40px;">
+    <h2 style="font-family: Georgia, serif; font-size: 19px; color: #201e11; font-weight: normal; border-bottom: 1px solid #c2a55e; padding-bottom: 10px; margin-bottom: 18px;">Location and Talent Key</h2>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background: #c2a55e;"></div> Michael, on-camera (clean clinical bg)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: #4a7c59;"></div> Brenan Place, clinic interior</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: #3a6a8a;"></div> Aitkenhead Precinct, exterior</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: #7a5c8a;"></div> Patient archetype, separate talent</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: #888;"></div> Lifestyle B-roll, no specific talent</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: #a83232;"></div> Operating theatre, special access required</div>
+    </div>
+    <p style="font-size: 11px; color: #666; margin-top: 4px; line-height: 1.6;">Talent flags in each row: <span class="flag-michael">Michael</span> <span class="flag-salena">Salena</span> <span class="flag-nicole">Nicole</span> <span class="flag-patient">Patient</span> <span class="flag-none">B-Roll only</span> <span class="flag-special">Special access</span></p>
+  </div>
+
+
+  <!-- =========================================== WEEK 1 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 01</span>
+      <span class="wlabel">Campaign Launch | 3 filmable posts</span>
+      <span class="wcount">Publish: Tue / Wed / Thu</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-michael">
+          <td class="post-num">01</td>
+          <td class="post-title">Meet the Surgeon Who Changed the Field</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Tuesday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Brenan Place consult room or corridor. Intercut: Aitkenhead exterior + Michael reviewing scan.</td>
+          <td class="notes-cell">Mid-shot to close-up. Professional attire, no scrubs. Warm, measured tone to camera. Needs both Michael on-camera segments and location B-roll.</td>
+        </tr>
+        <tr class="loc-michael">
+          <td class="post-num">11</td>
+          <td class="post-title">What Is Bariatric Metabolic Surgery?</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Wednesday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background, Brenan Place. Speaking directly to camera.</td>
+          <td class="notes-cell">Education reel. Animated gut-hormone pathway graphics added in post. Shoot the on-camera VO segment; graphics overlaid in edit.</td>
+        </tr>
+        <tr class="loc-aitkenhead">
+          <td class="post-num">04</td>
+          <td class="post-title">The Aitkenhead Precinct: Where Meridian Lives</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">30-45 sec</td>
+          <td class="talent-cell"><span class="flag-none">B-Roll only</span></td>
+          <td class="location-cell">Exterior Aitkenhead Precinct (wide establishing, signage, architecture). Interior Brenan Place (reception, consultation corridor). No people in establishing shots.</td>
+          <td class="notes-cell">Location walkthrough only. Slow pan, warm grade. Can batch this shoot with Post 37 and Post 38 exterior photography to save a return trip to the precinct.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Priority:</strong> Posts 01 and 11 must be production-ready before campaign launch. Batch 01 and 11 on the same Michael on-camera day. Post 04 can be shot on the same day as the Aitkenhead exterior component of Post 01, or on a dedicated location day alongside Posts 37 and 38.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 2 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 02</span>
+      <span class="wlabel">Authority + Education | 1 filmable post</span>
+      <span class="wcount">Publish: Saturday</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-michael">
+          <td class="post-num">13</td>
+          <td class="post-title">GLP-1 vs Surgery: A Balanced View</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Saturday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background. Michael to camera.</td>
+          <td class="notes-cell">Measured, collegial tone. Not polemical. Could include a brief split-screen graphic (added in post). Batch with Michael education reels (01, 11, 16).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Batch opportunity:</strong> Post 13 can be shot on the same day as Posts 01, 11, and 16 (all Michael, clean background). No additional location or talent required beyond Michael's scheduled day.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 3 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 03</span>
+      <span class="wlabel">Patient Story | 1 filmable post</span>
+      <span class="wcount">Publish: Thursday</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-patient">
+          <td class="post-num">21</td>
+          <td class="post-title">James: The Executive Who Got His Edge Back</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-patient">Patient</span></td>
+          <td class="location-cell">Real patient: professional environment, smart casual or business attire. Composite option: VO over urban B-roll (meeting room, morning commute, coffee).</td>
+          <td class="notes-cell">James is a composite archetype. Use de-identified real patient with full consent, or composite VO with B-roll. No before/after imagery. Mid-shot, patient speaks to off-camera interviewer. Confirm approach with team before scheduling talent.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Consent first:</strong> Confirm real patient or composite approach before scheduling this shoot. If composite VO over B-roll, can shoot B-roll independently. Tier 1 post; must be production-ready before launch.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 4 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 04</span>
+      <span class="wlabel">Education | 1 filmable post</span>
+      <span class="wcount">Publish: Tuesday</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-michael">
+          <td class="post-num">16</td>
+          <td class="post-title">How Metabolic Surgery Resolves Type 2 Diabetes</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Tuesday</td>
+          <td class="duration">45 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background. Michael to camera.</td>
+          <td class="notes-cell">Authoritative, evidence-based. T2D remission rate statistics added as on-screen text in post. Animation of gut-hormone pathway intercut in edit. Batch with Michael education day (01, 11, 13).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Batch opportunity:</strong> Post 16 is a clean-background Michael reel, identical setup to Posts 01, 11, and 13. Schedule all four on a single Michael on-camera day well before campaign launch.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 5 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 05</span>
+      <span class="wlabel">Patient Story | 1 filmable post</span>
+      <span class="wcount">Publish: Tuesday</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-patient">
+          <td class="post-num">23</td>
+          <td class="post-title">Sarah: After Years of Trying, She Found Her Team</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Tuesday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-patient">Patient</span></td>
+          <td class="location-cell">Patient home or warm neutral studio. Comfortable, non-clinical feel.</td>
+          <td class="notes-cell">Warm and intimate. Patient speaks directly to camera, particularly when describing the Meridian team. Tone is relief, not triumph. No before/after imagery. Conversational, not performative.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Consent required:</strong> Sarah is a composite archetype. Secure patient consent and confirm real patient or composite VO approach before scheduling. Allow two weeks lead time for patient coordination.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 6 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 06</span>
+      <span class="wlabel">5-Post Week | 4 filmable posts</span>
+      <span class="wcount">Publish: Mon / Tue / Thu / Fri / Sat</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-michael">
+          <td class="post-num">20</td>
+          <td class="post-title">Why BMI Is the Wrong Number to Watch</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Monday</td>
+          <td class="duration">30-45 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span><br><em style="font-size:10px;color:#888;">or Salena</em></td>
+          <td class="location-cell">Clean clinical background. To camera.</td>
+          <td class="notes-cell">Confident, slightly irreverent framing on BMI history, then pivots to clinical explanation. On-screen text highlights BMI historical origins and superior metabolic indicators. Can batch with Michael Reel day 2.</td>
+        </tr>
+        <tr class="loc-patient">
+          <td class="post-num">25</td>
+          <td class="post-title">Peter: Choosing Reversal Over Management</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Tuesday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-patient">Patient</span></td>
+          <td class="location-cell">Comfortable home or neutral studio setting. Warm, non-clinical.</td>
+          <td class="notes-cell">Dignified, warm, reflective tone. Peter (or composite VO with B-roll) speaks about having a clinical option that matched the seriousness of his health. Carries weight for the LinkedIn GP referral audience. No before/after imagery.</td>
+        </tr>
+        <tr class="loc-michael">
+          <td class="post-num">31</td>
+          <td class="post-title">The Escalation Question No App Can Answer</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background. Michael to camera.</td>
+          <td class="notes-cell">Competitive positioning reel. Michael articulates the escalation pathway question only a specialist can answer. Measured, authoritative. Batch with Michael Reel day 2 (alongside Post 20, 34, 45, 50).</td>
+        </tr>
+        <tr class="loc-theatre">
+          <td class="post-num">09</td>
+          <td class="post-title">A Day in the Surgical Week</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Friday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span><br><span class="flag-special">Theatre access</span></td>
+          <td class="location-cell">Operating theatre. Requires advance consent clearance and theatre scheduling coordination.</td>
+          <td class="notes-cell">SPECIAL PRODUCTION DAY. Operating theatre access must be arranged in advance. Consent clearance required for all footage captured. Cannot be batched with other shoot days. Allow a half-day minimum and confirm scheduling with theatre coordinator well ahead of Week 6.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Highest-complexity week:</strong> Post 09 requires a standalone operating theatre shoot day and cannot be batched. Arrange theatre access and consent clearance before any other Week 6 production. Posts 20 and 31 can be batched with the Michael education day. Post 25 (Peter) requires a separate patient/archetype shoot.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 7 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 07</span>
+      <span class="wlabel">Patient Story + Culture | 3 filmable posts</span>
+      <span class="wcount">Publish: Wed / Thu / Sat</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-brenan">
+          <td class="post-num">32</td>
+          <td class="post-title">What MDT Care Actually Means</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Wednesday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span><br><span class="flag-salena">Salena</span><br><span class="flag-nicole">Nicole</span></td>
+          <td class="location-cell">Brenan Place. MDT team context: Michael, Salena, and Nicole together or in sequence at Brenan Place.</td>
+          <td class="notes-cell">Shows the MDT model in action at Brenan Place. Team members speak to camera or interact naturally. Warm, collaborative feel. Can batch with Post 42 (Team Before the Appointment) as both use Michael, Salena, and Nicole at Brenan Place.</td>
+        </tr>
+        <tr class="loc-aitkenhead">
+          <td class="post-num">37</td>
+          <td class="post-title">The Precinct That Changes the Standard</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">30-45 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span><br><em style="font-size:10px;color:#888;">brief glimpse,<br>or Nicole</em></td>
+          <td class="location-cell">Aitkenhead Precinct exterior (wide establishing, architecture, signage). Transition to Brenan Place corridors and entrance. Brief glimpse of Michael or Nicole walking purposefully.</td>
+          <td class="notes-cell">Beautifully shot location walkthrough. Slow, intentional camera movement. Warm grade. Post 04 uses the same locations: batch both shoots into one Aitkenhead + Brenan Place location day along with the Post 38 photography.</td>
+        </tr>
+        <tr class="loc-lifestyle">
+          <td class="post-num">27</td>
+          <td class="post-title">The Moment Patients Describe Most</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Saturday</td>
+          <td class="duration">30-45 sec</td>
+          <td class="talent-cell"><span class="flag-none">B-Roll only</span></td>
+          <td class="location-cell">Lifestyle B-roll locations: morning window light in a home, someone walking at an easy pace outdoors, quiet morning coffee. Grounded and human, not aspirational lifestyle imagery.</td>
+          <td class="notes-cell">VO reel only. No on-camera talent required. B-roll shot separately from clinic. On-screen text highlights each experiential milestone (sleep, stairs, afternoon energy). Quiet, meaningful tone. Can be shot on a standalone half-day.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Two distinct shoot days:</strong> Post 32 (MDT team at Brenan Place) and Post 27 (lifestyle B-roll) require separate locations and talent. Post 37 can run alongside the Aitkenhead location shoot (which also covers Posts 04 and 38).</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 8 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 08</span>
+      <span class="wlabel">Culture | 1 filmable post</span>
+      <span class="wcount">Publish: Thursday</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-brenan">
+          <td class="post-num">38</td>
+          <td class="post-title">A Walk Through Brenan Place</td>
+          <td><span class="badge-story">STORY SERIES</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">6-8 frames</td>
+          <td class="talent-cell"><span class="flag-none">B-Roll only</span></td>
+          <td class="location-cell">Brenan Place all areas: exterior precinct, reception/entrance, Michael's consultation room, Seca body composition suite, Salena's dietitian space, private arrival area, corridor overview.</td>
+          <td class="notes-cell">Photography-led story series. One high-quality photograph per story frame. No people in most frames (reinforces discretion message). Natural light preferred. Saved to Highlights. Batch the photography shoot with the Post 04 and 37 exterior location day to cover all Brenan Place and Aitkenhead footage in one visit.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Photography session:</strong> Post 38 is photography only, not video. It requires access to every room at Brenan Place. This shoot can be combined with the Post 04 and 37 location day (all cover the same physical spaces) to keep clinic access to a single coordinated session.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 9 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 09</span>
+      <span class="wlabel">Competitive + Culture | 2 filmable posts</span>
+      <span class="wcount">Publish: Tue / Wed</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-michael">
+          <td class="post-num">34</td>
+          <td class="post-title">The Difference a Surgeon Makes</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Tuesday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background. Michael to camera.</td>
+          <td class="notes-cell">Competitive positioning reel. Michael articulates the surgeon difference in specialist metabolic care. Authoritative, clear. Batch with Michael Reel day 2 (alongside Posts 20, 31, 45, 50).</td>
+        </tr>
+        <tr class="loc-brenan">
+          <td class="post-num">39</td>
+          <td class="post-title">Behind the Consult Room Door</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Wednesday</td>
+          <td class="duration">30-45 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Brenan Place consultation room. Michael speaks to camera as if describing the first consultation to a colleague. Intercut with soft B-roll of consultation room (chairs, window light, notes on desk).</td>
+          <td class="notes-cell">Behind-the-scenes feel, not staged. Relaxed and thoughtful. No patient footage required. Can be batched with Post 42 (Team at Brenan Place) or shot on the same day as Michael's clean-background reels if the consultation room is used as the background.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- =========================================== WEEK 10 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 10</span>
+      <span class="wlabel">Culture + Performance | 2 filmable posts</span>
+      <span class="wcount">Publish: Wed / Thu</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-brenan">
+          <td class="post-num">40</td>
+          <td class="post-title">The Seca Scan: Precision You Can See</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Wednesday</td>
+          <td class="duration">30 sec</td>
+          <td class="talent-cell"><span class="flag-salena">Salena</span><br><em style="font-size:10px;color:#888;">or Nicole</em></td>
+          <td class="location-cell">Brenan Place, Seca body composition suite. Salena or Nicole explains the scanner output on camera. Show the Seca unit and digital output screen (example data, not patient data).</td>
+          <td class="notes-cell">Product walkthrough reel. On-screen text labels metric names: Visceral fat, Skeletal muscle mass, Phase angle, Body water. Warm, precise visual register. Can batch with the Brenan Place clinic photography shoot (Post 38).</td>
+        </tr>
+        <tr class="loc-michael">
+          <td class="post-num">45</td>
+          <td class="post-title">Why GLP-1 Growth Is Good News for Our Patients</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background. Michael to camera.</td>
+          <td class="notes-cell">Performance and momentum pillar. Michael explains the market context as an opportunity, not a threat. Confident, strategic tone. Batch with Michael Reel day 2 (Posts 20, 31, 34, 50).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Two distinct shoots:</strong> Post 40 (Seca suite, Brenan Place, Salena/Nicole) and Post 45 (clean background, Michael) are different locations and talent. Post 40 can share the Brenan Place clinic shoot with Posts 38 and 39.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 11 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 11</span>
+      <span class="wlabel">Culture | 1 filmable post</span>
+      <span class="wcount">Publish: Saturday</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-brenan">
+          <td class="post-num">42</td>
+          <td class="post-title">The Team Before the Appointment</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Saturday</td>
+          <td class="duration">30 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span><br><span class="flag-salena">Salena</span><br><span class="flag-nicole">Nicole</span></td>
+          <td class="location-cell">Brenan Place morning. Michael reviewing notes at desk; Salena at her desk; Nicole on the phone. Each identified with on-screen name and role text.</td>
+          <td class="notes-cell">Short behind-the-scenes B-roll of the team in their morning pre-appointment routine. No rush or frenzy: the opposite of a busy medical centre. Purposeful, warm. Music: clinical elegance. Batch with Post 32 (MDT Reel) as both need Michael + Salena + Nicole at Brenan Place.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Batch with Post 32:</strong> Both Posts 42 and 32 require Michael, Salena, and Nicole at Brenan Place. Shooting them on the same day is the most efficient approach and requires only one coordinated team booking.</div>
+  </div>
+
+
+  <!-- =========================================== WEEK 12 =========================================== -->
+  <div class="week-block">
+    <div class="week-header">
+      <span class="wnum">Week 12</span>
+      <span class="wlabel">Campaign Close | 2 filmable posts</span>
+      <span class="wcount">Publish: Thu / Sat</span>
+    </div>
+    <table class="shoot-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">Post</th>
+          <th>Title</th>
+          <th style="width:70px;">Format</th>
+          <th style="width:58px;">Pub Day</th>
+          <th style="width:60px;">Duration</th>
+          <th>Talent</th>
+          <th>Location</th>
+          <th>Shoot Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="loc-brenan">
+          <td class="post-num">48</td>
+          <td class="post-title">Brenan Place Is Open</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Thursday</td>
+          <td class="duration">30-45 sec</td>
+          <td class="talent-cell"><span class="flag-none">B-Roll only</span></td>
+          <td class="location-cell">Brenan Place interior and exterior reveal. Focus on the clinic as a welcoming destination. Warm grade, natural light.</td>
+          <td class="notes-cell">Campaign closing place reel. The clinic as the destination. Location B-roll only. Can be shot on the same day as the Aitkenhead and Brenan Place location session (Posts 04, 37, 38) to avoid a separate clinic access booking.</td>
+        </tr>
+        <tr class="loc-michael">
+          <td class="post-num">50</td>
+          <td class="post-title">One Conversation Could Change Your Next Decade</td>
+          <td><span class="badge-reel">REEL</span></td>
+          <td class="day-label">Saturday</td>
+          <td class="duration">45-60 sec</td>
+          <td class="talent-cell"><span class="flag-michael">Michael</span></td>
+          <td class="location-cell">Clean clinical background or Brenan Place consult room. Michael to camera. Campaign closer.</td>
+          <td class="notes-cell">Campaign finale. Michael speaks directly to camera with warmth and conviction. This is the conversion reel: personal, direct, calm. Batch with Michael Reel day 2 (Posts 20, 31, 34, 45). Ensure this is scripted and reviewed before filming.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="week-note"><strong>Batch opportunity:</strong> Post 48 (Brenan Place B-roll) batches with the clinic location day. Post 50 (Michael, clean background) batches with Michael Reel day 2. Neither requires special access or patient talent.</div>
+  </div>
+
+
+  <!-- =========================================== BATCH SHOOT DAY GUIDE =========================================== -->
+  <div class="section-break">
+    <h2 style="font-family: Georgia, serif; font-size: 22px; color: #201e11; font-weight: normal; border-bottom: 2px solid #c2a55e; padding-bottom: 12px; margin-bottom: 28px;">Batch Shoot Day Guide</h2>
+    <p style="font-size: 13px; color: #201e11; line-height: 1.9; margin-bottom: 28px;">The 22 filmable posts can be completed in approximately 10 coordinated shoot days when grouped by location and talent. The schedule below shows the recommended batches, the posts each batch covers, and the deadline that drives the booking date. Always add at least one week of buffer before the publish deadline for edit, review, and scheduling.</p>
+
+    <div class="batch-grid">
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-michael">Shoot Day 1 | Michael, Education Reels</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>01</span> <span>11</span> <span>13</span> <span>16</span></div>
+          <strong>Location:</strong> Brenan Place consult room or clean clinical background<br>
+          <strong>Talent:</strong> Michael only<br>
+          <strong>Est. shoot time:</strong> 5-6 hrs (all four posts)<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 01 and 11 publish Week 1</span>
+            <span><strong>Book by:</strong> At least 2 weeks before campaign launch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-michael">Shoot Day 2 | Michael, Competitive and Closer Reels</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>20</span> <span>31</span> <span>34</span> <span>45</span> <span>50</span></div>
+          <strong>Location:</strong> Clean clinical background<br>
+          <strong>Talent:</strong> Michael only (Salena optional alt. for Post 20)<br>
+          <strong>Est. shoot time:</strong> 6-7 hrs (all five posts)<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 20 and 31 publish Week 6</span>
+            <span><strong>Book by:</strong> At least 2 weeks before Week 6</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-brenan">Shoot Day 3 | Aitkenhead and Brenan Place Location Day</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>04</span> <span>37</span> <span>48</span></div>
+          <strong>Location:</strong> Aitkenhead Precinct exterior + Brenan Place interior (all areas)<br>
+          <strong>Talent:</strong> None required (brief Michael or Nicole in 37 optional)<br>
+          <strong>Est. shoot time:</strong> 3-4 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 04 publishes Week 1</span>
+            <span><strong>Book by:</strong> Before campaign launch. Can combine with Shoot Day 4 (same venue).</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-brenan">Shoot Day 4 | Brenan Place Clinic Photography and Seca</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>38</span> <span>39</span> <span>40</span></div>
+          <strong>Location:</strong> Brenan Place (all clinic areas: reception, consult room, Seca suite, Salena's space, private arrival, corridors)<br>
+          <strong>Talent:</strong> Salena or Nicole (for Post 40 Seca explainer); Michael (for Post 39 consult room)<br>
+          <strong>Est. shoot time:</strong> 4-5 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 38 publishes Week 8, Post 39 Week 9, Post 40 Week 10</span>
+            <span><strong>Book by:</strong> At least 2 weeks before Week 8. Can combine with Shoot Day 3.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-brenan">Shoot Day 5 | Team Behind-the-Scenes, Brenan Place</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>32</span> <span>42</span></div>
+          <strong>Location:</strong> Brenan Place (Michael's desk, Salena's space, Nicole at phone, team together)<br>
+          <strong>Talent:</strong> Michael, Salena, and Nicole all required<br>
+          <strong>Est. shoot time:</strong> 2-3 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 32 publishes Week 7</span>
+            <span><strong>Book by:</strong> At least 2 weeks before Week 7. Coordinate to get all three team members available on the same morning.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-patient">Shoot Day 6 | Patient Archetype: James</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>21</span></div>
+          <strong>Location:</strong> Professional/corporate setting or composite VO over urban B-roll (meeting room, morning commute, coffee)<br>
+          <strong>Talent:</strong> Real patient (de-identified, full consent) or composite narrative with VO<br>
+          <strong>Est. shoot time:</strong> 2-3 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 21 publishes Week 3 (Tier 1, before launch)</span>
+            <span><strong>Book by:</strong> Confirm patient or composite approach first. Secure consent. Allow 2 weeks lead time.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-patient">Shoot Day 7 | Patient Archetype: Sarah</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>23</span></div>
+          <strong>Location:</strong> Patient home or warm neutral studio. Non-clinical, comfortable feel.<br>
+          <strong>Talent:</strong> Real patient (de-identified, full consent) or composite narrative<br>
+          <strong>Est. shoot time:</strong> 2-3 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 23 publishes Week 5</span>
+            <span><strong>Book by:</strong> Confirm consent and approach 2 weeks before Week 5. No before/after imagery.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-patient">Shoot Day 8 | Patient Archetype: Peter</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>25</span></div>
+          <strong>Location:</strong> Comfortable home or neutral studio setting. Warm, non-clinical.<br>
+          <strong>Talent:</strong> Real patient (de-identified, full consent) or composite VO with B-roll<br>
+          <strong>Est. shoot time:</strong> 2-3 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 25 publishes Week 6 (Tier 1)</span>
+            <span><strong>Book by:</strong> Confirm consent and approach at least 3 weeks before Week 6. Carries weight for GP referral audience on LinkedIn.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-lifestyle">Shoot Day 9 | Lifestyle B-Roll</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>27</span></div>
+          <strong>Location:</strong> Natural/lifestyle settings. Morning window light, outdoor walking path, quiet coffee setting. Grounded, real, human. Not aspirational lifestyle imagery.<br>
+          <strong>Talent:</strong> None required (no specific on-camera talent needed)<br>
+          <strong>Est. shoot time:</strong> 2 hrs<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 27 publishes Week 7</span>
+            <span><strong>Book by:</strong> 2 weeks before Week 7. Flexible, can be shot early morning for best light.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card">
+        <div class="batch-card-header bh-theatre">Shoot Day 10 | Operating Theatre (Special Access)</div>
+        <div class="batch-card-body">
+          <strong>Posts covered:</strong>
+          <div class="posts-list"><span>09</span></div>
+          <strong>Location:</strong> Operating theatre. Requires advance coordination with theatre scheduling and formal consent clearance for all footage.<br>
+          <strong>Talent:</strong> Michael (in surgical context)<br>
+          <strong>Est. shoot time:</strong> Half-day minimum (including setup, consent compliance, and debrief)<br>
+          <div class="batch-meta">
+            <span><strong>Deadline driver:</strong> Post 09 publishes Week 6 (Friday)</span>
+            <span><strong>Book by:</strong> Arrange theatre access and consent clearance as early as possible. This is the single highest-logistics shoot in the campaign. Do not leave to last minute.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUMMARY TABLE -->
+    <h2 style="font-family: Georgia, serif; font-size: 19px; color: #201e11; font-weight: normal; border-bottom: 1px solid #c2a55e; padding-bottom: 10px; margin-bottom: 20px;">Pre-Production Priority Order</h2>
+    <p style="font-size: 13px; color: #201e11; line-height: 1.9; margin-bottom: 16px;">The table below lists every filmable post in the order it must be in the can, from highest urgency to lowest. Shoot days for Weeks 1-3 posts must begin before the campaign launch date.</p>
+
+    <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 40px;">
+      <thead>
+        <tr style="background: #201e11; color: #c2a55e;">
+          <th style="padding: 8px 12px; text-align: left; font-family: Georgia, serif; font-weight: normal;">Post</th>
+          <th style="padding: 8px 12px; text-align: left; font-family: Georgia, serif; font-weight: normal;">Title</th>
+          <th style="padding: 8px 12px; text-align: left; font-family: Georgia, serif; font-weight: normal;">Format</th>
+          <th style="padding: 8px 12px; text-align: left; font-family: Georgia, serif; font-weight: normal;">Pub Week</th>
+          <th style="padding: 8px 12px; text-align: left; font-family: Georgia, serif; font-weight: normal;">Shoot Day</th>
+          <th style="padding: 8px 12px; text-align: left; font-family: Georgia, serif; font-weight: normal;">Key Constraint</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">01</td>
+          <td style="padding: 7px 12px;">Meet the Surgeon Who Changed the Field</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 01</td>
+          <td style="padding: 7px 12px;">Day 1 + Day 3</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera + Aitkenhead B-roll. Tier 1.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">11</td>
+          <td style="padding: 7px 12px;">What Is Bariatric Metabolic Surgery?</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 01</td>
+          <td style="padding: 7px 12px;">Day 1</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Tier 1.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">04</td>
+          <td style="padding: 7px 12px;">The Aitkenhead Precinct: Where Meridian Lives</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 01</td>
+          <td style="padding: 7px 12px;">Day 3</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Location B-roll only. Batch with Day 4.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">13</td>
+          <td style="padding: 7px 12px;">GLP-1 vs Surgery: A Balanced View</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 02</td>
+          <td style="padding: 7px 12px;">Day 1</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Batch with Day 1.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">21</td>
+          <td style="padding: 7px 12px;">James: The Executive Who Got His Edge Back</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 03</td>
+          <td style="padding: 7px 12px;">Day 6</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Patient/archetype. Confirm consent approach first. Tier 1.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">16</td>
+          <td style="padding: 7px 12px;">How Metabolic Surgery Resolves Type 2 Diabetes</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 04</td>
+          <td style="padding: 7px 12px;">Day 1</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Batch with Day 1.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">23</td>
+          <td style="padding: 7px 12px;">Sarah: After Years of Trying, She Found Her Team</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 05</td>
+          <td style="padding: 7px 12px;">Day 7</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Patient/archetype. Confirm consent approach 2 weeks ahead.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">09</td>
+          <td style="padding: 7px 12px;">A Day in the Surgical Week</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 06</td>
+          <td style="padding: 7px 12px;">Day 10</td>
+          <td style="padding: 7px 12px; color: #a83232; font-size: 11px; font-weight: bold;">Theatre access + consent clearance. Book earliest of all.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">20</td>
+          <td style="padding: 7px 12px;">Why BMI Is the Wrong Number to Watch</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 06</td>
+          <td style="padding: 7px 12px;">Day 2</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael or Salena on-camera.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">25</td>
+          <td style="padding: 7px 12px;">Peter: Choosing Reversal Over Management</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 06</td>
+          <td style="padding: 7px 12px;">Day 8</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Patient/archetype. Confirm consent. Tier 1.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">31</td>
+          <td style="padding: 7px 12px;">The Escalation Question No App Can Answer</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 06</td>
+          <td style="padding: 7px 12px;">Day 2</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Batch with Day 2.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">32</td>
+          <td style="padding: 7px 12px;">What MDT Care Actually Means</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 07</td>
+          <td style="padding: 7px 12px;">Day 5</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael + Salena + Nicole at Brenan Place. Batch with Day 5.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">37</td>
+          <td style="padding: 7px 12px;">The Precinct That Changes the Standard</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 07</td>
+          <td style="padding: 7px 12px;">Day 3</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Location B-roll + brief Michael or Nicole. Batch with Days 3 and 4.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">27</td>
+          <td style="padding: 7px 12px;">The Moment Patients Describe Most</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 07</td>
+          <td style="padding: 7px 12px;">Day 9</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Lifestyle B-roll only. No specific talent.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">38</td>
+          <td style="padding: 7px 12px;">A Walk Through Brenan Place</td>
+          <td style="padding: 7px 12px;"><span class="badge-story">STORY</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 08</td>
+          <td style="padding: 7px 12px;">Day 4</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Photography, all Brenan Place areas. No people in most frames.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">34</td>
+          <td style="padding: 7px 12px;">The Difference a Surgeon Makes</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 09</td>
+          <td style="padding: 7px 12px;">Day 2</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Batch with Day 2.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">39</td>
+          <td style="padding: 7px 12px;">Behind the Consult Room Door</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 09</td>
+          <td style="padding: 7px 12px;">Day 4</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael in consult room at Brenan Place. Batch with Day 4.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">40</td>
+          <td style="padding: 7px 12px;">The Seca Scan: Precision You Can See</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 10</td>
+          <td style="padding: 7px 12px;">Day 4</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Salena or Nicole at Seca suite, Brenan Place. Batch with Day 4.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">45</td>
+          <td style="padding: 7px 12px;">Why GLP-1 Growth Is Good News for Our Patients</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 10</td>
+          <td style="padding: 7px 12px;">Day 2</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Batch with Day 2.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">42</td>
+          <td style="padding: 7px 12px;">The Team Before the Appointment</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 11</td>
+          <td style="padding: 7px 12px;">Day 5</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael + Salena + Nicole at Brenan Place. Batch with Day 5.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">48</td>
+          <td style="padding: 7px 12px;">Brenan Place Is Open</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 12</td>
+          <td style="padding: 7px 12px;">Day 3</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Brenan Place B-roll. Batch with Day 3.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee; background: #faf9f6;">
+          <td style="padding: 7px 12px; font-family: Georgia, serif; color: #c2a55e; font-weight: bold;">50</td>
+          <td style="padding: 7px 12px;">One Conversation Could Change Your Next Decade</td>
+          <td style="padding: 7px 12px;"><span class="badge-reel">REEL</span></td>
+          <td style="padding: 7px 12px; font-weight: bold;">Wk 12</td>
+          <td style="padding: 7px 12px;">Day 2</td>
+          <td style="padding: 7px 12px; color: #555; font-size: 11px;">Michael on-camera. Campaign closer. Batch with Day 2.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background: #201e11; padding: 20px 24px; border-radius: 4px;">
+      <p style="font-family: Georgia, serif; font-size: 14px; color: #c2a55e; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 2px;">Production note</p>
+      <p style="font-size: 13px; color: #e8e0d0; margin: 0; line-height: 1.8;">All archetype patient reels (Posts 21, 23, 25) require confirmation of the real patient or composite VO approach before any shoot booking is made. Operating theatre access for Post 09 is the single highest-logistics item in this campaign and should be the first shoot booked. Every other shoot day can begin once the patient archetype approach is confirmed and the theatre date is locked.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center;">
+    <p style="font-size: 11px; color: #aaa; margin: 0;">Meridian Health | Shooting Schedule | Metabolic Dominance Campaign | June 2026 | For internal production use only</p>
+  </div>
+
+</div>
+</body>
+</html>
