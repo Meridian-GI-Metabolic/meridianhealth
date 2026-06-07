@@ -1,0 +1,323 @@
+Wanted to revisit your thoughts on testing product-centric and subscriptions-based packages as the market continues to evolve since we last discussed this.
+ 
+The longevity players (locally Everlab / Hims / Function Health etc) are investing significantly to reach ‘weight loss’ audience, please see a reference of current Everlab ad attached. Hims currently holding a market cap of ~6B (+ acquisition of Eucalyptus - Aus telehealth).
+ 
+As innovation accelerating, harder to predict the method of future treatments, products and competitors.
+That said, one could assume current product-based and long-term subscription trends continue to grow.
+Particularly as many patients continues to lean into low-friction/low-barrier models.
+Eg. Telehealth > Prescriptions > Deliver of GLP/GIP/Retatrutide(soon)
+ 
+As the patient profiles below demonstrate, these are not low-value patients. They value specialist expertise and high standards, but increasingly prefer lower-friction pathways to care.
+ 
+Bariatric and metabolic medicine continue to be increasingly interlinked,
+With Harvard reporting direct correlation in trends:
+Bariatric Surgery down 34.1%,
+Use of GLP up 140%
+(Bariatric surgery continues to be reported as the more successful long-term pathway to sustained weight loss and better health.)
+ 
+Two MERIDIAN approaches to review within the Replit site,
+V1- Less direct in the commercialisation of the subscription
+V2 - Very direct in its approach, not hiding the numbers, which I predict will drive higher results
+Image
+ 
+ 
+ 
+Looking to USA for trend comparisons it remains the large percentage of demographic living with overweight and obesity and the largest commercial market that is driving marketing investment and in turn consumer behaviour. Consumer behaviour and patient acquisition models valuable reference.
+NB, Acknowledging APRHA v FDA; different way of operating, approval times, marketing restrictions etc.
+ 
+Australia vs United States 
+Obesity & Metabolic Health Market (2026)
+Metric
+USA
+Australia
+Population
+342M
+27.3M
+Adult Population
+~260M
+~22M
+Obesity
+138M (40.3%)
+6.9M (31.7%)
+Overweight (not obese)
+106M (31.0%)
+7.4M (34.0%)
+Overweight + Obesity
+244M (71.3%)
+14.3M (65.8%)
+Current GLP-1 / GIP Users
+~41M
+~0.8–1.2M
+% Adult Population Using GLP-1 / GIP
+~15.8%
+~3.6–5.5%
+% Obesity Population Using GLP-1 / GIP
+~30%
+~12–17%
+Retatrutide Users
+0 (not commercially launched)
+0
+Total Addressable Market (Obesity Population)
+138M
+6.9M
+Eligible Obesity Population Not on Medication
+~97M
+~5.8–6.1M
+% Obesity Population Untreated
+~70%
+~83–88%
+ 
+ 
+When we look at regional/local numbers, we would project a percentage may engage via telehealth video (medicare redeemable) for reasons such as mobility, or purely because low friction and the customer base moving towards this. 
+ 
+
+Market Opportunity
+Australia-Wide Telehealth
+Victoria-Focused
+Melbourne-Focused
+Population
+27.3M
+7.1M
+5.4M
+Adults with Obesity
+6.9M
+1.8M
+1.35M
+Estimated GLP-1/GIP Users
+~1.0M
+~260k
+~200k
+Untreated Obesity Population
+~6.0M
+~1.54M
+~1.15M
+Meridian Patients Required
+200
+200
+200
+Share of Untreated Market
+0.003%
+0.013%
+0.017%
+Membership Economics (Including Medication) – Based on conservative 200 subscribers
+Australia-Wide Telehealth
+Victoria-Focused
+Melbourne-Focused
+Patients
+200
+200
+200
+Monthly Membership (Care Only)
+$199
+$199
+$199
+Annual Membership Revenue
+$477,600
+$477,600
+$477,600
+Estimated GLP-1 Medication (avg $350 p/m)
+$840,000
+$840,000
+$840,000
+Total Annual Revenue
+$1,317,600
+$1,317,600
+$1,317,600
+Premium Membership Economics – Based on conservative 200 subscribers
+Australia-Wide Telehealth
+Victoria-Focused
+Melbourne-Focused
+Patients
+200
+200
+200
+Monthly Membership (Care Only)
+$299
+$299
+$299
+Annual Membership Revenue
+$717,600
+$717,600
+$717,600
+Estimated GLP-1 Medication (avg $350 p/m)
+$840,000
+$840,000
+$840,000
+Total Annual Revenue
+$1,557,600
+$1,557,600
+$1,557,600
+Hims-Style Premium Model – Based on conservative 200 subscribers
+Australia-Wide Telehealth
+Victoria-Focused
+Melbourne-Focused
+Patients
+200
+200
+200
+Monthly Membership + Medication
+$499
+$499
+$499
+Annual Revenue
+$1,197,600
+$1,197,600
+$1,197,600
+Share of Untreated Market
+0.003%
+0.013%
+0.017%
+ 
+ 
+ 
+As the number show, if we could achieve 200 join Y1 (0.017% of Melbourne’s Untreated total market), on a premium model, total revenue, $1,557,600.
+ 
+ 
+What does the patient compare Meridian against?
+
+Option 1 — GP + Chemist
+Costs
+
+GP consult: $80–120
+Medicare rebate: ~$42
+Net cost: ~$40–80
+Pharmacy medication:
+Semaglutide: ~$260–450/month
+Tirzepatide: ~$350–650/month
+Patient experience:
+
+No body composition
+No MDT
+No dietitian
+No exercise physiology
+No psychology pathway
+No surgeon access
+No ongoing accountability
+Usually reactive rather than proactive
+Patient annual spend
+~$4,000–8,000
+
+Option 2 — Juniper
+Typical spend:
+
+~$449–699/month
+Includes:
+
+Medication
+Telehealth
+Dietitian support
+App
+Coaching
+Annual spend:
+~$5,400–8,400
+
+Option 3 — Meridian
+Potential structure:
+
+$499/month
+
+Includes:
+
+Specialist-led metabolic programme
+Medication
+Telehealth reviews
+Initial pathology review
+Ongoing monitoring
+Seca body composition scans
+Dietitian support
+Bariatric surgeon access if required
+Escalation pathway to surgery
+Personalised treatment plan
+Priority appointments
+Digital patient portal
+Annual spend:
+~$5,988
+
+ 
+
+Who will use it?
+
+Patient 01
+
+James, 47
+CEO | 101 Collins Street
+
+James has a demanding schedule and values efficiency above almost everything else. He initially joins Meridian seeking support with weight management, energy levels and metabolic health. Following a comprehensive assessment, pathology and body composition analysis, he commences treatment.
+
+Quarterly visits to Meridian.
+
+Pathology completed beforehand
+Body composition scan completed in under 30 seconds
+Medication reviewed
+Progress reviewed with clinician
+Updated prescription provided
+Medication collected directly from Meridian
+No waiting rooms / pharmacy visits / No separate appointments across multiple providers.
+
+Values the discretion and continuity of care.
+
+For James, Meridian becomes a convenient part of maintaining performance, much like seeing an accountant, trainer or wealth adviser.
+
+Subscription Value: Time, convenience and proactive oversight.
+
+Patient 02
+
+Sarah, 43
+Brighton Mother of Three
+
+Sarah has spent years fluctuating between diets, fitness programs and periods of weight regain.
+
+She discovers Meridian through social media and completes her initial consultation via telehealth.
+
+Her pathway includes:
+
+Initial pathology
+Telehealth consultation
+Dietitian support
+Medication management
+Ongoing body composition monitoring
+Her medication arrives at home.
+
+Most reviews occur via video consultation.
+
+When required, she visits Meridian for a body composition scan and annual review.
+
+She feels supported without needing to constantly think about managing her treatment.
+
+Instead of buying a medication, Sarah feels enrolled in a programme.
+
+Subscription Value: Accountability, convenience and continuity of care.
+
+Patient 03
+
+Peter, 58
+Outer Metropolitan Melbourne
+
+Peter underwent bariatric surgery several years ago.
+
+Initially he achieved significant weight loss, however over time some weight regain occurred alongside type 2 diabetes and hypertension.
+
+Historically he would have needed to coordinate care across multiple providers.
+
+Instead, he enters Meridian's integrated model.
+
+His care includes:
+
+Bariatric surgical review
+Metabolic medicine review
+Dietitian support
+Ongoing pathology monitoring
+GLP-1 therapy where appropriate
+Regular telehealth reviews
+Living over an hour from Fitzroy, Peter prefers telehealth for most appointments.
+
+He visits Meridian only when clinically necessary.
+
+The same team manages his care regardless of whether treatment involves surgery, medication or both.
+
+He does not feel like a post-operative patient.
+
+He feels like a long-term patient of Meridian.
+
+Subscription Value: Continuity, specialist oversight and lifelong support.
+
