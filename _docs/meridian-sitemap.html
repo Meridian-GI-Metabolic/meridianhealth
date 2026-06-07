@@ -123,7 +123,7 @@
   /* ── TIER 1 ROW ──────────────────────────────── */
   .tier1-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0;
     width: 100%;
     position: relative;
@@ -132,7 +132,7 @@
   .tier1-row::before {
     content: '';
     position: absolute;
-    top: 0; left: calc(100% / 14); right: calc(100% / 14);
+    top: 0; left: calc(100% / 16); right: calc(100% / 16);
     height: 2px;
     background: var(--gold);
   }
@@ -459,6 +459,25 @@
           <div class="c-node"><span class="n-label">App features</span><span class="n-desc">Today · Library · Trackers · Messages</span></div>
           <div class="c-node"><span class="n-label">How it works</span><span class="n-desc">Patient number → Plan unfolds → Team reviews</span></div>
           <div class="c-node"><span class="n-label">Stats</span><span class="n-desc">1,800+ active patients · 12 daily prompts wk 1 · 1-day reply window</span></div>
+        </div>
+      </div>
+
+      <!-- 8. REFERRING CLINICIANS -->
+      <div class="t1-col">
+        <div class="t1-stem"></div>
+        <div class="t1-node" style="margin:0 4px;background:#2a1f0e;">
+          <span class="n-eyebrow">Clinicians</span>
+          <span class="n-title">Referring Clinicians</span>
+          <span class="n-url">/refer/</span>
+        </div>
+        <div class="t1-to-children"></div>
+        <div class="children-row" style="padding:0 4px">
+          <div class="c-node"><span class="c-chip">Audience</span><span class="n-label">GP / Clinician-facing</span><span class="n-desc">Distinct from patient-facing copy throughout</span></div>
+          <div class="c-node"><span class="n-label">Who to refer</span><span class="n-desc">T2DM with escalation · Metabolic/CVD risk · GLP-1 plateau · Failed conservative management</span></div>
+          <div class="c-node"><span class="n-label">MDT assessment</span><span class="n-desc">Surgical consult · Seca body composition · Dietitian · Psychology · Written care plan</span></div>
+          <div class="c-node"><span class="n-label">Outcomes snapshot</span><span class="n-desc">HbA1c · Medications · BP · Triglycerides — representative 12-month data</span></div>
+          <div class="c-node"><span class="n-label">Care team</span><span class="n-desc">Surgeon · Dietitian · Metabolic Nurse — GP informed at every stage</span></div>
+          <div class="c-node"><span class="n-label">How to refer</span><span class="n-desc">Phone · Email · Online form · Download GP referral guide PDF</span></div>
         </div>
       </div>
 
