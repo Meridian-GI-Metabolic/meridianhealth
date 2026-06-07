@@ -404,7 +404,7 @@ body.nav-open .nav-burger span::before{opacity:0}
 .btn .ic{width:14px;height:14px;display:inline-block;vertical-align:middle}
 
 /* Hero with art (two column) */
-.hero-art{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:end}
+.hero-art{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
 .hero-art .hero-copy h1.display{max-width:13ch}
 .hero-art .hero-copy .lead{max-width:42ch}
 .hero-art .hero-copy .body{max-width:48ch}
