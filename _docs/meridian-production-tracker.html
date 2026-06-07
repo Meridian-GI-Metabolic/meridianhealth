@@ -141,7 +141,7 @@
   </div>
 
   <!-- PROGRESS SUMMARY -->
-  <div style="margin-bottom: 48px; background: #201e11; padding: 24px 28px; border-radius: 4px;" class="no-print">
+  <div style="margin-bottom: 16px; background: #201e11; padding: 24px 28px; border-radius: 4px;" class="no-print">
     <h2 style="font-family: Georgia, serif; font-size: 16px; color: #c2a55e; font-weight: normal; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 2px;">Campaign Progress</h2>
     <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; text-align: center;" id="progress-summary">
       <div>
@@ -165,6 +165,12 @@
         <div style="font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Blocked</div>
       </div>
     </div>
+  </div>
+
+  <!-- RESET BUTTON -->
+  <div style="margin-bottom: 48px; text-align: right;" class="no-print">
+    <span style="font-size: 12px; color: #aaa; margin-right: 12px;" id="save-indicator"></span>
+    <button onclick="resetAll()" style="background: none; border: 1px solid #ccc; border-radius: 3px; padding: 6px 14px; font-size: 12px; color: #888; cursor: pointer;" onmouseover="this.style.borderColor='#a83232';this.style.color='#a83232';" onmouseout="this.style.borderColor='#ccc';this.style.color='#888';">Reset all</button>
   </div>
 
   <!-- ===================== WEEK TABLES ===================== -->
@@ -1187,7 +1193,9 @@
 </div>
 
 <script>
-  function updateStatus(selectEl) {
+  var STORAGE_KEY = 'meridian-tracker-v1';
+
+  function applyStatusStyle(selectEl) {
     var val = selectEl.value;
     selectEl.className = 'status-select';
     if (val === 'not-started')   selectEl.classList.add('status-not-started');
@@ -1195,13 +1203,16 @@
     if (val === 'ready')         selectEl.classList.add('status-ready');
     if (val === 'published')     selectEl.classList.add('status-published');
     if (val === 'blocked')       selectEl.classList.add('status-blocked');
-
     var row = selectEl.closest('tr');
     row.classList.remove('row-published', 'row-blocked');
     if (val === 'published') row.classList.add('row-published');
     if (val === 'blocked')   row.classList.add('row-blocked');
+  }
 
+  function updateStatus(selectEl) {
+    applyStatusStyle(selectEl);
     updateCounts();
+    saveState();
   }
 
   function updateCounts() {
@@ -1216,7 +1227,115 @@
     document.getElementById('count-blocked').textContent       = counts['blocked'] || 0;
   }
 
-  updateCounts();
+  function saveState() {
+    var statuses   = [];
+    var checkboxes = [];
+    var producers  = [];
+    var notes      = [];
+
+    document.querySelectorAll('select.status-select').forEach(function(s) {
+      statuses.push(s.value);
+    });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(c) {
+      checkboxes.push(c.checked);
+    });
+    document.querySelectorAll('input.producer-input').forEach(function(p) {
+      producers.push(p.value);
+    });
+    document.querySelectorAll('textarea.notes-input').forEach(function(n) {
+      notes.push(n.value);
+    });
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ statuses: statuses, checkboxes: checkboxes, producers: producers, notes: notes }));
+      showSaveIndicator();
+    } catch(e) {}
+  }
+
+  function restoreState() {
+    var raw;
+    try { raw = localStorage.getItem(STORAGE_KEY); } catch(e) {}
+    if (!raw) return;
+
+    var data;
+    try { data = JSON.parse(raw); } catch(e) { return; }
+
+    var selects   = document.querySelectorAll('select.status-select');
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var producers  = document.querySelectorAll('input.producer-input');
+    var notesEls   = document.querySelectorAll('textarea.notes-input');
+
+    if (data.statuses) {
+      data.statuses.forEach(function(val, i) {
+        if (selects[i]) {
+          selects[i].value = val;
+          applyStatusStyle(selects[i]);
+        }
+      });
+    }
+    if (data.checkboxes) {
+      data.checkboxes.forEach(function(checked, i) {
+        if (checkboxes[i]) checkboxes[i].checked = checked;
+      });
+    }
+    if (data.producers) {
+      data.producers.forEach(function(val, i) {
+        if (producers[i]) producers[i].value = val;
+      });
+    }
+    if (data.notes) {
+      data.notes.forEach(function(val, i) {
+        if (notesEls[i]) notesEls[i].value = val;
+      });
+    }
+
+    updateCounts();
+  }
+
+  function resetAll() {
+    if (!confirm('Reset all tracker entries? This will clear every status, checkbox, producer, and note. This cannot be undone.')) return;
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+
+    document.querySelectorAll('select.status-select').forEach(function(s) {
+      s.value = 'not-started';
+      applyStatusStyle(s);
+    });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(c) {
+      c.checked = false;
+    });
+    document.querySelectorAll('input.producer-input').forEach(function(p) {
+      p.value = '';
+    });
+    document.querySelectorAll('textarea.notes-input').forEach(function(n) {
+      n.value = '';
+    });
+
+    updateCounts();
+    var ind = document.getElementById('save-indicator');
+    if (ind) { ind.textContent = 'Tracker reset.'; setTimeout(function(){ ind.textContent = ''; }, 2500); }
+  }
+
+  function showSaveIndicator() {
+    var ind = document.getElementById('save-indicator');
+    if (!ind) return;
+    ind.textContent = 'Progress saved.';
+    clearTimeout(ind._timer);
+    ind._timer = setTimeout(function(){ ind.textContent = ''; }, 2000);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    restoreState();
+
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(c) {
+      c.addEventListener('change', saveState);
+    });
+    document.querySelectorAll('input.producer-input').forEach(function(p) {
+      p.addEventListener('input', saveState);
+    });
+    document.querySelectorAll('textarea.notes-input').forEach(function(n) {
+      n.addEventListener('input', saveState);
+    });
+  });
 </script>
 
 </body>
