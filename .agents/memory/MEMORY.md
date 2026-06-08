@@ -1,2 +1,3 @@
 - [NixOS PDF generation](nixos-pdf.md) — use `nix-shell -p chromium --run "chromium --headless --no-sandbox --disable-gpu --print-to-pdf=..."` for reliable PDF output
 - [Meridian team definitions](meridian-team.md) — all three named clinicians (Michael, Salena, Nicole) are FRACS surgeons; never describe Salena or Nicole as physicians.
+- [Illustration label pixel scanning](illustration-label-scanning.md) — AI-baked text labels: arrow shaft is at the TOP of the dark-pixel bbox, actual characters at the BOTTOM; use row-density scan (count dark px per row) to find true text band.

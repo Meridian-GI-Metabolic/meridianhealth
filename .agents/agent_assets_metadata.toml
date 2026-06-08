@@ -24,66 +24,6 @@ uri = "file://brand/practice/membership-v2.png"
 type = "image"
 title = "generated_image"
 
-[[generated]]
-id = "KJ3BnSqTgB8gQ163s7VWA"
-uri = "file://brand/illustrations/condition-hiatus-hernia-types.png"
-type = "image"
-title = "hiatus hernia types diagram"
-
-[[generated]]
-id = "03c3JXv2bVJDrOpIHLp49"
-uri = "file://brand/illustrations/condition-normal-stomach-anatomy.png"
-type = "image"
-title = "normal stomach anatomy unlabelled"
-
-[[generated]]
-id = "_pAu1s_Zz9LEaJ4nYHDPh"
-uri = "file://brand/illustrations/condition-reflux-prevention.png"
-type = "image"
-title = "Nissen fundoplication wrap"
-
-[[generated]]
-id = "7uzfLVI6YH_VqpLi8zO87"
-uri = "file://brand/illustrations/diagram-band-bypass.png"
-type = "image"
-title = "band bypass combination"
-
-[[generated]]
-id = "Qg53BTmwGjHh3bHU6nmAR"
-uri = "file://brand/illustrations/diagram-bypass.png"
-type = "image"
-title = "Roux-en-Y gastric bypass"
-
-[[generated]]
-id = "bNcQFjwc-vlHo9hj3G7Ke"
-uri = "file://brand/illustrations/diagram-oagb.png"
-type = "image"
-title = "OAGB mini bypass"
-
-[[generated]]
-id = "XD9xunJddTzgoBL0gNujQ"
-uri = "file://brand/illustrations/diagram-sleeve-to-bypass.png"
-type = "image"
-title = "sleeve to bypass revision"
-
-[[generated]]
-id = "QKvfedp9a-Tvmi6ZZExmi"
-uri = "file://brand/illustrations/diagram-sleeve.png"
-type = "image"
-title = "sleeve gastrectomy diagram"
-
-[[generated]]
-id = "EY3cQvinMLrnNZ47csxdm"
-uri = "file://brand/illustrations/treatment-bariatric.png"
-type = "image"
-title = "bariatric procedures overview grid"
-
-[[generated]]
-id = "09WWnjg1WPUX7ol65Rs93"
-uri = "file://brand/illustrations/treatment-care.png"
-type = "image"
-title = "care pathway flow diagram"
-
 [[outputs]]
 id = "jCVA6qChiry_0Od0iKpUY"
 uri = "file://prelaunch-meridian.zip"
