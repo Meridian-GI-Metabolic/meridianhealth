@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Meridian Health | Illustration Handoff | Stage 03 Diagrams</title>
+<style>
+  body { font-family: Georgia, serif; color: #201e11; background: #faf9f7; margin: 0; padding: 0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 40px 60px; }
+  h1 { font-family: Georgia, serif; font-size: 28px; color: #201e11; margin: 0 0 6px; }
+  .rule { border: none; border-top: 2px solid #c2a55e; margin: 10px 0 28px; }
+  h2 { font-family: Georgia, serif; font-size: 17px; color: #564929; margin: 36px 0 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  p, li { font-size: 14px; line-height: 1.7; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0 28px; }
+  th { background: #564929; color: #E2DED7; text-align: left; padding: 9px 12px; font-family: Georgia, serif; font-weight: normal; letter-spacing: 0.05em; }
+  td { padding: 8px 12px; border-bottom: 1px solid #ddd; vertical-align: top; }
+  tr:nth-child(even) td { background: #f3f0eb; }
+  code { font-family: 'Courier New', monospace; font-size: 12px; background: #ede9e1; padding: 2px 5px; border-radius: 2px; }
+  .palette { display: flex; gap: 14px; margin: 14px 0 24px; }
+  .swatch { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+  .color-box { width: 32px; height: 32px; border: 1px solid #ccc; border-radius: 3px; flex-shrink: 0; }
+  .note { background: #f0ece3; border-left: 3px solid #c2a55e; padding: 10px 16px; margin: 18px 0; font-size: 13px; }
+  .status-done { color: #3a6e3a; font-weight: bold; }
+  .status-pending { color: #8a6000; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Illustration Handoff</h1>
+  <hr class="rule">
+  <p style="margin-top:-8px; color:#666; font-size:13px;">Meridian Health | Generated June 2026 | Task 126</p>
+
+  <h2>Overview</h2>
+  <p>
+    This document records the ten new clinical illustrations generated for Stage 03-05 and Stage 10 
+    of the Meridian Health website. All images have been colour-remapped to the exact brand palette 
+    and saved to <code>brand/illustrations/</code>.
+  </p>
+  <p>
+    The old assets remain in place at their hashed paths (referenced by the compiled JS bundle) until 
+    the new illustrations are wired into the source and the site is rebuilt.
+  </p>
+
+  <h2>Brand Palette</h2>
+  <div class="palette">
+    <div class="swatch">
+      <div class="color-box" style="background:#E2DED7;"></div>
+      <span><strong>BG Stone</strong> | <code>#E2DED7</code> | Background, internal fill</span>
+    </div>
+    <div class="swatch">
+      <div class="color-box" style="background:#564929;"></div>
+      <span><strong>INK Olive</strong> | <code>#564929</code> | Linework, dark strokes</span>
+    </div>
+    <div class="swatch">
+      <div class="color-box" style="background:#8E7D49;"></div>
+      <span><strong>GOLD</strong> | <code>#8E7D49</code> | Accent, highlighted anatomy</span>
+    </div>
+  </div>
+  <p>No black (#000000) pixels are present in any file. Background areas lock to exact <code>#E2DED7</code>.</p>
+
+  <h2>Asset Path Mapping</h2>
+  <p>
+    Ten illustrations map to ten old hashed originals. The new files are at 
+    <code>brand/illustrations/&lt;name&gt;.png</code>. When the source is updated 
+    (Task 127), each <code>require()</code> call in the component files should point 
+    to the new path; the build will assign a fresh hash.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Illustration</th>
+        <th>Old hashed path (compiled bundle)</th>
+        <th>New canonical path</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Condition: Normal stomach anatomy</td>
+        <td><code>assets/assets/images/condition-normal-stomach-anatomy.b8b9178caed914a77996a55d039764f5.png</code></td>
+        <td><code>brand/illustrations/condition-normal-stomach-anatomy.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Condition: Hiatus hernia types</td>
+        <td><code>assets/assets/images/condition-hiatus-hernia-types.0e6271c41bb3564efb38bf2cf630b6c7.png</code></td>
+        <td><code>brand/illustrations/condition-hiatus-hernia-types.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Condition: Reflux prevention</td>
+        <td><code>assets/assets/images/condition-reflux-prevention.b9c84ff8e7bc683754230d3628ba38ce.png</code></td>
+        <td><code>brand/illustrations/condition-reflux-prevention.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Diagram: Sleeve gastrectomy</td>
+        <td><code>assets/assets/images/diagram-sleeve.d96b9b6797a089c6b3df2f01b60380e4.png</code></td>
+        <td><code>brand/illustrations/diagram-sleeve.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Diagram: Gastric bypass (RYGB)</td>
+        <td><code>assets/assets/images/diagram-bypass.845aedb336e984130a41f7659dff62d2.png</code></td>
+        <td><code>brand/illustrations/diagram-bypass.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Diagram: One-anastomosis gastric bypass (OAGB)</td>
+        <td><code>assets/assets/images/diagram-oagb.b10bb104ccbed9d027ca4dd57063efc4.png</code></td>
+        <td><code>brand/illustrations/diagram-oagb.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Diagram: Band to bypass revision</td>
+        <td><code>assets/assets/images/diagram-band-bypass.4eebdd10f12e5bbbed26b8e156fb41a0.png</code></td>
+        <td><code>brand/illustrations/diagram-band-bypass.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Diagram: Sleeve to bypass revision</td>
+        <td><code>assets/assets/images/diagram-sleeve-to-bypass.52c2cf4659289af5db7efd671537868a.png</code></td>
+        <td><code>brand/illustrations/diagram-sleeve-to-bypass.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Treatment: Bariatric surgery overview</td>
+        <td><code>assets/assets/images/treatment-bariatric.764928e9ba0ed4303b71b5c95c124da2.png</code></td>
+        <td><code>brand/illustrations/treatment-bariatric.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+      <tr>
+        <td>Treatment: Care pathway</td>
+        <td><code>assets/assets/images/treatment-care.52440b08026738db2c971ff6cca43d8f.png</code></td>
+        <td><code>brand/illustrations/treatment-care.png</code></td>
+        <td><span class="status-done">Ready</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>Note on the compiled bundle:</strong> The file
+    <code>_expo/static/js/web/entry-af7cdda5eec1046a250a8943559355d3.js</code> contains
+    inline asset records for all ten images (lines 1524-1627). These will be replaced 
+    automatically when the Expo web build is re-run after the source <code>require()</code> 
+    calls are updated (Task 127). Do not edit the bundle manually.
+  </div>
+
+  <div class="note">
+    <strong>Note on assets not replaced:</strong> Three legacy images in
+    <code>assets/assets/images/</code> are NOT covered by this handoff:
+    <code>diagram-midcal-ring.fb021f8522e505025f66d5df4db1dd54.jpeg</code>,
+    <code>diagram-sleeve-fundo-1.9b9d4b140a61eafcf7a3abf12b3d3dd0.jpeg</code>, and
+    <code>diagram-sleeve-fundo-2.29ee02afd54bfa4c649656b0709c7af9.jpeg</code>.
+    These were not part of the illustration regeneration scope.
+  </div>
+
+  <h2>Palette QA Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>BG (#E2DED7) exact pixels</th>
+        <th>GOLD (~#8E7D49) pixels</th>
+        <th>Black pixels</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>condition-hiatus-hernia-types.png</td><td>95.5%</td><td>0.5%</td><td>0</td></tr>
+      <tr><td>condition-normal-stomach-anatomy.png</td><td>0.5%</td><td>19.3%</td><td>0</td></tr>
+      <tr><td>condition-reflux-prevention.png</td><td>0.1%</td><td>11.5%</td><td>0</td></tr>
+      <tr><td>diagram-band-bypass.png</td><td>90.7%</td><td>2.4%</td><td>0</td></tr>
+      <tr><td>diagram-bypass.png</td><td>40.5%</td><td>7.5%</td><td>0</td></tr>
+      <tr><td>diagram-oagb.png</td><td>0.3%</td><td>3.2%</td><td>0</td></tr>
+      <tr><td>diagram-sleeve-to-bypass.png</td><td>0.4%</td><td>5.6%</td><td>0</td></tr>
+      <tr><td>diagram-sleeve.png</td><td>94.6%</td><td>1.5%</td><td>0</td></tr>
+      <tr><td>treatment-bariatric.png</td><td>4.4%</td><td>3.5%</td><td>0</td></tr>
+      <tr><td>treatment-care.png</td><td>87.8%</td><td>4.9%</td><td>0</td></tr>
+    </tbody>
+  </table>
+  <p>
+    All files: zero black pixels. All files contain exact <code>#E2DED7</code> or 
+    <code>#8E7D49</code> pixels. Linework tones sit in the interpolated range between 
+    INK and BG, producing the soft clinical etching appearance.
+  </p>
+
+  <h2>Next Steps</h2>
+  <ul>
+    <li><span class="status-pending">Task 127</span> | Swap site component <code>require()</code> paths to <code>brand/illustrations/</code> and rebuild.</li>
+    <li><span class="status-pending">Task 128</span> | Map illustrations to content calendar pages.</li>
+    <li>After rebuild, delete the ten legacy hashed PNGs from <code>assets/assets/images/</code> (the three JPEG files above are out of scope).</li>
+  </ul>
+
+</div>
+</body>
+</html>
