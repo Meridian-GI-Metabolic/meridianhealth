@@ -1,97 +1,288 @@
 <html>
-<head>
-<meta charset="UTF-8"/>
-<title>Meridian Health — Brevo Automation Status Summary</title>
-<style>
-  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #564929; line-height: 1.6; max-width: 920px; margin: 40px auto; padding: 0 24px; }
-  h1 { font-family: Georgia, serif; font-size: 22pt; font-weight: normal; color: #564929; border-bottom: 2px solid #c2a55e; padding-bottom: 8px; margin-bottom: 6px; }
-  h2 { font-family: Georgia, serif; font-size: 15pt; font-weight: normal; color: #564929; margin: 32px 0 6px; border-bottom: 1px solid #e8e0d0; padding-bottom: 4px; }
-  h3 { font-size: 10.5pt; font-weight: 700; color: #564929; margin: 20px 0 4px; text-transform: uppercase; letter-spacing: 0.5pt; }
-  .meta { font-size: 9.5pt; color: #888; margin-bottom: 20px; }
-  .callout { background: #f5f0e8; border-left: 3px solid #c2a55e; padding: 10px 14px; margin: 14px 0; font-size: 10.5pt; color: #5a4e32; }
-  .callout strong { color: #564929; }
-  p { margin: 0 0 8px; }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meridian Health — Brevo Automation Status Summary</title>
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif;
+        font-size: 11pt;
+        color: #564929;
+        line-height: 1.6;
+        max-width: 920px;
+        margin: 40px auto;
+        padding: 0 24px;
+      }
+      h1 {
+        font-family: Georgia, serif;
+        font-size: 22pt;
+        font-weight: normal;
+        color: #564929;
+        border-bottom: 2px solid #c2a55e;
+        padding-bottom: 8px;
+        margin-bottom: 6px;
+      }
+      h2 {
+        font-family: Georgia, serif;
+        font-size: 15pt;
+        font-weight: normal;
+        color: #564929;
+        margin: 32px 0 6px;
+        border-bottom: 1px solid #e8e0d0;
+        padding-bottom: 4px;
+      }
+      h3 {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: #564929;
+        margin: 20px 0 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+      }
+      .meta {
+        font-size: 9.5pt;
+        color: #888;
+        margin-bottom: 20px;
+      }
+      .callout {
+        background: #f5f0e8;
+        border-left: 3px solid #c2a55e;
+        padding: 10px 14px;
+        margin: 14px 0;
+        font-size: 10.5pt;
+        color: #5a4e32;
+      }
+      .callout strong {
+        color: #564929;
+      }
+      p {
+        margin: 0 0 8px;
+      }
 
-  /* STATUS BADGES */
-  .badge { display: inline-block; font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; padding: 2px 8px; border-radius: 3px; white-space: nowrap; }
-  .badge-live { background: #e8f7ee; color: #1a7a47; border: 1px solid #b2dfcc; }
-  .badge-pending { background: #fff8e1; color: #7a5200; border: 1px solid #f5d87a; }
-  .badge-not-started { background: #fdf0f0; color: #8b1a1a; border: 1px solid #f0b8b8; }
+      /* STATUS BADGES */
+      .badge {
+        display: inline-block;
+        font-size: 8.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8pt;
+        padding: 2px 8px;
+        border-radius: 3px;
+        white-space: nowrap;
+      }
+      .badge-live {
+        background: #e8f7ee;
+        color: #1a7a47;
+        border: 1px solid #b2dfcc;
+      }
+      .badge-pending {
+        background: #fff8e1;
+        color: #7a5200;
+        border: 1px solid #f5d87a;
+      }
+      .badge-not-started {
+        background: #fdf0f0;
+        color: #8b1a1a;
+        border: 1px solid #f0b8b8;
+      }
 
-  /* MAIN STATUS TABLE */
-  table.status {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 10pt;
-    margin: 12px 0 28px;
-  }
-  table.status thead th {
-    background: #564929;
-    color: #fff;
-    font-size: 8.5pt;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5pt;
-    padding: 7px 10px;
-    text-align: left;
-  }
-  table.status tbody tr { border-bottom: 1px solid #e8e0d0; }
-  table.status tbody tr:nth-child(even) td { background: #faf8f4; }
-  table.status td { padding: 8px 10px; vertical-align: top; }
-  table.status .stage-num { font-weight: 700; color: #c2a55e; white-space: nowrap; font-size: 10.5pt; }
-  table.status .stage-name { font-weight: 600; color: #564929; }
-  table.status .trigger { font-size: 9.5pt; color: #555; }
-  table.status .test-date { font-size: 9.5pt; color: #555; white-space: nowrap; }
-  table.status .spec-link a { color: #c2a55e; font-size: 9.5pt; text-decoration: none; }
-  table.status .spec-link a:hover { text-decoration: underline; }
+      /* MAIN STATUS TABLE */
+      table.status {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 10pt;
+        margin: 12px 0 28px;
+      }
+      table.status thead th {
+        background: #564929;
+        color: #fff;
+        font-size: 8.5pt;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+        padding: 7px 10px;
+        text-align: left;
+      }
+      table.status tbody tr {
+        border-bottom: 1px solid #e8e0d0;
+      }
+      table.status tbody tr:nth-child(even) td {
+        background: #faf8f4;
+      }
+      table.status td {
+        padding: 8px 10px;
+        vertical-align: top;
+      }
+      table.status .stage-num {
+        font-weight: 700;
+        color: #c2a55e;
+        white-space: nowrap;
+        font-size: 10.5pt;
+      }
+      table.status .stage-name {
+        font-weight: 600;
+        color: #564929;
+      }
+      table.status .trigger {
+        font-size: 9.5pt;
+        color: #555;
+      }
+      table.status .test-date {
+        font-size: 9.5pt;
+        color: #555;
+        white-space: nowrap;
+      }
+      table.status .spec-link a {
+        color: #c2a55e;
+        font-size: 9.5pt;
+        text-decoration: none;
+      }
+      table.status .spec-link a:hover {
+        text-decoration: underline;
+      }
 
-  /* GROUP HEADER ROWS */
-  .group-row td {
-    background: #f0ece4 !important;
-    font-family: Georgia, serif;
-    font-size: 10pt;
-    font-weight: normal;
-    color: #5a4e32;
-    padding: 6px 10px;
-    border-top: 2px solid #c2a55e;
-    border-bottom: 1px solid #d8d0c0;
-  }
-  .group-row .group-label { font-size: 8pt; letter-spacing: 1.5pt; text-transform: uppercase; color: #c2a55e; font-weight: 700; font-family: Calibri, Arial, sans-serif; display: block; margin-bottom: 1px; }
+      /* GROUP HEADER ROWS */
+      .group-row td {
+        background: #f0ece4 !important;
+        font-family: Georgia, serif;
+        font-size: 10pt;
+        font-weight: normal;
+        color: #5a4e32;
+        padding: 6px 10px;
+        border-top: 2px solid #c2a55e;
+        border-bottom: 1px solid #d8d0c0;
+      }
+      .group-row .group-label {
+        font-size: 8pt;
+        letter-spacing: 1.5pt;
+        text-transform: uppercase;
+        color: #c2a55e;
+        font-weight: 700;
+        font-family: Calibri, Arial, sans-serif;
+        display: block;
+        margin-bottom: 1px;
+      }
 
-  /* STAGE 10 SUB-TRACK ROWS */
-  .subtrack-row td { background: #fdfcfa !important; padding-left: 24px !important; }
-  .subtrack-row:nth-child(even) td { background: #f7f5f1 !important; }
-  .subtrack-label { font-size: 8pt; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5pt; }
+      /* STAGE 10 SUB-TRACK ROWS */
+      .subtrack-row td {
+        background: #fdfcfa !important;
+        padding-left: 24px !important;
+      }
+      .subtrack-row:nth-child(even) td {
+        background: #f7f5f1 !important;
+      }
+      .subtrack-label {
+        font-size: 8pt;
+        color: #aaa;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+      }
 
-  /* LEGEND */
-  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin: 12px 0 20px; font-size: 9.5pt; align-items: center; }
-  .legend-item { display: flex; align-items: center; gap: 6px; }
+      /* LEGEND */
+      .legend {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 12px 0 20px;
+        font-size: 9.5pt;
+        align-items: center;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-  /* SUMMARY STRIP */
-  .summary-strip { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0 24px; }
-  .summary-card { flex: 1; min-width: 130px; border: 1px solid #e8e0d0; border-top: 3px solid #c2a55e; padding: 12px 14px; background: #faf8f4; }
-  .summary-card .sc-number { font-family: Georgia, serif; font-size: 26pt; font-weight: normal; line-height: 1; }
-  .summary-card .sc-label { font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5pt; color: #888; margin-top: 2px; }
-  .sc-live .sc-number { color: #1a7a47; }
-  .sc-pending .sc-number { color: #7a5200; }
-  .sc-notstarted .sc-number { color: #8b1a1a; }
-  .sc-total .sc-number { color: #564929; }
+      /* SUMMARY STRIP */
+      .summary-strip {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 16px 0 24px;
+      }
+      .summary-card {
+        flex: 1;
+        min-width: 130px;
+        border: 1px solid #e8e0d0;
+        border-top: 3px solid #c2a55e;
+        padding: 12px 14px;
+        background: #faf8f4;
+      }
+      .summary-card .sc-number {
+        font-family: Georgia, serif;
+        font-size: 26pt;
+        font-weight: normal;
+        line-height: 1;
+      }
+      .summary-card .sc-label {
+        font-size: 8.5pt;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+        color: #888;
+        margin-top: 2px;
+      }
+      .sc-live .sc-number {
+        color: #1a7a47;
+      }
+      .sc-pending .sc-number {
+        color: #7a5200;
+      }
+      .sc-notstarted .sc-number {
+        color: #8b1a1a;
+      }
+      .sc-total .sc-number {
+        color: #564929;
+      }
 
-  /* FOOTER */
-  .doc-footer { margin-top: 40px; padding-top: 10px; border-top: 1px solid #e8e0d0; font-size: 9pt; color: #aaa; text-align: center; }
+      /* FOOTER */
+      .doc-footer {
+        margin-top: 40px;
+        padding-top: 10px;
+        border-top: 1px solid #e8e0d0;
+        font-size: 9pt;
+        color: #aaa;
+        text-align: center;
+      }
 
-  /* LAST REVIEWED STAMP */
-  .last-reviewed { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid #c2a55e; border-radius: 3px; padding: 5px 12px; background: #fffdf7; font-size: 9.5pt; color: #5a4e32; margin-bottom: 18px; }
-  .last-reviewed .lr-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8pt; color: #c2a55e; }
-  .last-reviewed .lr-date { font-weight: 700; color: #564929; }
+      /* LAST REVIEWED STAMP */
+      .last-reviewed {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 8px;
+        border: 1px solid #c2a55e;
+        border-radius: 3px;
+        padding: 5px 12px;
+        background: #fffdf7;
+        font-size: 9.5pt;
+        color: #5a4e32;
+        margin-bottom: 18px;
+      }
+      .last-reviewed .lr-label {
+        font-size: 8pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8pt;
+        color: #c2a55e;
+      }
+      .last-reviewed .lr-date {
+        font-weight: 700;
+        color: #564929;
+      }
 
-  /* MONO */
-  .mono { font-family: Courier New, monospace; font-size: 9.5pt; background: #f0ece4; padding: 1px 4px; border-radius: 2px; }
-</style>
-</head>
-<body>
-
-<!--
+      /* MONO */
+      .mono {
+        font-family:
+          Courier New,
+          monospace;
+        font-size: 9.5pt;
+        background: #f0ece4;
+        padding: 1px 4px;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
   ═══════════════════════════════════════════════════════════════════════════
   EDITOR GUIDE — update these fields whenever a stage status changes
   ═══════════════════════════════════════════════════════════════════════════
@@ -117,363 +308,805 @@
   ═══════════════════════════════════════════════════════════════════════════
 -->
 
-<p class="meta">Meridian Health &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Brevo CRM</p>
-<h1>Brevo Automation Status Summary</h1>
-<p class="meta">At-a-glance reference for the Practice Manager and admin team &nbsp;·&nbsp; Full spec: <a href="brevo-automation-flow.html" style="color:#c2a55e;">brevo-automation-flow.html</a></p>
+    <p class="meta">
+      Meridian Health &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Brevo CRM
+    </p>
+    <h1>Brevo Automation Status Summary</h1>
+    <p class="meta">
+      At-a-glance reference for the Practice Manager and admin team
+      &nbsp;·&nbsp; Full spec:
+      <a href="brevo-automation-flow.html" style="color: #c2a55e"
+        >brevo-automation-flow.html</a
+      >
+    </p>
 
-<div>
-  <span class="last-reviewed">
-    <span class="lr-label">Last reviewed</span>
-    <span class="lr-date">28 May 2026</span>
-    <span style="font-size:8.5pt; color:#888;">— update this date whenever any stage status changes (see source comment for full edit guide)</span>
-  </span>
-</div>
+    <div>
+      <span class="last-reviewed">
+        <span class="lr-label">Last reviewed</span>
+        <span class="lr-date">28 May 2026</span>
+        <span style="font-size: 8.5pt; color: #888"
+          >— update this date whenever any stage status changes (see source
+          comment for full edit guide)</span
+        >
+      </span>
+    </div>
 
-<div class="callout">
-  <strong>How to use this page:</strong> This is a single-glance status summary of all 10 automation stages, including the five Stage 10 pathway sub-tracks. For full configuration detail, email copy, and test records, follow the <em>Spec</em> links to the relevant section of the automation flow document. Update this page and the flow document together whenever a stage status changes.
-</div>
+    <div class="callout">
+      <strong>How to use this page:</strong> This is a single-glance status
+      summary of all 10 automation stages, including the five Stage 10 pathway
+      sub-tracks. For full configuration detail, email copy, and test records,
+      follow the <em>Spec</em> links to the relevant section of the automation
+      flow document. Update this page and the flow document together whenever a
+      stage status changes.
+    </div>
 
-<!-- SUMMARY STRIP -->
-<div class="summary-strip">
-  <div class="summary-card sc-live">
-    <div class="sc-number">6</div>
-    <div class="sc-label">Stages live<br/><span style="font-size:8pt; color:#aaa;">Stages 01, 02, 06, 07, 08, 09</span></div>
-  </div>
-  <div class="summary-card sc-pending">
-    <div class="sc-number">3</div>
-    <div class="sc-label">Pending copy<br/><span style="font-size:8pt; color:#aaa;">Stages 03, 04, 05</span></div>
-  </div>
-  <div class="summary-card sc-notstarted">
-    <div class="sc-number">5</div>
-    <div class="sc-label">Not yet built<br/><span style="font-size:8pt; color:#aaa;">Stage 10 tracks 10A–10E</span></div>
-  </div>
-  <div class="summary-card sc-total">
-    <div class="sc-number">14</div>
-    <div class="sc-label">Total rows<br/><span style="font-size:8pt; color:#aaa;">Stages 01–09 + 5 sub-tracks</span></div>
-  </div>
-</div>
+    <!-- SUMMARY STRIP -->
+    <div class="summary-strip">
+      <div class="summary-card sc-live">
+        <div class="sc-number">6</div>
+        <div class="sc-label">
+          Stages live<br /><span style="font-size: 8pt; color: #aaa"
+            >Stages 01, 02, 06, 07, 08, 09</span
+          >
+        </div>
+      </div>
+      <div class="summary-card sc-pending">
+        <div class="sc-number">3</div>
+        <div class="sc-label">
+          Pending copy<br /><span style="font-size: 8pt; color: #aaa"
+            >Stages 03, 04, 05</span
+          >
+        </div>
+      </div>
+      <div class="summary-card sc-notstarted">
+        <div class="sc-number">5</div>
+        <div class="sc-label">
+          Not yet built<br /><span style="font-size: 8pt; color: #aaa"
+            >Stage 10 tracks 10A–10E</span
+          >
+        </div>
+      </div>
+      <div class="summary-card sc-total">
+        <div class="sc-number">14</div>
+        <div class="sc-label">
+          Total rows<br /><span style="font-size: 8pt; color: #aaa"
+            >Stages 01–09 + 5 sub-tracks</span
+          >
+        </div>
+      </div>
+    </div>
 
-<!-- LEGEND -->
-<div class="legend">
-  <strong style="font-size:9pt; color:#888; text-transform:uppercase; letter-spacing:0.5pt;">Key:</strong>
-  <span class="legend-item"><span class="badge badge-live">Live</span> Active in Brevo — real patients entering</span>
-  <span class="legend-item"><span class="badge badge-pending">Pending copy</span> Automation stub built; awaiting approved email copy</span>
-  <span class="legend-item"><span class="badge badge-not-started">Not started</span> Not yet built in Brevo</span>
-</div>
+    <!-- LEGEND -->
+    <div class="legend">
+      <strong
+        style="
+          font-size: 9pt;
+          color: #888;
+          text-transform: uppercase;
+          letter-spacing: 0.5pt;
+        "
+        >Key:</strong
+      >
+      <span class="legend-item"
+        ><span class="badge badge-live">Live</span> Active in Brevo — real
+        patients entering</span
+      >
+      <span class="legend-item"
+        ><span class="badge badge-pending">Pending copy</span> Automation stub
+        built; awaiting approved email copy</span
+      >
+      <span class="legend-item"
+        ><span class="badge badge-not-started">Not started</span> Not yet built
+        in Brevo</span
+      >
+    </div>
 
-<!-- ═══ TABLE ═══ -->
-<table class="status">
-  <thead>
-    <tr>
-      <th style="width:56px;">Stage</th>
-      <th>Automation name &amp; description</th>
-      <th style="width:145px;">Trigger</th>
-      <th style="width:90px;">Channel</th>
-      <th style="width:90px;">Status</th>
-      <th style="width:110px;">Test date</th>
-      <th style="width:50px;">Spec</th>
-    </tr>
-  </thead>
-  <tbody>
+    <!-- ═══ TABLE ═══ -->
+    <table class="status">
+      <thead>
+        <tr>
+          <th style="width: 56px">Stage</th>
+          <th>Automation name &amp; description</th>
+          <th style="width: 145px">Trigger</th>
+          <th style="width: 90px">Channel</th>
+          <th style="width: 90px">Status</th>
+          <th style="width: 110px">Test date</th>
+          <th style="width: 50px">Spec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- GROUP: ENQUIRY NURTURE -->
+        <tr class="group-row">
+          <td colspan="7">
+            <span class="group-label"
+              >Automation 1 of 4 — MH — Enquiry Nurture</span
+            >
+            Stages 01–05 &nbsp;·&nbsp; Entry: enquiry form submitted
+          </td>
+        </tr>
 
-    <!-- GROUP: ENQUIRY NURTURE -->
-    <tr class="group-row">
-      <td colspan="7">
-        <span class="group-label">Automation 1 of 4 — MH — Enquiry Nurture</span>
-        Stages 01–05 &nbsp;·&nbsp; Entry: enquiry form submitted
-      </td>
-    </tr>
+        <tr>
+          <td class="stage-num">01</td>
+          <td>
+            <span class="stage-name">Enquiry follow-up email</span><br />
+            <span class="trigger"
+              >Confirms enquiry received; reassures the patient a team member
+              will follow up. Sent immediately on enquiry submission.</span
+            >
+          </td>
+          <td class="trigger">Enquiry submitted — immediate</td>
+          <td class="trigger">Email</td>
+          <td><span class="badge badge-live">Live</span></td>
+          <td
+            class="test-date"
+            style="font-size: 9pt; color: #888; font-style: italic"
+          >
+            No test record on file
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">01</td>
-      <td>
-        <span class="stage-name">Enquiry follow-up email</span><br/>
-        <span class="trigger">Confirms enquiry received; reassures the patient a team member will follow up. Sent immediately on enquiry submission.</span>
-      </td>
-      <td class="trigger">Enquiry submitted — immediate</td>
-      <td class="trigger">Email</td>
-      <td><span class="badge badge-live">Live</span></td>
-      <td class="test-date" style="font-size:9pt; color:#888; font-style:italic;">No test record on file</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a></td>
-    </tr>
+        <tr>
+          <td class="stage-num">02</td>
+          <td>
+            <span class="stage-name">Follow-up SMS</span><br />
+            <span class="trigger"
+              >Brief SMS to prompt the patient to expect a call. Fires 15
+              minutes after Stage 01 if the contact has not yet booked.</span
+            >
+          </td>
+          <td class="trigger">
+            +15 mins (if <span class="mono">booked_consult</span> not applied)
+          </td>
+          <td class="trigger">SMS</td>
+          <td><span class="badge badge-live">Live</span></td>
+          <td
+            class="test-date"
+            style="font-size: 9pt; color: #888; font-style: italic"
+          >
+            No test record on file
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">02</td>
-      <td>
-        <span class="stage-name">Follow-up SMS</span><br/>
-        <span class="trigger">Brief SMS to prompt the patient to expect a call. Fires 15 minutes after Stage 01 if the contact has not yet booked.</span>
-      </td>
-      <td class="trigger">+15 mins (if <span class="mono">booked_consult</span> not applied)</td>
-      <td class="trigger">SMS</td>
-      <td><span class="badge badge-live">Live</span></td>
-      <td class="test-date" style="font-size:9pt; color:#888; font-style:italic;">No test record on file</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a></td>
-    </tr>
+        <tr>
+          <td class="stage-num">03</td>
+          <td>
+            <span class="stage-name">Re-engagement email</span><br />
+            <span class="trigger"
+              >Gentle follow-up for contacts who have not yet booked a
+              consultation. Subject:
+              <em>Following your enquiry with Meridian Health</em>.</span
+            >
+          </td>
+          <td class="trigger">
+            +24 hrs (if <span class="mono">booked_consult</span> not applied)
+          </td>
+          <td class="trigger">Email</td>
+          <td><span class="badge badge-pending">Pending copy</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">03</td>
-      <td>
-        <span class="stage-name">Re-engagement email</span><br/>
-        <span class="trigger">Gentle follow-up for contacts who have not yet booked a consultation. Subject: <em>Following your enquiry with Meridian Health</em>.</span>
-      </td>
-      <td class="trigger">+24 hrs (if <span class="mono">booked_consult</span> not applied)</td>
-      <td class="trigger">Email</td>
-      <td><span class="badge badge-pending">Pending copy</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a></td>
-    </tr>
+        <tr>
+          <td class="stage-num">04</td>
+          <td>
+            <span class="stage-name">Education email</span><br />
+            <span class="trigger"
+              >Reduces pre-booking anxiety by explaining what to expect at an
+              initial consultation. Subject:
+              <em>What to expect from an initial consultation</em>.</span
+            >
+          </td>
+          <td class="trigger">
+            +3 days (if <span class="mono">booked_consult</span> not applied)
+          </td>
+          <td class="trigger">Email</td>
+          <td><span class="badge badge-pending">Pending copy</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">04</td>
-      <td>
-        <span class="stage-name">Education email</span><br/>
-        <span class="trigger">Reduces pre-booking anxiety by explaining what to expect at an initial consultation. Subject: <em>What to expect from an initial consultation</em>.</span>
-      </td>
-      <td class="trigger">+3 days (if <span class="mono">booked_consult</span> not applied)</td>
-      <td class="trigger">Email</td>
-      <td><span class="badge badge-pending">Pending copy</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a></td>
-    </tr>
+        <tr>
+          <td class="stage-num">05</td>
+          <td>
+            <span class="stage-name">Pathway education email</span><br />
+            <span class="trigger"
+              >Introduces Meridian's three care pathways to help contacts
+              self-identify. Subject:
+              <em>Upper GI, Bariatric &amp; Metabolic care pathways</em>.</span
+            >
+          </td>
+          <td class="trigger">
+            +5 days (if <span class="mono">booked_consult</span> not applied)
+          </td>
+          <td class="trigger">Email</td>
+          <td><span class="badge badge-pending">Pending copy</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">05</td>
-      <td>
-        <span class="stage-name">Pathway education email</span><br/>
-        <span class="trigger">Introduces Meridian's three care pathways to help contacts self-identify. Subject: <em>Upper GI, Bariatric &amp; Metabolic care pathways</em>.</span>
-      </td>
-      <td class="trigger">+5 days (if <span class="mono">booked_consult</span> not applied)</td>
-      <td class="trigger">Email</td>
-      <td><span class="badge badge-pending">Pending copy</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#enquiry-nurture">Spec →</a></td>
-    </tr>
+        <!-- GROUP: BOOKING CONFIRMATION -->
+        <tr class="group-row">
+          <td colspan="7">
+            <span class="group-label"
+              >Automation 2 of 4 — MH — Booking Confirmation</span
+            >
+            Stages 06–07 &nbsp;·&nbsp; Entry:
+            <span class="mono">booked_consult</span> tag applied
+          </td>
+        </tr>
 
-    <!-- GROUP: BOOKING CONFIRMATION -->
-    <tr class="group-row">
-      <td colspan="7">
-        <span class="group-label">Automation 2 of 4 — MH — Booking Confirmation</span>
-        Stages 06–07 &nbsp;·&nbsp; Entry: <span class="mono">booked_consult</span> tag applied
-      </td>
-    </tr>
+        <tr>
+          <td class="stage-num">06</td>
+          <td>
+            <span class="stage-name">Consultation confirmation email</span
+            ><br />
+            <span class="trigger"
+              >Operational onboarding — appointment details, forms, and
+              attachments (confirmation letter, Heidi info sheet, registration
+              form, clinical questionnaire). Conditional block: clinic address
+              (face-to-face) or Coviu link (telehealth).</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">booked_consult</span> tag applied — immediate
+          </td>
+          <td class="trigger">Email</td>
+          <td><span class="badge badge-live">Live</span></td>
+          <td
+            class="test-date"
+            style="font-size: 9pt; color: #888; font-style: italic"
+          >
+            No test record on file
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#booking-confirmation">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">06</td>
-      <td>
-        <span class="stage-name">Consultation confirmation email</span><br/>
-        <span class="trigger">Operational onboarding — appointment details, forms, and attachments (confirmation letter, Heidi info sheet, registration form, clinical questionnaire). Conditional block: clinic address (face-to-face) or Coviu link (telehealth).</span>
-      </td>
-      <td class="trigger"><span class="mono">booked_consult</span> tag applied — immediate</td>
-      <td class="trigger">Email</td>
-      <td><span class="badge badge-live">Live</span></td>
-      <td class="test-date" style="font-size:9pt; color:#888; font-style:italic;">No test record on file</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#booking-confirmation">Spec →</a></td>
-    </tr>
+        <tr>
+          <td class="stage-num">07</td>
+          <td>
+            <span class="stage-name">Appointment confirmed SMS</span><br />
+            <span class="trigger"
+              >Confirms booking by SMS for patients who may not open email
+              immediately. Sent simultaneously with Stage 06 email.</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">booked_consult</span> tag applied — immediate
+          </td>
+          <td class="trigger">SMS</td>
+          <td><span class="badge badge-live">Live</span></td>
+          <td
+            class="test-date"
+            style="font-size: 9pt; color: #888; font-style: italic"
+          >
+            No test record on file
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#booking-confirmation">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">07</td>
-      <td>
-        <span class="stage-name">Appointment confirmed SMS</span><br/>
-        <span class="trigger">Confirms booking by SMS for patients who may not open email immediately. Sent simultaneously with Stage 06 email.</span>
-      </td>
-      <td class="trigger"><span class="mono">booked_consult</span> tag applied — immediate</td>
-      <td class="trigger">SMS</td>
-      <td><span class="badge badge-live">Live</span></td>
-      <td class="test-date" style="font-size:9pt; color:#888; font-style:italic;">No test record on file</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#booking-confirmation">Spec →</a></td>
-    </tr>
+        <!-- GROUP: PRE-CONSULTATION REMINDER -->
+        <tr class="group-row">
+          <td colspan="7">
+            <span class="group-label"
+              >Automation 3 of 4 — MH — Pre-Consultation Reminder</span
+            >
+            Stage 08 &nbsp;·&nbsp; Entry: date-based trigger 72 hrs before
+            <span class="mono">appointment_datetime</span>
+          </td>
+        </tr>
 
-    <!-- GROUP: PRE-CONSULTATION REMINDER -->
-    <tr class="group-row">
-      <td colspan="7">
-        <span class="group-label">Automation 3 of 4 — MH — Pre-Consultation Reminder</span>
-        Stage 08 &nbsp;·&nbsp; Entry: date-based trigger 72 hrs before <span class="mono">appointment_datetime</span>
-      </td>
-    </tr>
+        <tr>
+          <td class="stage-num">08</td>
+          <td>
+            <span class="stage-name">72-hour reminder — email &amp; SMS</span
+            ><br />
+            <span class="trigger"
+              >Prompts form completion before the appointment. Email includes
+              conditional block: clinic address (face-to-face) or Coviu
+              instructions (telehealth). SMS sent simultaneously.</span
+            >
+          </td>
+          <td class="trigger">
+            72 hrs before <span class="mono">appointment_datetime</span>
+          </td>
+          <td class="trigger">Email + SMS</td>
+          <td><span class="badge badge-live">Live</span></td>
+          <td class="test-date">
+            29 May 2026<br /><span style="font-size: 8.5pt; color: #888"
+              >F2F + telehealth confirmed</span
+            >
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pre-consult-reminder">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">08</td>
-      <td>
-        <span class="stage-name">72-hour reminder — email &amp; SMS</span><br/>
-        <span class="trigger">Prompts form completion before the appointment. Email includes conditional block: clinic address (face-to-face) or Coviu instructions (telehealth). SMS sent simultaneously.</span>
-      </td>
-      <td class="trigger">72 hrs before <span class="mono">appointment_datetime</span></td>
-      <td class="trigger">Email + SMS</td>
-      <td><span class="badge badge-live">Live</span></td>
-      <td class="test-date">29 May 2026<br/><span style="font-size:8.5pt; color:#888;">F2F + telehealth confirmed</span></td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pre-consult-reminder">Spec →</a></td>
-    </tr>
+        <!-- GROUP: POST-CONSULTATION -->
+        <tr class="group-row">
+          <td colspan="7">
+            <span class="group-label"
+              >Automation 4 of 4 — MH — Post-Consultation</span
+            >
+            Stage 09 &nbsp;·&nbsp; Entry:
+            <span class="mono">consult_completed</span> tag applied
+          </td>
+        </tr>
 
-    <!-- GROUP: POST-CONSULTATION -->
-    <tr class="group-row">
-      <td colspan="7">
-        <span class="group-label">Automation 4 of 4 — MH — Post-Consultation</span>
-        Stage 09 &nbsp;·&nbsp; Entry: <span class="mono">consult_completed</span> tag applied
-      </td>
-    </tr>
+        <tr>
+          <td class="stage-num">09</td>
+          <td>
+            <span class="stage-name">Next steps email</span><br />
+            <span class="trigger"
+              >Acknowledges the consultation has occurred and reassures the
+              patient. Optionally references their care pathway if the
+              <span class="mono">PATHWAY</span> attribute has been set by the
+              surgeon (conditional block).</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">consult_completed</span> tag applied — immediate
+          </td>
+          <td class="trigger">Email</td>
+          <td><span class="badge badge-live">Live</span></td>
+          <td class="test-date">
+            27 May 2026<br /><span style="font-size: 8.5pt; color: #888"
+              >Both variants confirmed</span
+            >
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#post-consultation">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">09</td>
-      <td>
-        <span class="stage-name">Next steps email</span><br/>
-        <span class="trigger">Acknowledges the consultation has occurred and reassures the patient. Optionally references their care pathway if the <span class="mono">PATHWAY</span> attribute has been set by the surgeon (conditional block).</span>
-      </td>
-      <td class="trigger"><span class="mono">consult_completed</span> tag applied — immediate</td>
-      <td class="trigger">Email</td>
-      <td><span class="badge badge-live">Live</span></td>
-      <td class="test-date">27 May 2026<br/><span style="font-size:8.5pt; color:#888;">Both variants confirmed</span></td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#post-consultation">Spec →</a></td>
-    </tr>
+        <!-- GROUP: STAGE 10 PATHWAY TRACKS -->
+        <tr class="group-row">
+          <td colspan="7">
+            <span class="group-label"
+              >5 Separate automations — MH — Pathway: [Name]</span
+            >
+            Stage 10 (sub-tracks 10A–10E) &nbsp;·&nbsp; Entry:
+            <span class="mono">pathway</span> attribute set by surgeon
+            post-consultation
+          </td>
+        </tr>
 
-    <!-- GROUP: STAGE 10 PATHWAY TRACKS -->
-    <tr class="group-row">
-      <td colspan="7">
-        <span class="group-label">5 Separate automations — MH — Pathway: [Name]</span>
-        Stage 10 (sub-tracks 10A–10E) &nbsp;·&nbsp; Entry: <span class="mono">pathway</span> attribute set by surgeon post-consultation
-      </td>
-    </tr>
+        <tr>
+          <td class="stage-num">10</td>
+          <td colspan="5">
+            <span class="stage-name">Pathway-specific nurture tracks</span
+            ><br />
+            <span class="trigger"
+              >Five separate Brevo automations — one per care pathway. Each
+              delivers a 3-email nurture sequence starting immediately when the
+              <span class="mono">pathway</span> attribute is set. Body copy for
+              all five tracks is finalised in
+              <em>scripts/brevo-push-templates.js</em>. Templates and
+              automations are not yet built in Brevo — see sub-tracks below and
+              the "What needs to happen next" section.</span
+            >
+          </td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pathway-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr>
-      <td class="stage-num">10</td>
-      <td colspan="5">
-        <span class="stage-name">Pathway-specific nurture tracks</span><br/>
-        <span class="trigger">Five separate Brevo automations — one per care pathway. Each delivers a 3-email nurture sequence starting immediately when the <span class="mono">pathway</span> attribute is set. Body copy for all five tracks is finalised in <em>scripts/brevo-push-templates.js</em>. Templates and automations are not yet built in Brevo — see sub-tracks below and the "What needs to happen next" section.</span>
-      </td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pathway-nurture">Spec →</a></td>
-    </tr>
+        <tr class="subtrack-row">
+          <td class="stage-num">10A</td>
+          <td>
+            <span class="stage-name">Sleeve Gastrectomy pathway nurture</span
+            ><br />
+            <span class="trigger"
+              >3-email sequence: pathway overview → preparation → long-term
+              outcomes.</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">pathway</span> = <span class="mono">sleeve</span>
+          </td>
+          <td class="trigger">Email (×3)</td>
+          <td><span class="badge badge-not-started">Not started</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pathway-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr class="subtrack-row">
-      <td class="stage-num">10A</td>
-      <td>
-        <span class="stage-name">Sleeve Gastrectomy pathway nurture</span><br/>
-        <span class="trigger">3-email sequence: pathway overview → preparation → long-term outcomes.</span>
-      </td>
-      <td class="trigger"><span class="mono">pathway</span> = <span class="mono">sleeve</span></td>
-      <td class="trigger">Email (×3)</td>
-      <td><span class="badge badge-not-started">Not started</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pathway-nurture">Spec →</a></td>
-    </tr>
+        <tr class="subtrack-row">
+          <td class="stage-num">10B</td>
+          <td>
+            <span class="stage-name">Gastric Bypass pathway nurture</span><br />
+            <span class="trigger"
+              >3-email sequence: pathway overview → preparation → recovery and
+              long-term outcomes.</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">pathway</span> = <span class="mono">bypass</span>
+          </td>
+          <td class="trigger">Email (×3)</td>
+          <td><span class="badge badge-not-started">Not started</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pathway-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr class="subtrack-row">
-      <td class="stage-num">10B</td>
-      <td>
-        <span class="stage-name">Gastric Bypass pathway nurture</span><br/>
-        <span class="trigger">3-email sequence: pathway overview → preparation → recovery and long-term outcomes.</span>
-      </td>
-      <td class="trigger"><span class="mono">pathway</span> = <span class="mono">bypass</span></td>
-      <td class="trigger">Email (×3)</td>
-      <td><span class="badge badge-not-started">Not started</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pathway-nurture">Spec →</a></td>
-    </tr>
+        <tr class="subtrack-row">
+          <td class="stage-num">10C</td>
+          <td>
+            <span class="stage-name">Reflux &amp; Upper GI pathway nurture</span
+            ><br />
+            <span class="trigger"
+              >3-email sequence: pathway overview → treatment options →
+              long-term management.</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">pathway</span> =
+            <span class="mono">reflux_uppergi</span>
+          </td>
+          <td class="trigger">Email (×3)</td>
+          <td><span class="badge badge-not-started">Not started</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pathway-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr class="subtrack-row">
-      <td class="stage-num">10C</td>
-      <td>
-        <span class="stage-name">Reflux &amp; Upper GI pathway nurture</span><br/>
-        <span class="trigger">3-email sequence: pathway overview → treatment options → long-term management.</span>
-      </td>
-      <td class="trigger"><span class="mono">pathway</span> = <span class="mono">reflux_uppergi</span></td>
-      <td class="trigger">Email (×3)</td>
-      <td><span class="badge badge-not-started">Not started</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pathway-nurture">Spec →</a></td>
-    </tr>
+        <tr class="subtrack-row">
+          <td class="stage-num">10D</td>
+          <td>
+            <span class="stage-name"
+              >GLP-1 &amp; Metabolic Medicine pathway nurture</span
+            ><br />
+            <span class="trigger"
+              >3-email sequence: metabolic pathway overview → treatment plan →
+              long-term health.</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">pathway</span> =
+            <span class="mono">glp1_metabolic</span>
+          </td>
+          <td class="trigger">Email (×3)</td>
+          <td><span class="badge badge-not-started">Not started</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pathway-nurture">Spec →</a>
+          </td>
+        </tr>
 
-    <tr class="subtrack-row">
-      <td class="stage-num">10D</td>
-      <td>
-        <span class="stage-name">GLP-1 &amp; Metabolic Medicine pathway nurture</span><br/>
-        <span class="trigger">3-email sequence: metabolic pathway overview → treatment plan → long-term health.</span>
-      </td>
-      <td class="trigger"><span class="mono">pathway</span> = <span class="mono">glp1_metabolic</span></td>
-      <td class="trigger">Email (×3)</td>
-      <td><span class="badge badge-not-started">Not started</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pathway-nurture">Spec →</a></td>
-    </tr>
+        <tr class="subtrack-row">
+          <td class="stage-num">10E</td>
+          <td>
+            <span class="stage-name">Revision Procedures pathway nurture</span
+            ><br />
+            <span class="trigger"
+              >3-email sequence: revision overview → preparation → long-term
+              care after surgery.</span
+            >
+          </td>
+          <td class="trigger">
+            <span class="mono">pathway</span> =
+            <span class="mono">revision</span>
+          </td>
+          <td class="trigger">Email (×3)</td>
+          <td><span class="badge badge-not-started">Not started</span></td>
+          <td class="test-date">—</td>
+          <td class="spec-link">
+            <a href="brevo-automation-flow.html#pathway-nurture">Spec →</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-    <tr class="subtrack-row">
-      <td class="stage-num">10E</td>
-      <td>
-        <span class="stage-name">Revision Procedures pathway nurture</span><br/>
-        <span class="trigger">3-email sequence: revision overview → preparation → long-term care after surgery.</span>
-      </td>
-      <td class="trigger"><span class="mono">pathway</span> = <span class="mono">revision</span></td>
-      <td class="trigger">Email (×3)</td>
-      <td><span class="badge badge-not-started">Not started</span></td>
-      <td class="test-date">—</td>
-      <td class="spec-link"><a href="brevo-automation-flow.html#pathway-nurture">Spec →</a></td>
-    </tr>
+    <!-- NOTES SECTION -->
+    <h2>What needs to happen next</h2>
 
-  </tbody>
-</table>
+    <h3>Stages 03–05 — Pending copy</h3>
+    <p>
+      These three stages are built as stubs inside the
+      <em>MH — Enquiry Nurture</em> automation in Brevo. The automation
+      structure and timing are in place; the email body copy has not yet been
+      written and approved. Once the content team delivers approved copy for
+      each stage, it can be entered into the corresponding Brevo template and
+      activated — no further Brevo configuration is required beyond copy entry
+      and a live test for each.
+    </p>
+    <p style="font-size: 9.5pt; color: #555">
+      Subject lines specified in the flow document:
+      <em>Following your enquiry with Meridian Health</em> (Stage 03) ·
+      <em>What to expect from an initial consultation</em> (Stage 04) ·
+      <em>Upper GI, Bariatric &amp; Metabolic care pathways</em> (Stage 05).
+    </p>
 
-<!-- NOTES SECTION -->
-<h2>What needs to happen next</h2>
+    <h3>Stage 10 — Not yet built (all five tracks)</h3>
+    <p>
+      Email copy for all five pathway tracks (10A–10E) has been authored and is
+      ready to push to Brevo once the push script is run locally from a machine
+      with a whitelisted IP. After the push, the five Brevo automations must be
+      built in the UI and each track tested before activation.
+    </p>
+    <p><strong>Remaining steps in order:</strong></p>
+    <ol style="margin: 6px 0 10px 20px; padding: 0; font-size: 10.5pt">
+      <li>Confirm copy sign-off with treating clinicians (all five tracks).</li>
+      <li>
+        Whitelist the sending machine's IP in Brevo → Settings → Security →
+        Authorised IPs.
+      </li>
+      <li>
+        Run <span class="mono">scripts/brevo-push-templates.js</span> locally to
+        push all 15 Stage 10 templates to Brevo.
+      </li>
+      <li>
+        Build the five pathway automations in Brevo UI (attribute-based trigger:
+        <span class="mono">pathway</span> = track value). Full procedure:
+        <a href="brevo-stage-10-setup-checklist.html" style="color: #c2a55e"
+          >brevo-stage-10-setup-checklist.html</a
+        >.
+      </li>
+      <li>
+        Live-test Track 10A (Sleeve) first as a reference, then test Tracks
+        10B–10E in sequence.
+      </li>
+      <li>
+        Activate each track only after its live test is confirmed and recorded.
+      </li>
+    </ol>
 
-<h3>Stages 03–05 — Pending copy</h3>
-<p>These three stages are built as stubs inside the <em>MH — Enquiry Nurture</em> automation in Brevo. The automation structure and timing are in place; the email body copy has not yet been written and approved. Once the content team delivers approved copy for each stage, it can be entered into the corresponding Brevo template and activated — no further Brevo configuration is required beyond copy entry and a live test for each.</p>
-<p style="font-size:9.5pt; color:#555;">Subject lines specified in the flow document: <em>Following your enquiry with Meridian Health</em> (Stage 03) · <em>What to expect from an initial consultation</em> (Stage 04) · <em>Upper GI, Bariatric &amp; Metabolic care pathways</em> (Stage 05).</p>
+    <div class="callout">
+      <strong>Clinical sign-off required:</strong> Stage 10 copy has been
+      authored but has not yet received formal clinical review. Confirm copy for
+      each track is clinically appropriate before pushing templates to Brevo and
+      activating for real patients.
+    </div>
 
-<h3>Stage 10 — Not yet built (all five tracks)</h3>
-<p>Email copy for all five pathway tracks (10A–10E) has been authored and is ready to push to Brevo once the push script is run locally from a machine with a whitelisted IP. After the push, the five Brevo automations must be built in the UI and each track tested before activation.</p>
-<p><strong>Remaining steps in order:</strong></p>
-<ol style="margin: 6px 0 10px 20px; padding: 0; font-size: 10.5pt;">
-  <li>Confirm copy sign-off with treating clinicians (all five tracks).</li>
-  <li>Whitelist the sending machine's IP in Brevo → Settings → Security → Authorised IPs.</li>
-  <li>Run <span class="mono">scripts/brevo-push-templates.js</span> locally to push all 15 Stage 10 templates to Brevo.</li>
-  <li>Build the five pathway automations in Brevo UI (attribute-based trigger: <span class="mono">pathway</span> = track value). Full procedure: <a href="brevo-stage-10-setup-checklist.html" style="color:#c2a55e;">brevo-stage-10-setup-checklist.html</a>.</li>
-  <li>Live-test Track 10A (Sleeve) first as a reference, then test Tracks 10B–10E in sequence.</li>
-  <li>Activate each track only after its live test is confirmed and recorded.</li>
-</ol>
+    <!-- STAGE 08 DETAILS -->
+    <h2>Stage 08 — Test record summary</h2>
+    <p>
+      Full record:
+      <a
+        href="brevo-automation-flow.html#pre-consult-reminder"
+        style="color: #c2a55e"
+        >brevo-automation-flow.html § Section 3</a
+      >
+      and
+      <a href="brevo-stage-08-setup-checklist.html" style="color: #c2a55e"
+        >brevo-stage-08-setup-checklist.html</a
+      >.
+    </p>
+    <table
+      style="
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 10pt;
+        margin: 8px 0 20px;
+      "
+    >
+      <thead>
+        <tr>
+          <th
+            style="
+              background: #564929;
+              color: #fff;
+              font-size: 8.5pt;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.5pt;
+              padding: 6px 10px;
+              text-align: left;
+              width: 200px;
+            "
+          >
+            Field
+          </th>
+          <th
+            style="
+              background: #564929;
+              color: #fff;
+              font-size: 8.5pt;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.5pt;
+              padding: 6px 10px;
+              text-align: left;
+            "
+          >
+            Detail
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #e8e0d0">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Status
+          </td>
+          <td style="padding: 7px 10px">
+            <span style="color: #1a7a47; font-weight: 700">Live</span> — both
+            face-to-face and telehealth variants tested and confirmed. Test
+            contacts deleted. Record complete.
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0; background: #faf8f4">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Test initiated
+          </td>
+          <td style="padding: 7px 10px">
+            26 May 2026 — test contacts created, automation activated.
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Trigger confirmed
+          </td>
+          <td style="padding: 7px 10px">
+            29 May 2026 — 72-hour date-based trigger fired as expected.
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0; background: #faf8f4">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Tested by
+          </td>
+          <td style="padding: 7px 10px">Practice Manager</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Variants confirmed
+          </td>
+          <td style="padding: 7px 10px">
+            Face-to-face (clinic address block) · Telehealth (Coviu instructions
+            block) — both email and SMS confirmed for each variant.
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Activated for real patients
+          </td>
+          <td style="padding: 7px 10px">
+            <span style="color: #1a7a47; font-weight: 700">Active</span> —
+            confirmed 29 May 2026
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-<div class="callout">
-  <strong>Clinical sign-off required:</strong> Stage 10 copy has been authored but has not yet received formal clinical review. Confirm copy for each track is clinically appropriate before pushing templates to Brevo and activating for real patients.
-</div>
+    <!-- STAGE 09 DETAILS -->
+    <h2>Stage 09 — Test record summary</h2>
+    <p>
+      Full record:
+      <a
+        href="brevo-automation-flow.html#post-consultation"
+        style="color: #c2a55e"
+        >brevo-automation-flow.html § Section 4</a
+      >
+      and
+      <a href="brevo-stage-09-setup-checklist.html" style="color: #c2a55e"
+        >brevo-stage-09-setup-checklist.html</a
+      >.
+    </p>
+    <table
+      style="
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 10pt;
+        margin: 8px 0 20px;
+      "
+    >
+      <thead>
+        <tr>
+          <th
+            style="
+              background: #564929;
+              color: #fff;
+              font-size: 8.5pt;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.5pt;
+              padding: 6px 10px;
+              text-align: left;
+              width: 200px;
+            "
+          >
+            Field
+          </th>
+          <th
+            style="
+              background: #564929;
+              color: #fff;
+              font-size: 8.5pt;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.5pt;
+              padding: 6px 10px;
+              text-align: left;
+            "
+          >
+            Detail
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #e8e0d0">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Status
+          </td>
+          <td style="padding: 7px 10px">
+            <span style="color: #1a7a47; font-weight: 700">Live</span> — both
+            variants (with and without PATHWAY attribute) tested and confirmed.
+            Test contacts deleted. Record complete.
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0; background: #faf8f4">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Test date
+          </td>
+          <td style="padding: 7px 10px">27 May 2026</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Tested by
+          </td>
+          <td style="padding: 7px 10px">Practice Manager</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0; background: #faf8f4">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Variant A (PATHWAY set)
+          </td>
+          <td style="padding: 7px 10px">
+            <span style="color: #1a7a47; font-weight: 700">Confirmed</span> —
+            <span class="mono">sleeve</span> · Conditional pathway block visible
+            · All merge tags resolved.
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e8e0d0">
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Variant B (PATHWAY not set)
+          </td>
+          <td style="padding: 7px 10px">
+            <span style="color: #1a7a47; font-weight: 700">Confirmed</span> —
+            Conditional block absent · Email reads correctly without it.
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 7px 10px; font-weight: 600; color: #5a4e32">
+            Activated for real patients
+          </td>
+          <td style="padding: 7px 10px">
+            <span style="color: #1a7a47; font-weight: 700">Active</span> —
+            confirmed 27 May 2026
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-<!-- STAGE 08 DETAILS -->
-<h2>Stage 08 — Test record summary</h2>
-<p>Full record: <a href="brevo-automation-flow.html#pre-consult-reminder" style="color:#c2a55e;">brevo-automation-flow.html § Section 3</a> and <a href="brevo-stage-08-setup-checklist.html" style="color:#c2a55e;">brevo-stage-08-setup-checklist.html</a>.</p>
-<table style="width:100%; border-collapse:collapse; font-size:10pt; margin:8px 0 20px;">
-  <thead><tr>
-    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left; width:200px;">Field</th>
-    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left;">Detail</th>
-  </tr></thead>
-  <tbody>
-    <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Status</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Live</span> — both face-to-face and telehealth variants tested and confirmed. Test contacts deleted. Record complete.</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0; background:#faf8f4;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Test initiated</td><td style="padding:7px 10px;">26 May 2026 — test contacts created, automation activated.</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Trigger confirmed</td><td style="padding:7px 10px;">29 May 2026 — 72-hour date-based trigger fired as expected.</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0; background:#faf8f4;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Tested by</td><td style="padding:7px 10px;">Practice Manager</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Variants confirmed</td><td style="padding:7px 10px;">Face-to-face (clinic address block) · Telehealth (Coviu instructions block) — both email and SMS confirmed for each variant.</td></tr>
-    <tr><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Activated for real patients</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Active</span> — confirmed 29 May 2026</td></tr>
-  </tbody>
-</table>
-
-<!-- STAGE 09 DETAILS -->
-<h2>Stage 09 — Test record summary</h2>
-<p>Full record: <a href="brevo-automation-flow.html#post-consultation" style="color:#c2a55e;">brevo-automation-flow.html § Section 4</a> and <a href="brevo-stage-09-setup-checklist.html" style="color:#c2a55e;">brevo-stage-09-setup-checklist.html</a>.</p>
-<table style="width:100%; border-collapse:collapse; font-size:10pt; margin:8px 0 20px;">
-  <thead><tr>
-    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left; width:200px;">Field</th>
-    <th style="background:#564929; color:#fff; font-size:8.5pt; font-weight:600; text-transform:uppercase; letter-spacing:0.5pt; padding:6px 10px; text-align:left;">Detail</th>
-  </tr></thead>
-  <tbody>
-    <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Status</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Live</span> — both variants (with and without PATHWAY attribute) tested and confirmed. Test contacts deleted. Record complete.</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0; background:#faf8f4;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Test date</td><td style="padding:7px 10px;">27 May 2026</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Tested by</td><td style="padding:7px 10px;">Practice Manager</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0; background:#faf8f4;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Variant A (PATHWAY set)</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Confirmed</span> — <span class="mono">sleeve</span> · Conditional pathway block visible · All merge tags resolved.</td></tr>
-    <tr style="border-bottom:1px solid #e8e0d0;"><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Variant B (PATHWAY not set)</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Confirmed</span> — Conditional block absent · Email reads correctly without it.</td></tr>
-    <tr><td style="padding:7px 10px; font-weight:600; color:#5a4e32;">Activated for real patients</td><td style="padding:7px 10px;"><span style="color:#1a7a47; font-weight:700;">Active</span> — confirmed 27 May 2026</td></tr>
-  </tbody>
-</table>
-
-<div class="doc-footer">
-  Meridian Health &nbsp;·&nbsp; Brevo Automation Status Summary &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br/>
-  Full spec: <a href="brevo-automation-flow.html" style="color:#aaa;">brevo-automation-flow.html</a> &nbsp;·&nbsp; Internal use only<br/>
-  <span style="color:#c2a55e; font-weight:600;">When editing this page: update the "Last reviewed" date at the top and the status badges in the table.</span>
-</div>
-
-</body>
+    <div class="doc-footer">
+      Meridian Health &nbsp;·&nbsp; Brevo Automation Status Summary
+      &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; May 2026<br />
+      Full spec:
+      <a href="brevo-automation-flow.html" style="color: #aaa"
+        >brevo-automation-flow.html</a
+      >
+      &nbsp;·&nbsp; Internal use only<br />
+      <span style="color: #c2a55e; font-weight: 600"
+        >When editing this page: update the "Last reviewed" date at the top and
+        the status badges in the table.</span
+      >
+    </div>
+  </body>
 </html>
