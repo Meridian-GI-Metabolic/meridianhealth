@@ -89,3 +89,21 @@ id = "lXd_MEkTbsYNzQcYgi_Wm"
 uri = "file://_docs/meridian-glass-badges.zip"
 type = "unspecified"
 title = "Meridian Glass Badges (badge-mdt.png + badge-opening.png)"
+
+[[outputs]]
+id = "23QB9eK0hWb_drdx9ZHfa"
+uri = "file://_docs/meridian-patient-brochure.pdf"
+type = "pdf"
+title = "Patient Brochure"
+
+[[outputs]]
+id = "aEi9bts9aR6aq05LxygDI"
+uri = "file://_docs/meridian-gp-referral-onepager.pdf"
+type = "pdf"
+title = "GP Referral One-Pager"
+
+[[outputs]]
+id = "_5SqBNlbw7r7DIkX7yX37"
+uri = "file://gp-referral-guide.pdf"
+type = "pdf"
+title = "GP Referral Guide"
