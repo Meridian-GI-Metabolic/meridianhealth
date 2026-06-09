@@ -3,45 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meridian Health | Patient Brochure | DL Folded</title>
+  <title>Meridian Health | Patient Brochure | Bariatric Metabolic Surgery</title>
   <style>
     @page { size: A4 landscape; margin: 0; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Georgia, serif; color: #201e11; background: #e8e4de; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:   #c2a55e;
+      --ink:    #201e11;
+      --ink-60: rgba(32,30,17,0.60);
+      --ink-20: rgba(32,30,17,0.20);
+      --cream:  #f4f0e8;
+      --stone:  #faf9f6;
+      --white:  #ffffff;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      color: var(--ink);
+      background: #e0dbd2;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
     @media print {
-      body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: white; }
       .screen-label, .screen-gap { display: none; }
     }
 
     .screen-label {
       text-align: center;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: -apple-system, sans-serif;
       font-size: 10px;
-      color: #999;
+      color: #888;
       letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 16px 0 6px;
+      padding: 14px 0 5px;
     }
-    .screen-gap { height: 16px; }
+    .screen-gap { height: 14px; }
 
     .sheet {
       width: 297mm;
       height: 210mm;
       display: flex;
-      background: white;
+      background: var(--white);
       position: relative;
       margin: 0 auto;
-      box-shadow: 0 2px 24px rgba(0,0,0,.18);
+      box-shadow: 0 2px 24px rgba(0,0,0,.15);
+      overflow: hidden;
     }
 
     .fold {
       position: absolute; top: 0; bottom: 0; width: 0;
-      border-left: 0.4px dashed rgba(150,140,120,.4);
+      border-left: 0.5px dashed rgba(150,140,120,.35);
       z-index: 20; pointer-events: none;
     }
     .fold-1 { left: 99mm; }
     .fold-2 { left: 198mm; }
-    @media print { .fold { border-color: rgba(150,140,120,.25); } }
+    @media print { .fold { display: none; } }
 
     .panel {
       width: 99mm;
@@ -51,370 +70,523 @@
       position: relative;
     }
 
-    .gold-rule      { height: 1.5px;  background: #c2a55e; margin: 7px 0; }
-    .gold-rule-thin { height: 0.75px; background: #c2a55e; margin: 5px 0; }
-
-    .kicker {
+    /* ── SHARED TYPOGRAPHY ─────────────────────────────── */
+    .eyebrow {
       font-family: Georgia, serif;
-      font-size: 8px;
-      letter-spacing: 2px;
+      font-size: 7.5px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #c2a55e;
+      color: var(--gold);
+      display: block;
     }
+    .gold-rule { height: 1.5px; background: var(--gold); }
 
-    .sec-head {
-      font-family: Georgia, serif;
-      font-size: 9px;
-      font-weight: bold;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: #201e11;
-      border-bottom: 0.75px solid #c2a55e;
-      padding-bottom: 4px;
-      margin-bottom: 7px;
+    /* ── FRONT COVER (Panel C) ─────────────────────────── */
+    .cover {
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
     }
-
-    .t-body  { font-size: 8.5px; color: #444; line-height: 1.65; }
-    .t-small { font-size: 7.5px; color: #666; line-height: 1.6; }
-    .t-tiny  { font-size: 7px;   color: #888; line-height: 1.55; }
-
-    .step-row {
-      display: flex; gap: 6px; align-items: flex-start;
-      padding: 5px 0; border-bottom: 0.5px solid #ede8df;
-    }
-    .step-row:last-child { border-bottom: none; }
-    .step-num {
-      font-size: 9px; font-weight: bold; color: #c2a55e;
-      flex-shrink: 0; width: 14px; padding-top: 1px;
-    }
-
-    .check-list { list-style: none; }
-    .check-list li {
-      display: flex; gap: 6px; align-items: flex-start;
-      margin-bottom: 6px;
-    }
-    .check-list li .icon {
-      color: #c2a55e; font-size: 11px; line-height: 1.1;
+    .cover-img {
+      width: 100%;
+      height: 108mm;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
       flex-shrink: 0;
     }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px;
-      margin: 7px 0;
+    .cover-body {
+      flex: 1;
+      padding: 9mm 8mm 8mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--ink);
     }
-    .stat-cell {
-      background: #faf8f4;
-      border: 0.5px solid #e0d8cc;
-      padding: 7px 6px;
-      text-align: center;
-    }
-    .stat-big {
+    .cover-wordmark {
       font-family: Georgia, serif;
-      font-size: 13px;
-      font-weight: bold;
-      color: #201e11;
+      font-size: 8.5px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5mm;
+    }
+    .cover-rule { height: 1px; background: var(--gold); margin-bottom: 5mm; }
+    .cover-h1 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: normal;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 3mm;
+    }
+    .cover-lead {
+      font-family: Georgia, serif;
+      font-size: 9px;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+    .cover-footer {
+      font-size: 7.5px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.65;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── BACK COVER (Panel B) ──────────────────────────── */
+    .back {
+      background: var(--ink);
+      padding: 9mm 8mm;
+      display: flex;
+      flex-direction: column;
+      border-right: 0.5px solid rgba(255,255,255,0.06);
+    }
+    .back-method {
+      margin-bottom: 6mm;
+    }
+    .back-method .m-label {
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
       display: block;
       margin-bottom: 2px;
     }
-    .stat-label {
-      font-size: 6.5px;
-      color: #888;
+    .back-method .m-value {
+      font-size: 12px;
+      color: var(--white);
       display: block;
-      line-height: 1.4;
     }
+    .back-method .m-note {
+      font-size: 8px;
+      color: rgba(255,255,255,0.40);
+      display: block;
+      margin-top: 1px;
+    }
+    .back-divider { height: 0.5px; background: rgba(255,255,255,0.10); margin: 5mm 0; }
+
+    /* ── INSIDE FLAP — IS THIS RIGHT FOR ME (Panel A) ──── */
+    .flap {
+      background: var(--stone);
+      padding: 9mm 8mm;
+      border-right: 0.5px solid var(--ink-20);
+    }
+    .criterion-card {
+      background: var(--white);
+      border-left: 2.5px solid var(--gold);
+      padding: 5px 8px;
+      margin-bottom: 5px;
+    }
+    .criterion-card p {
+      font-size: 8px;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .criterion-card strong {
+      font-size: 8px;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    /* ── PANEL D — SURGICAL OPTIONS ────────────────────── */
+    .options-panel {
+      background: var(--cream);
+      padding: 9mm 8mm;
+      border-right: 0.5px solid var(--ink-20);
+    }
+    .proc-row {
+      padding: 5px 0;
+      border-bottom: 0.5px solid var(--ink-20);
+    }
+    .proc-row:last-child { border-bottom: none; }
+    .proc-row h3 {
+      font-size: 8.5px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .proc-row p {
+      font-size: 7.5px;
+      color: var(--ink-60);
+      line-height: 1.55;
+    }
+
+    /* ── PANEL E — JOURNEY / PROCESS ───────────────────── */
+    .journey-panel {
+      background: var(--white);
+      padding: 9mm 8mm;
+      border-right: 0.5px solid var(--ink-20);
+    }
+    .a-step {
+      display: flex;
+      gap: 7px;
+      padding: 5px 0;
+      border-bottom: 0.5px solid var(--ink-20);
+      align-items: flex-start;
+    }
+    .a-step:last-child { border-bottom: none; }
+    .a-step-num {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: normal;
+      min-width: 20px;
+      line-height: 1;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+    .a-step-body h3 { font-size: 8.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .a-step-body p  { font-size: 7.5px; color: var(--ink-60); line-height: 1.55; margin: 0; }
+
+    /* ── PANEL F — TEAM + OUTCOMES ─────────────────────── */
+    .team-panel {
+      background: var(--white);
+      padding: 9mm 8mm;
+    }
+    .surgeon-card {
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid var(--ink-20);
+    }
+    .surgeon-card:last-of-type { border-bottom: none; margin-bottom: 0; }
+    .surgeon-photo {
+      width: 22mm;
+      height: 26mm;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      display: block;
+      filter: grayscale(10%);
+    }
+    .surgeon-info { flex: 1; }
+    .surgeon-info .role-chip {
+      font-size: 6.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .surgeon-info h3 {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1px;
+    }
+    .surgeon-info .role {
+      font-size: 7.5px;
+      color: var(--ink-60);
+      font-style: italic;
+      line-height: 1.4;
+      display: block;
+    }
+    .surgeon-info .quals {
+      font-size: 6.5px;
+      color: var(--gold);
+      display: block;
+      margin-top: 1px;
+    }
+
+    .outcomes-band {
+      background: var(--ink);
+      padding: 6px 8px;
+    }
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      margin-top: 5px;
+    }
+    .outcome-cell {
+      text-align: center;
+    }
+    .outcome-metric { font-size: 8px; font-weight: 600; color: var(--white); display: block; }
+    .outcome-change { font-size: 7px; color: var(--gold); font-weight: 600; display: block; margin-top: 1px; }
+    .outcome-desc   { font-size: 6.5px; color: rgba(255,255,255,0.45); display: block; margin-top: 1px; line-height: 1.4; }
   </style>
 </head>
 <body>
 
-<!-- =========================================================
+<!-- =================================================================
      SIDE 1: OUTSIDE
-     Panels L to R: [Inside Flap — What to expect] [Back Cover — How to start] [Front Cover]
-     ========================================================= -->
+     Panels: [A — Inside Flap] [B — Back Cover] [C — Front Cover]
+     ================================================================= -->
 <p class="screen-label">Side 1 — Outside &nbsp;|&nbsp; Print face-up</p>
 
 <div class="sheet">
   <div class="fold fold-1"></div>
   <div class="fold fold-2"></div>
 
-  <!-- PANEL A: INSIDE FLAP — What to expect at your first appointment -->
-  <div class="panel" style="padding: 11mm 8mm 10mm 9mm; background: #faf8f4; border-right: 0.5px solid #e8e0d4;">
-    <p class="kicker" style="margin-bottom: 4px;">Your first appointment</p>
-    <div class="gold-rule"></div>
-    <p style="font-family: Georgia, serif; font-size: 12.5px; color: #201e11; line-height: 1.3; margin-bottom: 8px; font-weight: normal;">What to expect<br>when you visit.</p>
+  <!-- PANEL A: INSIDE FLAP — Is this right for you? -->
+  <div class="panel flap">
+    <span class="eyebrow" style="margin-bottom:4mm;">Is this right for you?</span>
+    <div class="gold-rule" style="margin-bottom:4mm;"></div>
+    <p style="font-family:Georgia,serif;font-size:13px;color:var(--ink);font-weight:normal;line-height:1.2;margin-bottom:3mm;">When bariatric surgery may be appropriate.</p>
+    <p style="font-size:8px;color:var(--ink-60);line-height:1.65;margin-bottom:5mm;">Bariatric surgery may be considered when excess weight is contributing to long-term health risk and previous attempts at weight reduction have not produced durable results.</p>
 
-    <p class="t-small" style="color: #666; margin-bottom: 9px;">Your first visit is a consultation. There is no commitment to surgery, and no decision will be made without you.</p>
-
-    <div class="step-row">
-      <span class="step-num">01</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Sit down with a surgeon</p>
-        <p class="t-small">You'll meet with one of our bariatric metabolic surgeons for a full clinical review — your history, your goals, your concerns.</p>
-      </div>
+    <div class="criterion-card">
+      <strong>Type 2 diabetes</strong>
+      <p>Blood sugar not well controlled despite multiple medications, or HbA1c persistently above 7.5%.</p>
     </div>
-    <div class="step-row">
-      <span class="step-num">02</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Body composition scan</p>
-        <p class="t-small">A quick, non-invasive scan that measures your muscle mass, body fat, and metabolic health — far more detailed than a BMI reading alone.</p>
-      </div>
+    <div class="criterion-card">
+      <strong>Elevated metabolic and cardiovascular risk</strong>
+      <p>BMI 35 or above with one or more metabolic conditions. BMI 30 to 35 with severe insulin resistance or cardiovascular risk. BMI alone is not the determinant.</p>
     </div>
-    <div class="step-row">
-      <span class="step-num">03</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Nutritional review</p>
-        <p class="t-small">You'll meet with a dietitian to talk through your eating patterns and what a pre- and post-operative nutrition plan might look like.</p>
-      </div>
+    <div class="criterion-card">
+      <strong>GLP-1 plateau or cessation</strong>
+      <p>GLP-1 pharmacotherapy has plateaued, is unsustainable long-term, or has been ceased with significant weight recurrence.</p>
     </div>
-    <div class="step-row" style="margin-bottom: 10px;">
-      <span class="step-num">04</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">A clear path forward</p>
-        <p class="t-small">The team will explain your options. If surgery is appropriate, you'll receive a written care plan. If it is not the right path, we'll tell you honestly and explore alternatives.</p>
-      </div>
+    <div class="criterion-card">
+      <strong>Weight not responding to sustained effort</strong>
+      <p>Two or more years of sustained lifestyle effort without durable metabolic benefit.</p>
+    </div>
+    <div class="criterion-card" style="margin-bottom:0;">
+      <strong>Other conditions associated with excess weight</strong>
+      <p>High blood pressure, sleep apnoea, fatty liver disease, reflux, or joint pain affecting daily life.</p>
     </div>
 
-    <div style="background: #f0ece5; border-left: 2px solid #c2a55e; padding: 7px 9px;">
-      <p class="kicker" style="margin-bottom: 3px;">No referral required to enquire</p>
-      <p class="t-small" style="color: #555;">You are welcome to call us directly. A GP referral is helpful but not required for an initial appointment.</p>
-    </div>
-
-    <div style="position: absolute; bottom: 9mm; left: 9mm; right: 8mm;">
-      <div class="gold-rule-thin"></div>
-      <p class="t-tiny" style="margin-top: 4px;">meridianhealth.com.au</p>
+    <div style="position:absolute;bottom:8mm;left:8mm;right:8mm;">
+      <div style="border-left:2px solid var(--gold);padding:5px 8px;background:var(--cream);">
+        <span class="eyebrow" style="margin-bottom:2px;">Coming to a consultation is not a commitment</span>
+        <p style="font-size:7.5px;color:var(--ink-60);line-height:1.6;">The assessment determines candidacy. No surgical decision is made before the full team has reviewed your case. Many people find the assessment itself clarifying.</p>
+      </div>
     </div>
   </div>
 
-  <!-- PANEL B: BACK COVER — How to get started -->
-  <div class="panel" style="padding: 11mm 8mm 10mm 8mm; background: #201e11;">
-    <p class="kicker" style="margin-bottom: 5px; color: #c2a55e;">Getting started</p>
-    <div style="height: 1.5px; background: #c2a55e; margin: 6px 0 10px 0;"></div>
+  <!-- PANEL B: BACK COVER — Getting started -->
+  <div class="panel back">
+    <span class="eyebrow" style="margin-bottom:3mm;">Getting started</span>
+    <div class="gold-rule" style="margin-bottom:4mm;"></div>
 
-    <p style="font-family: Georgia, serif; font-size: 10px; font-weight: normal; color: #c2a55e; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;">Three ways to take<br>the first step</p>
+    <p style="font-family:Georgia,serif;font-size:11px;font-weight:normal;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;line-height:1.3;margin-bottom:5mm;">Three ways to take<br>the first step.</p>
 
-    <div style="margin-bottom: 9px;">
-      <p style="font-size: 8px; color: #c2a55e; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Talk to your GP</p>
-      <p style="font-size: 8px; color: #f0ebe0; line-height: 1.65;">Ask your GP for a referral to Meridian Health. Bring this brochure if it helps start the conversation. Medicare rebates may apply with a valid GP referral.</p>
+    <div class="back-method">
+      <span class="m-label">Talk to your GP</span>
+      <span class="m-value" style="font-size:10px;line-height:1.5;">Ask your GP for a referral to Meridian Health.</span>
+      <span class="m-note">Medicare rebates may apply with a valid GP referral.</span>
     </div>
 
-    <div style="margin-bottom: 9px;">
-      <p style="font-size: 8px; color: #c2a55e; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Call us directly</p>
-      <p style="font-size: 11px; color: #f0ebe0; font-family: Georgia, serif; margin-bottom: 2px;">(03) 9416 4418</p>
-      <p class="t-tiny" style="color: #888;">Monday to Friday, 8:30am to 5:00pm</p>
+    <div class="back-method">
+      <span class="m-label">Call us directly</span>
+      <span class="m-value">(03) 9416 4418</span>
+      <span class="m-note">Monday to Friday, 8:30am to 5:00pm</span>
     </div>
 
-    <div style="margin-bottom: 12px;">
-      <p style="font-size: 8px; color: #c2a55e; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Visit our website</p>
-      <p style="font-size: 9px; color: #f0ebe0; margin: 0;">meridianhealth.com.au</p>
-      <p class="t-tiny" style="color: #888; margin-top: 2px;">Submit an enquiry online at any time.</p>
+    <div class="back-method">
+      <span class="m-label">Visit our website</span>
+      <span class="m-value" style="font-size:10px;">meridianhealth.com.au</span>
+      <span class="m-note">Submit an enquiry online at any time.</span>
     </div>
 
-    <div style="border-top: 0.5px solid #3a3620; padding-top: 9px; margin-bottom: 9px;">
-      <p style="font-size: 8px; color: #c2a55e; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;">Where we are</p>
-      <p style="font-size: 8.5px; color: #f0ebe0; line-height: 1.65;">Brenan Place<br>Aitkenhead Medical Discovery Precinct<br>Fitzroy, Melbourne</p>
+    <div class="back-divider"></div>
+
+    <div style="margin-bottom:4mm;">
+      <span class="m-label" style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px;">Where we are</span>
+      <p style="font-size:8.5px;color:rgba(255,255,255,0.75);line-height:1.65;">Brenan Place<br>Aitkenhead Medical Discovery Precinct<br>Fitzroy, Melbourne</p>
     </div>
 
-    <div style="border-top: 0.5px solid #3a3620; padding-top: 8px;">
-      <p class="t-tiny" style="color: #888; line-height: 1.6;">reception@meridianhealth.com.au<br>Opening September 2026</p>
-    </div>
+    <div class="back-divider"></div>
 
-    <div style="position: absolute; bottom: 9mm; left: 8mm; right: 8mm; border-top: 0.5px solid #3a3620; padding-top: 7px;">
-      <p class="t-tiny" style="color: #666; text-align: center; letter-spacing: 1px; text-transform: uppercase;">Meridian Health</p>
+    <p style="font-size:7.5px;color:rgba(255,255,255,0.35);line-height:1.65;">reception@meridianhealth.com.au<br>Opening September 2026</p>
+
+    <div style="position:absolute;bottom:8mm;left:8mm;right:8mm;border-top:0.5px solid rgba(255,255,255,0.08);padding-top:5px;">
+      <p style="font-size:7px;color:rgba(255,255,255,0.25);text-align:center;letter-spacing:1.5px;text-transform:uppercase;">Meridian Health</p>
     </div>
   </div>
 
   <!-- PANEL C: FRONT COVER -->
-  <div class="panel" style="padding: 11mm 9mm 10mm 9mm; background: #f4f0e8; display: flex; flex-direction: column; justify-content: space-between;">
-
-    <div>
-      <p style="font-family: Georgia, serif; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: #c2a55e; margin-bottom: 7px;">Meridian Health</p>
-      <div style="height: 1.5px; background: #c2a55e; margin-bottom: 14px;"></div>
-      <p style="font-family: Georgia, serif; font-size: 22px; color: #201e11; font-weight: normal; line-height: 1.2; margin-bottom: 12px;">A longer-term<br>answer.</p>
-      <p style="font-size: 9px; color: #555; line-height: 1.75; margin-bottom: 12px;">If you have been living with type 2 diabetes, significant weight challenges, or metabolic conditions that haven't responded to medication or lifestyle change, surgery may offer a more lasting solution.</p>
-
-      <div style="background: #201e11; padding: 9px 11px; margin-bottom: 12px;">
-        <p style="font-size: 7.5px; color: #c2a55e; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px;">This is not a last resort</p>
-        <p style="font-size: 8px; color: #f0ebe0; line-height: 1.65;">Bariatric metabolic surgery is the most evidence-supported long-term intervention for complex metabolic disease. Many patients wish they had explored it sooner.</p>
+  <div class="panel cover">
+    <img class="cover-img" src="file:///home/runner/workspace/brand/scenes/scene-prep.png" alt="Follow-up consultation, Meridian Health">
+    <div class="cover-body">
+      <div>
+        <div class="cover-wordmark">Meridian Health</div>
+        <div class="cover-rule"></div>
+        <h1 class="cover-h1">Bariatric<br>Metabolic<br>Surgery.</h1>
+        <p class="cover-lead" style="margin-top:3mm;">Personalised surgical options. Structured preparation. Twelve months of included follow-up.</p>
+      </div>
+      <div class="cover-footer">
+        Surgeon-led specialist care<br>
+        Brenan Place, Fitzroy, Melbourne<br>
+        (03) 9416 4418
       </div>
     </div>
-
-    <div>
-      <div style="border-top: 0.75px solid #c2a55e; padding-top: 9px;">
-        <p style="font-size: 7.5px; color: #888; line-height: 1.7;">
-          Surgeon-led specialist care<br>
-          Brenan Place, Fitzroy, Melbourne<br><br>
-          (03) 9416 4418<br>
-          meridianhealth.com.au
-        </p>
-      </div>
-    </div>
-
   </div>
+
 </div>
 
 <div class="screen-gap"></div>
 
-<!-- =========================================================
+<!-- =================================================================
      SIDE 2: INSIDE
-     Panels L to R: [Could this be right for me?] [What the journey looks like] [What people experience + your team]
-     ========================================================= -->
+     Panels: [D — Surgical Options] [E — Your Journey] [F — Your Team]
+     ================================================================= -->
 <p class="screen-label">Side 2 — Inside &nbsp;|&nbsp; Print face-down, flip on long edge</p>
 
 <div class="sheet">
   <div class="fold fold-1"></div>
   <div class="fold fold-2"></div>
 
-  <!-- PANEL D: COULD THIS BE RIGHT FOR ME? -->
-  <div class="panel" style="padding: 11mm 8mm 10mm 9mm; border-right: 0.5px solid #e8e0d4;">
-    <p class="kicker" style="margin-bottom: 4px;">Is this right for me?</p>
-    <div class="gold-rule"></div>
-    <p style="font-family: Georgia, serif; font-size: 13px; color: #201e11; font-weight: normal; line-height: 1.25; margin-bottom: 8px;">You might be a<br>candidate if&#8202;...</p>
+  <!-- PANEL D: SURGICAL OPTIONS -->
+  <div class="panel options-panel">
+    <span class="eyebrow" style="margin-bottom:4mm;">Procedures</span>
+    <div class="gold-rule" style="margin-bottom:4mm;"></div>
+    <p style="font-family:Georgia,serif;font-size:12px;color:var(--ink);font-weight:normal;line-height:1.2;margin-bottom:2mm;">Tailored procedures. Choosing yours is anything but routine.</p>
+    <p style="font-size:8px;color:var(--ink-60);line-height:1.6;margin-bottom:4mm;">Procedure selection is individualised around metabolic health, eating patterns, anatomy, and long-term treatment goals.</p>
 
-    <ul class="check-list" style="margin-bottom: 10px;">
-      <li>
-        <span class="icon">&#8250;</span>
-        <p class="t-body">You have type 2 diabetes and your blood sugar is still not well controlled, despite taking multiple medications.</p>
-      </li>
-      <li>
-        <span class="icon">&#8250;</span>
-        <p class="t-body">Your weight has not responded to sustained diet and lifestyle changes over two or more years.</p>
-      </li>
-      <li>
-        <span class="icon">&#8250;</span>
-        <p class="t-body">You have been on GLP-1 medication (such as Ozempic or Wegovy) and it has stopped working, or is unsustainable long-term.</p>
-      </li>
-      <li>
-        <span class="icon">&#8250;</span>
-        <p class="t-body">Your doctor has told you that your weight is affecting your heart health, blood pressure, or other chronic conditions.</p>
-      </li>
-      <li>
-        <span class="icon">&#8250;</span>
-        <p class="t-body">You have a BMI above 30 and significant metabolic health concerns, or a BMI above 35 regardless of other conditions.</p>
-      </li>
-    </ul>
+    <div class="proc-row">
+      <h3>Laparoscopic sleeve gastrectomy</h3>
+      <p>The most commonly performed bariatric procedure. A significant portion of the stomach is removed to reduce hunger and support durable weight reduction.</p>
+    </div>
+    <div class="proc-row">
+      <h3>Roux-en-Y gastric bypass</h3>
+      <p>Combines restriction and selective malabsorption. Often considered in patients with significant reflux, type 2 diabetes, or failed previous interventions.</p>
+    </div>
+    <div class="proc-row">
+      <h3>One anastomosis gastric bypass</h3>
+      <p>A single-anastomosis bypass with substantial metabolic and weight-loss effects in selected patients.</p>
+    </div>
+    <div class="proc-row">
+      <h3>Sleeve fundoplication</h3>
+      <p>Combines sleeve gastrectomy with anti-reflux surgery. Considered where obesity and reflux coexist.</p>
+    </div>
+    <div class="proc-row">
+      <h3>Revision bariatric surgery</h3>
+      <p>Assessment and management of previous bariatric procedures, including weight regain, nutritional concerns, or anatomical problems.</p>
+    </div>
 
-    <div style="background: #201e11; padding: 9px 10px;">
-      <p class="kicker" style="color: #c2a55e; margin-bottom: 5px;">You don't have to decide today</p>
-      <p class="t-tiny" style="color: #f0ebe0; line-height: 1.65;">Coming to a consultation is just that. The team will assess your situation fully before any recommendation is made. Many people find the assessment itself clarifying, regardless of what comes next.</p>
+    <div style="background:var(--ink);padding:6px 9px;margin-top:5mm;">
+      <span class="eyebrow" style="color:var(--gold);margin-bottom:3px;">The evidence, briefly</span>
+      <p style="font-size:7.5px;color:rgba(240,235,224,0.80);line-height:1.6;margin-bottom:4px;">T2DM remission rates exceed those of any pharmacological intervention in selected surgical patients.</p>
+      <p style="font-size:7.5px;color:rgba(240,235,224,0.80);line-height:1.6;">Long-term weight loss maintenance is superior to every non-surgical intervention at five and ten years.</p>
     </div>
   </div>
 
-  <!-- PANEL E: WHAT THE JOURNEY LOOKS LIKE -->
-  <div class="panel" style="padding: 11mm 8mm 10mm 8mm; background: #fdfcfa; border-right: 0.5px solid #e8e0d4;">
-    <p class="kicker" style="margin-bottom: 4px;">Your journey</p>
-    <div class="gold-rule"></div>
-    <p style="font-family: Georgia, serif; font-size: 13px; color: #201e11; font-weight: normal; line-height: 1.25; margin-bottom: 5px;">What the process<br>looks like.</p>
-    <p class="t-small" style="color: #666; margin-bottom: 9px;">No surgical decision is made before the full team has reviewed your case and you have been fully informed.</p>
+  <!-- PANEL E: YOUR JOURNEY -->
+  <div class="panel journey-panel">
+    <span class="eyebrow" style="margin-bottom:4mm;">Process</span>
+    <div class="gold-rule" style="margin-bottom:4mm;"></div>
+    <p style="font-family:Georgia,serif;font-size:12px;color:var(--ink);font-weight:normal;line-height:1.2;margin-bottom:2mm;">From first consultation to long-term follow-up.</p>
+    <p style="font-size:8px;color:var(--ink-60);line-height:1.6;margin-bottom:4mm;">The first twelve months are considered part of the procedure itself.</p>
 
-    <div class="step-row">
-      <span class="step-num">01</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Initial consultation</p>
-        <p class="t-small">A thorough review with a surgeon. Your history, goals, and any concerns are discussed fully.</p>
+    <div class="a-step">
+      <div class="a-step-num">01</div>
+      <div class="a-step-body">
+        <h3>Surgical consultation</h3>
+        <p>A bariatric surgeon reviews medical history, weight trajectory, metabolic health and treatment goals. Available surgical pathways are discussed.</p>
       </div>
     </div>
-    <div class="step-row">
-      <span class="step-num">02</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Body composition and investigations</p>
-        <p class="t-small">A medical-grade scan and any required pathology or imaging to complete the clinical picture.</p>
+    <div class="a-step">
+      <div class="a-step-num">02</div>
+      <div class="a-step-body">
+        <h3>Assessment and investigations</h3>
+        <p>Dietitian review, blood tests, body composition analysis. Additional investigations arranged where appropriate.</p>
       </div>
     </div>
-    <div class="step-row">
-      <span class="step-num">03</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Nutrition and psychology review</p>
-        <p class="t-small">Supportive assessment to understand your dietary habits and readiness for the pre- and post-operative process.</p>
+    <div class="a-step">
+      <div class="a-step-num">03</div>
+      <div class="a-step-body">
+        <h3>Pre-operative preparation</h3>
+        <p>Two-week VLCD liver reduction diet, nurse education, pre-operative review and anaesthetic assessment.</p>
       </div>
     </div>
-    <div class="step-row">
-      <span class="step-num">04</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">MDT review and recommendation</p>
-        <p class="t-small">The full team reviews your case. If surgery is appropriate, a written care plan is prepared and discussed with you.</p>
+    <div class="a-step">
+      <div class="a-step-num">04</div>
+      <div class="a-step-body">
+        <h3>Surgery and hospital stay</h3>
+        <p>Laparoscopic procedure within connected private hospitals. Most patients stay one to two nights.</p>
       </div>
     </div>
-    <div class="step-row">
-      <span class="step-num">05</span>
-      <div>
-        <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Surgery and ongoing care</p>
-        <p class="t-small">Minimally invasive surgery, followed by twelve months of active follow-up. Your GP is kept informed throughout.</p>
+    <div class="a-step">
+      <div class="a-step-num">05</div>
+      <div class="a-step-body">
+        <h3>Twelve months of included follow-up</h3>
+        <p>Structured review with the surgical, nursing and dietetic team throughout the first year. Included within the surgical fee.</p>
       </div>
     </div>
-
-    <div style="background: #f0ece5; border-left: 2px solid #c2a55e; padding: 7px 9px; margin-top: 9px;">
-      <p class="kicker" style="margin-bottom: 3px;">Opening September 2026</p>
-      <p class="t-small" style="color: #555;">Brenan Place, Fitzroy. Specialist consulting suites alongside St Vincent's Hospital and the Aitkenhead precinct.</p>
-    </div>
-
-    <div style="position: absolute; bottom: 9mm; left: 8mm; right: 8mm; border-top: 0.5px solid #e0d8cc; padding-top: 5px;">
-      <p class="t-tiny" style="color: #aaa; text-align: center;">meridianhealth.com.au &nbsp;·&nbsp; (03) 9416 4418</p>
+    <div class="a-step">
+      <div class="a-step-num">06</div>
+      <div class="a-step-body">
+        <h3>Long-term metabolic care</h3>
+        <p>Many patients continue long-term follow-up. Ongoing review supports durable weight maintenance and nutritional health.</p>
+      </div>
     </div>
   </div>
 
-  <!-- PANEL F: WHAT PEOPLE EXPERIENCE + YOUR TEAM -->
-  <div class="panel" style="padding: 11mm 9mm 10mm 8mm;">
+  <!-- PANEL F: YOUR SURGICAL TEAM + OUTCOMES -->
+  <div class="panel team-panel">
+    <span class="eyebrow" style="margin-bottom:3mm;">Your surgical team</span>
+    <div class="gold-rule" style="margin-bottom:4mm;"></div>
 
-    <p class="kicker" style="margin-bottom: 4px;">Real outcomes</p>
-    <div class="gold-rule"></div>
-    <p style="font-family: Georgia, serif; font-size: 11px; color: #201e11; font-weight: normal; line-height: 1.3; margin-bottom: 4px;">What people experience<br>after surgery.</p>
-    <p class="t-tiny" style="color: #888; margin-bottom: 6px;">Indicative twelve-month outcomes for a T2DM patient post bariatric metabolic surgery.</p>
-
-    <div class="stat-grid" style="margin-bottom: 5px;">
-      <div class="stat-cell">
-        <span class="stat-big">Blood sugar</span>
-        <span class="stat-label" style="color: #c2a55e; font-weight: bold; font-size: 7.5px;">Returned to normal range</span>
-        <span class="stat-label">HbA1c 8.4% reduced to 5.9%</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-big">Medications</span>
-        <span class="stat-label" style="color: #c2a55e; font-weight: bold; font-size: 7.5px;">Significantly reduced</span>
-        <span class="stat-label">From 4 agents to 2, continuing to taper</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-big">Blood pressure</span>
-        <span class="stat-label" style="color: #c2a55e; font-weight: bold; font-size: 7.5px;">Normalised</span>
-        <span class="stat-label">138/88 reduced to 118/76</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-big">Cholesterol</span>
-        <span class="stat-label" style="color: #c2a55e; font-weight: bold; font-size: 7.5px;">Within normal range</span>
-        <span class="stat-label">Triglycerides 3.2 to 1.1 mmol/L</span>
+    <div class="surgeon-card">
+      <img class="surgeon-photo" src="file:///home/runner/workspace/brand/team/team-michael-hii.png" alt="A/Prof Michael Hii">
+      <div class="surgeon-info">
+        <span class="role-chip">Surgeon</span>
+        <h3>A/Prof Michael Hii</h3>
+        <span class="role">Oesophago-Gastric &amp; Bariatric Surgeon</span>
+        <span class="quals">FRACS &middot; MBBS &middot; BMedSci &middot; PGDipSurgAnat</span>
       </div>
     </div>
 
-    <p class="t-tiny" style="color: #bbb; margin-bottom: 8px; font-style: italic;">Representative outcomes. Individual results vary. Published with patient consent.</p>
-
-    <div class="gold-rule-thin" style="margin-bottom: 7px;"></div>
-
-    <p class="sec-head">Your Surgical Team</p>
-
-    <div style="margin-bottom: 5px; padding-bottom: 5px; border-bottom: 0.5px solid #ede8df;">
-      <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">A/Prof Michael Hii</p>
-      <p style="font-size: 7px; color: #c2a55e; font-style: italic; margin-bottom: 1px;">Oesophago-Gastric &amp; Bariatric Surgeon &nbsp;·&nbsp; FRACS</p>
+    <div class="surgeon-card">
+      <img class="surgeon-photo" src="file:///home/runner/workspace/brand/team/team-salena-ward.png" alt="Dr Salena Ward">
+      <div class="surgeon-info">
+        <span class="role-chip">Surgeon</span>
+        <h3>Dr Salena Ward</h3>
+        <span class="role">Gastric, Bariatric &amp; General Surgeon</span>
+        <span class="quals">MBBS &middot; FRACS &middot; MS &middot; PGDipSurgAnat</span>
+      </div>
     </div>
 
-    <div style="margin-bottom: 5px; padding-bottom: 5px; border-bottom: 0.5px solid #ede8df;">
-      <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Dr Salena Ward</p>
-      <p style="font-size: 7px; color: #c2a55e; font-style: italic; margin-bottom: 1px;">Gastric, Bariatric &amp; General Surgeon &nbsp;·&nbsp; FRACS</p>
+    <div class="surgeon-card" style="padding-bottom:5mm;margin-bottom:5mm;">
+      <img class="surgeon-photo" src="file:///home/runner/workspace/brand/team/team-nicole-winter.png" alt="Dr Nicole Winter">
+      <div class="surgeon-info">
+        <span class="role-chip">Surgeon</span>
+        <h3>Dr Nicole Winter</h3>
+        <span class="role">Oesophago-Gastric &amp; Bariatric Surgeon</span>
+        <span class="quals">FRACS &middot; MBBS (Hons) &middot; BMedSci &middot; AANZGOSA</span>
+      </div>
     </div>
 
-    <div style="margin-bottom: 8px;">
-      <p style="font-size: 8.5px; font-weight: bold; color: #201e11; margin-bottom: 1px;">Dr Nicole Winter</p>
-      <p style="font-size: 7px; color: #c2a55e; font-style: italic; margin-bottom: 1px;">Oesophago-Gastric &amp; Bariatric Surgeon &nbsp;·&nbsp; FRACS</p>
+    <div class="outcomes-band">
+      <span class="eyebrow" style="color:var(--gold);margin-bottom:4px;">Indicative twelve-month outcomes</span>
+      <p style="font-size:7px;color:rgba(255,255,255,0.40);line-height:1.5;margin-bottom:4px;">T2DM patient, post bariatric metabolic surgery</p>
+      <div class="outcomes-grid">
+        <div class="outcome-cell">
+          <span class="outcome-metric">HbA1c</span>
+          <span class="outcome-change">8.4% to 5.9%</span>
+          <span class="outcome-desc">Normal range</span>
+        </div>
+        <div class="outcome-cell">
+          <span class="outcome-metric">Medications</span>
+          <span class="outcome-change">4 agents to 2</span>
+          <span class="outcome-desc">Continuing to taper</span>
+        </div>
+        <div class="outcome-cell">
+          <span class="outcome-metric">Blood Pressure</span>
+          <span class="outcome-change">138/88 to 118/76</span>
+          <span class="outcome-desc">Normalised</span>
+        </div>
+        <div class="outcome-cell">
+          <span class="outcome-metric">Triglycerides</span>
+          <span class="outcome-change">3.2 to 1.1 mmol/L</span>
+          <span class="outcome-desc">Normal range</span>
+        </div>
+      </div>
+      <p style="font-size:6px;color:rgba(255,255,255,0.25);margin-top:5px;font-style:italic;line-height:1.5;">Representative outcomes. Individual results vary. Published with patient consent.</p>
     </div>
 
-    <div style="background: #f4f0e8; border-left: 2px solid #c2a55e; padding: 6px 9px;">
-      <p class="t-tiny" style="color: #555; font-style: italic; line-height: 1.65;">You are cared for by a complete team: surgeons, a physician, a dietitian, a psychologist, and dedicated nursing staff. Your GP remains part of your care throughout.</p>
+    <div style="position:absolute;bottom:8mm;left:8mm;right:8mm;border-top:0.5px solid var(--ink-20);padding-top:5px;display:flex;justify-content:space-between;">
+      <p style="font-size:7px;color:var(--ink-60);">meridianhealth.com.au</p>
+      <p style="font-size:7px;color:var(--ink-60);">(03) 9416 4418</p>
     </div>
-
-    <div style="position: absolute; bottom: 9mm; left: 8mm; right: 9mm; border-top: 0.5px solid #e0d8cc; padding-top: 5px; display: flex; justify-content: space-between;">
-      <p class="t-tiny" style="color: #aaa;">Brenan Place, Fitzroy</p>
-      <p class="t-tiny" style="color: #aaa;">Prepared June 2026</p>
-    </div>
-
   </div>
+
 </div>
 
 <div class="screen-gap"></div>
