@@ -1,42 +1,5 @@
 [build]
   publish = "."
-  functions = "netlify/functions"
-
-# Non-production contexts (deploy-preview, branch-deploy, dev) automatically
-# use BREVO_TEST_API_KEY instead of BREVO_API_KEY — see enquiry.js and
-# _docs/brevo-preview-env-setup.md for details.
-# BREVO_TEST_API_KEY must be set in Netlify → Site settings → Environment variables.
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/*/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-# Prelaunch — keep hidden from search engines
-[[headers]]
-  for = "/prelaunch/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/sitemap.xml"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/llms.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
 
 [[headers]]
   for = "/fonts/*"
@@ -49,19 +12,9 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/assets/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
 [build.processing.html]
   pretty_urls = true
-
-[[redirects]]
-  from = "/api/enquiry"
-  to = "/.netlify/functions/enquiry"
-  status = 200

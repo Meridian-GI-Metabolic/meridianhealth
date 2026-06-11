@@ -1,38 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /portal/
-Disallow: /admin/
-Disallow: /prelaunch/
-Disallow: /.netlify/
-
-User-agent: GPTBot
-Allow: /
-Disallow: /portal/
-Disallow: /admin/
-Disallow: /prelaunch/
-
-User-agent: ClaudeBot
-Allow: /
-Disallow: /portal/
-Disallow: /admin/
-Disallow: /prelaunch/
-
-User-agent: PerplexityBot
-Allow: /
-Disallow: /portal/
-Disallow: /admin/
-Disallow: /prelaunch/
-
-User-agent: Google-Extended
-Allow: /
-Disallow: /portal/
-Disallow: /admin/
-Disallow: /prelaunch/
-
-User-agent: Bingbot
-Allow: /
-Disallow: /portal/
-Disallow: /admin/
-Disallow: /prelaunch/
 
 Sitemap: https://meridianhealth.com.au/sitemap.xml

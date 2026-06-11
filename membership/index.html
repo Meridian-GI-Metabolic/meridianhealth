@@ -8,14 +8,47 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
 <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
 <link rel="apple-touch-icon" sizes="180x180" href="/brand/favicon-180.png?v=6.7q" />
-<style id="meridian-gate-style">html.meridian-locked #content{visibility:hidden!important}#meridian-gate{position:fixed!important;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:24px;background:#e8e4dc;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#564929;visibility:visible!important;opacity:1!important;box-sizing:border-box}#meridian-gate.hidden{display:none}#meridian-gate .card{background:#eeebe4;border:1px solid rgba(86,73,41,.10);border-radius:12px;padding:36px 32px 30px;width:100%;max-width:360px;box-sizing:border-box}#meridian-gate h1{margin:0 0 6px;font-size:22px;font-family:"Inter";font-weight:500;letter-spacing:-.012em;line-height:1.2}#meridian-gate p.sub{margin:0 0 22px;font-size:14px;color:rgba(86,73,41,.62);line-height:1.45}#meridian-gate label{display:block;font-size:11px;font-family:"Inter";font-weight:500;text-transform:uppercase;letter-spacing:1.2px;color:rgba(86,73,41,.55);margin:14px 0 6px}#meridian-gate input{width:100%;padding:12px 14px;font-size:15px;font-family:"Inter";border:1px solid rgba(86,73,41,.18);border-radius:6px;background:#fff;color:#564929;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none}#meridian-gate input:focus{border-color:#564929;box-shadow:0 0 0 3px rgba(86,73,41,.06)}#meridian-gate button{margin-top:22px;width:100%;padding:12px 16px;font-size:13px;font-family:"Inter";font-weight:500;letter-spacing:.6px;text-transform:uppercase;background:transparent;color:#564929;border:1px solid #564929;border-radius:999px;cursor:pointer;transition:background .15s ease,color .15s ease;-webkit-appearance:none;appearance:none}#meridian-gate button:hover{background:#564929;color:#e8e4dc}#meridian-gate .err{margin-top:14px;font-size:13px;color:#b3261e;min-height:16px;font-family:"Inter"}#meridian-gate .brand{display:block;width:108px;height:15px;margin:0 0 18px;background-color:#9a7818;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;overflow:hidden;font-size:0;color:transparent}#meridian-logout{position:fixed;bottom:14px;right:14px;z-index:2147483645;background:transparent;color:#564929;border:1px solid rgba(86,73,41,.25);border-radius:999px;padding:7px 14px;font-size:11px;font-family:"Inter";font-weight:500;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(247,245,239,.7)}#meridian-logout:hover{background:#564929;color:#e8e4dc;border-color:#564929}</style>
-<script id="meridian-gate-script">(function(){if(location.hostname==="localhost"||location.hostname==="127.0.0.1"||location.hostname.endsWith(".replit.dev"))return;var KEY="meridian_auth_v1";var U="MHII";var P="MERIDIANMHII2026@!";var root=document.documentElement;function isAuthed(){try{return window.localStorage.getItem(KEY)==="1"}catch(e){return false}}function lock(){root.classList.add("meridian-locked")}function unlock(){root.classList.remove("meridian-locked")}if(!isAuthed()){lock()}function buildOverlay(){var d=document.createElement("div");d.id="meridian-gate";d.innerHTML='<div class="card" role="dialog" aria-modal="true" aria-labelledby="mg-title"><span class="brand">Meridian Health</span><h1 id="mg-title">Sign in</h1><p class="sub">Enter your credentials to continue.</p><form id="meridian-gate-form" autocomplete="off"><label for="mg-user">Username</label><input id="mg-user" name="username" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" required /><label for="mg-pass">Password</label><input id="mg-pass" name="password" type="password" required /><button type="submit">Enter</button><div class="err" id="mg-err" aria-live="polite"></div></form></div>';return d}function buildLogout(){var b=document.createElement("button");b.id="meridian-logout";b.type="button";b.textContent="Log out";b.addEventListener("click",function(){try{window.localStorage.removeItem(KEY)}catch(e){}window.location.reload()});return b}function mountLogout(){if(document.getElementById("meridian-logout"))return;var btn=buildLogout();(document.body||document.documentElement).appendChild(btn)}function mountOverlay(){if(document.getElementById("meridian-gate"))return;var ov=buildOverlay();(document.body||document.documentElement).appendChild(ov);var form=document.getElementById("meridian-gate-form");var err=document.getElementById("mg-err");form.addEventListener("submit",function(e){e.preventDefault();var u=document.getElementById("mg-user").value;var p=document.getElementById("mg-pass").value;if(u===U&&p===P){try{window.localStorage.setItem(KEY,"1")}catch(e){}err.textContent="";ov.classList.add("hidden");unlock();mountLogout()}else{err.textContent="Invalid username or password.";document.getElementById("mg-pass").value="";document.getElementById("mg-pass").focus()}});setTimeout(function(){var f=document.getElementById("mg-user");if(f)f.focus()},50)}function init(){if(isAuthed()){unlock();mountLogout()}else{mountOverlay()}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();</script>
-<link rel="stylesheet" href="/assets/styles.css?v=8" />
-  <link rel="stylesheet" href="/assets/gate.css?v=2" />
-  <script defer src="/assets/gate.js?v=2"></script>
+<link rel="stylesheet" href="/assets/styles.css?v=6.7bg" />
+<link rel="canonical" href="https://meridianhealth.com.au/membership/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Membership | Meridian Health, Fitzroy" />
+<meta property="og:description" content="Meridian Membership extends physician-led metabolic care, GLP-1 therapy where clinically appropriate, dietetic and psychology support, and twelve-month structured follow-up. Held to clinical standards." />
+<meta property="og:url" content="https://meridianhealth.com.au/membership/" />
+<meta property="og:image" content="https://meridianhealth.com.au/brand/social/og-default.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Membership | Meridian Health, Fitzroy" />
+<meta name="twitter:description" content="Meridian Membership extends physician-led metabolic care, GLP-1 therapy where clinically appropriate, dietetic and psychology support, and twelve-month structured follow-up. Held to clinical standards." />
+<meta name="twitter:image" content="https://meridianhealth.com.au/brand/social/og-default.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Meridian Membership",
+  "description": "Meridian Membership extends physician-led metabolic care, GLP-1 therapy where clinically appropriate, dietetic and psychology support, and twelve-month structured follow-up.",
+  "url": "https://meridianhealth.com.au/membership/",
+  "provider": {
+    "@type": "MedicalClinic",
+    "name": "Meridian Health",
+    "url": "https://meridianhealth.com.au/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Suite 301, Level 3, 33 Victoria Parade",
+      "addressLocality": "Fitzroy",
+      "addressRegion": "VIC",
+      "postalCode": "3065",
+      "addressCountry": "AU"
+    },
+    "telephone": "+61394164418"
+  },
+  "serviceType": "Medical Membership Programme",
+  "areaServed": {
+    "@type": "City",
+    "name": "Melbourne"
+  }
+}
+</script>
 </head>
 <body>
-<div class="ann-bar"><span class="ann-desk"><span class="ann-w">MGOS</span> and <span class="ann-w">MWLS</span>, now united at <span class="ann-w">MERIDIAN</span>. Clinical excellence, multidisciplinary care, and a connected patient experience.</span><span class="ann-mob"><span class="ann-w">MGOS</span> and <span class="ann-w">MWLS</span> now united at <span class="ann-w">MERIDIAN</span></span></div>
 
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
@@ -25,31 +58,24 @@
       <div class="nav-dd">
         <a href="/clinical-pathways/" aria-haspopup="true" aria-expanded="false">Clinical Pathways</a>
         <div class="nav-dd-panel" role="menu">
-          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Metabolic Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
           <a href="/clinical-pathways/upper-gi-surgical-care/" role="menuitem"><span class="dd-t">Upper GI &amp; Surgical Care</span><span class="dd-s">Reflux, hernia, oesophago-gastric and revisional surgery.</span></a>
+          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
           <a href="/clinical-pathways/metabolic-medicine/" role="menuitem"><span class="dd-t">Metabolic Medicine</span><span class="dd-s">Physician-led weight management and GLP-1 therapy.</span></a>
         </div>
       </div>
+      <a href="/specialists/">Specialists</a>
       <div class="nav-dd">
         <a href="/the-practice/" aria-haspopup="true" aria-expanded="false">The Practice</a>
         <div class="nav-dd-panel" role="menu">
           <a href="/the-practice/" role="menuitem"><span class="dd-t">Overview</span><span class="dd-s">Clinic, theatres and the multidisciplinary team.</span></a>
-          <a href="/specialists/" role="menuitem"><span class="dd-t">Your Care Team</span><span class="dd-s">Surgeons, physicians and the multidisciplinary team.</span></a>
           <a href="/contact/" role="menuitem"><span class="dd-t">Contact and visit</span><span class="dd-s">Enquiries, appointments and Brenan Place.</span></a>
         </div>
       </div>
-      <div class="nav-dd">
-        <a href="/app/" aria-haspopup="true" aria-expanded="false" class="active">Patient Hub</a>
-        <div class="nav-dd-panel" role="menu">
-          <a href="/app/" role="menuitem"><span class="dd-t">App</span><span class="dd-s">Track progress and stay connected between appointments.</span></a>
-          <a href="/membership/" role="menuitem"><span class="dd-t">Membership V1</span><span class="dd-s">Annual care, priority access and continuity.</span></a>
-          <a href="/membership-v2/" role="menuitem"><span class="dd-t">Membership V2</span><span class="dd-s">All-inclusive telehealth programme, $299/month.</span></a>
-        </div>
-      </div>
-      <a href="/refer/">Referrals</a>
-      <a href="/contact/#assessment" class="nav-cta-mobile">Start assessment</a>
+      <a href="/app/">App</a>
+      <a href="/membership/" class="active">Membership</a>
+      <a href="/consultation/" class="nav-cta-mobile">Start assessment</a>
     </div>
-    <a href="/contact/#assessment" class="btn btn-key nav-cta">Start assessment</a>
+    <a href="/consultation/" class="btn btn-key nav-cta">Start assessment</a>
     <a href="/portal/" class="nav-portal" aria-label="Patient sign in" title="Patient sign in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 19.5c1.4-3.4 4.4-5.2 7.5-5.2s6.1 1.8 7.5 5.2"/></svg><span>Patient sign in</span></a>
   </div>
 </nav>
@@ -59,18 +85,18 @@
 <header class="page-head bg-glp1" aria-label="Membership">
   <div class="wrap">
     <span class="label reveal reveal-1">Membership</span>
-    <h1 class="display reveal reveal-2">Long-term metabolic care, under continuous clinical oversight.</h1>
-    <p class="lead reveal reveal-3">A physician-led membership for medical weight management and metabolic health.</p>
+    <h1 class="display reveal reveal-2">Specialist metabolic care, held continuously.</h1>
+    <p class="lead reveal reveal-3">A physician-led membership for medical weight management and long-term metabolic health.</p>
   </div>
 </header>
 
 <section class="member-hero" aria-label="How Meridian Membership begins">
   <div class="wrap">
     <div class="mh-head reveal">
-      <span class="eyebrow">Membership in Three Steps</span>
-
-      <h2 class="mh-h2">Physician-led metabolic care, coordinated from the beginning.</h2>
-      <p class="mh-sub">Join through the Meridian app, complete assessment with a consultant physician, and remain under the care of the same multidisciplinary team across the year.</p>
+      <span class="eyebrow">Membership in three steps</span>
+      <div class="gold-rule"></div>
+      <h2 class="mh-h2">Specialist GLP-1 care, in hand within a day.</h2>
+      <p class="mh-sub">Download the Meridian app, meet a consultant physician, hold the year with the same clinical team.</p>
     </div>
 
     <ol class="mh-steps">
@@ -79,8 +105,7 @@
         <div class="mh-num">01</div>
         <div class="mh-body">
           <h3 class="mh-t">Download the app</h3>
-          <p class="mh-p">Install the Meridian patient app on iPhone or Android.</p>
-          <p class="mh-p">Following first contact with the practice, your patient profile is activated to support appointments, communication and ongoing care throughout treatment.</p>
+          <p class="mh-p">Scan the code. The Meridian patient app installs on iPhone or Android. Your patient number is issued at first contact and unlocks the file.</p>
         </div>
         <div class="mh-art mh-art-qr" aria-label="Download QR code">
           <a class="mh-qr-canvas" href="https://meridianhealth.com.au/app/" target="_blank" rel="noopener" aria-label="Open the Meridian patient app page">
@@ -96,15 +121,16 @@
         <div class="mh-art-photo" aria-hidden="true"><img src="/brand/scenes/scene-glp1-pen.png?v=5" alt="" loading="lazy" /></div>
         <div class="mh-num">02</div>
         <div class="mh-body">
-          <h3 class="mh-t">Physician-led GLP-1 care</h3>
-          <p class="mh-p">Where clinically appropriate, GLP-1 therapy is prescribed and supervised by a consultant physician within Meridian's metabolic programme.</p>
-          <p class="mh-p">Treatment selection, dose titration, monitoring and ongoing support are managed through the same clinical team to support continuity and safety.</p>
+          <h3 class="mh-t">Reliable access to GLP-1 therapy</h3>
+          <p class="mh-p">Prescribed and titrated under a consultant physician where clinically appropriate. Side effect management, dose escalation and pharmacy supply are coordinated within the practice.</p>
         </div>
         <div class="mh-art mh-art-meta">
           <span class="mh-meta-n">GLP-1</span>
           <span class="mh-meta-v">Physician-prescribed</span>
           <ul class="mh-meta-list">
-            <li>Therapies may include GLP medications as appropriate</li>
+            <li>Semaglutide</li>
+            <li>Tirzepatide</li>
+            <li>Liraglutide, where indicated</li>
           </ul>
         </div>
       </li>
@@ -113,9 +139,8 @@
         <div class="mh-art-photo" aria-hidden="true"><img src="/brand/scenes/scene-care-team.png?v=2" alt="" loading="lazy" /></div>
         <div class="mh-num">03</div>
         <div class="mh-body">
-          <h3 class="mh-t">Continuous care with the same clinical team</h3>
-          <p class="mh-p">Your physician, dietitian and psychologist remain involved across assessment, treatment and follow-up throughout the year wherever possible.</p>
-          <p class="mh-p">Care is supported by scheduled review, GP communication and a shared longitudinal clinical record within the Meridian app.</p>
+          <h3 class="mh-t">Continuity with named specialists</h3>
+          <p class="mh-p">The physician, dietitian and psychologist who open your file are the clinicians who hold it across twelve months. Quarterly review, shared care letters to your GP, and the patient app holding the longitudinal record.</p>
         </div>
         <div class="mh-art mh-art-meta">
           <span class="mh-meta-n">Care team</span>
@@ -138,16 +163,14 @@
     <div class="hero-art">
       <div>
         <span class="eyebrow reveal">What it includes</span>
-
-        <h2 class="reveal" style="font-size:clamp(28px,3.4vw,40px);max-width:20ch;margin:0 0 22px">Metabolic care rarely succeeds as a single episode of treatment.</h2>
-        <p class="reveal reveal-2" style="font-size:16.5px;color:var(--ink-80);max-width:50ch">Most patients require continuity, periodic review, adjustment of therapy and support that evolves over time.</p>
-        <p class="reveal reveal-2" style="font-size:16.5px;color:var(--ink-80);max-width:50ch">Meridian Membership is designed to provide that ongoing clinical framework.</p>
-        <p class="reveal reveal-2" style="font-size:16.5px;color:var(--ink-80);max-width:50ch">Membership is offered through recommendation by a Meridian physician or surgeon and provides coordinated long-term metabolic care within the broader Meridian model.</p>
-        <p class="reveal reveal-2" style="font-size:16.5px;color:var(--ink-80);max-width:50ch">This is a clinical programme, not a subscription product.</p>
+        <div class="gold-rule reveal"></div>
+        <h2 class="reveal" style="font-size:clamp(28px,3.4vw,40px);max-width:20ch;margin:0 0 22px">Care that does not begin and end at the consultation door.</h2>
+        <p class="reveal reveal-2" style="font-size:16.5px;color:var(--ink-80);max-width:50ch">Patients on most metabolic pathways need more than an episode of treatment. They need continuity, periodic review, adjustment of medication, and clinical reading that arrives at the right moment in care. Meridian Membership is designed for that arc.</p>
+        <p class="reveal reveal-2" style="font-size:16.5px;color:var(--ink-80);max-width:50ch">Membership is opened at the recommendation of a Meridian physician or surgeon. It is a clinical service, not a subscription product.</p>
       </div>
       <div class="reveal reveal-3">
         <div class="media-card tall">
-          <img src="/brand/practice/membership-v2.png" alt="Meridian Membership clinical interior" loading="lazy">
+          <img src="/brand/practice/membership.png?v=2" alt="Meridian Membership clinical interior" loading="lazy">
           <div class="media-cap">
             <span class="eyebrow">Membership</span>
             <p class="cap lg">Physician-led, twelve-month arc.</p>
@@ -162,7 +185,7 @@
   <div class="wrap">
     <div class="section-head reveal" style="max-width:780px;margin:0 0 48px">
       <span class="eyebrow">Clinical inclusions</span>
-
+      <div class="gold-rule"></div>
       <h2 style="font-size:clamp(28px,3.4vw,42px);max-width:22ch">Six elements of care, held in one programme.</h2>
     </div>
     <div class="felt-grid with-photos">
@@ -181,13 +204,13 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">Who it is for</span>
-
-        <h2 style="max-width:18ch">Designed for patients who benefit from ongoing metabolic care rather than a single episode of treatment.</h2>
+        <div class="gold-rule"></div>
+        <h2 style="max-width:18ch">Patients who need continuity, not a single episode of care.</h2>
       </div>
       <div class="reveal reveal-2">
-        <p>This pathway commonly includes patients undergoing long-term medical weight management, maintaining outcomes after bariatric surgery, or managing insulin resistance, type 2 diabetes and related metabolic conditions requiring periodic clinical review.</p>
-        <p>Membership is recommended selectively following assessment by a Meridian physician, ensuring the programme aligns appropriately with the patient's medical, metabolic and surgical needs.</p>
-        <p style="color:var(--ink-65);font-size:14px;margin-top:18px">A GP referral is helpful, but not required for initial enquiry. Medicare rebates may apply where eligible services are provided under a valid referral.</p>
+        <p>Membership suits patients on a long medical weight-management arc, patients maintaining results after bariatric surgery, and patients managing insulin resistance, type 2 diabetes or related metabolic conditions where periodic specialist review is clinically indicated.</p>
+        <p>Membership is not appropriate for every enquiry. A Meridian physician will determine whether the programme is the right fit at first consultation, or whether a different pathway, surgical or medical, is more appropriate.</p>
+        <p style="color:var(--ink-65);font-size:14px;margin-top:18px">A referral is helpful but not required to enquire. Medicare rebates apply where the patient holds a valid GP referral and the service is eligible.</p>
       </div>
     </div>
   </div>
@@ -197,7 +220,7 @@
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:48px">
       <span class="eyebrow">How it works</span>
-
+      <div class="gold-rule"></div>
       <h2 style="max-width:18ch">Three steps to enrolment.</h2>
     </div>
     <div class="process-list" style="border-top:1px solid var(--ink-15)">
@@ -231,7 +254,7 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">Diagnostics</span>
-
+        <div class="gold-rule"></div>
         <h2 style="max-width:18ch">Investigations held in the file, not chased between providers.</h2>
       </div>
       <div class="reveal reveal-2">
@@ -247,7 +270,7 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">Escalation</span>
-
+        <div class="gold-rule"></div>
         <h2 style="max-width:18ch">If the medical pathway reaches its limit, the surgical pathway is in the next room.</h2>
       </div>
       <div class="reveal reveal-2">
@@ -263,12 +286,12 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">Bariatric integration</span>
-
-        <h2 style="max-width:20ch">The operation is only one part of long-term metabolic care.</h2>
+        <div class="gold-rule"></div>
+        <h2 style="max-width:20ch">For post-bariatric patients, membership holds the years that follow.</h2>
       </div>
       <div class="reveal reveal-2">
-        <p>Meridian Membership supports post-bariatric patients through ongoing physician review, dietetic care, supplement and nutritional monitoring, and management of weight regain or metabolic drift over time.</p>
-        <p>Care remains integrated with the operating surgeon and coordinated with the patient's GP to support continuity across the years following surgery.</p>
+        <p>Bariatric surgery is a clinical event. The decade after is the patient's. Meridian Membership is open to post-bariatric patients of the practice for ongoing physician review, dietetic support, supplement monitoring, and management of weight regain or metabolic drift.</p>
+        <p>Care is coordinated with the operating surgeon and shared with the patient's GP.</p>
       </div>
     </div>
   </div>
@@ -279,12 +302,12 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">Continuity</span>
-
-        <h2 style="max-width:18ch">The same clinicians remain involved throughout the programme.</h2>
+        <div class="gold-rule"></div>
+        <h2 style="max-width:18ch">The same clinicians, the same file, every visit.</h2>
       </div>
       <div class="reveal reveal-2">
-        <p>The physician who commences care continues review across the year, supported by a consistent dietitian and psychology team. Clinical records, progress and communication are maintained within a single longitudinal patient file through the Meridian app.</p>
-        <p>Membership can be paused or concluded at any time without affecting ongoing care within the broader Meridian practice, including active surgical follow-up where applicable.</p>
+        <p>Membership is held by named clinicians. The physician who opens the programme is the physician who reviews you across the year. The dietitian and psychologist remain consistent. The patient app holds the longitudinal record.</p>
+        <p>Membership can be paused or closed at any time. Closure does not affect the patient's standing with the practice or any active surgical care.</p>
       </div>
     </div>
   </div>
@@ -294,7 +317,7 @@
   <div class="wrap">
     <div class="in-practice-inner reveal">
       <span class="eyebrow">Held to clinical standards</span>
-
+      <div class="gold-rule"></div>
       <p>Meridian Membership is operated by Meridian Health under the supervision of consultant physicians.</p>
       <p>It is not a wellness subscription, a coaching product, or a direct-to-consumer medication service.</p>
     </div>
@@ -305,11 +328,11 @@
   <div class="wrap">
     <div class="cta-inner reveal">
       <span class="eyebrow">Speak to the team</span>
-
+      <div class="gold-rule"></div>
       <h2>Enquire about Membership.</h2>
       <p style="margin:0 0 24px;color:var(--ink-65);max-width:54ch">A clinician will write back within a working day. The first step is a consultation with a Meridian physician.</p>
       <div class="btn-row">
-        <a href="/contact/#assessment" class="btn btn-fill">Start assessment</a>
+        <a href="/consultation/" class="btn btn-fill">Start assessment</a>
         <a href="/clinical-pathways/metabolic-medicine/" class="btn">Read the metabolic pathway</a>
       </div>
     </div>
@@ -317,12 +340,12 @@
 </section>
 
 <section class="full-divider" aria-label="Brenan Place">
-  <img class="fd-img" src="/brand/practice/membership-v2.png" alt="">
+  <img class="fd-img" src="/brand/practice/membership.png?v=2" alt="">
   <span class="fd-mark"></span>
   <div class="fd-cap">
     <div class="wrap"><span class="eyebrow">In practice</span>
-
-    <p class="cap">Care remains connected within the same practice, with ongoing review provided by consistent clinicians who know your history and treatment pathway.</p>
+    <div class="gold-rule"></div>
+    <p class="cap">Membership is held by named clinicians, in the same building as the rest of your care.</p>
     </div>
   </div>
 </section>
@@ -333,17 +356,17 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="footer-mark" aria-label="Meridian Health"><img src="/brand/monogram.png" alt="Meridian monogram" width="76" height="76" style="display:block;width:76px;height:76px;object-fit:contain" /></div>
+        <div class="footer-mark" aria-label="Meridian Health"><span class="brand-mono"></span></div>
         <p style="margin:0 0 6px;color:var(--ink-65);font-size:13px">Gastrointestinal &amp; Metabolic Health</p>
         <p style="margin:0;color:var(--ink-45);font-size:12.5px;line-height:1.55">Suite 301, Level 3<br/>33 Victoria Parade<br/>Fitzroy VIC 3065</p>
       </div>
       <div class="footer-col"><h4>Pathways</h4><ul>
-        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Metabolic Surgery</a></li>
         <li><a href="/clinical-pathways/upper-gi-surgical-care/">Upper GI &amp; Surgical Care</a></li>
+        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Surgery</a></li>
         <li><a href="/clinical-pathways/metabolic-medicine/">Metabolic Medicine</a></li>
       </ul></div>
       <div class="footer-col"><h4>Practice</h4><ul>
-        <li><a href="/specialists/">Your Care Team</a></li>
+        <li><a href="/specialists/">Specialists</a></li>
         <li><a href="/the-practice/">The practice</a></li>
         <li><a href="/membership/">Membership</a></li>
         <li><a href="/contact/">Contact</a></li>
@@ -352,11 +375,6 @@
         <li>(03) 9416 4418</li>
         <li><a href="mailto:reception@meridianhealth.com.au">reception@meridianhealth.com.au</a></li>
         <li>Mon to Fri, 8.30am to 5.00pm</li>
-      </ul></div>
-          <div class="footer-col"><h4>Clinicians</h4><ul>
-        <li><a href="/refer/">Referrals</a></li>
-        <li><a href="/gp-referral-guide.pdf">Download Referral Guide</a></li>
-        <li><a href="/contact/">Send a Referral</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026</span><span>Fitzroy</span></div>

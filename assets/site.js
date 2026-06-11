@@ -18,27 +18,19 @@
     });
   }
 
-  // Reveal on scroll (adds both 'in' and 'show' for cross-page compatibility)
-  function showEl(el) { el.classList.add('in'); el.classList.add('show'); }
-  function showAll() { document.querySelectorAll('.reveal').forEach(showEl); }
-
-  // In iframe contexts (canvas preview, embeds) IO root is the parent frame —
-  // elements never intersect. Detect and show all reveals immediately.
-  var inIframe = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
-
-  if (inIframe) {
-    showAll();
-  } else if ('IntersectionObserver' in window) {
+  // Reveal on scroll
+  if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { showEl(en.target); io.unobserve(en.target); }
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-    // Safety net: show any still-hidden reveals after 1.2 s (e.g. slow scroll contexts)
-    setTimeout(showAll, 1200);
   } else {
-    showAll();
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
 
   // Nav active link based on path

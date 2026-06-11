@@ -1,57 +1,11 @@
 # Meridian Health
+> Specialist upper GI, bariatric, and metabolic care in Fitzroy, Victoria.
 
-Meridian Health is a specialist medical practice in Fitzroy, Melbourne, Australia, focused on upper gastrointestinal surgery, bariatric (weight loss) surgery, and physician-led metabolic medicine. The practice operates from Brenan Place, within the St Vincent's health precinct.
-
-## What Meridian Health does
-
-Meridian delivers integrated surgical and metabolic care through three clinical pathways:
-
-1. **Bariatric (metabolic) surgery** — Sleeve gastrectomy, Roux-en-Y gastric bypass, one anastomosis gastric bypass, sleeve fundoplication, gastric band removal, and revision bariatric surgery. Twelve months of structured follow-up is included within the surgical pathway.
-
-2. **Upper GI & Surgical Care** — Anti-reflux surgery and hiatus hernia repair, Heller myotomy for achalasia, laparoscopic cholecystectomy, abdominal hernia repair, upper GI cancer surgery (gastrectomy, oesophagectomy), revisional foregut surgery, gastroscopy, and oesophageal physiology testing (manometry and pH monitoring).
-
-3. **Metabolic Medicine** — Physician-led non-surgical weight management including GLP-1 therapy (semaglutide, tirzepatide) where clinically appropriate. Monthly review with the same physician and dietitian. Surgical option held open if needed.
-
-## The clinical team
-
-**Surgeons:**
-- A/Prof Michael Hii — Oesophago-Gastric & Bariatric Surgeon (FRACS, MBBS, BMedSci, PGDipSurgAnat)
-- Dr Salena Ward — Gastric, Bariatric & General Surgeon (MBBS, FRACS, MS, PGDipSurgAnat; Adjunct Lecturer, Monash University)
-- Dr Nicole Winter — Oesophago-Gastric & Bariatric Surgeon (FRACS, MBBS Hons, BMedSci, AANZGOSA, GChPOM; Clinical Honorary Lecturer, University of Melbourne)
-
-**Physicians:**
-- Dr Amy Osborne — Consultant Physician, Perioperative Medicine & Cardiology
-- Dr Anna Galligan — Consultant Physician & Endocrinologist
-- Dr Geetha Theverkalam — Consultant Physician & Endocrinologist
-- Dr Katrina Heggie — Bariatric General Practitioner
-
-**Allied health:** Two Accredited Practising Dietitians (Jennifer Tsoutsoulis, Megan Hickey), a Registered Psychologist (Dr Melanie Strang), two Registered Nurses, three Surgical PAs, and administration.
-
-Total clinical and support team: 24 clinicians and coordinators.
-
-## Location and contact
-
-Address: Suite 8, Level 8, Brenan Place, Victoria Parade, Fitzroy VIC 3065, Australia
-Phone: (03) 9416 4418
-Fax: (03) 8692 1190
-Email: reception@meridianhealth.com.au
-Hours: Monday to Friday, 8.30am to 5.00pm
-A referral is not required to enquire. A clinician responds within one working day.
-
-## Key pages
-
-- Homepage: https://meridianhealth.com.au/
-- Clinical Pathways: https://meridianhealth.com.au/clinical-pathways/
-- Bariatric Surgery: https://meridianhealth.com.au/clinical-pathways/bariatric-surgery/
-- Upper GI Surgery: https://meridianhealth.com.au/clinical-pathways/upper-gi-surgical-care/
-- Metabolic Medicine: https://meridianhealth.com.au/clinical-pathways/metabolic-medicine/
-- The Practice: https://meridianhealth.com.au/the-practice/
-- Care Team: https://meridianhealth.com.au/specialists/
-- Contact: https://meridianhealth.com.au/contact/
-- Membership: https://meridianhealth.com.au/membership/
-
-## About the practice
-
-Meridian unites two established Melbourne surgical practices (MGOS and MWLS) under one clinical team and one patient file. Care is delivered within the Fitzroy health precinct alongside St Vincent's Hospital Melbourne and the Aikenhead Centre for Medical Discovery. The practice holds adjunct and honorary academic appointments with the University of Melbourne and Monash University.
-
-The patient app extends support between appointments with tracking, education, and progress review by the clinical team.
+/
+/clinical-pathways/
+/clinical-pathways/upper-gi-surgical-care/
+/clinical-pathways/bariatric-surgery/
+/clinical-pathways/metabolic-medicine/
+/specialists/
+/contact/
+/consultation/

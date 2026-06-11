@@ -8,14 +8,19 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
 <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
 <link rel="apple-touch-icon" sizes="180x180" href="/brand/favicon-180.png?v=6.7q" />
-<style id="meridian-gate-style">html.meridian-locked #content{visibility:hidden!important}#meridian-gate{position:fixed!important;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:24px;background:#e8e4dc;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#564929;visibility:visible!important;opacity:1!important;box-sizing:border-box}#meridian-gate.hidden{display:none}#meridian-gate .card{background:#eeebe4;border:1px solid rgba(86,73,41,.10);border-radius:12px;padding:36px 32px 30px;width:100%;max-width:360px;box-sizing:border-box}#meridian-gate h1{margin:0 0 6px;font-size:22px;font-family:"Inter";font-weight:500;letter-spacing:-.012em;line-height:1.2}#meridian-gate p.sub{margin:0 0 22px;font-size:14px;color:rgba(86,73,41,.62);line-height:1.45}#meridian-gate label{display:block;font-size:11px;font-family:"Inter";font-weight:500;text-transform:uppercase;letter-spacing:1.2px;color:rgba(86,73,41,.55);margin:14px 0 6px}#meridian-gate input{width:100%;padding:12px 14px;font-size:15px;font-family:"Inter";border:1px solid rgba(86,73,41,.18);border-radius:6px;background:#fff;color:#564929;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none}#meridian-gate input:focus{border-color:#564929;box-shadow:0 0 0 3px rgba(86,73,41,.06)}#meridian-gate button{margin-top:22px;width:100%;padding:12px 16px;font-size:13px;font-family:"Inter";font-weight:500;letter-spacing:.6px;text-transform:uppercase;background:transparent;color:#564929;border:1px solid #564929;border-radius:999px;cursor:pointer;transition:background .15s ease,color .15s ease;-webkit-appearance:none;appearance:none}#meridian-gate button:hover{background:#564929;color:#e8e4dc}#meridian-gate .err{margin-top:14px;font-size:13px;color:#b3261e;min-height:16px;font-family:"Inter"}#meridian-gate .brand{display:block;width:108px;height:15px;margin:0 0 18px;background-color:#9a7818;-webkit-mask:url('/brand/wordmark.png') left center/contain no-repeat;mask:url('/brand/wordmark.png') left center/contain no-repeat;text-indent:-9999px;overflow:hidden;font-size:0;color:transparent}#meridian-logout{position:fixed;bottom:14px;right:14px;z-index:2147483645;background:transparent;color:#564929;border:1px solid rgba(86,73,41,.25);border-radius:999px;padding:7px 14px;font-size:11px;font-family:"Inter";font-weight:500;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(247,245,239,.7)}#meridian-logout:hover{background:#564929;color:#e8e4dc;border-color:#564929}</style>
-<script id="meridian-gate-script">(function(){if(location.hostname==="localhost"||location.hostname==="127.0.0.1"||location.hostname.endsWith(".replit.dev"))return;var KEY="meridian_auth_v1";var U="MHII";var P="MERIDIANMHII2026@!";var root=document.documentElement;function isAuthed(){try{return window.localStorage.getItem(KEY)==="1"}catch(e){return false}}function lock(){root.classList.add("meridian-locked")}function unlock(){root.classList.remove("meridian-locked")}if(!isAuthed()){lock()}function buildOverlay(){var d=document.createElement("div");d.id="meridian-gate";d.innerHTML='<div class="card" role="dialog" aria-modal="true" aria-labelledby="mg-title"><span class="brand">Meridian Health</span><h1 id="mg-title">Sign in</h1><p class="sub">Enter your credentials to continue.</p><form id="meridian-gate-form" autocomplete="off"><label for="mg-user">Username</label><input id="mg-user" name="username" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" required /><label for="mg-pass">Password</label><input id="mg-pass" name="password" type="password" required /><button type="submit">Enter</button><div class="err" id="mg-err" aria-live="polite"></div></form></div>';return d}function buildLogout(){var b=document.createElement("button");b.id="meridian-logout";b.type="button";b.textContent="Log out";b.addEventListener("click",function(){try{window.localStorage.removeItem(KEY)}catch(e){}window.location.reload()});return b}function mountLogout(){if(document.getElementById("meridian-logout"))return;var btn=buildLogout();(document.body||document.documentElement).appendChild(btn)}function mountOverlay(){if(document.getElementById("meridian-gate"))return;var ov=buildOverlay();(document.body||document.documentElement).appendChild(ov);var form=document.getElementById("meridian-gate-form");var err=document.getElementById("mg-err");form.addEventListener("submit",function(e){e.preventDefault();var u=document.getElementById("mg-user").value;var p=document.getElementById("mg-pass").value;if(u===U&&p===P){try{window.localStorage.setItem(KEY,"1")}catch(e){}err.textContent="";ov.classList.add("hidden");unlock();mountLogout()}else{err.textContent="Invalid username or password.";document.getElementById("mg-pass").value="";document.getElementById("mg-pass").focus()}});setTimeout(function(){var f=document.getElementById("mg-user");if(f)f.focus()},50)}function init(){if(isAuthed()){unlock();mountLogout()}else{mountOverlay()}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();</script>
-<link rel="stylesheet" href="/assets/styles.css?v=8" />
-  <link rel="stylesheet" href="/assets/gate.css?v=2" />
-  <script defer src="/assets/gate.js?v=2"></script>
+<link rel="stylesheet" href="/assets/styles.css?v=6.7bg" />
+<link rel="canonical" href="https://meridianhealth.com.au/app/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Patient App | Meridian Health" />
+<meta property="og:description" content="The Meridian patient app keeps clinical care continuous between visits. Enter your patient number to unlock guided protocols, treatment explanations, trackers and content prepared by your team." />
+<meta property="og:url" content="https://meridianhealth.com.au/app/" />
+<meta property="og:image" content="https://meridianhealth.com.au/brand/social/og-default.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Patient App | Meridian Health" />
+<meta name="twitter:description" content="The Meridian patient app keeps clinical care continuous between visits. Enter your patient number to unlock guided protocols, treatment explanations, trackers and content prepared by your team." />
+<meta name="twitter:image" content="https://meridianhealth.com.au/brand/social/og-default.jpg" />
 </head>
 <body>
-<div class="ann-bar"><span class="ann-desk"><span class="ann-w">MGOS</span> and <span class="ann-w">MWLS</span>, now united at <span class="ann-w">MERIDIAN</span>. Clinical excellence, multidisciplinary care, and a connected patient experience.</span><span class="ann-mob"><span class="ann-w">MGOS</span> and <span class="ann-w">MWLS</span> now united at <span class="ann-w">MERIDIAN</span></span></div>
 
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
@@ -25,31 +30,24 @@
       <div class="nav-dd">
         <a href="/clinical-pathways/" aria-haspopup="true" aria-expanded="false">Clinical Pathways</a>
         <div class="nav-dd-panel" role="menu">
-          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Metabolic Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
           <a href="/clinical-pathways/upper-gi-surgical-care/" role="menuitem"><span class="dd-t">Upper GI &amp; Surgical Care</span><span class="dd-s">Reflux, hernia, oesophago-gastric and revisional surgery.</span></a>
+          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
           <a href="/clinical-pathways/metabolic-medicine/" role="menuitem"><span class="dd-t">Metabolic Medicine</span><span class="dd-s">Physician-led weight management and GLP-1 therapy.</span></a>
         </div>
       </div>
+      <a href="/specialists/">Specialists</a>
       <div class="nav-dd">
         <a href="/the-practice/" aria-haspopup="true" aria-expanded="false">The Practice</a>
         <div class="nav-dd-panel" role="menu">
           <a href="/the-practice/" role="menuitem"><span class="dd-t">Overview</span><span class="dd-s">Clinic, theatres and the multidisciplinary team.</span></a>
-          <a href="/specialists/" role="menuitem"><span class="dd-t">Your Care Team</span><span class="dd-s">Surgeons, physicians and the multidisciplinary team.</span></a>
           <a href="/contact/" role="menuitem"><span class="dd-t">Contact and visit</span><span class="dd-s">Enquiries, appointments and Brenan Place.</span></a>
         </div>
       </div>
-      <div class="nav-dd">
-        <a href="/app/" aria-haspopup="true" aria-expanded="false" class="active">Patient Hub</a>
-        <div class="nav-dd-panel" role="menu">
-          <a href="/app/" role="menuitem"><span class="dd-t">App</span><span class="dd-s">Track progress and stay connected between appointments.</span></a>
-          <a href="/membership/" role="menuitem"><span class="dd-t">Membership V1</span><span class="dd-s">Annual care, priority access and continuity.</span></a>
-          <a href="/membership-v2/" role="menuitem"><span class="dd-t">Membership V2</span><span class="dd-s">All-inclusive telehealth programme, $299/month.</span></a>
-        </div>
-      </div>
-      <a href="/refer/">Referrals</a>
-      <a href="/contact/#assessment" class="nav-cta-mobile">Start assessment</a>
+      <a href="/app/" class="active">App</a>
+      <a href="/membership/">Membership</a>
+      <a href="/consultation/" class="nav-cta-mobile">Start assessment</a>
     </div>
-    <a href="/contact/#assessment" class="btn btn-key nav-cta">Start assessment</a>
+    <a href="/consultation/" class="btn btn-key nav-cta">Start assessment</a>
     <a href="/portal/" class="nav-portal" aria-label="Patient sign in" title="Patient sign in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 19.5c1.4-3.4 4.4-5.2 7.5-5.2s6.1 1.8 7.5 5.2"/></svg><span>Patient sign in</span></a>
   </div>
 </nav>
@@ -82,7 +80,7 @@
   <div class="wrap">
     <div class="section-head reveal" style="max-width:780px;margin:0 0 56px">
       <span class="eyebrow">In hand</span>
-
+      <div class="gold-rule"></div>
       <h2 style="font-size:clamp(28px,3.4vw,42px);max-width:22ch">A quiet companion to your care. Not another health app.</h2>
       <p style="font-size:17px;color:var(--ink-65);max-width:54ch;margin-top:12px">The Meridian app holds the parts of treatment you would otherwise carry on paper, in your inbox, or in your head.</p>
     </div>
@@ -112,10 +110,10 @@
   <div class="wrap">
     <div class="section-head reveal" style="max-width:680px;margin:0 0 36px">
       <span class="eyebrow">What it does</span>
-
-      <h2 style="font-size:clamp(26px,3vw,36px)">The six things you will use it for.</h2>
+      <div class="gold-rule"></div>
+      <h2 style="font-size:clamp(26px,3vw,36px)">The four things you will use it for.</h2>
     </div>
-    <div class="felt-grid felt-grid-icons" style="grid-template-columns:repeat(3,1fr)">
+    <div class="felt-grid felt-grid-icons">
       <div class="felt-item">
         <span class="felt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor" stroke="none"/></svg></span>
         <span class="felt-n">No. 01</span><span class="felt-v">Today</span><p class="felt-l">Where you are in care, and the next step waiting for you.</p>
@@ -132,40 +130,6 @@
         <span class="felt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 3.5V17H6.5A2.5 2.5 0 0 1 4 14.5v-8z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
         <span class="felt-n">No. 04</span><span class="felt-v">Messages</span><p class="felt-l">Reach your nurse, dietitian or surgeon between visits.</p>
       </div>
-      <div class="felt-item">
-        <span class="felt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="13" height="17" rx="1.5"/><path d="M4 18h13"/><path d="M7 7h7M7 10.5h5"/><path d="M7 14.5h5.5"/><path d="M14.5 14l3.5 3.5" stroke-width="1.2"/><path d="M17.5 12a2 2 0 1 1 2.83 2.83l-3.5 3.5-2.83-.71.71-2.83z"/></svg></span>
-        <span class="felt-n">No. 05</span><span class="felt-v">Forms</span><p class="felt-l">Sign and submit patient forms on your device. Tap to complete on a touch screen, or download for later.</p>
-      </div>
-      <div class="felt-item">
-        <span class="felt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="2.5"/><path d="M3.5 19c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/><circle cx="17" cy="8" r="2"/><path d="M19.5 17c0-2.48-1.57-4.61-3.76-5.41"/></svg></span>
-        <span class="felt-n">No. 06</span><span class="felt-v">Your Team</span><p class="felt-l">Familiarise yourself with the clinicians and staff looking after you before your first appointment.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section bleed-deep" style="padding:72px 0">
-  <div class="wrap">
-    <div class="two-col reveal" style="align-items:center;gap:60px">
-      <div>
-        <span class="eyebrow" style="color:var(--gold)">Meridian Access</span>
-        <h2 style="font-size:clamp(26px,3vw,40px);max-width:20ch;margin:18px 0 20px;color:#e2ded7">On-demand metabolic medicine. Reliable, physician-led, ongoing.</h2>
-        <p style="font-size:15.5px;line-height:1.65;color:rgba(241,239,235,0.72);max-width:46ch;margin:0 0 14px">Physician-led GLP-1 therapy, metabolic review and dietetic support delivered through a structured monthly programme. No waitlists. No repeat referrals. No gaps in care.</p>
-        <p style="font-size:15.5px;line-height:1.65;color:rgba(241,239,235,0.72);max-width:46ch;margin:0 0 28px">Available through recommendation from a Meridian clinician, or assessed directly through the app.</p>
-        <div class="btn-row"><a href="/membership/" class="btn btn-fill">Explore Meridian Access</a></div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:18px">
-        <div style="border:1px solid rgba(241,239,235,0.14);border-radius:4px;padding:22px 24px">
-          <span style="font-family:'Inter';font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px">What is included</span>
-          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
-            <li style="font-size:14px;color:rgba(241,239,235,0.8);padding-left:18px;position:relative"><span style="position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--gold);display:block"></span>Monthly physician consultation</li>
-            <li style="font-size:14px;color:rgba(241,239,235,0.8);padding-left:18px;position:relative"><span style="position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--gold);display:block"></span>GLP-1 therapy assessment and prescribing</li>
-            <li style="font-size:14px;color:rgba(241,239,235,0.8);padding-left:18px;position:relative"><span style="position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--gold);display:block"></span>Dietetic guidance and nutrition support</li>
-            <li style="font-size:14px;color:rgba(241,239,235,0.8);padding-left:18px;position:relative"><span style="position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--gold);display:block"></span>Blood test review and metabolic monitoring</li>
-            <li style="font-size:14px;color:rgba(241,239,235,0.8);padding-left:18px;position:relative"><span style="position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--gold);display:block"></span>In-app messaging with your care team</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -175,7 +139,7 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">By the numbers</span>
-
+        <div class="gold-rule"></div>
         <h2 style="max-width:18ch">Held to clinical standards, not consumer ones.</h2>
       </div>
       <div class="reveal reveal-2">
@@ -196,7 +160,7 @@
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:48px">
       <span class="eyebrow">How it works</span>
-
+      <div class="gold-rule"></div>
       <h2 style="max-width:18ch">Three steps. We handle the rest.</h2>
     </div>
     <div class="process-list" style="border-top:1px solid var(--ink-15)">
@@ -230,7 +194,7 @@
     <div class="two-col-asymm">
       <div class="reveal">
         <span class="eyebrow">Privacy</span>
-
+        <div class="gold-rule"></div>
         <h2>Your record stays inside the practice. Where it should.</h2>
       </div>
       <div class="reveal reveal-2">
@@ -246,7 +210,7 @@
     <div class="qr-block reveal">
       <div class="qr-copy">
         <span class="eyebrow">Download</span>
-
+        <div class="gold-rule"></div>
         <h2 style="font-size:clamp(26px,3vw,36px);max-width:18ch;margin:0 0 14px">Scan to open the Meridian patient app.</h2>
         <p style="font-size:15px;color:var(--ink-65);max-width:46ch;margin:0">Point your phone camera at the code. The link opens the App Store or Google Play, depending on your device.</p>
       </div>
@@ -265,10 +229,10 @@
   <div class="wrap">
     <div class="cta-inner reveal">
       <span class="eyebrow">Get the app</span>
-
+      <div class="gold-rule"></div>
       <h2>Available to Meridian patients on iPhone and Android.</h2>
       <div class="btn-row">
-        <a href="/contact/#assessment" class="btn btn-fill">Start assessment</a>
+        <a href="/consultation/" class="btn btn-fill">Start assessment</a>
         <a href="/contact/" class="btn">Speak to the team</a>
       </div>
     </div>
@@ -284,17 +248,17 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="footer-mark" aria-label="Meridian Health"><img src="/brand/monogram.png" alt="Meridian monogram" width="76" height="76" style="display:block;width:76px;height:76px;object-fit:contain" /></div>
+        <div class="footer-mark" aria-label="Meridian Health"><span class="brand-mono"></span></div>
         <p style="margin:0 0 6px;color:var(--ink-65);font-size:13px">Gastrointestinal &amp; Metabolic Health</p>
         <p style="margin:0;color:var(--ink-45);font-size:12.5px;line-height:1.55">Suite 301, Level 3<br/>33 Victoria Parade<br/>Fitzroy VIC 3065</p>
       </div>
       <div class="footer-col"><h4>Pathways</h4><ul>
-        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Metabolic Surgery</a></li>
         <li><a href="/clinical-pathways/upper-gi-surgical-care/">Upper GI &amp; Surgical Care</a></li>
+        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Surgery</a></li>
         <li><a href="/clinical-pathways/metabolic-medicine/">Metabolic Medicine</a></li>
       </ul></div>
       <div class="footer-col"><h4>Practice</h4><ul>
-        <li><a href="/specialists/">Your Care Team</a></li>
+        <li><a href="/specialists/">Specialists</a></li>
         <li><a href="/the-practice/">The practice</a></li>
         <li><a href="/membership/">Membership</a></li>
         <li><a href="/app/">Patient app</a></li>
@@ -304,11 +268,6 @@
         <li>(03) 9416 4418</li>
         <li><a href="mailto:reception@meridianhealth.com.au">reception@meridianhealth.com.au</a></li>
         <li>Mon to Fri, 8.30am to 5.00pm</li>
-      </ul></div>
-          <div class="footer-col"><h4>Clinicians</h4><ul>
-        <li><a href="/refer/">Referrals</a></li>
-        <li><a href="/gp-referral-guide.pdf">Download Referral Guide</a></li>
-        <li><a href="/contact/">Send a Referral</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026</span><span>Fitzroy</span></div>

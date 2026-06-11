@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Arrange a Consultation | Meridian Health</title>
+<meta name="description" content="Arrange a consultation with a Meridian Health clinician, in clinic or by telehealth. A clinician will be in touch within one working day. A referral is not required to enquire." />
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/favicon-180.png?v=6.7q" />
+<link rel="stylesheet" href="/assets/styles.css?v=6.7bg" />
+<link rel="canonical" href="https://meridianhealth.com.au/consultation/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Arrange a Consultation | Meridian Health" />
+<meta property="og:description" content="Arrange a consultation with a Meridian Health clinician, in clinic or by telehealth. A clinician will be in touch within one working day. A referral is not required to enquire." />
+<meta property="og:url" content="https://meridianhealth.com.au/consultation/" />
+<meta property="og:image" content="https://meridianhealth.com.au/brand/social/og-default.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Arrange a Consultation | Meridian Health" />
+<meta name="twitter:description" content="Arrange a consultation with a Meridian Health clinician, in clinic or by telehealth. A clinician will be in touch within one working day. A referral is not required to enquire." />
+<meta name="twitter:image" content="https://meridianhealth.com.au/brand/social/og-default.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Meridian Health",
+  "url": "https://meridianhealth.com.au/",
+  "description": "Arrange a consultation with a Meridian Health clinician, in clinic or by telehealth. A referral is not required to enquire.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 301, Level 3, 33 Victoria Parade",
+    "addressLocality": "Fitzroy",
+    "addressRegion": "VIC",
+    "postalCode": "3065",
+    "addressCountry": "AU"
+  },
+  "telephone": "+61394164418",
+  "email": "reception@meridianhealth.com.au",
+  "availableService": [
+    {
+      "@type": "MedicalTherapy",
+      "name": "In-clinic consultation"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Telehealth consultation"
+    }
+  ]
+}
+</script>
+<style>
+  .funnel{max-width:680px}
+  .fsteps{display:flex;gap:10px;margin:0 0 26px}
+  .fsteps-item{flex:1;height:3px;border-radius:999px;background:var(--ink-15);transition:background .25s ease}
+  .fsteps-item.is-on{background:var(--gold)}
+  .fstep-count{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-45);font-weight:500;margin:0 0 18px}
+  .fstep{display:none}
+  .fstep.is-active{display:block;animation:fstepIn .3s ease}
+  @keyframes fstepIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .fstep h3{margin:0 0 4px}
+  .fstep-sub{font-size:14px;color:var(--ink-65);margin:0 0 22px;line-height:1.5}
+  .opt-grid{display:grid;gap:12px}
+  .opt-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:560px){.opt-grid.cols-3{grid-template-columns:1fr}}
+  .opt{position:relative;display:block;cursor:pointer}
+  .opt input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+  .opt-box{display:block;padding:16px 16px;border:1px solid var(--ink-15);border-radius:6px;background:var(--cream);transition:border-color .15s ease,box-shadow .15s ease,background .15s ease}
+  .opt-box .ot{display:block;font-size:15px;color:var(--ink);font-weight:500;letter-spacing:-.005em}
+  .opt-box .os{display:block;font-size:13px;color:var(--ink-65);margin-top:4px;line-height:1.45}
+  .opt input:focus-visible + .opt-box{box-shadow:0 0 0 3px rgba(200,160,53,.28)}
+  .opt input:checked + .opt-box{border-color:var(--ink);background:var(--cream-2);box-shadow:0 0 0 1px var(--ink)}
+  .opt input:checked + .opt-box .ot{color:var(--ink)}
+  .funnel-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px}
+  .funnel-nav .btn-back{visibility:hidden}
+  .funnel-nav.has-back .btn-back{visibility:visible}
+  .ghost{background:transparent;border:1px solid var(--ink-25);color:var(--ink-80)}
+  .ghost:hover{background:var(--ink-08);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="/" class="nav-mark" aria-label="Meridian Health"><span class="logotype">Meridian Health</span></a>
+    <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav-links"><span></span></button>
+    <div class="nav-links" id="primary-nav-links">
+      <div class="nav-dd">
+        <a href="/clinical-pathways/" aria-haspopup="true" aria-expanded="false">Clinical Pathways</a>
+        <div class="nav-dd-panel" role="menu">
+          <a href="/clinical-pathways/upper-gi-surgical-care/" role="menuitem"><span class="dd-t">Upper GI &amp; Surgical Care</span><span class="dd-s">Reflux, hernia, oesophago-gastric and revisional surgery.</span></a>
+          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
+          <a href="/clinical-pathways/metabolic-medicine/" role="menuitem"><span class="dd-t">Metabolic Medicine</span><span class="dd-s">Physician-led weight management and GLP-1 therapy.</span></a>
+        </div>
+      </div>
+      <a href="/specialists/">Specialists</a>
+      <div class="nav-dd">
+        <a href="/the-practice/" aria-haspopup="true" aria-expanded="false">The Practice</a>
+        <div class="nav-dd-panel" role="menu">
+          <a href="/the-practice/" role="menuitem"><span class="dd-t">Overview</span><span class="dd-s">Clinic, theatres and the multidisciplinary team.</span></a>
+          <a href="/contact/" role="menuitem"><span class="dd-t">Contact and visit</span><span class="dd-s">Enquiries, appointments and Brenan Place.</span></a>
+        </div>
+      </div>
+      <a href="/app/">App</a>
+      <a href="/membership/">Membership</a>
+      <a href="/consultation/#start" class="nav-cta-mobile">Arrange a consultation</a>
+    </div>
+    <a href="/consultation/#start" class="btn btn-key nav-cta">Arrange a consultation</a>
+    <a href="/portal/" class="nav-portal" aria-label="Patient sign in" title="Patient sign in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 19.5c1.4-3.4 4.4-5.2 7.5-5.2s6.1 1.8 7.5 5.2"/></svg><span>Patient sign in</span></a>
+  </div>
+</nav>
+
+<main id="content">
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="label reveal reveal-1">Consultation</span>
+    <h1 class="display reveal reveal-2">Arrange a consultation.</h1>
+    <p class="lead reveal reveal-3">Speak with a Meridian Health clinician, in clinic or by telehealth.</p>
+    <p class="body reveal reveal-3">Share a few details and the practice will be in touch within one working day to confirm a time. A referral is not required to enquire, and there is no obligation to proceed.</p>
+  </div>
+</header>
+
+<section class="section" id="start">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <span class="eyebrow reveal">Request a time</span>
+        <div class="gold-rule reveal"></div>
+
+        <div id="meridian-form-success" class="form-card funnel reveal reveal-2" style="display:none">
+          <span class="eyebrow" style="color:var(--gold-deep)">Received</span>
+          <div class="gold-rule"></div>
+          <h3 style="font-size:22px;margin:0 0 10px">Thank you. The practice will be in touch.</h3>
+          <p style="margin:0 0 8px;color:var(--ink-65)">A member of the team will contact you within one working day to confirm a consultation that suits you, in clinic or by telehealth.</p>
+          <p style="margin:0;color:var(--ink-65)">If your enquiry is urgent, please call <a href="tel:+61394164418" style="color:var(--ink-80);border-bottom:1px solid var(--ink-15)">(03) 9416 4418</a>.</p>
+        </div>
+
+        <form name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/consultation/?sent=1#start" class="form-card funnel reveal reveal-2" id="meridian-form">
+          <input type="hidden" name="form-name" value="consultation" />
+          <p style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+
+          <div class="fsteps" aria-hidden="true">
+            <span class="fsteps-item is-on" data-dot="1"></span>
+            <span class="fsteps-item" data-dot="2"></span>
+            <span class="fsteps-item" data-dot="3"></span>
+          </div>
+          <p class="fstep-count" id="fstep-count">Step 1 of 3</p>
+
+          <!-- Step 1 -->
+          <div class="fstep is-active" data-step="1">
+            <h3>Your details</h3>
+            <p class="fstep-sub">So the practice knows who to contact.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="fname">First name</label>
+                <input id="fname" name="fname" type="text" required autocomplete="given-name" />
+              </div>
+              <div class="field">
+                <label for="lname">Last name</label>
+                <input id="lname" name="lname" type="text" required autocomplete="family-name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="fstep" data-step="2">
+            <h3>How you would like to meet</h3>
+            <p class="fstep-sub">A consultation can be in clinic at Fitzroy or by telehealth from anywhere in Australia.</p>
+            <div class="field field-full" style="margin-bottom:18px">
+              <label style="margin-bottom:4px">Preferred format</label>
+              <div class="opt-grid cols-3" role="radiogroup" aria-label="Preferred format">
+                <label class="opt"><input type="radio" name="format" value="In clinic" required /><span class="opt-box"><span class="ot">In clinic</span><span class="os">Fitzroy</span></span></label>
+                <label class="opt"><input type="radio" name="format" value="Telehealth" /><span class="opt-box"><span class="ot">Telehealth</span><span class="os">By phone or video</span></span></label>
+                <label class="opt"><input type="radio" name="format" value="No preference" /><span class="opt-box"><span class="ot">No preference</span><span class="os">Either suits</span></span></label>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="location">Where are you located</label>
+                <select id="location" name="location" required>
+                  <option value="">Select a state</option>
+                  <option value="VIC">Victoria</option>
+                  <option value="NSW">New South Wales</option>
+                  <option value="QLD">Queensland</option>
+                  <option value="SA">South Australia</option>
+                  <option value="WA">Western Australia</option>
+                  <option value="TAS">Tasmania</option>
+                  <option value="ACT">Australian Capital Territory</option>
+                  <option value="NT">Northern Territory</option>
+                  <option value="Outside Australia">Outside Australia</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="availability">When suits you</label>
+                <input id="availability" name="availability" type="text" placeholder="For example, weekday mornings" autocomplete="off" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="fstep" data-step="3">
+            <h3>A little context</h3>
+            <p class="fstep-sub">This helps the practice direct your enquiry to the right clinician. Nothing here is a recommendation, and your consultation is where any pathway is discussed.</p>
+            <div class="field field-full" style="margin-bottom:18px">
+              <label style="margin-bottom:4px">What brings you to Meridian Health</label>
+              <div class="opt-grid">
+                <label class="opt"><input type="checkbox" name="reason" value="Reflux or heartburn" /><span class="opt-box"><span class="ot">Reflux or heartburn</span></span></label>
+                <label class="opt"><input type="checkbox" name="reason" value="Weight and metabolic health" /><span class="opt-box"><span class="ot">Weight and metabolic health</span></span></label>
+                <label class="opt"><input type="checkbox" name="reason" value="Hernia or upper GI concern" /><span class="opt-box"><span class="ot">Hernia or upper GI concern</span></span></label>
+                <label class="opt"><input type="checkbox" name="reason" value="A second opinion" /><span class="opt-box"><span class="ot">A second opinion</span></span></label>
+                <label class="opt"><input type="checkbox" name="reason" value="Not sure yet" /><span class="opt-box"><span class="ot">Not sure yet</span></span></label>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="notes">Anything you would like the team to know</label>
+                <textarea id="notes" name="notes" placeholder="For example, I have had reflux that has not settled on medication, and I would like to understand my options."></textarea>
+              </div>
+              <div class="field">
+                <label for="referral">Do you have a referral</label>
+                <select id="referral" name="referral">
+                  <option value="">Select an option</option>
+                  <option value="Yes">Yes, I have a referral</option>
+                  <option value="No">No referral</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="heard">How did you hear of us</label>
+                <select id="heard" name="heard">
+                  <option value="">Select an option</option>
+                  <option value="GP or specialist">GP or specialist</option>
+                  <option value="Search">Online search</option>
+                  <option value="Social">Social media</option>
+                  <option value="Friend or family">Friend or family</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="funnel-nav" id="funnel-nav">
+            <button type="button" class="btn ghost btn-back" id="btn-back">Back</button>
+            <button type="button" class="btn" id="btn-next">Continue</button>
+            <button type="submit" class="btn btn-fill" id="btn-send" style="display:none">Send to the team</button>
+          </div>
+          <p class="privacy">Your details are held in confidence and used only to arrange and support your care. There is no obligation to proceed.</p>
+        </form>
+      </div>
+
+      <div>
+        <span class="eyebrow reveal">What to expect</span>
+        <div class="gold-rule reveal"></div>
+        <p class="reveal reveal-2" style="color:var(--ink-65);font-size:15.5px;margin-bottom:24px">You will hear from one of our surgical PAs or nurses. The right clinician will then confirm your consultation.</p>
+        <div class="info-card reveal reveal-2">
+          <div class="info-row"><span class="k">Practice</span><span>Suite 301, Level 3<br/>33 Victoria Parade<br/>Fitzroy VIC 3065</span></div>
+          <div class="info-row"><span class="k">Phone</span><span>(03) 9416 4418</span></div>
+          <div class="info-row"><span class="k">Email</span><span><a href="mailto:reception@meridianhealth.com.au" style="color:var(--ink-80);border-bottom:1px solid var(--ink-15)">reception@meridianhealth.com.au</a></span></div>
+          <div class="info-row"><span class="k">Hours</span><span>Mon to Fri, 8.30am to 5.00pm</span></div>
+          <div class="info-row"><span class="k">Reply</span><span>Within one working day</span></div>
+          <div class="info-row"><span class="k">Referral</span><span>Not required to enquire</span></div>
+        </div>
+        <div class="btn-row reveal reveal-3" style="margin-top:24px">
+          <a href="tel:+61394164418" class="btn">Call (03) 9416 4418</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bleed-cream-2">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What happens next</span>
+      <div class="gold-rule"></div>
+      <h2>From request to consultation.</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-step reveal"><div class="step-num">01</div><div class="step-body"><h3>We confirm your request</h3><p>You receive a short message to confirm we have your details.</p></div></div>
+      <div class="process-step reveal"><div class="step-num">02</div><div class="step-body"><h3>We arrange a time</h3><p>The practice contacts you to set a consultation, in clinic or by telehealth.</p></div></div>
+      <div class="process-step reveal"><div class="step-num">03</div><div class="step-body"><h3>You meet a clinician</h3><p>Your options are discussed in the consultation, with no pathway assumed beforehand.</p></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-mark" aria-label="Meridian Health"><span class="brand-mono"></span></div>
+        <p style="margin:0 0 6px;color:var(--ink-65);font-size:13px">Gastrointestinal &amp; Metabolic Health</p>
+        <p style="margin:0;color:var(--ink-45);font-size:12.5px;line-height:1.55">Suite 301, Level 3<br/>33 Victoria Parade<br/>Fitzroy VIC 3065</p>
+      </div>
+      <div class="footer-col"><h4>Pathways</h4><ul>
+        <li><a href="/clinical-pathways/upper-gi-surgical-care/">Upper GI &amp; Surgical Care</a></li>
+        <li><a href="/clinical-pathways/bariatric-surgery/">Bariatric Surgery</a></li>
+        <li><a href="/clinical-pathways/metabolic-medicine/">Metabolic Medicine</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Practice</h4><ul>
+        <li><a href="/specialists/">Specialists</a></li>
+        <li><a href="/the-practice/">The practice</a></li>
+        <li><a href="/membership/">Membership</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Get in touch</h4><ul>
+        <li>(03) 9416 4418</li>
+        <li><a href="mailto:reception@meridianhealth.com.au">reception@meridianhealth.com.au</a></li>
+        <li>Mon to Fri, 8.30am to 5.00pm</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026</span><span>Fitzroy</span></div>
+  </div>
+</footer>
+
+<script>(function(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('show')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)})})();
+(function(){if(window.location.search.indexOf('sent=1')!==-1){var ok=document.getElementById('meridian-form-success');var f=document.getElementById('meridian-form');if(ok&&f){f.style.display='none';ok.style.display='block';ok.classList.add('show')}}})();
+(function(){
+  var form=document.getElementById('meridian-form');if(!form)return;
+  var steps=Array.prototype.slice.call(form.querySelectorAll('.fstep'));
+  var dots=Array.prototype.slice.call(form.querySelectorAll('.fsteps-item'));
+  var count=document.getElementById('fstep-count');
+  var navRow=document.getElementById('funnel-nav');
+  var back=document.getElementById('btn-back');
+  var next=document.getElementById('btn-next');
+  var send=document.getElementById('btn-send');
+  var i=0;var total=steps.length;
+  function render(){
+    steps.forEach(function(s,n){s.classList.toggle('is-active',n===i)});
+    dots.forEach(function(d,n){d.classList.toggle('is-on',n<=i)});
+    count.textContent='Step '+(i+1)+' of '+total;
+    navRow.classList.toggle('has-back',i>0);
+    next.style.display=(i===total-1)?'none':'inline-flex';
+    send.style.display=(i===total-1)?'inline-flex':'none';
+  }
+  function validStep(){
+    var active=steps[i];
+    var fields=active.querySelectorAll('input,select,textarea');
+    for(var k=0;k<fields.length;k++){
+      var f=fields[k];
+      if(f.type==='radio'){
+        var grp=active.querySelectorAll('input[name="'+f.name+'"]');
+        var any=false;grp.forEach(function(g){if(g.checked)any=true});
+        if(f.required && !any){grp[0].focus();return false}
+      } else if(typeof f.checkValidity==='function' && !f.checkValidity()){
+        f.reportValidity();return false;
+      }
+    }
+    return true;
+  }
+  next.addEventListener('click',function(){if(!validStep())return;if(i<total-1){i++;render();active_scroll()}});
+  back.addEventListener('click',function(){if(i>0){i--;render();active_scroll()}});
+  function active_scroll(){var top=document.getElementById('start');if(top){top.scrollIntoView({behavior:'smooth',block:'start'})}}
+  form.addEventListener('keydown',function(e){
+    if(e.key==='Enter' && e.target && e.target.tagName!=='TEXTAREA' && i<total-1){
+      e.preventDefault();
+      if(validStep()){i++;render();active_scroll()}
+    }
+  });
+  form.addEventListener('submit',function(e){if(i<total-1 || !validStep()){e.preventDefault()}});
+  render();
+})();</script>
+
+<script id="meridian-mobile-nav">(function(){var b=document.querySelector(".nav-burger");if(!b)return;var body=document.body;b.addEventListener("click",function(){var open=body.classList.toggle("nav-open");b.setAttribute("aria-expanded",open?"true":"false")});document.querySelectorAll(".nav-dd > a").forEach(function(a){a.addEventListener("click",function(e){if(window.matchMedia("(max-width:880px)").matches){e.preventDefault();var dd=a.parentNode;var open=dd.classList.toggle("open");a.setAttribute("aria-expanded",open?"true":"false")}})});document.querySelectorAll(".nav-links a").forEach(function(a){if(a.classList.contains("nav-cta-mobile")||(a.parentNode&&a.parentNode.classList&&a.parentNode.classList.contains("nav-dd"))){return}a.addEventListener("click",function(){body.classList.remove("nav-open");b.setAttribute("aria-expanded","false")})});document.querySelectorAll(".nav-dd-panel a").forEach(function(a){a.addEventListener("click",function(){body.classList.remove("nav-open");b.setAttribute("aria-expanded","false")})})})();</script>
+</body>
+</html>
