@@ -46,6 +46,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://meridianhealth.com.au/app/support/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://meridianhealth.com.au/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
