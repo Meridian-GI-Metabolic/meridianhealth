@@ -1,11 +1,14 @@
 # Meridian Health
 > Specialist upper GI, bariatric, and metabolic care in Fitzroy, Victoria.
 
-/
-/clinical-pathways/
-/clinical-pathways/upper-gi-surgical-care/
-/clinical-pathways/bariatric-surgery/
-/clinical-pathways/metabolic-medicine/
-/specialists/
-/contact/
-/consultation/
+/: Home — overview of Meridian GI and Metabolic Health, services, and navigation hub
+/clinical-pathways/: Clinical Pathways — hub for all specialist surgical and medical care pathways
+/clinical-pathways/upper-gi-surgical-care/: Upper GI Surgical Care — oesophageal, gastric, and reflux surgery pathway
+/clinical-pathways/bariatric-surgery/: Bariatric Surgery — weight-loss surgery pathway including sleeve gastrectomy and gastric bypass
+/clinical-pathways/metabolic-medicine/: Metabolic Medicine — non-surgical metabolic and obesity medicine pathway
+/specialists/: Our Specialists — profiles of the Meridian surgical and medical team
+/the-practice/: The Practice — about Meridian GI and Metabolic Health, our approach, and facilities
+/membership/: Membership — Meridian membership programme details and benefits
+/app/: Patient App — information about the Meridian patient mobile app for care-journey support
+/contact/: Contact — clinic address, phone, email, and location details
+/consultation/: Request a Consultation — book an initial specialist consultation
