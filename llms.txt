@@ -10,6 +10,8 @@
 /the-practice/: The Practice — about Meridian GI and Metabolic Health, our approach, and facilities
 /membership/: Membership — Meridian membership programme details and benefits
 /app/: Patient App — information about the Meridian patient mobile app for care-journey support
+/app/support/: App Support — help getting started with the Meridian patient app, troubleshooting, and how to reach the practice
 /contact/: Contact — clinic address, phone, email, and location details
 /consultation/: Request a Consultation — book an initial specialist consultation
-/privacy: Privacy Policy — how Meridian GI and Metabolic Health collects, uses, and protects patient and visitor information
+/privacy/: Privacy Policy — how Meridian GI and Metabolic Health collects, uses, and protects patient and visitor information
+/privacy-choices/: Privacy Choices — the choices patients have over their information in the Meridian patient app, including data deletion, pausing the app, and limiting optional features
