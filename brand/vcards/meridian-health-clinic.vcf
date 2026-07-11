@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Meridian Health;;;
+FN:Meridian Health
+ORG:Meridian GI and Metabolic Health
+TITLE:Clinic Reception
+EMAIL;TYPE=WORK:reception@meridianhealth.com.au
+TEL;TYPE=WORK,VOICE:+61394164418
+ADR;TYPE=WORK:;;Suite 2, Level 3, Brenan Place Building, 31-35 Victoria Parade;Fitzroy;VIC;3065;Australia
+URL:https://meridianhealth.com.au
+END:VCARD
