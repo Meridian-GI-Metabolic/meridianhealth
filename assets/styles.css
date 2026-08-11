@@ -902,6 +902,9 @@ main#content{margin:0;padding:0;background:transparent}
   transition:background .14s ease;
 }
 .nav-dd-panel a:hover,.nav-dd-panel a:focus{background:var(--cream-3) !important;outline:none}
+.nav-dd-panel a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.skip-link{position:absolute;top:-100%;left:0;padding:.5rem 1rem;background:#201e11;color:#f7f5ef;z-index:10000;font-size:15px;font-weight:500;text-decoration:none;border-radius:0 0 4px 0}
+.skip-link:focus-visible{top:0}
 .nav-dd-panel .dd-t{font-size:14px !important;font-weight:500 !important;letter-spacing:-.005em;color:var(--ink) !important;display:block}
 .nav-dd-panel .dd-s{font-size:12.5px !important;color:var(--ink-65) !important;line-height:1.4 !important;font-weight:400 !important;display:block;margin-top:2px}
 @media(max-width:880px){

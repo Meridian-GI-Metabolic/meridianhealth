@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Arrange a Consultation | Meridian Health</title>
+<title>Arrange a Consultation | GI & Bariatric | Meridian Health</title>
 <meta name="description" content="Book a consultation with Meridian Health in Fitzroy or by telehealth. No referral needed — a clinician will respond within one day." />
 <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=6.7q" />
 <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=6.7q" />
@@ -25,6 +25,7 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
+  "@id": "https://meridianhealth.com.au/#practice",
   "name": "Meridian Health",
   "url": "https://meridianhealth.com.au/",
   "description": "Arrange a consultation with a Meridian Health clinician, in clinic or by telehealth. A referral is not required to enquire.",
@@ -46,6 +47,26 @@
     {
       "@type": "MedicalTherapy",
       "name": "Telehealth consultation"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://meridianhealth.com.au/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Request a Consultation",
+      "item": "https://meridianhealth.com.au/consultation/"
     }
   ]
 }
@@ -81,6 +102,7 @@
 </head>
 <body>
 
+<a class="skip-link" href="#content">Skip to main content</a>
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="nav-mark" aria-label="Meridian Health"><span class="logotype">Meridian Health</span></a>
@@ -88,18 +110,18 @@
     <div class="nav-links" id="primary-nav-links">
       <div class="nav-dd">
         <a href="/clinical-pathways/" aria-haspopup="true" aria-expanded="false">Clinical Pathways</a>
-        <div class="nav-dd-panel" role="menu">
-          <a href="/clinical-pathways/upper-gi-surgical-care/" role="menuitem"><span class="dd-t">Upper GI &amp; Surgical Care</span><span class="dd-s">Reflux, hernia, oesophago-gastric and revisional surgery.</span></a>
-          <a href="/clinical-pathways/bariatric-surgery/" role="menuitem"><span class="dd-t">Bariatric Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
-          <a href="/clinical-pathways/metabolic-medicine/" role="menuitem"><span class="dd-t">Metabolic Medicine</span><span class="dd-s">Physician-led weight management and GLP-1 therapy.</span></a>
+        <div class="nav-dd-panel">
+          <a href="/clinical-pathways/upper-gi-surgical-care/"><span class="dd-t">Upper GI &amp; Surgical Care</span><span class="dd-s">Reflux, hernia, oesophago-gastric and revisional surgery.</span></a>
+          <a href="/clinical-pathways/bariatric-surgery/"><span class="dd-t">Bariatric Surgery</span><span class="dd-s">Sleeve gastrectomy and revisional bariatric procedures.</span></a>
+          <a href="/clinical-pathways/metabolic-medicine/"><span class="dd-t">Metabolic Medicine</span><span class="dd-s">Physician-led weight management and GLP-1 therapy.</span></a>
         </div>
       </div>
       <a href="/specialists/">Specialists</a>
       <div class="nav-dd">
         <a href="/the-practice/" aria-haspopup="true" aria-expanded="false">The Practice</a>
-        <div class="nav-dd-panel" role="menu">
-          <a href="/the-practice/" role="menuitem"><span class="dd-t">Overview</span><span class="dd-s">Clinic, theatres and the multidisciplinary team.</span></a>
-          <a href="/contact/" role="menuitem"><span class="dd-t">Contact and visit</span><span class="dd-s">Enquiries, appointments and Brenan Place.</span></a>
+        <div class="nav-dd-panel">
+          <a href="/the-practice/"><span class="dd-t">Overview</span><span class="dd-s">Clinic, theatres and the multidisciplinary team.</span></a>
+          <a href="/contact/"><span class="dd-t">Contact and visit</span><span class="dd-s">Enquiries, appointments and Brenan Place.</span></a>
         </div>
       </div>
       <a href="/app/">App</a>
@@ -212,8 +234,8 @@
             <h3>A little context</h3>
             <p class="fstep-sub">This helps the practice direct your enquiry to the right clinician. Nothing here is a recommendation, and your consultation is where any pathway is discussed.</p>
             <div class="field field-full" style="margin-bottom:18px">
-              <label style="margin-bottom:4px">What brings you to Meridian Health</label>
-              <div class="opt-grid">
+              <label id="reason-legend" style="margin-bottom:4px">What brings you to Meridian Health</label>
+              <div class="opt-grid" role="group" aria-labelledby="reason-legend">
                 <label class="opt"><input type="checkbox" name="reason" value="Reflux or heartburn" /><span class="opt-box"><span class="ot">Reflux or heartburn</span></span></label>
                 <label class="opt"><input type="checkbox" name="reason" value="Weight and metabolic health" /><span class="opt-box"><span class="ot">Weight and metabolic health</span></span></label>
                 <label class="opt"><input type="checkbox" name="reason" value="Hernia or upper GI concern" /><span class="opt-box"><span class="ot">Hernia or upper GI concern</span></span></label>
